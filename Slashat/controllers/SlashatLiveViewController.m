@@ -25,6 +25,7 @@
 
     
     [embedWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"bambuser-embed" ofType:@"html"]isDirectory:NO]]];
+    [embedWebView setAllowsInlineMediaPlayback:YES];
     embedWebView.scrollView.scrollEnabled = NO;
 }
 

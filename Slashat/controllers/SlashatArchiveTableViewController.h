@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlashatArchiveTableViewController : UITableViewController
+@interface SlashatArchiveTableViewController : UITableViewController {
+    NSMutableArray *_allEntries;
+}
+
+@property (retain) NSMutableArray *allEntries;
 
 @end

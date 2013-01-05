@@ -2,30 +2,49 @@
 //  SlashatArchiveEpisodeViewController.m
 //  Slashat
 //
-//  Created by Johan Larsson on 2013-01-03.
+//  Created by Johan Larsson on 2013-01-05.
 //  Copyright (c) 2013 Johan Larsson. All rights reserved.
 //
 
 #import "SlashatArchiveEpisodeViewController.h"
 
+@interface SlashatArchiveEpisodeViewController ()
+
+@property (nonatomic, weak) IBOutlet UIWebView *embedWebView;
+@property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
+
+@end
+
 @implementation SlashatArchiveEpisodeViewController
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code
+        // Custom initialization
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)viewDidLoad
 {
-    // Drawing code
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
+    self.navigationItem.title = self.rssItem.title;
+    NSLog(@"rssItem.mediaUrl: %@", self.rssItem.mediaUrl);
+    
+    [self.embedWebView loadHTMLString:[NSString stringWithFormat:@"<audio controls src='%@' />", self.rssItem.mediaUrl] baseURL:nil];
+    [self.embedWebView setAllowsInlineMediaPlayback:YES];
+    
+    self.descriptionTextView.text = self.rssItem.itemDescription;
+    //[embedWebView setMediaPlaybackAllowsAirPlay:YES];
 }
-*/
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

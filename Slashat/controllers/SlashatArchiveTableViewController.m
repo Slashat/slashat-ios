@@ -7,12 +7,17 @@
 //
 
 #import "SlashatArchiveTableViewController.h"
+#import "RSSItem.h"
+#import "RSSParser.h"
+#import "SlashatArchiveEpisodeViewController.h"
 
 @interface SlashatArchiveTableViewController ()
 
 @end
 
 @implementation SlashatArchiveTableViewController
+
+@synthesize allEntries = _allEntries;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,11 +32,22 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.allEntries = [NSMutableArray array];
+    [self refresh];
+}
+
+- (void) refresh {
+    NSLog(@"Refreshing!");
+    NSURL *url = [NSURL URLWithString:@"http://slashat.se/avsnitt.rss"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [RSSParser parseRSSFeedForRequest:request success:^(NSArray *feedItems) {
+        NSLog(@"Refresh done!");
+        [_allEntries addObjectsFromArray:feedItems];
+        [self.tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,24 +60,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _allEntries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SlashatArchiveTableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    RSSItem *entry = [_allEntries objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = entry.title;
+    cell.detailTextLabel.text = entry.itemDescription;
     
     return cell;
 }
@@ -105,10 +125,20 @@
 }
 */
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];    
+    SlashatArchiveEpisodeViewController *episodeViewController = segue.destinationViewController;
+    [episodeViewController setRssItem:[_allEntries objectAtIndex:indexPath.row]];
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //SlashatArchiveEpisodeViewController *episodeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SlashatArchiveEpisode"];
+    
+    //[episodeViewController setRssItem:[_allEntries objectAtIndex:indexPath.row]];
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

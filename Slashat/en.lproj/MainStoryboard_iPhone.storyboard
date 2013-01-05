@@ -107,16 +107,57 @@
             </objects>
             <point key="canvasLocation" x="725" y="355"/>
         </scene>
-        <!--Slashat Archive Episode Table View Controller-->
+        <!--Slashat Archive Episode View Controller-->
         <scene sceneID="ZIt-P1-o4F">
             <objects>
-                <viewController id="WDs-f0-o1S" customClass="SlashatArchiveEpisodeTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlashatArchiveEpisode" id="WDs-f0-o1S" customClass="SlashatArchiveEpisodeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZC6-ti-xUL">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-KE-Z6i">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="345" id="dgC-aM-gkT"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUw-Xj-Rs2">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="7c7-ri-LJT"/>
+                                        </constraints>
+                                    </webView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eUw-Xj-Rs2" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1ze-DT-zMN"/>
+                                    <constraint firstAttribute="trailing" secondItem="eUw-Xj-Rs2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Jft-TJ-Lpe"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MN9-kL-m3q"/>
+                                    <constraint firstAttribute="trailing" secondItem="trO-IF-BDt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YGS-3J-spB"/>
+                                    <constraint firstItem="eUw-Xj-Rs2" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aKO-At-ijm"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="kgi-zX-oRF"/>
+                                    <constraint firstAttribute="bottom" secondItem="trO-IF-BDt" secondAttribute="bottom" constant="39" id="uP6-c5-kmH"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="eUw-Xj-Rs2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="voD-fc-c7k"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V7l-KE-Z6i" firstAttribute="top" secondItem="ZC6-ti-xUL" secondAttribute="top" type="default" id="3fw-aG-BJb"/>
+                            <constraint firstItem="V7l-KE-Z6i" firstAttribute="bottom" secondItem="ZC6-ti-xUL" secondAttribute="bottom" type="default" id="Otk-6t-UGA"/>
+                            <constraint firstItem="V7l-KE-Z6i" firstAttribute="trailing" secondItem="ZC6-ti-xUL" secondAttribute="trailing" type="default" id="Vel-83-Hg7"/>
+                            <constraint firstItem="V7l-KE-Z6i" firstAttribute="leading" secondItem="ZC6-ti-xUL" secondAttribute="leading" type="default" id="u30-P6-FdL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Eur-K4-rGk"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="trO-IF-BDt" id="5Hu-23-LvU"/>
+                        <outlet property="embedWebView" destination="eUw-Xj-Rs2" id="UkY-vV-7A9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqP-VS-UWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -243,6 +284,13 @@
         </class>
         <class className="SlashatAboutTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutTableViewController.h"/>
+        </class>
+        <class className="SlashatArchiveEpisodeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatArchiveEpisodeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="embedWebView" candidateClass="UIWebView"/>
+            </relationships>
         </class>
         <class className="SlashatArchiveTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatArchiveTableViewController.h"/>
