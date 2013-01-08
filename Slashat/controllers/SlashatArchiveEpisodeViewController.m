@@ -7,10 +7,17 @@
 //
 
 #import "SlashatArchiveEpisodeViewController.h"
+#import "AVFoundation/AVPlayer.h"
+#import "AVFoundation/AVAudioPlayer.h"
+#import "AVFoundation/AVAudioSession.h"
+#import "MediaPlayer/MPMoviePlayerController.h"
 
-@interface SlashatArchiveEpisodeViewController ()
+@interface SlashatArchiveEpisodeViewController () {
+    MPMoviePlayerController *player;
+}
 
 @property (nonatomic, weak) IBOutlet UIWebView *embedWebView;
+@property (nonatomic, weak) IBOutlet UIButton *playButton;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 
 @end
@@ -34,12 +41,42 @@
     self.navigationItem.title = self.rssItem.title;
     NSLog(@"rssItem.mediaUrl: %@", self.rssItem.mediaUrl);
     
-    [self.embedWebView loadHTMLString:[NSString stringWithFormat:@"<audio controls src='%@' />", self.rssItem.mediaUrl] baseURL:nil];
-    [self.embedWebView setAllowsInlineMediaPlayback:YES];
+    //[self.embedWebView loadHTMLString:[NSString stringWithFormat:@"<audio controls src='%@' />", self.rssItem.mediaUrl] baseURL:nil];
+    //[self.embedWebView setAllowsInlineMediaPlayback:YES];
+        
+    
     
     self.descriptionTextView.text = self.rssItem.itemDescription;
     //[embedWebView setMediaPlaybackAllowsAirPlay:YES];
 }
+
+-(IBAction)playButtonPressed:(id)sender
+{
+    NSLog(@"Playbutton pressed!");
+    //player = [AVPlayer playerWithURL:self.rssItem.mediaUrl];
+    //[player setAllowsExternalPlayback:YES];
+    //[player setUsesExternalPlaybackWhileExternalScreenIsActive:YES];
+    //[player addObserver:self forKeyPath:@"status" options:0 context:NULL];
+    
+    //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    
+    player = [[MPMoviePlayerController alloc] initWithContentURL:self.rssItem.mediaUrl];
+    [player prepareToPlay];
+    [player.view setFrame: self.view.bounds];  // player's frame must match parent's
+    [self.view addSubview:player.view];
+    // ...
+    [player play];
+}
+
+/*- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"status"]) {
+        if (player.status == AVPlayerStatusReadyToPlay) {
+            [player play];
+        } else if (player.status == AVPlayerStatusFailed) {
+        }
+    }
+}*/
 
 - (void)didReceiveMemoryWarning
 {

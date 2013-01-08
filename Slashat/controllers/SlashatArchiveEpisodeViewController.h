@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) RSSItem *rssItem;
 
+- (IBAction) playButtonPressed:(id)sender;
+
 @end

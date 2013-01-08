@@ -46,6 +46,9 @@
 		0452944C16985951001F0504 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944116985951001F0504 /* AFURLConnectionOperation.m */; };
 		0452944D16985951001F0504 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944316985951001F0504 /* AFXMLRequestOperation.m */; };
 		0452944E16985951001F0504 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944516985951001F0504 /* UIImageView+AFNetworking.m */; };
+		04940492169C96BE00871DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940491169C96BE00871DB3 /* AVFoundation.framework */; };
+		04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940494169CA34600871DB3 /* AudioToolbox.framework */; };
+		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,9 @@
 		0452944316985951001F0504 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		0452944416985951001F0504 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		0452944516985951001F0504 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		04940491169C96BE00871DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */,
+				04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */,
+				04940492169C96BE00871DB3 /* AVFoundation.framework in Frameworks */,
 				043B543E169313A500B71F3A /* UIKit.framework in Frameworks */,
 				043B5440169313A500B71F3A /* Foundation.framework in Frameworks */,
 				043B5442169313A500B71F3A /* CoreGraphics.framework in Frameworks */,
@@ -193,6 +202,9 @@
 		043B542E169313A500B71F3A = {
 			isa = PBXGroup;
 			children = (
+				0494049D169CB27300871DB3 /* MediaPlayer.framework */,
+				04940494169CA34600871DB3 /* AudioToolbox.framework */,
+				04940491169C96BE00871DB3 /* AVFoundation.framework */,
 				043B5443169313A500B71F3A /* Slashat */,
 				043B5475169313A500B71F3A /* SlashatTests */,
 				043B543C169313A500B71F3A /* Frameworks */,
