@@ -7,7 +7,7 @@
 //
 
 #import "SlashatArchiveTableViewController.h"
-#import "RSSItem.h"
+#import "SlashatEpisode.h"
 #import "RSSParser.h"
 #import "SlashatArchiveEpisodeViewController.h"
 
@@ -78,10 +78,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    RSSItem *entry = [_allEntries objectAtIndex:indexPath.row];
+    SlashatEpisode *episode = [_allEntries objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = entry.title;
-    cell.detailTextLabel.text = entry.itemDescription;
+    cell.textLabel.text = episode.title;
+    cell.detailTextLabel.text = episode.itemDescription;
     
     return cell;
 }
@@ -129,7 +129,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];    
     SlashatArchiveEpisodeViewController *episodeViewController = segue.destinationViewController;
-    [episodeViewController setRssItem:[_allEntries objectAtIndex:indexPath.row]];
+    [episodeViewController setEpisode:[_allEntries objectAtIndex:indexPath.row]];
 }
 
 #pragma mark - Table view delegate

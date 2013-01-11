@@ -34,7 +34,6 @@
 		043B547A169313A500B71F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 043B5478169313A500B71F3A /* InfoPlist.strings */; };
 		043B547D169313A500B71F3A /* SlashatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B547C169313A500B71F3A /* SlashatTests.m */; };
 		043B54871693189B00B71F3A /* bambuser-embed.html in Resources */ = {isa = PBXBuildFile; fileRef = 043B54861693189B00B71F3A /* bambuser-embed.html */; };
-		044730581698623F00C74E01 /* RSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 044730551698623F00C74E01 /* RSSItem.m */; };
 		044730591698623F00C74E01 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 044730571698623F00C74E01 /* RSSParser.m */; };
 		0447305D16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447305C16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m */; };
 		0452944616985951001F0504 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452943416985951001F0504 /* AFHTTPClient.m */; };
@@ -47,6 +46,7 @@
 		0452944D16985951001F0504 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944316985951001F0504 /* AFXMLRequestOperation.m */; };
 		0452944E16985951001F0504 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944516985951001F0504 /* UIImageView+AFNetworking.m */; };
 		0481815A16A0A71000F60954 /* SlashatAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815916A0A71000F60954 /* SlashatAudioHandler.m */; };
+		0481815E16A0BC4500F60954 /* SlashatEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815D16A0BC4500F60954 /* SlashatEpisode.m */; };
 		04940492169C96BE00871DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940491169C96BE00871DB3 /* AVFoundation.framework */; };
 		04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940494169CA34600871DB3 /* AudioToolbox.framework */; };
 		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
@@ -99,8 +99,6 @@
 		043B547B169313A500B71F3A /* SlashatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlashatTests.h; sourceTree = "<group>"; };
 		043B547C169313A500B71F3A /* SlashatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlashatTests.m; sourceTree = "<group>"; };
 		043B54861693189B00B71F3A /* bambuser-embed.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "bambuser-embed.html"; sourceTree = "<group>"; };
-		044730541698623F00C74E01 /* RSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItem.h; sourceTree = "<group>"; };
-		044730551698623F00C74E01 /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItem.m; sourceTree = "<group>"; };
 		044730561698623F00C74E01 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
 		044730571698623F00C74E01 /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 		0447305B16987BB100C74E01 /* SlashatArchiveEpisodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatArchiveEpisodeViewController.h; sourceTree = "<group>"; };
@@ -126,6 +124,8 @@
 		0452944516985951001F0504 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		0481815816A0A71000F60954 /* SlashatAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAudioHandler.h; sourceTree = "<group>"; };
 		0481815916A0A71000F60954 /* SlashatAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAudioHandler.m; sourceTree = "<group>"; };
+		0481815C16A0BC4500F60954 /* SlashatEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatEpisode.h; sourceTree = "<group>"; };
+		0481815D16A0BC4500F60954 /* SlashatEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatEpisode.m; sourceTree = "<group>"; };
 		04940491169C96BE00871DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -178,12 +178,12 @@
 				042ECD6F16961A1400C77193 /* SlashatLiveViewController.m */,
 				042ECD62169614C200C77193 /* SlashatArchiveTableViewController.h */,
 				042ECD63169614C200C77193 /* SlashatArchiveTableViewController.m */,
+				0447305B16987BB100C74E01 /* SlashatArchiveEpisodeViewController.h */,
+				0447305C16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m */,
 				042ECD68169616C400C77193 /* SlashatAboutTableViewController.h */,
 				042ECD69169616C400C77193 /* SlashatAboutTableViewController.m */,
 				042ECD6B1696177D00C77193 /* SlashatAboutHostProfileViewController.h */,
 				042ECD6C1696177D00C77193 /* SlashatAboutHostProfileViewController.m */,
-				0447305B16987BB100C74E01 /* SlashatArchiveEpisodeViewController.h */,
-				0447305C16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -193,6 +193,8 @@
 			children = (
 				0481815816A0A71000F60954 /* SlashatAudioHandler.h */,
 				0481815916A0A71000F60954 /* SlashatAudioHandler.m */,
+				0481815C16A0BC4500F60954 /* SlashatEpisode.h */,
+				0481815D16A0BC4500F60954 /* SlashatEpisode.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -291,8 +293,6 @@
 		044730531698623F00C74E01 /* RSSParser */ = {
 			isa = PBXGroup;
 			children = (
-				044730541698623F00C74E01 /* RSSItem.h */,
-				044730551698623F00C74E01 /* RSSItem.m */,
 				044730561698623F00C74E01 /* RSSParser.h */,
 				044730571698623F00C74E01 /* RSSParser.m */,
 			);
@@ -467,10 +467,10 @@
 				0452944C16985951001F0504 /* AFURLConnectionOperation.m in Sources */,
 				0452944D16985951001F0504 /* AFXMLRequestOperation.m in Sources */,
 				0452944E16985951001F0504 /* UIImageView+AFNetworking.m in Sources */,
-				044730581698623F00C74E01 /* RSSItem.m in Sources */,
 				044730591698623F00C74E01 /* RSSParser.m in Sources */,
 				0447305D16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m in Sources */,
 				0481815A16A0A71000F60954 /* SlashatAudioHandler.m in Sources */,
+				0481815E16A0BC4500F60954 /* SlashatEpisode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,7 +71,7 @@
 {
     
     if ([elementName isEqualToString:@"item"]) {
-        currentItem = [[RSSItem alloc] init];
+        currentItem = [[SlashatEpisode alloc] init];
     }
     
     tmpString = [[NSMutableString alloc] init];
@@ -98,24 +98,8 @@
             [currentItem setItemDescription:tmpString];
         }
         
-        if ([elementName isEqualToString:@"content:encoded"]) {
-            [currentItem setContent:tmpString];
-        }
-        
         if ([elementName isEqualToString:@"link"]) {
             [currentItem setLink:[NSURL URLWithString:tmpString]];
-        }
-        
-        if ([elementName isEqualToString:@"comments"]) {
-            [currentItem setCommentsLink:[NSURL URLWithString:tmpString]];
-        }
-        
-        if ([elementName isEqualToString:@"wfw:commentRss"]) {
-            [currentItem setCommentsFeed:[NSURL URLWithString:tmpString]];
-        }
-        
-        if ([elementName isEqualToString:@"slash:comments"]) {
-            [currentItem setCommentsCount:[NSNumber numberWithInt:[tmpString intValue]]];
         }
         
         if ([elementName isEqualToString:@"pubDate"]) {
@@ -128,10 +112,6 @@
             
             [currentItem setPubDate:[formatter dateFromString:tmpString]];
             
-        }
-
-        if ([elementName isEqualToString:@"dc:creator"]) {
-            [currentItem setAuthor:tmpString];
         }
         
         if ([elementName isEqualToString:@"guid"]) {

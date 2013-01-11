@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AFXMLRequestOperation.h"
-#import "RSSItem.h"
+#import "SlashatEpisode.h"
 
 @interface RSSParser : AFXMLRequestOperation <NSXMLParserDelegate> {
-    RSSItem *currentItem;
+    SlashatEpisode *currentItem;
     NSMutableArray *items;
     NSMutableString *tmpString;
     void (^block)(NSArray *feedItems);

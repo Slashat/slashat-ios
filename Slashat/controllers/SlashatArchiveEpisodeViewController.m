@@ -33,10 +33,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.navigationItem.title = self.rssItem.title;
-    NSLog(@"rssItem.mediaUrl: %@", self.rssItem.mediaUrl);
+    self.navigationItem.title = self.episode.title;
+    NSLog(@"rssItem.mediaUrl: %@", self.episode.mediaUrl);
     
-    self.descriptionTextView.text = self.rssItem.itemDescription;
+    self.descriptionTextView.text = self.episode.itemDescription;
 }
 
 - (IBAction)playButtonPressed:(id)sender
@@ -45,7 +45,7 @@
     
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     
-    [[appDelegate audioHandler] setEpisodeUrl:self.rssItem.mediaUrl];
+    [[appDelegate audioHandler] setEpisodeUrl:self.episode.mediaUrl];
     [[appDelegate audioHandler] play];
 }
 

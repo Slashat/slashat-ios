@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RSSItem.h"
+#import "SlashatEpisode.h"
 
 @interface SlashatArchiveEpisodeViewController : UIViewController
 
-@property (nonatomic, strong) RSSItem *rssItem;
+@property (nonatomic, strong) SlashatEpisode *episode;
 
 - (IBAction) playButtonPressed:(id)sender;
 
