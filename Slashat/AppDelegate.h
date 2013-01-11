@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "SlashatAudioHandler.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) SlashatAudioHandler *audioHandler;
 @property (strong, nonatomic) UIWindow *window;
+
++ (AppDelegate *)sharedAppDelegate;
 
 @end

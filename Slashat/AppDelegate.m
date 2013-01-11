@@ -12,6 +12,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _audioHandler = [[SlashatAudioHandler alloc] init];
+    
     NSError *sessionError = nil;
     [[AVAudioSession sharedInstance] setDelegate:self];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
@@ -27,6 +29,10 @@
     AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
     // Override point for customization after application launch.
     return YES;
+}
+
++ (AppDelegate *)sharedAppDelegate {
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
