@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SlashatEpisode.h"
 
 @interface SlashatAudioHandler : NSObject
 
-@property (strong,nonatomic) NSURL *episodeUrl;
+@property (strong, nonatomic) SlashatEpisode *episode;
 
 - (void)play;
 - (void)pause;
-
 
 @end

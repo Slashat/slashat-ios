@@ -45,7 +45,7 @@
     
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     
-    [[appDelegate audioHandler] setEpisodeUrl:self.episode.mediaUrl];
+    [[appDelegate audioHandler] setEpisode:self.episode];
     [[appDelegate audioHandler] play];
 }
 
