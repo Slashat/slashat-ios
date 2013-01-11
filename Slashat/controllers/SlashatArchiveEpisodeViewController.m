@@ -7,14 +7,9 @@
 //
 
 #import "SlashatArchiveEpisodeViewController.h"
-#import "AVFoundation/AVPlayer.h"
-#import "AVFoundation/AVAudioPlayer.h"
-#import "AVFoundation/AVAudioSession.h"
-#import "MediaPlayer/MPMoviePlayerController.h"
+#import "AppDelegate.h"
 
-@interface SlashatArchiveEpisodeViewController () {
-    MPMoviePlayerController *player;
-}
+@interface SlashatArchiveEpisodeViewController ()
 
 @property (nonatomic, weak) IBOutlet UIWebView *embedWebView;
 @property (nonatomic, weak) IBOutlet UIButton *playButton;
@@ -41,32 +36,17 @@
     self.navigationItem.title = self.rssItem.title;
     NSLog(@"rssItem.mediaUrl: %@", self.rssItem.mediaUrl);
     
-    //[self.embedWebView loadHTMLString:[NSString stringWithFormat:@"<audio controls src='%@' />", self.rssItem.mediaUrl] baseURL:nil];
-    //[self.embedWebView setAllowsInlineMediaPlayback:YES];
-        
-    
-    
     self.descriptionTextView.text = self.rssItem.itemDescription;
-    //[embedWebView setMediaPlaybackAllowsAirPlay:YES];
 }
 
--(IBAction)playButtonPressed:(id)sender
+- (IBAction)playButtonPressed:(id)sender
 {
     NSLog(@"Playbutton pressed!");
-    //player = [AVPlayer playerWithURL:self.rssItem.mediaUrl];
-    //[player setAllowsExternalPlayback:YES];
-    //[player setUsesExternalPlaybackWhileExternalScreenIsActive:YES];
-    //[player addObserver:self forKeyPath:@"status" options:0 context:NULL];
     
-    //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     
-    
-    player = [[MPMoviePlayerController alloc] initWithContentURL:self.rssItem.mediaUrl];
-    [player prepareToPlay];
-    [player.view setFrame: self.view.bounds];  // player's frame must match parent's
-    [self.view addSubview:player.view];
-    // ...
-    [player play];
+    [[appDelegate audioHandler] setEpisodeUrl:self.rssItem.mediaUrl];
+    [[appDelegate audioHandler] play];
 }
 
 /*- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
