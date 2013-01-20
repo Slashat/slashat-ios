@@ -3,9 +3,9 @@ Slashat för iOS
 
 En app för att följa och interagera med podcasten slashat.se. Utvecklingsarbetet går att följa här på github och på [Slashats forum](http://forum.slashat.se/viewforum.php?f=13) där man kan diskutera allt som har med utvecklandet av apparna att göra. Om man är sugen på att hjälpa till (vi behöver all hjälp vi kan få) så  är det enklast att forka det här projektet och börja utforska. 
 
-Vill man hänga bland likasinnande så brukar det alltid vara någon online i [#slashatdev på irc.slashat.se](irc://irc.slashat.se/slashatdev). 
+Vill man hänga bland likasinnande så brukar det alltid vara någon online i [#slashatdev på irc.slashat.se][slashatdev]. 
 
-Skisser och planer är utspridda mellan forumet och github. Det smidigaste är nästan att fråga på forumet, i #slashatdev eller fråga ([@kottkrig](http://twitter.com/kottkrig)) om man undrar över vad det är som gäller.
+Skisser och planer är utspridda mellan forumet och github. Det smidigaste är nästan att fråga på forumet, i [#slashatdev][slashatdev] eller fråga ([@kottkrig](http://twitter.com/kottkrig)) om man undrar över vad det är som gäller.
 
 Features:
 ---------
@@ -27,3 +27,5 @@ Gränssnittet och flödet är i stor mån uppbyggt med hjälp av Storyboards.
 Vi kör ARC för att slippa jönsa runt med retain/release.
 
 Mer info kommer.
+
+[slashatdev]: irc://irc.slashat.se/slashatdev
