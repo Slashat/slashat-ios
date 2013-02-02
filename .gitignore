@@ -17,3 +17,4 @@ profile
 DerivedData
 .idea/
 *.hmap
+Slashat/APIKey.h
