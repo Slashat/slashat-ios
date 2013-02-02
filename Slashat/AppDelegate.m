@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SlashatAudioControlViewController.h"
 
 @implementation AppDelegate
 
@@ -20,12 +21,7 @@
     [[AVAudioSession sharedInstance] setDelegate:self];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
-    /* Pick any one of them */
-    // 1. Overriding the output audio route
-    //UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
-    //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(audioRouteOverride), &audioRouteOverride);
-    
-    // 2. Changing the default output audio route
+    // Changing the default output audio route
     //
     UInt32 doChangeDefaultRoute = 1;
     AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
@@ -52,6 +48,20 @@
                           UITextAttributeTextShadowColor: textShadowColor,
                          UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)]}
                                                 forState: UIControlStateNormal];
+}
+
+- (void)playSlashatAudioEpisode:(SlashatEpisode *)episode
+{
+    [self.audioHandler setEpisode:episode];
+    [self.audioHandler play];
+    
+    UIStoryboard *iphoneStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    SlashatAudioControlViewController *audioControlViewController = (SlashatAudioControlViewController*)[iphoneStoryboard instantiateViewControllerWithIdentifier:@"SlashatAudioControl"];
+    
+    [audioControlViewController setAudioHandler:self.audioHandler];
+    [audioControlViewController.view setBounds:CGRectMake(0, 0, 320, 100)];
+    
+    [[[UIApplication sharedApplication] keyWindow] addSubview:audioControlViewController.view];
 }
 
 + (AppDelegate *)sharedAppDelegate {

@@ -8,6 +8,7 @@
 
 #import "SlashatArchiveEpisodeViewController.h"
 #import "AppDelegate.h"
+#import "SlashatAudioControlViewController.h"
 
 @interface SlashatArchiveEpisodeViewController ()
 
@@ -45,8 +46,7 @@
     
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     
-    [[appDelegate audioHandler] setEpisode:self.episode];
-    [[appDelegate audioHandler] play];
+    [appDelegate playSlashatAudioEpisode:self.episode];
 }
 
 /*- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

@@ -17,5 +17,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 + (AppDelegate *)sharedAppDelegate;
+- (void)playSlashatAudioEpisode:(SlashatEpisode *)episode;
 
 @end
