@@ -26,6 +26,10 @@ Gränssnittet och flödet är i stor mån uppbyggt med hjälp av Storyboards.
 
 Vi kör ARC för att slippa jönsa runt med retain/release.
 
+Instruktioner
+=============
+Eftersom vi använder Bambusers privata api för liveström så krävs det en api-nyckel samt endpoint-url till detta api för att kunna se liveströmmar under utvecklingsfasen. Appen i övrigt skall gå fint att köra även utan detta men då utan möjlighet att se liveströmmen. Döp om *SampleAPIKey.h* till *APIKey.h* för att projektet skall kompilera.
+
 Mer info kommer.
 
 [slashatdev]: irc://irc.slashat.se/slashatdev
