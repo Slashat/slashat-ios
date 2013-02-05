@@ -17,14 +17,14 @@
     
     [self setCustomNavigationBarAppearance];
     
-    NSError *sessionError = nil;
-    [[AVAudioSession sharedInstance] setDelegate:self];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    //NSError *sessionError = nil;
+    //[[AVAudioSession sharedInstance] setDelegate:self];
+    //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
     // Changing the default output audio route
     //
-    UInt32 doChangeDefaultRoute = 1;
-    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
+    //UInt32 doChangeDefaultRoute = 1;
+    //AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
     // Override point for customization after application launch.
     return YES;
 }
