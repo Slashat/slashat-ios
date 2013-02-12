@@ -70,9 +70,12 @@
 
 - (void)initializeLiveStream:(NSString *)broadcastId
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.json?api_key=%@&preset=hls", BAMBUSER_TRANSCODE_URL, broadcastId, BAMBUSER_TRANSCODE_API_KEY]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSURL *broadcastUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.json", BAMBUSER_TRANSCODE_URL, broadcastId]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:broadcastUrl];
     [request setHTTPMethod:@"POST"];
+    
+    NSString *params = [NSString stringWithFormat:@"api_key=%@&preset=hls", BAMBUSER_TRANSCODE_API_KEY];
+    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
