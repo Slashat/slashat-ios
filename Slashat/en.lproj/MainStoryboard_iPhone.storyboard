@@ -349,7 +349,6 @@
             <relationships>
                 <relationship kind="action" name="playButtonPressed:"/>
                 <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="embedWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
             </relationships>
         </class>
