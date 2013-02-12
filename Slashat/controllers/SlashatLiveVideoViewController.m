@@ -77,8 +77,8 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:broadcastUrl];
     [request setHTTPMethod:@"POST"];
     
-    NSString *params = [NSString stringWithFormat:@"api_key=%@&preset=hls", BAMBUSER_TRANSCODE_API_KEY];
-    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *postParams = [NSString stringWithFormat:@"api_key=%@&preset=hls", BAMBUSER_TRANSCODE_API_KEY];
+    [request setHTTPBody:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
