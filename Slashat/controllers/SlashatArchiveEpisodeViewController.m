@@ -12,7 +12,6 @@
 
 @interface SlashatArchiveEpisodeViewController ()
 
-@property (nonatomic, weak) IBOutlet UIWebView *embedWebView;
 @property (nonatomic, weak) IBOutlet UIButton *playButton;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 
@@ -48,15 +47,6 @@
     
     [appDelegate playSlashatAudioEpisode:self.episode];
 }
-
-/*- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"status"]) {
-        if (player.status == AVPlayerStatusReadyToPlay) {
-            [player play];
-        } else if (player.status == AVPlayerStatusFailed) {
-        }
-    }
-}*/
 
 - (void)didReceiveMemoryWarning
 {
