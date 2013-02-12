@@ -41,10 +41,10 @@ ViewControllers
 Sköter livefliken. Innehåller poll samt instans av `SlashatLiveVideoViewController` för uppspelning av bambusers livestream.
 
 ### SlashatArchiveTableViewController
-Sköter Arkivfliken. Hämtar podrss från slashat.se genom *AFNetworking* och modifierad *RSSParser* samt sköter uppritning av celler som länkar till *SlashatArchiveEpisodeViewController*. Cellerna är mappade mot en Array av `SlashatEpisode`-instanser. Någon gång framöver så hade det varit snygg om detta cachades lokalt i CoreData och mergades varje gång man uppdaterade. För tillfället så hämtar hela rss:en på nytt varje gång vyn startar.
+Sköter Arkivfliken. Hämtar podrss från slashat.se genom *AFNetworking* och modifierad `RSSParser` samt sköter uppritning av celler som länkar till `SlashatArchiveEpisodeViewController`. Cellerna är mappade mot en Array av `SlashatEpisode`-instanser. Någon gång framöver så hade det varit snygg om detta cachades lokalt i CoreData och mergades varje gång man uppdaterade. För tillfället så hämtas hela rss:en på nytt varje gång vyn startar.
 
 ### SlashatArchiveEpisodeViewController
-Vykontroller för arkiverat slashatavsnitt. Initieras med en instans av `SlashatEpisode`. Titel och text sätts från episoden som den initieras med. Tryck på playknapp skickar episoden vidare till *AppDelegaten* som i sin tur spelar episoden genom en instans av `SlashatAudioControlViewController`.
+Vykontroller för arkiverat slashatavsnitt. Initieras med en instans av `SlashatEpisode`. Titel och text sätts från episoden som den initieras med. Tryck på playknapp skickar episoden vidare till `AppDelegate` som i sin tur spelar episoden genom en instans av `SlashatAudioControlViewController`.
 
 ### SlashatAboutTableViewController
 Vykontroller för Om oss-fliken. En TableView bestående av foton på våra nunor samt label med namn.
@@ -76,7 +76,7 @@ Innehåller relevant info om ett slashatavsnitt från rss-feeden. Denna info anv
 ------
 
 ### SlashatAudioHandler
-Sköter uppspelning av ett `SlashatEpisode`. Använder sig av MPMoviePlayerController för att strömma från ett avsnitts `mediaUrl`. Troligtvis så sköter denna klass även sättandet av lock-screen-media-image samt lyssning på användarinteraktion från låsskärm eller systemets mediaknappar.
+Sköter uppspelning av ett `SlashatEpisode`. Använder sig av `MPMoviePlayerController` för att strömma från ett avsnitts `mediaUrl`. Troligtvis så sköter denna klass även sättandet av lock-screen-media-image samt lyssning på användarinteraktion från låsskärm eller systemets mediaknappar.
 
 ### AppDelegate
 Håller instans av `SlashatAudioControlViewController` för att den skall vara tillgänglig globalt, `SlashatArchiveEpisodeViewController` kallar på `playSlashatAudioEpisode` för att sätta igång spelning av episod. Sköter även sättandet av färger på NavigationBar.
