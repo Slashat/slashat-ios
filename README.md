@@ -47,10 +47,10 @@ Sköter Arkivfliken. Hämtar podrss från slashat.se genom *AFNetworking* och mo
 Vykontroller för arkiverat slashatavsnitt. Initieras med en instans av `SlashatEpisode`. Titel och text sätts från episoden som den initieras med. Tryck på playknapp skickar episoden vidare till `AppDelegate` som i sin tur spelar episoden genom en instans av `SlashatAudioControlViewController`.
 
 ### SlashatAboutTableViewController
-Vykontroller för Om oss-fliken. En TableView bestående av foton på våra nunor samt label med namn.
+Vykontroller för Om oss-fliken. En TableView bestående av foton på våra nunor samt label med namn. Info och bild ligger lokalt i appen.
 
 ### SlashatAboutHostProfileViewController
-Vykontroller för en programledare för slashat. Skall innehålla foto, länkar till sociala medier och beskrivande text.
+Vykontroller för en programledare för slashat. Skall innehålla foto, länkar till sociala medier och beskrivande text. Info och bild ligger lokalt i appen.
 
 ### SlashatAudioControlViewController
 Håller en instans av `SlashatAudioHandler` och sköter uppspelning av en arkiverad slashatepisod. Skall innehålla play/pause, duration samt airplaymöjlighet. Denna skall synas på samtliga vyer i appen (och därför ligger den i nuläget i AppDelegaten) och skall kännas som att den ligger i anslutning till TabBaren.
