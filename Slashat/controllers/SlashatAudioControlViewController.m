@@ -8,13 +8,11 @@
 
 #import "SlashatAudioControlViewController.h"
 #import "AppDelegate.h"
-#import "SlashatEpisode.h"
 #import "SlashatAudioHandler.h"
 
 @interface SlashatAudioControlViewController ()
 @property (nonatomic, weak) IBOutlet UIButton *playPauseButton;
 @property (strong, nonatomic) SlashatAudioHandler *audioHandler;
-@property (strong, nonatomic) SlashatEpisode *episode;
 @end
 
 @implementation SlashatAudioControlViewController
@@ -41,7 +39,6 @@
 
 - (void)startPlayingEpisode:(SlashatEpisode *)episode
 {
-    self.episode = episode;
     [self.audioHandler setEpisode:episode];
     [self.audioHandler play];
 }
