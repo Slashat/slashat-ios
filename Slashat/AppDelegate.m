@@ -16,9 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    _audioHandler = [[SlashatAudioHandler alloc] init];
-    
+{    
     [self setCustomNavigationBarAppearance];
     
     //NSError *sessionError = nil;
@@ -56,17 +54,13 @@
 
 - (void)playSlashatAudioEpisode:(SlashatEpisode *)episode
 {
-    [self.audioHandler setEpisode:episode];
-    [self.audioHandler play];
-    
     UIStoryboard *iphoneStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     self.audioControlViewController = (SlashatAudioControlViewController*)[iphoneStoryboard instantiateViewControllerWithIdentifier:@"SlashatAudioControl"];
     
-    [self.audioControlViewController setAudioHandler:self.audioHandler];
     [self.audioControlViewController.view setBounds:CGRectMake(0, 0, 320, 100)];
-    
     [self.window addSubview:self.audioControlViewController.view];
     
+    [self.audioControlViewController startPlayingEpisode:episode];
 }
 
 + (AppDelegate *)sharedAppDelegate {

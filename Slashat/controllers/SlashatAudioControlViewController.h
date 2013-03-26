@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SlashatAudioHandler.h"
+
+@class SlashatEpisode;
 
 @interface SlashatAudioControlViewController : UIViewController
 
-@property (nonatomic, strong) SlashatAudioHandler *audioHandler;
-
-- (IBAction) playPauseButtonPressed:(id)sender;
-
+- (void)startPlayingEpisode:(SlashatEpisode *)episode;
 
 @end

@@ -13,7 +13,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) SlashatAudioHandler *audioHandler;
 @property (strong, nonatomic) UIWindow *window;
 
 + (AppDelegate *)sharedAppDelegate;
