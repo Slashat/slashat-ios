@@ -33,8 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self fetchLiveStreams];
 }
 
 - (void)viewWillLayoutSubviews
@@ -43,32 +41,6 @@
     
     NSLog(@"Frame: %f, %f", self.view.frame.size.width, self.view.frame.size.height);
     NSLog(@"Bounds: %f, %f", self.view.bounds.size.width, self.view.bounds.size.height);
-}
-
-- (void)fetchLiveStreams
-{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.bambuser.com/broadcast.json"]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    
-    NSString *postParams = [NSString stringWithFormat:@"username=slashat&type=live&limit=1&api_key=%@", BAMBUSER_TRANSCODE_API_KEY];
-    [request setHTTPBody:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        NSArray *broadcasts = [JSON valueForKeyPath:@"result"];
-        
-        if (broadcasts.count > 0) {
-            NSString *broadcastId = [(id)[broadcasts objectAtIndex:0] valueForKeyPath:@"vid"];
-            NSLog(@"Live stream active: %@", broadcastId);
-            [self initializeLiveStream:broadcastId];
-        } else {
-            NSLog(@"No live streams active");
-        }
-
-    } failure:nil];
-    
-    [operation start];
 }
 
 - (void)initializeLiveStream:(NSString *)broadcastId

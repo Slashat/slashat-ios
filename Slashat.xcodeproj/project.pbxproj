@@ -17,6 +17,7 @@
 		042ECD6A169616C400C77193 /* SlashatAboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042ECD69169616C400C77193 /* SlashatAboutTableViewController.m */; };
 		042ECD6D1696177D00C77193 /* SlashatAboutHostProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042ECD6C1696177D00C77193 /* SlashatAboutHostProfileViewController.m */; };
 		042ECD7016961A1400C77193 /* SlashatLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042ECD6F16961A1400C77193 /* SlashatLiveViewController.m */; };
+		043255161702255200639F82 /* SlashatCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043255151702255200639F82 /* SlashatCountdownViewController.m */; };
 		043B543E169313A500B71F3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B543D169313A500B71F3A /* UIKit.framework */; };
 		043B5440169313A500B71F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B543F169313A500B71F3A /* Foundation.framework */; };
 		043B5442169313A500B71F3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B5441169313A500B71F3A /* CoreGraphics.framework */; };
@@ -81,6 +82,8 @@
 		042ECD6C1696177D00C77193 /* SlashatAboutHostProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAboutHostProfileViewController.m; sourceTree = "<group>"; };
 		042ECD6E16961A1400C77193 /* SlashatLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatLiveViewController.h; sourceTree = "<group>"; };
 		042ECD6F16961A1400C77193 /* SlashatLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatLiveViewController.m; sourceTree = "<group>"; };
+		043255141702255200639F82 /* SlashatCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCountdownViewController.h; sourceTree = "<group>"; };
+		043255151702255200639F82 /* SlashatCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatCountdownViewController.m; sourceTree = "<group>"; };
 		043B5439169313A500B71F3A /* Slashat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slashat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043B543D169313A500B71F3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		043B543F169313A500B71F3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -201,6 +204,8 @@
 				0481816C16A314D900F60954 /* SlashatAudioControlViewController.m */,
 				046D60DE16BD12D80088678E /* SlashatLiveVideoViewController.h */,
 				046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */,
+				043255141702255200639F82 /* SlashatCountdownViewController.h */,
+				043255151702255200639F82 /* SlashatCountdownViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				0481815E16A0BC4500F60954 /* SlashatEpisode.m in Sources */,
 				0481816D16A314D900F60954 /* SlashatAudioControlViewController.m in Sources */,
 				046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */,
+				043255161702255200639F82 /* SlashatCountdownViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
