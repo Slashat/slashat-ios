@@ -7,6 +7,7 @@
 //
 
 #import "SlashatAudioControlViewController.h"
+#import "AppDelegate.h"
 
 @interface SlashatAudioControlViewController ()
 
@@ -33,7 +34,7 @@
 
 - (IBAction)playPauseButtonPressed:(id)sender
 {
-//    [self.audioHandler pause];
+    [[AppDelegate sharedAppDelegate].audioHandler pause];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "SlashatAudioControlViewController.h"
 
+@interface AppDelegate ()
+@property (strong, nonatomic) SlashatAudioControlViewController *audioControlViewController;
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -56,12 +60,13 @@
     [self.audioHandler play];
     
     UIStoryboard *iphoneStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
-    SlashatAudioControlViewController *audioControlViewController = (SlashatAudioControlViewController*)[iphoneStoryboard instantiateViewControllerWithIdentifier:@"SlashatAudioControl"];
+    self.audioControlViewController = (SlashatAudioControlViewController*)[iphoneStoryboard instantiateViewControllerWithIdentifier:@"SlashatAudioControl"];
     
-    [audioControlViewController setAudioHandler:self.audioHandler];
-    [audioControlViewController.view setBounds:CGRectMake(0, 0, 320, 100)];
+    [self.audioControlViewController setAudioHandler:self.audioHandler];
+    [self.audioControlViewController.view setBounds:CGRectMake(0, 0, 320, 100)];
     
-    [[[UIApplication sharedApplication] keyWindow] addSubview:audioControlViewController.view];
+    [self.window addSubview:self.audioControlViewController.view];
+    
 }
 
 + (AppDelegate *)sharedAppDelegate {
