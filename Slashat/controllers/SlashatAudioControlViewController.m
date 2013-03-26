@@ -34,7 +34,11 @@
 
 - (IBAction)playPauseButtonPressed:(id)sender
 {
-    [self.audioHandler pause];
+    if (self.audioHandler.isPlaying) {
+        [self.audioHandler pause];
+    } else {
+        [self.audioHandler play];
+    }
 }
 
 - (void)startPlayingEpisode:(SlashatEpisode *)episode

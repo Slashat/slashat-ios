@@ -12,6 +12,7 @@
 @interface SlashatAudioHandler : NSObject
 
 @property (strong, nonatomic) SlashatEpisode *episode;
+@property (assign, nonatomic) BOOL isPlaying;
 
 - (void)play;
 - (void)pause;

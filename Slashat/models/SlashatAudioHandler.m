@@ -36,6 +36,8 @@
             // Since there were no errors initializing the session, we'll allow begin receiving remote control events
             [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
         }
+        
+        self.isPlaying = NO;
     }
     
     return self;
@@ -44,6 +46,8 @@
 - (void)play
 {
     [player play];
+    
+    self.isPlaying = YES;
     
     Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
     
@@ -71,6 +75,7 @@
 - (void)pause
 {
     [player pause];
+    self.isPlaying = NO;
 }
 
 @end
