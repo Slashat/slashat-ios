@@ -146,6 +146,7 @@
 		0481816C16A314D900F60954 /* SlashatAudioControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAudioControlViewController.m; sourceTree = "<group>"; };
 		048EC31E173BA6890043E57D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		048EC320173BA6C10043E57D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		048EC322173BB0370043E57D /* ColorUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorUtils.h; path = Utils/ColorUtils.h; sourceTree = "<group>"; };
 		04940491169C96BE00871DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -287,6 +288,7 @@
 				043B544D169313A500B71F3A /* AppDelegate.m */,
 				043B5455169313A500B71F3A /* MainStoryboard_iPhone.storyboard */,
 				043B5458169313A500B71F3A /* MainStoryboard_iPad.storyboard */,
+				048EC323173BB1D50043E57D /* Utils */,
 				043B5444169313A500B71F3A /* Supporting Files */,
 			);
 			path = Slashat;
@@ -367,6 +369,14 @@
 				0452944516985951001F0504 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		048EC323173BB1D50043E57D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				048EC322173BB0370043E57D /* ColorUtils.h */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
