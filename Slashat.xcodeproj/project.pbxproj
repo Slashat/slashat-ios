@@ -53,6 +53,8 @@
 		0481816516A0D11900F60954 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481816316A0D11900F60954 /* icon.png */; };
 		0481816616A0D11900F60954 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481816416A0D11900F60954 /* icon@2x.png */; };
 		0481816D16A314D900F60954 /* SlashatAudioControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481816C16A314D900F60954 /* SlashatAudioControlViewController.m */; };
+		048EC31F173BA6890043E57D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048EC31E173BA6890043E57D /* SystemConfiguration.framework */; };
+		048EC321173BA6C10043E57D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048EC320173BA6C10043E57D /* MobileCoreServices.framework */; };
 		04940492169C96BE00871DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940491169C96BE00871DB3 /* AVFoundation.framework */; };
 		04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940494169CA34600871DB3 /* AudioToolbox.framework */; };
 		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
@@ -142,6 +144,8 @@
 		0481816416A0D11900F60954 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0481816B16A314D900F60954 /* SlashatAudioControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAudioControlViewController.h; sourceTree = "<group>"; };
 		0481816C16A314D900F60954 /* SlashatAudioControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAudioControlViewController.m; sourceTree = "<group>"; };
+		048EC31E173BA6890043E57D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		048EC320173BA6C10043E57D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		04940491169C96BE00871DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -152,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048EC321173BA6C10043E57D /* MobileCoreServices.framework in Frameworks */,
+				048EC31F173BA6890043E57D /* SystemConfiguration.framework in Frameworks */,
 				04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */,
 				0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */,
 				04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */,
@@ -234,10 +240,6 @@
 		043B542E169313A500B71F3A = {
 			isa = PBXGroup;
 			children = (
-				04596A1F17199E450094C499 /* QuartzCore.framework */,
-				0494049D169CB27300871DB3 /* MediaPlayer.framework */,
-				04940494169CA34600871DB3 /* AudioToolbox.framework */,
-				04940491169C96BE00871DB3 /* AVFoundation.framework */,
 				043B5443169313A500B71F3A /* Slashat */,
 				043B5475169313A500B71F3A /* SlashatTests */,
 				043B543C169313A500B71F3A /* Frameworks */,
@@ -257,6 +259,12 @@
 		043B543C169313A500B71F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				048EC320173BA6C10043E57D /* MobileCoreServices.framework */,
+				048EC31E173BA6890043E57D /* SystemConfiguration.framework */,
+				04596A1F17199E450094C499 /* QuartzCore.framework */,
+				0494049D169CB27300871DB3 /* MediaPlayer.framework */,
+				04940494169CA34600871DB3 /* AudioToolbox.framework */,
+				04940491169C96BE00871DB3 /* AVFoundation.framework */,
 				043B543D169313A500B71F3A /* UIKit.framework */,
 				043B543F169313A500B71F3A /* Foundation.framework */,
 				043B5441169313A500B71F3A /* CoreGraphics.framework */,
