@@ -28,7 +28,6 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 240.0f}};
     [super viewDidLoad];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1];
     
     [self startLiveStreamOrCountdownAsync];
 }
