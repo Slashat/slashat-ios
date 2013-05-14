@@ -72,6 +72,41 @@
     [_moviePlayer.view setFrame:self.view.bounds];
     [self.view addSubview: _moviePlayer.view];
     [_moviePlayer play];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieExitedFullScreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieEnteredFullScreen:) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
+
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)  name:UIDeviceOrientationDidChangeNotification  object:nil];
+}
+
+- (void)movieEnteredFullScreen:(NSNotification *)notification
+{
+    NSLog(@"movieEnteredFullScreen");
+}
+
+- (void)movieExitedFullScreen:(NSNotification *)notification
+{
+    NSLog(@"movieExitedFullScreen");
+}
+
+- (void)orientationChanged:(NSNotification *)notification
+{
+    [self adjustViewsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+}
+
+- (void) adjustViewsForOrientation:(UIInterfaceOrientation) orientation
+{
+    if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        [_moviePlayer setFullscreen:NO animated:YES];
+
+    }
+    else if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight)
+    {
+        [_moviePlayer setFullscreen:YES animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning

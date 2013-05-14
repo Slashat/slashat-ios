@@ -10,4 +10,6 @@
 
 @interface SlashatLiveVideoViewController : UIViewController
 
+- (void)initializeLiveStream:(NSString *)broadcastId;
+
 @end

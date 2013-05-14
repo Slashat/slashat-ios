@@ -10,6 +10,7 @@
 #import "SlashatCountdownViewController.h"
 #import "AFJSONRequestOperation.h"
 #import "APIKey.h"
+#import "SlashatLiveVideoViewController.h"
 
 const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 240.0f}};
 
@@ -61,8 +62,10 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 240.0f}};
 {
     NSLog(@"Starting live stream: %@", broadcastId);
     
-    SlashatLiveViewController *liveVideoViewController = (SlashatLiveViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatLiveVideoViewController"];
+    SlashatLiveVideoViewController *liveVideoViewController = (SlashatLiveVideoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatLiveVideoViewController"];
     
+    [liveVideoViewController initializeLiveStream:broadcastId];
+        
     [self addNewChildViewController:liveVideoViewController];
 }
 
