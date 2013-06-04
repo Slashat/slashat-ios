@@ -8,6 +8,10 @@
 
 #import "SlashatCountdownViewController.h"
 #import "QuartzCore/QuartzCore.h"
+#import "AFJSONRequestOperation.h"
+#import "DateUtils.h"
+#import "APIKey.h"
+#import "AFHTTPClient.h"
 
 @interface SlashatCountdownViewController ()
 
@@ -15,9 +19,9 @@
 
 @implementation SlashatCountdownViewController
 
-NSDate *laterDate;
 @synthesize countdownHeaderLabel;
 
+NSDate *nextLiveShowDate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,10 +35,44 @@ NSDate *laterDate;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    [self initCountdownFromNextGoogleCalendarEvent];
+}
+
+- (void)initCountdownFromNextGoogleCalendarEvent
+{
+    NSString *parameterString = [NSString stringWithFormat:@"orderBy=startTime&singleEvents=true&timeMin=%@&key=%@", [DateUtils convertNSDateToGoogleCalendarString:[NSDate date]], GOOGLE_CALENDAR_API_KEY];
     
-    laterDate = [self getNextSlashatDate];
-    [self setCountdownStartValue:laterDate];
+    NSString *encodedParameterString = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)parameterString, NULL, CFSTR("+:"), kCFStringEncodingUTF8);
     
+    NSString *calendarUrlString = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/3om4bg9o7rdij1vuo7of48n910@group.calendar.google.com/events?%@", encodedParameterString];
+    
+    NSURL *calendarUrl = [NSURL URLWithString:calendarUrlString];
+    
+    NSLog(@"calendarUrl: %@", calendarUrl);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:calendarUrl];
+    [request setHTTPMethod:@"GET"];
+            
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        NSString *headerText = [[(NSArray *)[JSON valueForKeyPath:@"items"] objectAtIndex:0] valueForKeyPath:@"summary"];
+        [countdownHeaderLabel setText:headerText];
+        
+        NSString *dateString = [[[(NSArray *)[JSON valueForKeyPath:@"items"] objectAtIndex:0] valueForKeyPath:@"start"] valueForKeyPath:@"dateTime"];
+        
+        nextLiveShowDate = [DateUtils createNSDateFrom:dateString];
+        [self setCountdownStartValue:nextLiveShowDate];
+        [self startCountDown];
+        
+    } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
+        NSLog(@"Failed: %@",[error localizedDescription]);
+    }];
+    
+    [operation start];
+}
+
+- (void)startCountDown
+{
     // __attributes__((unused)) is to get rid of the "unused variable" warning in xcode
     NSTimer *timer __attribute__((unused)) = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateCountdown:) userInfo:nil repeats:YES];
 }
@@ -48,7 +86,11 @@ NSDate *laterDate;
     NSDateComponents *nowComponents = [gregorian components:NSYearCalendarUnit | NSWeekCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:today];
     
     [nowComponents setWeekday:3]; //Tuesday
-    [nowComponents setWeek: [nowComponents week] + 1]; //Next week
+    
+    if (nowComponents.weekday != 3) {
+        [nowComponents setWeek: [nowComponents week] + 1]; //Next week
+    }
+    
     [nowComponents setHour:19]; //19.30
     [nowComponents setMinute:30];
     [nowComponents setSecond:0];
@@ -59,12 +101,13 @@ NSDate *laterDate;
 
 - (void)updateCountdown:(NSTimer *)timer
 {
-    [self setCountdownStartValue:laterDate];
+    [self setCountdownStartValue:nextLiveShowDate];
 }
 
 - (void)setCountdownStartValue:(NSDate *)destinationDate
 {
-    int differenceInSeconds = (int)[destinationDate timeIntervalSinceNow];
+    double differenceInSeconds = [destinationDate timeIntervalSinceDate:[NSDate date]];
+    
     
     int days = (int)((double)differenceInSeconds/(3600.0*24.00));
     int diffDay=differenceInSeconds-(days*3600*24);
