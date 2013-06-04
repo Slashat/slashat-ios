@@ -16,6 +16,8 @@
 @implementation SlashatCountdownViewController
 
 NSDate *laterDate;
+@synthesize countdownHeaderLabel;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -10,4 +10,6 @@
 
 @interface SlashatCountdownViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *countdownHeaderLabel;
+
 @end

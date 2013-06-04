@@ -165,7 +165,7 @@
                                     <constraint firstAttribute="height" constant="21" id="Mxv-cd-xk8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.21069834183673475" green="0.21069834183673475" blue="0.21069834183673475" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="timmar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-sC-M6p">
@@ -237,6 +237,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="countdownHeaderLabel" destination="XH1-ht-iTx" id="awX-9W-w24"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-vx-sze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -528,6 +531,9 @@
         </class>
         <class className="SlashatCountdownViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatCountdownViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countdownHeaderLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="SlashatLiveVideoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatLiveVideoViewController.h"/>
