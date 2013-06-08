@@ -11,6 +11,7 @@
 #import "AFJSONRequestOperation.h"
 #import "APIKey.h"
 #import "SlashatLiveVideoViewController.h"
+#import <Social/Social.h>
 
 const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 240.0f}};
 
@@ -77,6 +78,29 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 240.0f}};
     SlashatCountdownViewController *countdownViewController = (SlashatCountdownViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatCountdownViewController"];
     
     [self addNewChildViewController:countdownViewController];
+}
+
+- (IBAction)shareOnTwitter:(id)sender
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet addURL:[NSURL URLWithString:@"http://live.slashat.se"]];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+}
+
+- (IBAction)shareOnFacebook:(id)sender
+{
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [facebookSheet addURL:[NSURL URLWithString:@"http://live.slashat.se"]];
+        
+        [self presentViewController:facebookSheet animated:YES completion:Nil];
+    }
 }
 
 - (void)addNewChildViewController:(UIViewController *)newChildViewController

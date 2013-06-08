@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -37,13 +37,47 @@
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpr-ha-DVX">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prl-Jg-FKc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="1VB-rw-9jr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Dela på Twitter">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareOnTwitter:" destination="2" eventType="touchUpInside" id="nej-La-9eY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEM-9c-bAU">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Dela på Facebook">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareOnFacebook:" destination="2" eventType="touchUpInside" id="JeZ-Vd-onE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="prl-Jg-FKc" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JB9-XE-RVW"/>
                             <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qxj-1L-2Yh"/>
+                            <constraint firstItem="PEM-9c-bAU" firstAttribute="leading" secondItem="prl-Jg-FKc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="R7n-9L-WJl"/>
                             <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ty9-wx-CyI"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="bD9-Q2-KF0"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="188" id="bSv-xS-uPq"/>
+                            <constraint firstAttribute="trailing" secondItem="PEM-9c-bAU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ebk-5y-nXi"/>
+                            <constraint firstItem="PEM-9c-bAU" firstAttribute="baseline" secondItem="prl-Jg-FKc" secondAttribute="baseline" type="default" id="hYE-n4-xVZ"/>
+                            <constraint firstItem="prl-Jg-FKc" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nMY-OY-i2E"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="Rpr-ha-DVX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="t5b-0e-Lvv"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="uNq-Nt-Y1x"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="vfb-2G-4Ya"/>
@@ -541,6 +575,8 @@
         <class className="SlashatLiveViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatLiveViewController.h"/>
             <relationships>
+                <relationship kind="action" name="shareOnFacebook:"/>
+                <relationship kind="action" name="shareOnTwitter:"/>
                 <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="embedWebView" candidateClass="UIWebView"/>
             </relationships>
