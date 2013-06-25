@@ -7,11 +7,12 @@
 //
 
 #import "SlashatAboutTableViewController.h"
+#import "SlashatAboutHostProfileViewController.h"
+#import "SlashatHost.h"
 
 @interface SlashatAboutTableViewController ()
 
-@property (nonatomic, strong) NSArray *hostIds;
-@property (nonatomic, strong) NSDictionary *hostsDictionary;
+@property (nonatomic, strong) NSArray *hosts;
 
 @end
 
@@ -21,9 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-        self.hostsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistHostPath];
-        self.hostIds = [self.hostsDictionary allKeys];
+        
     }
     return self;
 }
@@ -32,16 +31,25 @@
 {
     [super viewDidLoad];
     
+    self.hosts = [self getSlashatHostsFromPlist];
+}
+
+- (NSArray *)getSlashatHostsFromPlist
+{
     NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-    self.hostsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistHostPath];
-    self.hostIds = [self.hostsDictionary allKeys];
-
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSDictionary *hostsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistHostPath];
+    NSArray *hostIds = [hostsDictionary allKeys];
+    
+    NSMutableArray *hosts = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i < hostIds.count; i++) {
+        SlashatHost *host = [[SlashatHost alloc] init];
+        host.name = hostsDictionary[[hostIds objectAtIndex:i]][@"name"];
+        host.description = hostsDictionary[[hostIds objectAtIndex:i]][@"description"];
+        [hosts addObject:host];
+    }
+    
+    return hosts;
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,8 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return self.hostIds.count;
+    return self.hosts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,52 +79,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
         
-    cell.textLabel.text = self.hostsDictionary[[self.hostIds objectAtIndex:indexPath.row]][@"name"];
-    cell.detailTextLabel.text = self.hostsDictionary[[self.hostIds objectAtIndex:indexPath.row]][@"description"];
+    cell.textLabel.text = ((SlashatHost *)[self.hosts objectAtIndex:indexPath.row]).name;
+    cell.detailTextLabel.text = ((SlashatHost *)[self.hosts objectAtIndex:indexPath.row]).description;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SlashatAboutHostProfileSegway"]) {
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        SlashatHost *selectedHost = [self.hosts objectAtIndex:selectedIndexPath.row];
+        ((SlashatAboutHostProfileViewController *)segue.destinationViewController).host = selectedHost;
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

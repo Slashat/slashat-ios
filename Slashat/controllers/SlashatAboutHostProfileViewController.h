@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlashatHost.h"
 
 @interface SlashatAboutHostProfileViewController : UIViewController
+
+@property (nonatomic, strong) SlashatHost *host;
 
 - (IBAction) twitterButtonPressed:(id)sender;
 - (IBAction) webButtonPressed:(id)sender;

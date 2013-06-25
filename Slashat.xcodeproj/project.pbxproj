@@ -53,6 +53,7 @@
 		0478928B177A25630091B0AD /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 04789288177A25630091B0AD /* mail.png */; };
 		0478928C177A25630091B0AD /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 04789289177A25630091B0AD /* twitter.png */; };
 		0478928D177A25630091B0AD /* web.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478928A177A25630091B0AD /* web.png */; };
+		04789290177A30050091B0AD /* SlashatHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478928F177A30050091B0AD /* SlashatHost.m */; };
 		0481815A16A0A71000F60954 /* SlashatAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815916A0A71000F60954 /* SlashatAudioHandler.m */; };
 		0481815E16A0BC4500F60954 /* SlashatEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815D16A0BC4500F60954 /* SlashatEpisode.m */; };
 		0481816516A0D11900F60954 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481816316A0D11900F60954 /* icon.png */; };
@@ -147,6 +148,8 @@
 		04789288177A25630091B0AD /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		04789289177A25630091B0AD /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		0478928A177A25630091B0AD /* web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web.png; sourceTree = "<group>"; };
+		0478928E177A30050091B0AD /* SlashatHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHost.h; sourceTree = "<group>"; };
+		0478928F177A30050091B0AD /* SlashatHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHost.m; sourceTree = "<group>"; };
 		0481815816A0A71000F60954 /* SlashatAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAudioHandler.h; sourceTree = "<group>"; };
 		0481815916A0A71000F60954 /* SlashatAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAudioHandler.m; sourceTree = "<group>"; };
 		0481815C16A0BC4500F60954 /* SlashatEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatEpisode.h; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				0481815916A0A71000F60954 /* SlashatAudioHandler.m */,
 				0481815C16A0BC4500F60954 /* SlashatEpisode.h */,
 				0481815D16A0BC4500F60954 /* SlashatEpisode.m */,
+				0478928E177A30050091B0AD /* SlashatHost.h */,
+				0478928F177A30050091B0AD /* SlashatHost.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */,
 				043255161702255200639F82 /* SlashatCountdownViewController.m in Sources */,
 				04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */,
+				04789290177A30050091B0AD /* SlashatHost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
