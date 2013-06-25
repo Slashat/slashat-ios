@@ -10,7 +10,7 @@
 
 @interface SlashatAboutHostProfileViewController ()
 
-@property (nonatomic, weak) IBOutlet UIButton *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 
 @end
@@ -29,7 +29,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.nameLabel.text = self.host.name;
+    self.descriptionTextView.text = self.host.description;
 	// Do any additional setup after loading the view.
+}
+
+- (IBAction) twitterButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction) webButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction) mailButtonPressed:(id)sender
+{
+    
 }
 
 - (void)didReceiveMemoryWarning

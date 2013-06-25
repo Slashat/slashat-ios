@@ -536,6 +536,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ap-qt-wbW"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="yii-un-JME" id="V96-he-Npw"/>
+                        <outlet property="nameLabel" destination="hac-eA-2YS" id="f1R-P7-RYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7a-F7-qtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -634,7 +638,7 @@
                 <relationship kind="action" name="twitterButtonPressed:"/>
                 <relationship kind="action" name="webButtonPressed:"/>
                 <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SlashatAboutTableViewController" superclassName="UITableViewController">
