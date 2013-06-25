@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) SlashatEpisode *episode;
 
+- (IBAction) shareButtonPressed:(id)sender;
 - (IBAction) playButtonPressed:(id)sender;
+
 
 @end

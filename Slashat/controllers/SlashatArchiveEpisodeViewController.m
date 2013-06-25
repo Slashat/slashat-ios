@@ -9,6 +9,7 @@
 #import "SlashatArchiveEpisodeViewController.h"
 #import "AppDelegate.h"
 #import "SlashatAudioControlViewController.h"
+#import <Social/Social.h>
 
 @interface SlashatArchiveEpisodeViewController ()
 
@@ -37,6 +38,19 @@
     NSLog(@"rssItem.mediaUrl: %@", self.episode.mediaUrl);
     
     self.descriptionTextView.text = self.episode.itemDescription;
+}
+
+- (IBAction)shareButtonPressed:(id)sender
+{
+    if (self.episode.link) {
+        NSLog(@"Share button pressed: %@", self.episode.link);
+        NSArray* dataToShare = @[self.episode.title, self.episode.link];
+        
+        UIActivityViewController* activityViewController =
+        [[UIActivityViewController alloc] initWithActivityItems:dataToShare
+                                          applicationActivities:nil];
+        [self presentViewController:activityViewController animated:YES completion:^{}];
+    }
 }
 
 - (IBAction)playButtonPressed:(id)sender
