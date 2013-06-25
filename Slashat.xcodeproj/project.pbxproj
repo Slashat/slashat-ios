@@ -49,6 +49,10 @@
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
 		046EF2F41763292B00005B82 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046EF2F31763292B00005B82 /* Social.framework */; };
+		04789287177A21AD0091B0AD /* Slashat-hosts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04789286177A21AD0091B0AD /* Slashat-hosts.plist */; };
+		0478928B177A25630091B0AD /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 04789288177A25630091B0AD /* mail.png */; };
+		0478928C177A25630091B0AD /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 04789289177A25630091B0AD /* twitter.png */; };
+		0478928D177A25630091B0AD /* web.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478928A177A25630091B0AD /* web.png */; };
 		0481815A16A0A71000F60954 /* SlashatAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815916A0A71000F60954 /* SlashatAudioHandler.m */; };
 		0481815E16A0BC4500F60954 /* SlashatEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815D16A0BC4500F60954 /* SlashatEpisode.m */; };
 		0481816516A0D11900F60954 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481816316A0D11900F60954 /* icon.png */; };
@@ -139,6 +143,10 @@
 		046D60DE16BD12D80088678E /* SlashatLiveVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatLiveVideoViewController.h; sourceTree = "<group>"; };
 		046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatLiveVideoViewController.m; sourceTree = "<group>"; };
 		046EF2F31763292B00005B82 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		04789286177A21AD0091B0AD /* Slashat-hosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Slashat-hosts.plist"; sourceTree = "<group>"; };
+		04789288177A25630091B0AD /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		04789289177A25630091B0AD /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		0478928A177A25630091B0AD /* web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web.png; sourceTree = "<group>"; };
 		0481815816A0A71000F60954 /* SlashatAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAudioHandler.h; sourceTree = "<group>"; };
 		0481815916A0A71000F60954 /* SlashatAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAudioHandler.m; sourceTree = "<group>"; };
 		0481815C16A0BC4500F60954 /* SlashatEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatEpisode.h; sourceTree = "<group>"; };
@@ -191,6 +199,9 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				04789288177A25630091B0AD /* mail.png */,
+				04789289177A25630091B0AD /* twitter.png */,
+				0478928A177A25630091B0AD /* web.png */,
 				0481816316A0D11900F60954 /* icon.png */,
 				0481816416A0D11900F60954 /* icon@2x.png */,
 				042ECD451693537C00C77193 /* first.png */,
@@ -247,6 +258,7 @@
 		043B542E169313A500B71F3A = {
 			isa = PBXGroup;
 			children = (
+				04789285177A21AD0091B0AD /* Data */,
 				043B5443169313A500B71F3A /* Slashat */,
 				043B5475169313A500B71F3A /* SlashatTests */,
 				043B543C169313A500B71F3A /* Frameworks */,
@@ -378,6 +390,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		04789285177A21AD0091B0AD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04789286177A21AD0091B0AD /* Slashat-hosts.plist */,
+			);
+			name = Data;
+			path = Slashat/Data;
+			sourceTree = "<group>";
+		};
 		048EC323173BB1D50043E57D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +495,10 @@
 				042ECD501693537C00C77193 /* second@2x.png in Resources */,
 				0481816516A0D11900F60954 /* icon.png in Resources */,
 				0481816616A0D11900F60954 /* icon@2x.png in Resources */,
+				04789287177A21AD0091B0AD /* Slashat-hosts.plist in Resources */,
+				0478928B177A25630091B0AD /* mail.png in Resources */,
+				0478928C177A25630091B0AD /* twitter.png in Resources */,
+				0478928D177A25630091B0AD /* web.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,8 @@
 
 @interface SlashatAboutHostProfileViewController : UIViewController
 
+- (IBAction) twitterButtonPressed:(id)sender;
+- (IBAction) webButtonPressed:(id)sender;
+- (IBAction) mailButtonPressed:(id)sender;
+
 @end

@@ -10,6 +10,9 @@
 
 @interface SlashatAboutHostProfileViewController ()
 
+@property (nonatomic, weak) IBOutlet UIButton *nameLabel;
+@property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
+
 @end
 
 @implementation SlashatAboutHostProfileViewController

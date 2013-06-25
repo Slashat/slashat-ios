@@ -417,7 +417,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SlashatAboutTableViewCell" textLabel="3tP-w4-tmm" imageView="mHi-2V-5W6" style="IBUITableViewCellStyleDefault" id="yG9-j8-u7u">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SlashatAboutTableViewCell" textLabel="3tP-w4-tmm" detailTextLabel="gZb-Nu-RT7" imageView="mHi-2V-5W6" style="IBUITableViewCellStyleSubtitle" id="yG9-j8-u7u">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -425,7 +425,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tP-w4-tmm">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -433,6 +433,11 @@
                                             <rect key="frame" x="6" y="6" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-Nu-RT7">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -455,7 +460,80 @@
                     <view key="view" contentMode="scaleToFill" id="Yh4-ge-JpG">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hac-eA-2YS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="pVl-o0-bbc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="J6S-iH-h4h"/>
+                                    <constraint firstAttribute="width" constant="32" id="c3n-bh-29G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Twitter" image="twitter.png">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwl-Bd-ak7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="047-Dw-l8O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Web" image="web.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3k-4t-fPJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="0cX-Hb-IFB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Mail" image="mail.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="hac-eA-2YS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3Sk-7t-uVZ"/>
+                            <constraint firstItem="hac-eA-2YS" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5qP-5o-baA"/>
+                            <constraint firstItem="Rwl-Bd-ak7" firstAttribute="top" secondItem="hac-eA-2YS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6PZ-co-Yh9"/>
+                            <constraint firstItem="q3k-4t-fPJ" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="125" id="7yW-Mt-dfK"/>
+                            <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="Rwl-Bd-ak7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9HQ-9l-Tqh"/>
+                            <constraint firstItem="Rwl-Bd-ak7" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="72" id="M8C-8Y-Cte"/>
+                            <constraint firstItem="q3k-4t-fPJ" firstAttribute="top" secondItem="hac-eA-2YS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ov3-Sx-hIe"/>
+                            <constraint firstItem="hac-eA-2YS" firstAttribute="top" secondItem="Yh4-ge-JpG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RFi-e0-bj4"/>
+                            <constraint firstAttribute="trailing" secondItem="hac-eA-2YS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Uby-RO-dNS"/>
+                            <constraint firstItem="yii-un-JME" firstAttribute="bottom" secondItem="Yh4-ge-JpG" secondAttribute="bottom" type="default" id="YUa-Qp-KoC"/>
+                            <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gOe-l5-MFM"/>
+                            <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="h0M-RL-Og0"/>
+                            <constraint firstAttribute="trailing" secondItem="yii-un-JME" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="juX-s8-Ow8"/>
+                            <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="q3k-4t-fPJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kR9-4I-S6g"/>
+                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lgf-bC-qnE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ap-qt-wbW"/>
                 </viewController>
@@ -540,7 +618,10 @@
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
+        <image name="mail.png" width="64" height="64"/>
         <image name="second.png" width="30" height="30"/>
+        <image name="twitter.png" width="64" height="64"/>
+        <image name="web.png" width="67" height="67"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -548,6 +629,13 @@
         </class>
         <class className="SlashatAboutHostProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutHostProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mailButtonPressed:"/>
+                <relationship kind="action" name="twitterButtonPressed:"/>
+                <relationship kind="action" name="webButtonPressed:"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="SlashatAboutTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutTableViewController.h"/>
@@ -567,7 +655,6 @@
         <class className="SlashatAudioControlViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAudioControlViewController.h"/>
             <relationships>
-                <relationship kind="action" name="playPauseButtonPressed:"/>
                 <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
             </relationships>
         </class>

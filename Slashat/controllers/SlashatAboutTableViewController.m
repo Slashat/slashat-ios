@@ -10,6 +10,9 @@
 
 @interface SlashatAboutTableViewController ()
 
+@property (nonatomic, strong) NSArray *hostIds;
+@property (nonatomic, strong) NSDictionary *hostsDictionary;
+
 @end
 
 @implementation SlashatAboutTableViewController
@@ -18,7 +21,9 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
+        self.hostsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistHostPath];
+        self.hostIds = [self.hostsDictionary allKeys];
     }
     return self;
 }
@@ -26,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
+    self.hostsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistHostPath];
+    self.hostIds = [self.hostsDictionary allKeys];
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,24 +54,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.hostIds.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SlashatAboutTableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+        
+    cell.textLabel.text = self.hostsDictionary[[self.hostIds objectAtIndex:indexPath.row]][@"name"];
+    cell.detailTextLabel.text = self.hostsDictionary[[self.hostIds objectAtIndex:indexPath.row]][@"description"];
     
     return cell;
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>jezper</key>
+	<dict>
+		<key>name</key>
+		<string>Jezper</string>
+		<key>twitter</key>
+		<string>jezperse</string>
+		<key>mail</key>
+		<string>jezper@slashat.se</string>
+		<key>web</key>
+		<string>http://jezper.se</string>
+		<key>description</key>
+		<string>En glad och bekväm herre, årsmodell 1980. Jobbar som originalare men är också aktiv inom dansmusikscenen som producenten och DJ:n Airbase. Han spenderar orimligt mycket tid framför datorer och har numer helt och hållet lämnat PC-land för en hundraprocentig Apple-miljö. Några Linux-dojor har han aldrig velat ha. Intresset för datorer och teknik har hängt med sedan Amiga 500:an. Övriga intressen innefattar musik, film, resor, gott öl och vin, motorcyklar, golf och egentligen allt som hör livsnjutning till.</string>
+	</dict>
+	<key>tommie</key>
+	<dict>
+		<key>name</key>
+		<string>Tommie</string>
+		<key>twitter</key>
+		<string>tommienu</string>
+		<key>mail</key>
+		<string>tommie@slashat.se</string>
+		<key>web</key>
+		<string>http://podzemski.se</string>
+		<key>description</key>
+		<string>Tommie en tjötig och sportig serie-entreprenör med visst huvud för kod. Vilket allt som oftast innebär att Tommie får en idé på fredagen, spenderar hela helgen på att koda den för att sedan lägga ner allt på måndagen. Kör uteslutande PC (Ubuntu och Windows), och är vad man kallar en Android-fanboy. Han har en viss förkärlek till att pyssla med linux-kärror och jobbar som IT-ansvarig på ett medelstort svenskt företag och säger sällan, t.om aldrig, nej till en öl.</string>
+	</dict>
+</dict>
+</plist>
