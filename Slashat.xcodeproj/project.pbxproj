@@ -54,6 +54,11 @@
 		0478928C177A25630091B0AD /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 04789289177A25630091B0AD /* twitter.png */; };
 		0478928D177A25630091B0AD /* web.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478928A177A25630091B0AD /* web.png */; };
 		04789290177A30050091B0AD /* SlashatHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478928F177A30050091B0AD /* SlashatHost.m */; };
+		04789294177EEEFE0091B0AD /* snyggjeppe@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04789292177EEEFE0091B0AD /* snyggjeppe@2x.jpg */; };
+		04789295177EEEFE0091B0AD /* snyggmagnus@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04789293177EEEFE0091B0AD /* snyggmagnus@2x.jpg */; };
+		04789297177EF0EF0091B0AD /* snyggjohan@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04789296177EF0EF0091B0AD /* snyggjohan@2x.jpg */; };
+		0478929B177EF2DE0091B0AD /* snyggtommie@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0478929A177EF2DE0091B0AD /* snyggtommie@2x.jpg */; };
+		0478929D177EFC6E0091B0AD /* nicklas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478929C177EFC6E0091B0AD /* nicklas@2x.png */; };
 		0481815A16A0A71000F60954 /* SlashatAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815916A0A71000F60954 /* SlashatAudioHandler.m */; };
 		0481815E16A0BC4500F60954 /* SlashatEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481815D16A0BC4500F60954 /* SlashatEpisode.m */; };
 		0481816516A0D11900F60954 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481816316A0D11900F60954 /* icon.png */; };
@@ -150,6 +155,11 @@
 		0478928A177A25630091B0AD /* web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web.png; sourceTree = "<group>"; };
 		0478928E177A30050091B0AD /* SlashatHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHost.h; sourceTree = "<group>"; };
 		0478928F177A30050091B0AD /* SlashatHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHost.m; sourceTree = "<group>"; };
+		04789292177EEEFE0091B0AD /* snyggjeppe@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggjeppe@2x.jpg"; sourceTree = "<group>"; };
+		04789293177EEEFE0091B0AD /* snyggmagnus@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggmagnus@2x.jpg"; sourceTree = "<group>"; };
+		04789296177EF0EF0091B0AD /* snyggjohan@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggjohan@2x.jpg"; sourceTree = "<group>"; };
+		0478929A177EF2DE0091B0AD /* snyggtommie@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggtommie@2x.jpg"; sourceTree = "<group>"; };
+		0478929C177EFC6E0091B0AD /* nicklas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nicklas@2x.png"; sourceTree = "<group>"; };
 		0481815816A0A71000F60954 /* SlashatAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAudioHandler.h; sourceTree = "<group>"; };
 		0481815916A0A71000F60954 /* SlashatAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAudioHandler.m; sourceTree = "<group>"; };
 		0481815C16A0BC4500F60954 /* SlashatEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatEpisode.h; sourceTree = "<group>"; };
@@ -202,6 +212,7 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				04789291177EEEFE0091B0AD /* hosts */,
 				04789288177A25630091B0AD /* mail.png */,
 				04789289177A25630091B0AD /* twitter.png */,
 				0478928A177A25630091B0AD /* web.png */,
@@ -404,6 +415,18 @@
 			path = Slashat/Data;
 			sourceTree = "<group>";
 		};
+		04789291177EEEFE0091B0AD /* hosts */ = {
+			isa = PBXGroup;
+			children = (
+				0478929C177EFC6E0091B0AD /* nicklas@2x.png */,
+				0478929A177EF2DE0091B0AD /* snyggtommie@2x.jpg */,
+				04789296177EF0EF0091B0AD /* snyggjohan@2x.jpg */,
+				04789292177EEEFE0091B0AD /* snyggjeppe@2x.jpg */,
+				04789293177EEEFE0091B0AD /* snyggmagnus@2x.jpg */,
+			);
+			path = hosts;
+			sourceTree = "<group>";
+		};
 		048EC323173BB1D50043E57D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +527,11 @@
 				0478928B177A25630091B0AD /* mail.png in Resources */,
 				0478928C177A25630091B0AD /* twitter.png in Resources */,
 				0478928D177A25630091B0AD /* web.png in Resources */,
+				04789294177EEEFE0091B0AD /* snyggjeppe@2x.jpg in Resources */,
+				04789295177EEEFE0091B0AD /* snyggmagnus@2x.jpg in Resources */,
+				04789297177EF0EF0091B0AD /* snyggjohan@2x.jpg in Resources */,
+				0478929B177EF2DE0091B0AD /* snyggtommie@2x.jpg in Resources */,
+				0478929D177EFC6E0091B0AD /* nicklas@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@
 @interface SlashatHost : NSObject
 
 @property (strong,nonatomic) NSString *name;
-@property (strong,nonatomic) NSString *description;
+@property (strong,nonatomic) UIImage *profileImage;
+@property (strong,nonatomic) NSString *shortDescription;
+@property (strong,nonatomic) NSString *longDescription;
 
 @end

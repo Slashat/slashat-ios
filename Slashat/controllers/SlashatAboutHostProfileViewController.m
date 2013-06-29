@@ -31,7 +31,7 @@
     [super viewDidLoad];
     
     self.nameLabel.text = self.host.name;
-    self.descriptionTextView.text = self.host.description;
+    self.descriptionTextView.text = self.host.longDescription;
 	// Do any additional setup after loading the view.
 }
 

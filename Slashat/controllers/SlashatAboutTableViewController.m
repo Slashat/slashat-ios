@@ -13,6 +13,7 @@
 @interface SlashatAboutTableViewController ()
 
 @property (nonatomic, strong) NSArray *hosts;
+@property (nonatomic, strong) NSArray *sectionNames;
 
 @end
 
@@ -32,24 +33,49 @@
     [super viewDidLoad];
     
     self.hosts = [self getSlashatHostsFromPlist];
+    self.sectionNames = [self getSlashatHostSectionsFromPlist];
 }
 
 - (NSArray *)getSlashatHostsFromPlist
 {
     NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-    NSDictionary *hostsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistHostPath];
-    NSArray *hostIds = [hostsDictionary allKeys];
+    NSArray *plistRootArray = [[NSArray alloc] initWithContentsOfFile:plistHostPath];
+            
+    NSMutableArray *hostSections = [[NSMutableArray alloc] init];
     
-    NSMutableArray *hosts = [[NSMutableArray alloc] init];
-    
-    for (int i=0; i < hostIds.count; i++) {
-        SlashatHost *host = [[SlashatHost alloc] init];
-        host.name = hostsDictionary[[hostIds objectAtIndex:i]][@"name"];
-        host.description = hostsDictionary[[hostIds objectAtIndex:i]][@"description"];
-        [hosts addObject:host];
+    for (int i=0; i < plistRootArray.count; i++) {
+        
+        NSArray *sectionHosts = [plistRootArray objectAtIndex:i][@"items"];
+        
+        NSMutableArray *hosts = [[NSMutableArray alloc] init];
+        
+        for (int j=0; j<sectionHosts.count; j++) {
+            SlashatHost *host = [[SlashatHost alloc] init];
+            host.name = [sectionHosts objectAtIndex:j][@"name"];
+            host.profileImage = [UIImage imageNamed:[sectionHosts objectAtIndex:j][@"image"]];
+            host.shortDescription = [sectionHosts objectAtIndex:j][@"short_description"];
+            host.longDescription = [sectionHosts objectAtIndex:j][@"long_description"];
+            [hosts addObject:host];
+        }
+        
+        [hostSections addObject:hosts];        
     }
     
-    return hosts;
+    return hostSections;
+}
+
+- (NSArray *)getSlashatHostSectionsFromPlist
+{
+    NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
+    NSArray *plistRootArray = [[NSArray alloc] initWithContentsOfFile:plistHostPath];
+    
+    NSMutableArray *sectionTitles = [[NSMutableArray alloc] init];
+    for (int i = 0; i < plistRootArray.count; i++) {
+        NSString *sectionTitle = [plistRootArray objectAtIndex:i][@"title"];
+        [sectionTitles addObject:sectionTitle];
+    }
+    
+    return sectionTitles;
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,12 +88,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.hosts.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.hosts.count;
+    return ((NSArray *)[self.hosts objectAtIndex:section]).count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,11 +104,19 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-        
-    cell.textLabel.text = ((SlashatHost *)[self.hosts objectAtIndex:indexPath.row]).name;
-    cell.detailTextLabel.text = ((SlashatHost *)[self.hosts objectAtIndex:indexPath.row]).description;
+    
+    SlashatHost *host = [[self.hosts objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    [cell.imageView setImage:host.profileImage];
+    cell.textLabel.text = host.name;
+    cell.detailTextLabel.text = host.shortDescription;
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.sectionNames objectAtIndex:section];
 }
 
 #pragma mark - Table view delegate
@@ -91,7 +125,8 @@
 {
     if ([segue.identifier isEqualToString:@"SlashatAboutHostProfileSegway"]) {
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        SlashatHost *selectedHost = [self.hosts objectAtIndex:selectedIndexPath.row];
+        SlashatHost *selectedHost = [[self.hosts objectAtIndex:selectedIndexPath.section] objectAtIndex:selectedIndexPath.row];
+
         ((SlashatAboutHostProfileViewController *)segue.destinationViewController).host = selectedHost;
     }
 }

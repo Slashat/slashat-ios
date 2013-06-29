@@ -1,32 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>jezper</key>
+<array>
 	<dict>
-		<key>name</key>
-		<string>Jezper</string>
-		<key>twitter</key>
-		<string>jezperse</string>
-		<key>mail</key>
-		<string>jezper@slashat.se</string>
-		<key>web</key>
-		<string>http://jezper.se</string>
-		<key>description</key>
-		<string>En glad och bekväm herre, årsmodell 1980. Jobbar som originalare men är också aktiv inom dansmusikscenen som producenten och DJ:n Airbase. Han spenderar orimligt mycket tid framför datorer och har numer helt och hållet lämnat PC-land för en hundraprocentig Apple-miljö. Några Linux-dojor har han aldrig velat ha. Intresset för datorer och teknik har hängt med sedan Amiga 500:an. Övriga intressen innefattar musik, film, resor, gott öl och vin, motorcyklar, golf och egentligen allt som hör livsnjutning till.</string>
+		<key>title</key>
+		<string>Programledare</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Jezper</string>
+				<key>image</key>
+				<string>snyggjeppe.jpg</string>
+				<key>twitter</key>
+				<string>jezperse</string>
+				<key>mail</key>
+				<string>jezper@slashat.se</string>
+				<key>web</key>
+				<string>http://jezper.se</string>
+				<key>short_description</key>
+				<string>Programledare</string>
+				<key>long_description</key>
+				<string>En glad och bekväm herre, årsmodell 1980. Jobbar som originalare men är också aktiv inom dansmusikscenen som producenten och DJ:n Airbase. Han spenderar orimligt mycket tid framför datorer och har numer helt och hållet lämnat PC-land för en hundraprocentig Apple-miljö. Några Linux-dojor har han aldrig velat ha. Intresset för datorer och teknik har hängt med sedan Amiga 500:an. Övriga intressen innefattar musik, film, resor, gott öl och vin, motorcyklar, golf och egentligen allt som hör livsnjutning till.</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Tommie</string>
+				<key>image</key>
+				<string>snyggtommie.jpg</string>
+				<key>twitter</key>
+				<string>tommienu</string>
+				<key>mail</key>
+				<string>tommie@slashat.se</string>
+				<key>web</key>
+				<string>http://podzemski.se</string>
+				<key>short_description</key>
+				<string>Programledare</string>
+				<key>long_description</key>
+				<string>Tommie en tjötig och sportig serie-entreprenör med visst huvud för kod. Vilket allt som oftast innebär att Tommie får en idé på fredagen, spenderar hela helgen på att koda den för att sedan lägga ner allt på måndagen. Kör uteslutande PC (Ubuntu och Windows), och är vad man kallar en Android-fanboy. Han har en viss förkärlek till att pyssla med linux-kärror och jobbar som IT-ansvarig på ett medelstort svenskt företag och säger sällan, t.om aldrig, nej till en öl.</string>
+			</dict>
+		</array>
 	</dict>
-	<key>tommie</key>
 	<dict>
-		<key>name</key>
-		<string>Tommie</string>
-		<key>twitter</key>
-		<string>tommienu</string>
-		<key>mail</key>
-		<string>tommie@slashat.se</string>
-		<key>web</key>
-		<string>http://podzemski.se</string>
-		<key>description</key>
-		<string>Tommie en tjötig och sportig serie-entreprenör med visst huvud för kod. Vilket allt som oftast innebär att Tommie får en idé på fredagen, spenderar hela helgen på att koda den för att sedan lägga ner allt på måndagen. Kör uteslutande PC (Ubuntu och Windows), och är vad man kallar en Android-fanboy. Han har en viss förkärlek till att pyssla med linux-kärror och jobbar som IT-ansvarig på ett medelstort svenskt företag och säger sällan, t.om aldrig, nej till en öl.</string>
+		<key>title</key>
+		<string>Medarbetare</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Magnus</string>
+				<key>image</key>
+				<string>snyggmagnus.jpg</string>
+				<key>twitter</key>
+				<string>magnusjonasson</string>
+				<key>mail</key>
+				<string>magnus@slashat.se</string>
+				<key>web</key>
+				<string>http://magnusjonasson.com</string>
+				<key>short_description</key>
+				<string>Forumgeneral</string>
+				<key>long_description</key>
+				<string>Killen som drar upp medelåldern på Slashat-redaktionen då han är den enda i gänget som är född på 70-talet. Magnus jobbar till vardags som IT-tekniker och konsult med affärssystem och Windows Server-miljöer som specialitet, men föredrar faktiskt Mac privat. Beskriver sig själv som en prylnörd och är alltid hungrig på nya prylar att integrera med sitt digitala liv. Förutom teknik så har en kärlek till matlagning har funnits länge och inte mycket slår hemlagat med en kall öl till. Eller två.</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Johan</string>
+				<key>image</key>
+				<string>snyggjohan.jpg</string>
+				<key>twitter</key>
+				<string>kottkrig</string>
+				<key>mail</key>
+				<string>johan@slashat.se</string>
+				<key>web</key>
+				<string>http://johanl.se</string>
+				<key>short_description</key>
+				<string>Kottragear och apputveckling</string>
+				<key>long_description</key>
+				<string>Älskar allt som är interaktivt. Utvecklar till vardags multimediaproduktioner och till sängdags så utvecklar jag annat smått och gott.
+Är biOS så jag använder (och utvecklar) lika gärna med Android som iOS. Det finns styrkor och svagheter med allt men jag försöker att använda det som känns mest spännande för stunden.
+Arbetar hellre i OS X och Linux än i Windows när jag vill vara produktiv. Använder hellre Windows än annat när det kommer till lek &amp; spel.</string>
+			</dict>
+		</array>
 	</dict>
-</dict>
+	<dict>
+		<key>title</key>
+		<string>Apphjälpredor</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>contributor</string>
+				<key>name</key>
+				<string>Nicklas</string>
+				<key>image</key>
+				<string>nicklas.png</string>
+				<key>twitter</key>
+				<string></string>
+				<key>mail</key>
+				<string></string>
+				<key>web</key>
+				<string></string>
+				<key>short_description</key>
+				<string>Androidkung</string>
+				<key>long_description</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+</array>
 </plist>
