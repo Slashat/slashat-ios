@@ -12,6 +12,7 @@
 
 @property (strong,nonatomic) NSString *title;
 @property (strong,nonatomic) NSString *itemDescription;
+@property (strong,nonatomic) NSString *showNotes;
 @property (strong,nonatomic) NSURL *link;
 @property (strong,nonatomic) NSDate *pubDate;
 @property (strong,nonatomic) NSString *guid;

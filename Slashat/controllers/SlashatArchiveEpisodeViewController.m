@@ -37,7 +37,7 @@
     self.navigationItem.title = self.episode.title;
     NSLog(@"rssItem.mediaUrl: %@", self.episode.mediaUrl);
     
-    self.descriptionTextView.text = self.episode.itemDescription;
+    self.descriptionTextView.text = self.episode.showNotes;
 }
 
 - (IBAction)shareButtonPressed:(id)sender

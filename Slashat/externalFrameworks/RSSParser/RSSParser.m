@@ -98,6 +98,10 @@
             [currentItem setItemDescription:tmpString];
         }
         
+        if ([elementName isEqualToString:@"itunes:summary"]) {
+            [currentItem setShowNotes:tmpString];
+        }
+        
         if ([elementName isEqualToString:@"link"]) {
             [currentItem setLink:[NSURL URLWithString:tmpString]];
         }
