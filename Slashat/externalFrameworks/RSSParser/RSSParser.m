@@ -76,7 +76,7 @@
     
     tmpString = [[NSMutableString alloc] init];
     
-    if ([elementName isEqualToString:@"media:content"]) {
+    if ([elementName isEqualToString:@"enclosure"]) {
         NSString *urlString = [attributeDict objectForKey:@"url"];
         [currentItem setMediaUrl:[NSURL URLWithString:urlString]];
     }
