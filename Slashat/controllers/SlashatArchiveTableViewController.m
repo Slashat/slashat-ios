@@ -42,7 +42,7 @@
 
 - (void) refresh {
     NSLog(@"Refreshing!");
-    NSURL *url = [NSURL URLWithString:@"http://slashat.se/avsnitt.rss"];
+    NSURL *url = [NSURL URLWithString:@"http://slashat.se/feed/podcast/slashat.xml"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [RSSParser parseRSSFeedForRequest:request success:^(NSArray *feedItems) {
         NSLog(@"Refresh done!");
