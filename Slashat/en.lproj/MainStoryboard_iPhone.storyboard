@@ -334,18 +334,21 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-KE-Z6i">
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="364" id="maM-B7-ewy"/>
+                                            <constraint firstAttribute="height" constant="352" id="0wL-id-TTK"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-1C-Hxf">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="CNq-Zp-0iX"/>
+                                            <constraint firstAttribute="height" constant="28" id="SnQ-P8-f55"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <state key="normal" title="Play">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -357,16 +360,37 @@
                                             <action selector="playButtonPressed:" destination="WDs-f0-o1S" eventType="touchUpInside" id="Viy-WN-NUn"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slashat.se #223 - I Göttingen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53b-9s-qLr">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="cdG-iy-ANr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2013-01-10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-FK-O3R">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="87" id="201-wc-Kv0"/>
+                                            <constraint firstAttribute="height" constant="21" id="4D3-CU-oIG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0vK-1K-jRA"/>
+                                    <constraint firstAttribute="bottom" secondItem="trO-IF-BDt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="3SD-L0-p0t"/>
                                     <constraint firstAttribute="trailing" secondItem="hD0-1C-Hxf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="41o-hG-K81"/>
-                                    <constraint firstItem="hD0-1C-Hxf" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HnP-S5-2tN"/>
-                                    <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MN9-kL-m3q"/>
-                                    <constraint firstAttribute="bottom" secondItem="trO-IF-BDt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="RgA-Tw-4RH"/>
-                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="hD0-1C-Hxf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bhf-CB-UsW"/>
-                                    <constraint firstItem="trO-IF-BDt" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="fRM-2z-1oJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="trO-IF-BDt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j90-r4-F9r"/>
-                                    <constraint firstItem="hD0-1C-Hxf" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x0q-K5-9RL"/>
+                                    <constraint firstAttribute="trailing" secondItem="trO-IF-BDt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9mF-Jk-FMQ"/>
+                                    <constraint firstItem="53b-9s-qLr" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DUX-lO-ws2"/>
+                                    <constraint firstItem="bOF-FK-O3R" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="47" id="Gul-wd-6Wf"/>
+                                    <constraint firstAttribute="trailing" secondItem="53b-9s-qLr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KNw-2V-Wpy"/>
+                                    <constraint firstItem="bOF-FK-O3R" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="P0d-sb-vUA"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="gTx-4E-qJR"/>
+                                    <constraint firstItem="53b-9s-qLr" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="7" id="hEu-9G-zBa"/>
+                                    <constraint firstItem="bOF-FK-O3R" firstAttribute="baseline" secondItem="hD0-1C-Hxf" secondAttribute="baseline" type="default" id="sIS-Or-5wa"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="hD0-1C-Hxf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uPM-QH-jWe"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -386,7 +410,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateLabel" destination="bOF-FK-O3R" id="cJN-JA-QJE"/>
                         <outlet property="descriptionTextView" destination="trO-IF-BDt" id="5Hu-23-LvU"/>
+                        <outlet property="scrollView" destination="V7l-KE-Z6i" id="RUy-gb-HZF"/>
+                        <outlet property="titleLabel" destination="53b-9s-qLr" id="yw1-e5-wIi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqP-VS-UWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -663,8 +690,11 @@
             <relationships>
                 <relationship kind="action" name="playButtonPressed:"/>
                 <relationship kind="action" name="shareButtonPressed:"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SlashatArchiveTableViewController" superclassName="UITableViewController">
