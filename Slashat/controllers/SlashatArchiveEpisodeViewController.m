@@ -81,7 +81,7 @@
 
 - (IBAction)playButtonPressed:(id)sender
 {
-    NSLog(@"Playbutton pressed!");
+    NSLog(@"Playbutton pressed! Media-url: %@", self.episode.mediaUrl);
     
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     
