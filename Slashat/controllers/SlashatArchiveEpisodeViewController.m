@@ -44,9 +44,9 @@
 {
     if (self.episode.link) {
         NSLog(@"Share button pressed: %@", self.episode.link);
-        NSArray* dataToShare = @[self.episode.title, self.episode.link];
+        NSArray *dataToShare = @[[self.episode.title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], self.episode.link];
         
-        UIActivityViewController* activityViewController =
+        UIActivityViewController *activityViewController =
         [[UIActivityViewController alloc] initWithActivityItems:dataToShare
                                           applicationActivities:nil];
         [self presentViewController:activityViewController animated:YES completion:^{}];
