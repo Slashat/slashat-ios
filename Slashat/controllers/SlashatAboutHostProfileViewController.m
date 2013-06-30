@@ -13,6 +13,14 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 
+@property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
+
+@property (nonatomic, weak) IBOutlet UIButton *twitterButton;
+@property (nonatomic, weak) IBOutlet UIButton *webButton;
+@property (nonatomic, weak) IBOutlet UIButton *mailButton;
+
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation SlashatAboutHostProfileViewController
@@ -32,7 +40,18 @@
     
     self.nameLabel.text = self.host.name;
     self.descriptionTextView.text = self.host.longDescription;
-	// Do any additional setup after loading the view.
+    [self.profileImageView setImage:self.host.profileImage];
+    
+    [self.twitterButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.webButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.mailButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    self.navigationItem.title = self.host.name;
+    
+    CGRect frame;
+    frame = self.descriptionTextView.frame;
+    frame.size.height = [self.descriptionTextView contentSize].height;
+    self.descriptionTextView.frame = frame;    
 }
 
 - (IBAction) twitterButtonPressed:(id)sender

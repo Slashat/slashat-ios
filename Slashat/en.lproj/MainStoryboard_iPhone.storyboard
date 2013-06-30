@@ -461,84 +461,92 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hac-eA-2YS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-gs-HjC">
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBu-JY-eKI">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="WDP-it-Yaa"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Q9L-Pq-ag5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="web.png">
+                                            <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="248" id="9tw-Qd-RO5"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="mail.png">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="7Ag-nZ-uHs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="twitter.png">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="pVl-o0-bbc"/>
+                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="0zW-HV-dkl"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="403-jT-fUI"/>
+                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" type="default" id="Clq-ej-h4X"/>
+                                    <constraint firstAttribute="bottom" secondItem="yii-un-JME" secondAttribute="bottom" constant="8" id="Kk3-jf-EJV"/>
+                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="QF0-dm-3y8"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="trailing" secondItem="4hx-jF-Ekm" secondAttribute="trailing" type="default" id="RDx-FP-tsW"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="wRf-an-U0c" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VsX-5S-HuF"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ZON-VC-2Qr"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="akU-Nz-XeR"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="trailing" secondItem="5DR-Di-HOm" secondAttribute="trailing" type="default" id="cJ8-rX-9TB"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="top" secondItem="5DR-Di-HOm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kf3-4W-adM"/>
+                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ldY-Vs-7lh"/>
+                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="so9-6O-62u"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="centerY" secondItem="CBu-JY-eKI" secondAttribute="centerY" type="default" id="u5k-Bp-SiF"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="199" id="xRl-4a-xUB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="J6S-iH-h4h"/>
-                                    <constraint firstAttribute="width" constant="32" id="c3n-bh-29G"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Twitter" image="twitter.png">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwl-Bd-ak7">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="047-Dw-l8O"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Web" image="web.png">
-                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3k-4t-fPJ">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="0cX-Hb-IFB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Mail" image="mail.png">
-                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="hac-eA-2YS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3Sk-7t-uVZ"/>
-                            <constraint firstItem="hac-eA-2YS" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5qP-5o-baA"/>
-                            <constraint firstItem="Rwl-Bd-ak7" firstAttribute="top" secondItem="hac-eA-2YS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6PZ-co-Yh9"/>
-                            <constraint firstItem="q3k-4t-fPJ" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="125" id="7yW-Mt-dfK"/>
-                            <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="Rwl-Bd-ak7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9HQ-9l-Tqh"/>
-                            <constraint firstItem="Rwl-Bd-ak7" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="72" id="M8C-8Y-Cte"/>
-                            <constraint firstItem="q3k-4t-fPJ" firstAttribute="top" secondItem="hac-eA-2YS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ov3-Sx-hIe"/>
-                            <constraint firstItem="hac-eA-2YS" firstAttribute="top" secondItem="Yh4-ge-JpG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RFi-e0-bj4"/>
-                            <constraint firstAttribute="trailing" secondItem="hac-eA-2YS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Uby-RO-dNS"/>
-                            <constraint firstItem="yii-un-JME" firstAttribute="bottom" secondItem="Yh4-ge-JpG" secondAttribute="bottom" type="default" id="YUa-Qp-KoC"/>
-                            <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gOe-l5-MFM"/>
-                            <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="h0M-RL-Og0"/>
-                            <constraint firstAttribute="trailing" secondItem="yii-un-JME" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="juX-s8-Ow8"/>
-                            <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="q3k-4t-fPJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kR9-4I-S6g"/>
-                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lgf-bC-qnE"/>
+                            <constraint firstItem="fwB-gs-HjC" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" type="default" id="G6U-Yq-SPf"/>
+                            <constraint firstItem="fwB-gs-HjC" firstAttribute="bottom" secondItem="Yh4-ge-JpG" secondAttribute="bottom" type="default" id="Klx-Ux-eYo"/>
+                            <constraint firstItem="fwB-gs-HjC" firstAttribute="trailing" secondItem="Yh4-ge-JpG" secondAttribute="trailing" type="default" id="WGK-Ce-qrW"/>
+                            <constraint firstItem="fwB-gs-HjC" firstAttribute="top" secondItem="Yh4-ge-JpG" secondAttribute="top" type="default" id="z8Z-1j-ka0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ap-qt-wbW"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="yii-un-JME" id="V96-he-Npw"/>
-                        <outlet property="nameLabel" destination="hac-eA-2YS" id="f1R-P7-RYm"/>
+                        <outlet property="mailButton" destination="wRf-an-U0c" id="D3R-vz-BY2"/>
+                        <outlet property="profileImageView" destination="CBu-JY-eKI" id="rdg-cw-iNN"/>
+                        <outlet property="twitterButton" destination="4hx-jF-Ekm" id="Ice-MR-OdH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7a-F7-qtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -622,10 +630,10 @@
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
-        <image name="mail.png" width="64" height="64"/>
+        <image name="mail.png" width="32" height="32"/>
         <image name="second.png" width="30" height="30"/>
-        <image name="twitter.png" width="64" height="64"/>
-        <image name="web.png" width="67" height="67"/>
+        <image name="twitter.png" width="32" height="32"/>
+        <image name="web.png" width="33" height="33"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -638,7 +646,12 @@
                 <relationship kind="action" name="twitterButtonPressed:"/>
                 <relationship kind="action" name="webButtonPressed:"/>
                 <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="mailButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="webButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="SlashatAboutTableViewController" superclassName="UITableViewController">
