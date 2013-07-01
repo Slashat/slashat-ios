@@ -20,12 +20,15 @@
 
 @synthesize allEntries = _allEntries;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
+    self = [super initWithCoder:aDecoder];
+    
     if (self) {
-        // Custom initialization
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Arkiv" image:nil tag:0];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"Archive_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Archive_passive.png"]];
     }
+    
     return self;
 }
 

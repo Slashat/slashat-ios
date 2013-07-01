@@ -19,6 +19,18 @@
 
 @implementation SlashatAboutTableViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Om oss" image:nil tag:0];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"About_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"About_passive.png"]];
+    }
+    
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
