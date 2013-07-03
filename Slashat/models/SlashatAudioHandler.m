@@ -7,13 +7,12 @@
 //
 
 #import "SlashatAudioHandler.h"
-#import "MediaPlayer/MPMoviePlayerController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
 
 @interface SlashatAudioHandler () {
-    MPMoviePlayerController *player;
+    
 }
 
 @end
@@ -23,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        player = [[MPMoviePlayerController alloc] init];
+        self.player = [[MPMoviePlayerController alloc] init];
         [[AVAudioSession sharedInstance] setDelegate: self];
         
         NSError *myErr;
@@ -45,7 +44,7 @@
 
 - (void)play
 {
-    [player play];
+    [self.player play];
     
     self.isPlaying = YES;
     
@@ -68,13 +67,14 @@
 - (void)setEpisode:(SlashatEpisode *)episode
 {
     _episode = episode;
-    [player setContentURL:[_episode mediaUrl]];
-    [player prepareToPlay];
+    [self.player setContentURL:[_episode mediaUrl]];
+    [self.player prepareToPlay];
+    [self.player play];
 }
 
 - (void)pause
 {
-    [player pause];
+    [self.player pause];
     self.isPlaying = NO;
 }
 

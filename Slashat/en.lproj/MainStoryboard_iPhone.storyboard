@@ -590,6 +590,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krT-vY-S9o">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="1kZ-1U-O5U"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Play/Pause">
@@ -603,15 +606,20 @@
                                     <action selector="playPauseButtonPressed:" destination="nCp-dC-CLG" eventType="touchUpInside" id="2kA-lV-R4Q"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lLM-4x-6K3"/>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lLM-4x-6K3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9mT-hG-57p"/>
                             <constraint firstItem="krT-vY-S9o" firstAttribute="leading" secondItem="kR4-jC-TU4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LCB-wy-zTv"/>
                             <constraint firstItem="krT-vY-S9o" firstAttribute="top" secondItem="kR4-jC-TU4" secondAttribute="top" constant="28" id="MNp-I3-Rha"/>
+                            <constraint firstItem="lLM-4x-6K3" firstAttribute="leading" secondItem="krT-vY-S9o" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="NiG-vm-h0e"/>
+                            <constraint firstItem="lLM-4x-6K3" firstAttribute="centerY" secondItem="kR4-jC-TU4" secondAttribute="centerY" type="default" id="VQe-IW-g54"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="durationSlider" destination="lLM-4x-6K3" id="0y8-tu-Yc7"/>
                         <outlet property="playPauseButton" destination="krT-vY-S9o" id="YMj-zP-ieP"/>
                     </connections>
                 </viewController>
@@ -703,6 +711,8 @@
         <class className="SlashatAudioControlViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAudioControlViewController.h"/>
             <relationships>
+                <relationship kind="action" name="playPauseButtonPressed:"/>
+                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
             </relationships>
         </class>

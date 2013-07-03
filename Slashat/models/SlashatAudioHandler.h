@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "SlashatEpisode.h"
+#import "MediaPlayer/MPMoviePlayerController.h"
 
 @interface SlashatAudioHandler : NSObject
+
+@property (strong, nonatomic) MPMoviePlayerController *player;
 
 @property (strong, nonatomic) SlashatEpisode *episode;
 @property (assign, nonatomic) BOOL isPlaying;

@@ -12,6 +12,7 @@
 
 @interface SlashatAudioControlViewController ()
 @property (nonatomic, weak) IBOutlet UIButton *playPauseButton;
+@property (nonatomic, weak) IBOutlet UISlider *durationSlider;
 @property (strong, nonatomic) SlashatAudioHandler *audioHandler;
 @end
 
@@ -45,6 +46,8 @@
 {
     [self.audioHandler setEpisode:episode];
     [self.audioHandler play];
+    
+    self.durationSlider.enabled = YES;
 }
 
 - (void)didReceiveMemoryWarning
