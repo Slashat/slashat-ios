@@ -790,6 +790,7 @@
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -797,10 +798,13 @@
 		043B5482169313A500B71F3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0E644E37-0D19-4F4B-8DF8-B9C53186889E";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
