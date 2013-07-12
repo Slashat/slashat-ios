@@ -345,11 +345,10 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-1C-Hxf">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="77" id="CNq-Zp-0iX"/>
-                                            <constraint firstAttribute="height" constant="28" id="SnQ-P8-f55"/>
+                                            <constraint firstAttribute="width" constant="102" id="RD5-WX-ak9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                        <state key="normal" title="Play">
+                                        <state key="normal" title="Play" image="Slashat_stream.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -381,16 +380,17 @@
                                 <constraints>
                                     <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0vK-1K-jRA"/>
                                     <constraint firstAttribute="bottom" secondItem="trO-IF-BDt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="3SD-L0-p0t"/>
-                                    <constraint firstAttribute="trailing" secondItem="hD0-1C-Hxf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="41o-hG-K81"/>
                                     <constraint firstAttribute="trailing" secondItem="trO-IF-BDt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9mF-Jk-FMQ"/>
                                     <constraint firstItem="53b-9s-qLr" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DUX-lO-ws2"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="83" id="DhD-4B-hgC"/>
+                                    <constraint firstItem="bOF-FK-O3R" firstAttribute="top" secondItem="hD0-1C-Hxf" secondAttribute="top" type="default" id="EfS-SY-feB"/>
                                     <constraint firstItem="bOF-FK-O3R" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="47" id="Gul-wd-6Wf"/>
                                     <constraint firstAttribute="trailing" secondItem="53b-9s-qLr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KNw-2V-Wpy"/>
                                     <constraint firstItem="bOF-FK-O3R" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="P0d-sb-vUA"/>
-                                    <constraint firstItem="trO-IF-BDt" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="gTx-4E-qJR"/>
+                                    <constraint firstItem="53b-9s-qLr" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="cZb-sn-1hl"/>
                                     <constraint firstItem="53b-9s-qLr" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="7" id="hEu-9G-zBa"/>
-                                    <constraint firstItem="bOF-FK-O3R" firstAttribute="baseline" secondItem="hD0-1C-Hxf" secondAttribute="baseline" type="default" id="sIS-Or-5wa"/>
-                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="hD0-1C-Hxf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uPM-QH-jWe"/>
+                                    <constraint firstAttribute="trailing" secondItem="hD0-1C-Hxf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qGC-Ts-7k2"/>
+                                    <constraint firstItem="hD0-1C-Hxf" firstAttribute="bottom" secondItem="bOF-FK-O3R" secondAttribute="bottom" type="default" id="xj1-WK-nf4"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -497,11 +497,8 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Q9L-Pq-ag5"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" image="web.png">
+                                        <state key="normal" image="Slashat_webb.png">
                                             <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -509,18 +506,25 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="248" id="9tw-Qd-RO5"/>
+                                            <constraint firstAttribute="height" constant="250" id="5Sg-1G-k61"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" image="mail.png">
+                                        <state key="normal" image="Slashat_mail.png">
                                             <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -529,11 +533,8 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="7Ag-nZ-uHs"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" image="twitter.png">
+                                        <state key="normal" image="Slashat_twitter.png">
                                             <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -545,19 +546,18 @@
                                 <constraints>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="0zW-HV-dkl"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="403-jT-fUI"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="214" id="4xS-9e-Eze"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="CbF-Dr-od1"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" type="default" id="Clq-ej-h4X"/>
-                                    <constraint firstAttribute="bottom" secondItem="yii-un-JME" secondAttribute="bottom" constant="8" id="Kk3-jf-EJV"/>
-                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="QF0-dm-3y8"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="trailing" secondItem="4hx-jF-Ekm" secondAttribute="trailing" type="default" id="RDx-FP-tsW"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="wRf-an-U0c" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VsX-5S-HuF"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="wRf-an-U0c" secondAttribute="top" type="default" id="VPH-a2-9DC"/>
+                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="212" id="XBh-FL-ZTC"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ZON-VC-2Qr"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="akU-Nz-XeR"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="trailing" secondItem="5DR-Di-HOm" secondAttribute="trailing" type="default" id="cJ8-rX-9TB"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="top" secondItem="5DR-Di-HOm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kf3-4W-adM"/>
+                                    <constraint firstAttribute="bottom" secondItem="yii-un-JME" secondAttribute="bottom" constant="-53" id="bMn-fk-vUu"/>
+                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="centerX" secondItem="4hx-jF-Ekm" secondAttribute="centerX" type="default" id="i4G-O6-GDa"/>
+                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="76" id="jF9-gg-r0v"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ldY-Vs-7lh"/>
-                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="so9-6O-62u"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="centerY" secondItem="CBu-JY-eKI" secondAttribute="centerY" type="default" id="u5k-Bp-SiF"/>
-                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="199" id="xRl-4a-xUB"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="258" id="mfK-Vb-bX7"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="200" id="n64-iB-Cvs"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -665,11 +665,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Slashat_mail.png" width="44" height="44"/>
+        <image name="Slashat_stream.png" width="109" height="22"/>
+        <image name="Slashat_twitter.png" width="44" height="44"/>
+        <image name="Slashat_webb.png" width="44" height="44"/>
         <image name="first" width="16" height="16"/>
-        <image name="mail.png" width="32" height="32"/>
         <image name="second.png" width="30" height="30"/>
-        <image name="twitter.png" width="32" height="32"/>
-        <image name="web.png" width="33" height="33"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
