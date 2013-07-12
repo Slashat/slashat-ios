@@ -91,7 +91,7 @@
     if (currentItem != nil && tmpString != nil) {
         
         if ([elementName isEqualToString:@"title"]) {
-            [currentItem setTitle:tmpString];
+            [currentItem setTitle:[tmpString stringByReplacingOccurrencesOfString:@"Slashat.se #" withString:@""]];
         }
         
         if ([elementName isEqualToString:@"description"]) {
