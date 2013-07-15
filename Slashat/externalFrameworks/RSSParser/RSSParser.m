@@ -92,6 +92,11 @@
         
         if ([elementName isEqualToString:@"title"]) {
             [currentItem setTitle:[tmpString stringByReplacingOccurrencesOfString:@"Slashat.se #" withString:@""]];
+            NSInteger episodeNumber;
+            [[NSScanner scannerWithString:currentItem.title] scanInteger:&episodeNumber];
+            currentItem.episodeNumber = episodeNumber;
+            
+            [currentItem setTitle:[currentItem.title stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%i - ", currentItem.episodeNumber] withString:@""]];
         }
         
         if ([elementName isEqualToString:@"description"]) {

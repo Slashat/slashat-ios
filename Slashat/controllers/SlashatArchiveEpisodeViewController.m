@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = self.episode.title;
+    self.navigationItem.title = [NSString stringWithFormat:@"%i", self.episode.episodeNumber];
     
     self.descriptionTextView.contentInset = UIEdgeInsetsMake(-8,-8,-8,-8);
     NSString *descriptionString = [NSString stringWithFormat:@"%@\n%@", self.episode.itemDescription, self.episode.showNotes];

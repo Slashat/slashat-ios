@@ -10,6 +10,7 @@
 
 @interface SlashatEpisode : NSObject
 
+@property (assign,nonatomic) NSInteger episodeNumber;
 @property (strong,nonatomic) NSString *title;
 @property (strong,nonatomic) NSString *itemDescription;
 @property (strong,nonatomic) NSString *showNotes;

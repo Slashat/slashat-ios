@@ -518,6 +518,9 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" type="user" id="FRh-cs-L5I"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                         <state key="normal" image="Slashat_mail.png">
                                             <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,25 +545,27 @@
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="0zW-HV-dkl"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="403-jT-fUI"/>
                                     <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="214" id="4xS-9e-Eze"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="CbF-Dr-od1"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="user" id="CbF-Dr-od1"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" type="default" id="Clq-ej-h4X"/>
+                                    <constraint firstAttribute="centerX" secondItem="CBu-JY-eKI" secondAttribute="centerX" type="user" id="Hcc-Eg-GyE"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="4hx-jF-Ekm" secondAttribute="trailing" constant="18" type="user" id="PK0-Pv-FTE"/>
                                     <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="wRf-an-U0c" secondAttribute="top" type="default" id="VPH-a2-9DC"/>
                                     <constraint firstItem="5DR-Di-HOm" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="212" id="XBh-FL-ZTC"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ZON-VC-2Qr"/>
                                     <constraint firstAttribute="bottom" secondItem="yii-un-JME" secondAttribute="bottom" constant="-53" id="bMn-fk-vUu"/>
-                                    <constraint firstItem="CBu-JY-eKI" firstAttribute="centerX" secondItem="4hx-jF-Ekm" secondAttribute="centerX" type="default" id="i4G-O6-GDa"/>
-                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="76" id="jF9-gg-r0v"/>
+                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="5DR-Di-HOm" secondAttribute="trailing" constant="18" type="user" id="fO4-AS-VIa"/>
+                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="76" type="user" id="jF9-gg-r0v"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ldY-Vs-7lh"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="258" id="mfK-Vb-bX7"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="200" id="n64-iB-Cvs"/>
+                                    <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="200" type="user" id="n64-iB-Cvs"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fwB-gs-HjC" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" type="default" id="G6U-Yq-SPf"/>
+                            <constraint firstItem="fwB-gs-HjC" firstAttribute="leading" secondItem="Yh4-ge-JpG" secondAttribute="leading" type="user" id="G6U-Yq-SPf"/>
                             <constraint firstItem="fwB-gs-HjC" firstAttribute="bottom" secondItem="Yh4-ge-JpG" secondAttribute="bottom" type="default" id="Klx-Ux-eYo"/>
-                            <constraint firstItem="fwB-gs-HjC" firstAttribute="trailing" secondItem="Yh4-ge-JpG" secondAttribute="trailing" type="default" id="WGK-Ce-qrW"/>
+                            <constraint firstItem="fwB-gs-HjC" firstAttribute="trailing" secondItem="Yh4-ge-JpG" secondAttribute="trailing" type="user" id="WGK-Ce-qrW"/>
                             <constraint firstItem="fwB-gs-HjC" firstAttribute="top" secondItem="Yh4-ge-JpG" secondAttribute="top" type="default" id="z8Z-1j-ka0"/>
                         </constraints>
                     </view>
