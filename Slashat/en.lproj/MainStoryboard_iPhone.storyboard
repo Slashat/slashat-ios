@@ -436,7 +436,7 @@
             </objects>
             <point key="canvasLocation" x="301" y="355"/>
         </scene>
-        <!--Slashat About Table View Controller - Programledare-->
+        <!--Slashat About Table View Controller - Om oss-->
         <scene sceneID="Gio-p3-jpX">
             <objects>
                 <tableViewController id="sik-nw-XZP" customClass="SlashatAboutTableViewController" sceneMemberID="viewController">
@@ -475,7 +475,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Programledare" id="fZg-Be-5h5"/>
+                    <navigationItem key="navigationItem" title="Om oss" id="fZg-Be-5h5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sod-oq-9ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

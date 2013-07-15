@@ -44,6 +44,9 @@
 {
     [super viewDidLoad];
     
+    UIColor *darkSeparatorColor = [UIColor colorWithRed:46/255.0f green:45/255.0f blue:48/255.0f alpha:1];
+    [[UITableViewHeaderFooterView appearance] setTintColor:darkSeparatorColor];
+    
     self.hosts = [self getSlashatHostsFromPlist];
     self.sectionNames = [self getSlashatHostSectionsFromPlist];
 }

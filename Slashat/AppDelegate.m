@@ -35,11 +35,13 @@
 
 - (void)setCustomNavigationBarAppearance
 {
-    UIColor *slashatNavigationBarColor = [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1];
+    UIColor *slashatNavigationBarColor = [UIColor colorWithRed:106/255.0f green:36/255.0f blue:12/255.0f alpha:1];
     [[UINavigationBar appearance] setTintColor:slashatNavigationBarColor];
     
-    UIColor *textColor = [UIColor blackColor];
-    UIColor *textShadowColor = [UIColor colorWithWhite:255.0 alpha:0.8];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    UIColor *textColor = [UIColor whiteColor];
+    UIColor *textShadowColor = [UIColor colorWithWhite:255.0 alpha:0];
     
     [[UINavigationBar appearance] setTitleTextAttributes: @{
                                 UITextAttributeTextColor: textColor,
