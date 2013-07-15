@@ -54,6 +54,23 @@
     self.descriptionTextView.frame = frame;    
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    [self.view layoutIfNeeded];
+    
+    CGRect frame = self.descriptionTextView.frame;
+    frame.size.height = self.descriptionTextView.contentSize.height - self.descriptionTextView.contentInset.bottom - self.descriptionTextView.contentInset.top;
+    self.descriptionTextView.frame = frame;
+    
+    CGFloat contentHeight = self.descriptionTextView.contentSize.height + self.descriptionTextView.frame.origin.y;
+    
+    CGSize contentSize = CGSizeMake(0, contentHeight);
+    
+    [self.scrollView setContentSize:contentSize];
+}
+
 - (IBAction) twitterButtonPressed:(id)sender
 {
     

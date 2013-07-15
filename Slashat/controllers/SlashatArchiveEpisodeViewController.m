@@ -41,7 +41,7 @@
     
     self.descriptionTextView.contentInset = UIEdgeInsetsMake(-8,-8,-8,-8);
     NSString *descriptionString = [NSString stringWithFormat:@"%@\n%@", self.episode.itemDescription, self.episode.showNotes];
-    self.descriptionTextView.text = descriptionString;
+    self.descriptionTextView.text = [descriptionString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     self.titleLabel.text = [self.episode.title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
@@ -55,15 +55,17 @@
 {
     [super viewDidLayoutSubviews];
     
+    [self.view layoutIfNeeded];
+        
     CGRect frame = self.descriptionTextView.frame;
-    frame.size.height = self.descriptionTextView.contentSize.height;
+    frame.size.height = self.descriptionTextView.contentSize.height - self.descriptionTextView.contentInset.bottom - self.descriptionTextView.contentInset.top;
     self.descriptionTextView.frame = frame;
     
     CGFloat contentHeight = self.descriptionTextView.contentSize.height + self.descriptionTextView.frame.origin.y;
     
     CGSize contentSize = CGSizeMake(0, contentHeight);
     
-    [self.scrollView setContentSize:contentSize];    
+    [self.scrollView setContentSize:contentSize];
 }
 
 - (IBAction)shareButtonPressed:(id)sender
