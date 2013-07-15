@@ -28,34 +28,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Live" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpr-ha-DVX">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prl-Jg-FKc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEM-9c-bAU">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="1VB-rw-9jr"/>
+                                    <constraint firstAttribute="height" constant="22" type="user" id="570-ds-LBQ"/>
+                                    <constraint firstAttribute="width" constant="154" type="user" id="M1m-GE-iQe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Dela på Twitter">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareOnTwitter:" destination="2" eventType="touchUpInside" id="nej-La-9eY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEM-9c-bAU">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Dela på Facebook">
+                                <state key="normal" image="Slashat_fbshare.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -66,21 +48,35 @@
                                     <action selector="shareOnFacebook:" destination="2" eventType="touchUpInside" id="JeZ-Vd-onE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsN-t9-twP">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" type="user" id="dF3-vb-yhT"/>
+                                    <constraint firstAttribute="width" constant="154" type="user" id="kSi-hJ-lao"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="Slashat_twittershare.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareOnTwitter:" destination="2" eventType="touchUpInside" id="Oah-ug-Zll"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="prl-Jg-FKc" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JB9-XE-RVW"/>
-                            <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qxj-1L-2Yh"/>
-                            <constraint firstItem="PEM-9c-bAU" firstAttribute="leading" secondItem="prl-Jg-FKc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="R7n-9L-WJl"/>
-                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ty9-wx-CyI"/>
+                            <constraint firstAttribute="bottom" secondItem="nsN-t9-twP" secondAttribute="bottom" constant="61" id="0kN-dc-5BV"/>
+                            <constraint firstItem="Rpr-ha-DVX" firstAttribute="centerX" secondItem="PEM-9c-bAU" secondAttribute="centerX" type="default" id="3YN-qa-wGS"/>
+                            <constraint firstItem="nsN-t9-twP" firstAttribute="top" secondItem="PEM-9c-bAU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8yT-c7-W9o"/>
+                            <constraint firstItem="nsN-t9-twP" firstAttribute="leading" secondItem="PEM-9c-bAU" secondAttribute="leading" type="user" id="Bhw-y3-JXG"/>
+                            <constraint firstItem="nsN-t9-twP" firstAttribute="trailing" secondItem="PEM-9c-bAU" secondAttribute="trailing" type="user" id="NWT-y8-Rkk"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="bD9-Q2-KF0"/>
-                            <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="188" id="bSv-xS-uPq"/>
-                            <constraint firstAttribute="trailing" secondItem="PEM-9c-bAU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ebk-5y-nXi"/>
-                            <constraint firstItem="PEM-9c-bAU" firstAttribute="baseline" secondItem="prl-Jg-FKc" secondAttribute="baseline" type="default" id="hYE-n4-xVZ"/>
-                            <constraint firstItem="prl-Jg-FKc" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nMY-OY-i2E"/>
-                            <constraint firstItem="20" firstAttribute="top" secondItem="Rpr-ha-DVX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="t5b-0e-Lvv"/>
+                            <constraint firstItem="Rpr-ha-DVX" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="jaB-cP-MJ5"/>
+                            <constraint firstAttribute="bottom" secondItem="Rpr-ha-DVX" secondAttribute="bottom" constant="225" id="sr9-J8-nm2"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="uNq-Nt-Y1x"/>
-                            <constraint firstItem="Rpr-ha-DVX" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="vfb-2G-4Ya"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Live" image="first" id="7"/>
@@ -343,7 +339,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-1C-Hxf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-1C-Hxf">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="102" id="RD5-WX-ak9"/>
                                         </constraints>
@@ -370,7 +366,6 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2013-01-10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-FK-O3R">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87" id="201-wc-Kv0"/>
-                                            <constraint firstAttribute="height" constant="21" id="4D3-CU-oIG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -665,9 +660,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Slashat_fbshare.png" width="154" height="22"/>
         <image name="Slashat_mail.png" width="44" height="44"/>
-        <image name="Slashat_stream.png" width="109" height="22"/>
+        <image name="Slashat_stream.png" width="96" height="22"/>
         <image name="Slashat_twitter.png" width="44" height="44"/>
+        <image name="Slashat_twittershare.png" width="154" height="22"/>
         <image name="Slashat_webb.png" width="44" height="44"/>
         <image name="first" width="16" height="16"/>
         <image name="second.png" width="30" height="30"/>

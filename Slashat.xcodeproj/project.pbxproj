@@ -94,6 +94,10 @@
 		04CA4C95179041DC00428565 /* Navigationbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C93179041DC00428565 /* Navigationbar@2x.png */; };
 		04CA4C981790448300428565 /* Slashat_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C961790448200428565 /* Slashat_logo.png */; };
 		04CA4C991790448300428565 /* Slashat_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C971790448300428565 /* Slashat_logo@2x.png */; };
+		04CA4C9E17941DE500428565 /* Slashat_fbshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9A17941DE500428565 /* Slashat_fbshare.png */; };
+		04CA4C9F17941DE500428565 /* Slashat_twittershare.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9B17941DE500428565 /* Slashat_twittershare.png */; };
+		04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */; };
+		04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +228,10 @@
 		04CA4C93179041DC00428565 /* Navigationbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Navigationbar@2x.png"; sourceTree = "<group>"; };
 		04CA4C961790448200428565 /* Slashat_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_logo.png; sourceTree = "<group>"; };
 		04CA4C971790448300428565 /* Slashat_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_logo@2x.png"; sourceTree = "<group>"; };
+		04CA4C9A17941DE500428565 /* Slashat_fbshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_fbshare.png; sourceTree = "<group>"; };
+		04CA4C9B17941DE500428565 /* Slashat_twittershare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_twittershare.png; sourceTree = "<group>"; };
+		04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_twittershare@2x.png"; sourceTree = "<group>"; };
+		04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_fbshare@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +270,10 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				04CA4C9A17941DE500428565 /* Slashat_fbshare.png */,
+				04CA4C9B17941DE500428565 /* Slashat_twittershare.png */,
+				04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */,
+				04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */,
 				04CA4C961790448200428565 /* Slashat_logo.png */,
 				04CA4C971790448300428565 /* Slashat_logo@2x.png */,
 				04CA4C92179041DC00428565 /* Navigationbar.png */,
@@ -640,6 +652,10 @@
 				04CA4C95179041DC00428565 /* Navigationbar@2x.png in Resources */,
 				04CA4C981790448300428565 /* Slashat_logo.png in Resources */,
 				04CA4C991790448300428565 /* Slashat_logo@2x.png in Resources */,
+				04CA4C9E17941DE500428565 /* Slashat_fbshare.png in Resources */,
+				04CA4C9F17941DE500428565 /* Slashat_twittershare.png in Resources */,
+				04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */,
+				04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
