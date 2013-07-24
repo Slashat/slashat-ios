@@ -141,11 +141,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"SlashatAboutHostProfileSegway"]) {
+    NSLog(@"SlashatAboutTableViewController prepareForSegue");
+    if ([segue.identifier isEqualToString:@"SlashatAboutHostProfileSegue"]) {
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         SlashatHost *selectedHost = [[self.hosts objectAtIndex:selectedIndexPath.section] objectAtIndex:selectedIndexPath.row];
 
         ((SlashatAboutHostProfileViewController *)segue.destinationViewController).host = selectedHost;
+        NSLog(@"SlashatAboutTableViewController prepareForSegue: host has been set");
     }
 }
 
