@@ -70,6 +70,9 @@
             host.profileImage = [UIImage imageNamed:[sectionHosts objectAtIndex:j][@"image"]];
             host.shortDescription = [sectionHosts objectAtIndex:j][@"short_description"];
             host.longDescription = [sectionHosts objectAtIndex:j][@"long_description"];
+            host.twitterHandle = [sectionHosts objectAtIndex:j][@"twitter"];
+            host.emailAdress = [sectionHosts objectAtIndex:j][@"mail"];
+            host.link = [NSURL URLWithString:[sectionHosts objectAtIndex:j][@"web"]];
             [hosts addObject:host];
         }
         

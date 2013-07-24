@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "SlashatHost.h"
 
-@interface SlashatAboutHostProfileViewController : UIViewController
+@interface SlashatAboutHostProfileViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) SlashatHost *host;
 

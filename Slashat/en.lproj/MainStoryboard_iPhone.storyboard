@@ -507,28 +507,79 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uo-Gs-3lO">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-pU-SQP">
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Slashat_webb.png">
+                                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="webButtonPressed:" destination="kaT-K8-JSB" eventType="touchUpInside" id="fiP-wB-pca"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" type="user" id="FRh-cs-L5I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Slashat_mail.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mailButtonPressed:" destination="kaT-K8-JSB" eventType="touchUpInside" id="cYK-9m-VRE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" type="user" id="32x-z9-nRr"/>
+                                                    <constraint firstAttribute="width" constant="44" type="user" id="70n-1v-Mwe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Slashat_twitter.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twitterButtonPressed:" destination="kaT-K8-JSB" eventType="touchUpInside" id="Kub-5c-dqB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Dox-pe-MPm"/>
+                                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="5DR-Di-HOm" secondAttribute="trailing" constant="20" type="user" id="7lq-1p-pYp"/>
+                                            <constraint firstItem="wRf-an-U0c" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="top" type="default" id="KXn-WU-7A2"/>
+                                            <constraint firstItem="5DR-Di-HOm" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="top" type="default" id="R1o-HU-qaF"/>
+                                            <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="4hx-jF-Ekm" secondAttribute="trailing" constant="20" type="user" id="aLs-jA-Cg3"/>
+                                            <constraint firstAttribute="height" constant="50" id="fGb-Js-xyz"/>
+                                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerY" secondItem="fhW-pU-SQP" secondAttribute="centerY" type="default" id="jK4-UI-G3Z"/>
+                                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fhW-pU-SQP" secondAttribute="centerX" type="default" id="mfh-FT-b2u"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="qtf-Wj-Udn" kind="embed" id="gc3-FX-6FI"/>
-                                        </connections>
-                                    </containerView>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="0zW-HV-dkl"/>
-                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="27F-Fe-zqa"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="403-jT-fUI"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="258" id="5Lx-HJ-Tsr"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" type="default" id="Clq-ej-h4X"/>
-                                    <constraint firstAttribute="bottom" secondItem="2uo-Gs-3lO" secondAttribute="bottom" constant="109" id="FyT-4o-9XR"/>
-                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="KXp-xz-nzV"/>
-                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="KnW-Eg-7GO"/>
+                                    <constraint firstAttribute="bottom" secondItem="fhW-pU-SQP" secondAttribute="bottom" constant="110" id="RuC-Rr-gQR"/>
+                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="W2n-ua-8yH"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ZON-VC-2Qr"/>
+                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="f4d-7K-4to"/>
+                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="knC-Zv-Aaa"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ldY-Vs-7lh"/>
-                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="258" id="mfK-Vb-bX7"/>
-                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="top" secondItem="CBu-JY-eKI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="p4n-ud-AL6"/>
+                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="207" id="wI5-Yp-d8A"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -633,68 +684,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-294" y="182"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gkL-D7-ZMS">
-            <objects>
-                <viewController id="qtf-Wj-Udn" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fhW-pU-SQP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="Slashat_webb.png">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" type="user" id="FRh-cs-L5I"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="Slashat_mail.png">
-                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" type="user" id="32x-z9-nRr"/>
-                                    <constraint firstAttribute="width" constant="44" type="user" id="70n-1v-Mwe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="Slashat_twitter.png">
-                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="5DR-Di-HOm" secondAttribute="trailing" constant="20" type="user" id="7lq-1p-pYp"/>
-                            <constraint firstItem="wRf-an-U0c" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="top" type="default" id="KXn-WU-7A2"/>
-                            <constraint firstItem="5DR-Di-HOm" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="top" type="default" id="R1o-HU-qaF"/>
-                            <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="4hx-jF-Ekm" secondAttribute="trailing" constant="20" type="user" id="aLs-jA-Cg3"/>
-                            <constraint firstItem="wRf-an-U0c" firstAttribute="centerY" secondItem="fhW-pU-SQP" secondAttribute="centerY" type="default" id="fbu-72-n0N"/>
-                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fhW-pU-SQP" secondAttribute="centerX" type="default" id="mfh-FT-b2u"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5tA-Qo-JHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1597" y="1230"/>
         </scene>
     </scenes>
     <resources>

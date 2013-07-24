@@ -71,19 +71,78 @@
     [self.scrollView setContentSize:contentSize];
 }
 
-- (IBAction) twitterButtonPressed:(id)sender
+- (IBAction)twitterButtonPressed:(id)sender
 {
+    NSArray *twitterUrls = [self getTwitterAppUrlsForTwitterHandle:self.host.twitterHandle];
     
+    for (NSURL *twitterUrl in twitterUrls) {
+        if ([[UIApplication sharedApplication] canOpenURL:twitterUrl]) {
+            [[UIApplication sharedApplication] openURL:twitterUrl];
+            break;
+        }
+    }
 }
 
-- (IBAction) webButtonPressed:(id)sender
+- (NSArray *)getTwitterAppUrlsForTwitterHandle:(NSString *)twitterHandle
 {
+    NSURL *tweetbotUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tweetbot:///user_profile/%@", twitterHandle]];
+    NSURL *twitterifficUrl = [NSURL URLWithString:[NSString stringWithFormat:@"twitterrific:///profile?screen_name=%@", twitterHandle]];
+    NSURL *twitterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", twitterHandle]];
     
+    NSArray *twitterAppUrls = [NSArray arrayWithObjects:tweetbotUrl, twitterifficUrl, twitterUrl, nil];
+    
+    return twitterAppUrls;
 }
 
-- (IBAction) mailButtonPressed:(id)sender
+- (IBAction)webButtonPressed:(id)sender
 {
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome://"]]) {
+        NSURL *chromeUrl = [NSURL URLWithString:[NSString stringWithFormat:@"googlechrome://%@", self.host.link]];
+        [[UIApplication sharedApplication] openURL:chromeUrl];
+    } else {
+        [[UIApplication sharedApplication] openURL:self.host.link];
+    }
+}
+
+- (IBAction)mailButtonPressed:(id)sender
+{
+    [self displayComposeMailSheet];
+}
+
+- (void)displayComposeMailSheet
+{
+    MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
+    mailComposeViewController.mailComposeDelegate = self;
     
+    NSArray *toRecipients = [NSArray arrayWithObjects:self.host.emailAdress,
+                             nil];
+    
+    [mailComposeViewController setToRecipients:toRecipients];
+    
+    [self presentViewController:mailComposeViewController animated:YES completion:nil];    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning

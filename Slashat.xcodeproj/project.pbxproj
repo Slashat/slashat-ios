@@ -82,6 +82,7 @@
 		04940492169C96BE00871DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940491169C96BE00871DB3 /* AVFoundation.framework */; };
 		04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940494169CA34600871DB3 /* AudioToolbox.framework */; };
 		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
+		04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04972487179FD2E4003685CD /* MessageUI.framework */; };
 		04CA4C88179033A300428565 /* Slashat_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C82179033A300428565 /* Slashat_mail.png */; };
 		04CA4C89179033A300428565 /* Slashat_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C83179033A300428565 /* Slashat_twitter.png */; };
 		04CA4C8A179033A300428565 /* Slashat_webb.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C84179033A300428565 /* Slashat_webb.png */; };
@@ -216,6 +217,7 @@
 		04940491169C96BE00871DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		04972487179FD2E4003685CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		04CA4C82179033A300428565 /* Slashat_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_mail.png; sourceTree = "<group>"; };
 		04CA4C83179033A300428565 /* Slashat_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_twitter.png; sourceTree = "<group>"; };
 		04CA4C84179033A300428565 /* Slashat_webb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_webb.png; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */,
 				046EF2F41763292B00005B82 /* Social.framework in Frameworks */,
 				048EC321173BA6C10043E57D /* MobileCoreServices.framework in Frameworks */,
 				048EC31F173BA6890043E57D /* SystemConfiguration.framework in Frameworks */,
@@ -370,6 +373,7 @@
 		043B543C169313A500B71F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04972487179FD2E4003685CD /* MessageUI.framework */,
 				046EF2F31763292B00005B82 /* Social.framework */,
 				048EC320173BA6C10043E57D /* MobileCoreServices.framework */,
 				048EC31E173BA6890043E57D /* SystemConfiguration.framework */,

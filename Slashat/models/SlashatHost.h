@@ -15,4 +15,9 @@
 @property (strong,nonatomic) NSString *shortDescription;
 @property (strong,nonatomic) NSString *longDescription;
 
+@property (strong,nonatomic) NSString *twitterHandle;
+@property (strong,nonatomic) NSURL *link;
+@property (strong,nonatomic) NSString *emailAdress;
+
+
 @end
