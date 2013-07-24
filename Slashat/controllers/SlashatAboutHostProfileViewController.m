@@ -36,22 +36,33 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"SlashatAboutHostProfileViewController: viewDidLoad: Calling [super viewDidLoad]");
     [super viewDidLoad];
     
+    NSLog(@"SlashatAboutHostProfileViewController: Setting nameLabel.text");
     self.nameLabel.text = self.host.name;
+    
+    NSLog(@"SlashatAboutHostProfileViewController: Setting descriptionTextView.text");
     self.descriptionTextView.text = self.host.longDescription;
+    
+    NSLog(@"SlashatAboutHostProfileViewController: Setting profileImageView");
     [self.profileImageView setImage:self.host.profileImage];
     
+    NSLog(@"SlashatAboutHostProfileViewController: Setting content modes on image views");
     [self.twitterButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.webButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.mailButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
     
+    NSLog(@"SlashatAboutHostProfileViewController: Setting navigationItem.title");
     self.navigationItem.title = self.host.name;
     
+    NSLog(@"SlashatAboutHostProfileViewController: Setting descriptionTextView.frame");
     CGRect frame;
     frame = self.descriptionTextView.frame;
     frame.size.height = [self.descriptionTextView contentSize].height;
-    self.descriptionTextView.frame = frame;    
+    self.descriptionTextView.frame = frame;
+    
+    NSLog(@"SlashatAboutHostProfileViewController: viewDidLoad: All set!");
 }
 
 - (void)viewDidLayoutSubviews
