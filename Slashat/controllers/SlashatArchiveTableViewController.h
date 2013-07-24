@@ -12,6 +12,8 @@
     NSMutableArray *_allEntries;
 }
 
+- (IBAction) subscribeButtonPressed:(id)sender;
+
 @property (retain) NSMutableArray *allEntries;
 
 @end
