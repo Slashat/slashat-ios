@@ -96,8 +96,9 @@
 
 - (IBAction)webButtonPressed:(id)sender
 {
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome://"]]) {
-        NSURL *chromeUrl = [NSURL URLWithString:[NSString stringWithFormat:@"googlechrome://%@", self.host.link]];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome:///"]]) {
+        // Chrome is installed
+        NSURL *chromeUrl = [NSURL URLWithString:[NSString stringWithFormat:@"googlechrome:///%@", self.host.link]];
         [[UIApplication sharedApplication] openURL:chromeUrl];
     } else {
         [[UIApplication sharedApplication] openURL:self.host.link];
@@ -106,7 +107,14 @@
 
 - (IBAction)mailButtonPressed:(id)sender
 {
-    [self displayComposeMailSheet];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlegmail:///"]]) {
+        // Gmail-app is installed
+        NSURL *gmailUrl = [NSURL URLWithString:[NSString stringWithFormat:@"googlegmail:///co?to=%@", self.host.emailAdress]];
+        [[UIApplication sharedApplication] openURL:gmailUrl];
+    } else {
+        [self displayComposeMailSheet];
+    }
+    
 }
 
 - (void)displayComposeMailSheet
