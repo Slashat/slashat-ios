@@ -49,7 +49,6 @@ NSDate *nextLiveShowDate;
     
     NSURL *calendarUrl = [NSURL URLWithString:calendarUrlString];
     
-    NSLog(@"calendarUrl: %@", calendarUrl);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:calendarUrl];
     [request setHTTPMethod:@"GET"];
             
