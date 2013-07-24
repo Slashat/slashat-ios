@@ -87,9 +87,11 @@
 {
     NSURL *tweetbotUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tweetbot:///user_profile/%@", twitterHandle]];
     NSURL *twitterifficUrl = [NSURL URLWithString:[NSString stringWithFormat:@"twitterrific:///profile?screen_name=%@", twitterHandle]];
-    NSURL *twitterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", twitterHandle]];
+    NSURL *twitterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"twitter:///user?screen_name=%@", twitterHandle]];
     
-    NSArray *twitterAppUrls = [NSArray arrayWithObjects:tweetbotUrl, twitterifficUrl, twitterUrl, nil];
+    NSURL *twitterWebUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", twitterHandle]];
+    
+    NSArray *twitterAppUrls = [NSArray arrayWithObjects:tweetbotUrl, twitterifficUrl, twitterUrl, twitterWebUrl, nil];
     
     return twitterAppUrls;
 }
