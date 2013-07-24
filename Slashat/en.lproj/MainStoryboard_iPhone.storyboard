@@ -25,7 +25,7 @@
             <objects>
                 <viewController title="First" id="2" customClass="SlashatLiveViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpr-ha-DVX">
@@ -280,7 +280,7 @@
             <objects>
                 <tableViewController id="8LT-hW-RdA" customClass="SlashatArchiveTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PIp-e9-PcS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -325,7 +325,7 @@
             <objects>
                 <viewController storyboardIdentifier="SlashatArchiveEpisode" id="WDs-f0-o1S" customClass="SlashatArchiveEpisodeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZC6-ti-xUL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-KE-Z6i">
@@ -436,7 +436,7 @@
             <objects>
                 <tableViewController id="sik-nw-XZP" customClass="SlashatAboutTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ULb-rk-SFq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -481,7 +481,7 @@
             <objects>
                 <viewController id="kaT-K8-JSB" customClass="SlashatAboutHostProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yh4-ge-JpG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-gs-HjC">
@@ -491,16 +491,6 @@
                                             <constraint firstAttribute="height" constant="200" id="WDP-it-Yaa"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
-                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" image="Slashat_webb.png">
-                                            <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -517,47 +507,28 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
+                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uo-Gs-3lO">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" type="user" id="FRh-cs-L5I"/>
+                                            <constraint firstAttribute="height" constant="50" id="Dox-pe-MPm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" image="Slashat_mail.png">
-                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
-                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" image="Slashat_twitter.png">
-                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
+                                        <connections>
+                                            <segue destination="qtf-Wj-Udn" kind="embed" id="gc3-FX-6FI"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="0zW-HV-dkl"/>
+                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="27F-Fe-zqa"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="403-jT-fUI"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="214" id="4xS-9e-Eze"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="user" id="CbF-Dr-od1"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" type="default" id="Clq-ej-h4X"/>
-                                    <constraint firstAttribute="centerX" secondItem="CBu-JY-eKI" secondAttribute="centerX" type="user" id="Hcc-Eg-GyE"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="4hx-jF-Ekm" secondAttribute="trailing" constant="18" type="user" id="PK0-Pv-FTE"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="top" secondItem="wRf-an-U0c" secondAttribute="top" type="default" id="VPH-a2-9DC"/>
-                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="212" id="XBh-FL-ZTC"/>
+                                    <constraint firstAttribute="bottom" secondItem="2uo-Gs-3lO" secondAttribute="bottom" constant="109" id="FyT-4o-9XR"/>
+                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="KXp-xz-nzV"/>
+                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="KnW-Eg-7GO"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ZON-VC-2Qr"/>
-                                    <constraint firstAttribute="bottom" secondItem="yii-un-JME" secondAttribute="bottom" constant="-53" id="bMn-fk-vUu"/>
-                                    <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="5DR-Di-HOm" secondAttribute="trailing" constant="18" type="user" id="fO4-AS-VIa"/>
-                                    <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="76" type="user" id="jF9-gg-r0v"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ldY-Vs-7lh"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="258" id="mfK-Vb-bX7"/>
-                                    <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" constant="200" type="user" id="n64-iB-Cvs"/>
+                                    <constraint firstItem="2uo-Gs-3lO" firstAttribute="top" secondItem="CBu-JY-eKI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="p4n-ud-AL6"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -663,6 +634,68 @@
             </objects>
             <point key="canvasLocation" x="-294" y="182"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gkL-D7-ZMS">
+            <objects>
+                <viewController id="qtf-Wj-Udn" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fhW-pU-SQP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-jF-Ekm">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" image="Slashat_webb.png">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" type="user" id="FRh-cs-L5I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" image="Slashat_mail.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" type="user" id="32x-z9-nRr"/>
+                                    <constraint firstAttribute="width" constant="44" type="user" id="70n-1v-Mwe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" image="Slashat_twitter.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="leading" secondItem="5DR-Di-HOm" secondAttribute="trailing" constant="20" type="user" id="7lq-1p-pYp"/>
+                            <constraint firstItem="wRf-an-U0c" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="top" type="default" id="KXn-WU-7A2"/>
+                            <constraint firstItem="5DR-Di-HOm" firstAttribute="top" secondItem="4hx-jF-Ekm" secondAttribute="top" type="default" id="R1o-HU-qaF"/>
+                            <constraint firstItem="wRf-an-U0c" firstAttribute="leading" secondItem="4hx-jF-Ekm" secondAttribute="trailing" constant="20" type="user" id="aLs-jA-Cg3"/>
+                            <constraint firstItem="wRf-an-U0c" firstAttribute="centerY" secondItem="fhW-pU-SQP" secondAttribute="centerY" type="default" id="fbu-72-n0N"/>
+                            <constraint firstItem="4hx-jF-Ekm" firstAttribute="centerX" secondItem="fhW-pU-SQP" secondAttribute="centerX" type="default" id="mfh-FT-b2u"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tA-Qo-JHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597" y="1230"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Slashat_fbshare.png" width="154" height="22"/>
@@ -743,6 +776,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
