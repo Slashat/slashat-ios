@@ -115,7 +115,7 @@
         NSURL *podcastUrl = [NSURL URLWithString:@"podcast://slashat.se/avsnitt.rss"];
         [[UIApplication sharedApplication] openURL:podcastUrl];
     } else {
-        NSURL *itunesUrl = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=309930774"];
+        NSURL *itunesUrl = [NSURL URLWithString:@"http://slashat.se/avsnitt.rss"];
         [[UIApplication sharedApplication] openURL:itunesUrl];
     }
 }
