@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *audioControlsView;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *episodeTitle;
 
 @end
 
@@ -122,6 +123,8 @@
         self.isShowingAudioControlsView = YES;
         NSTimer *updateTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateCurrentTime) userInfo:nil repeats:YES];
     }
+    
+    self.episodeTitle.text = [NSString stringWithFormat:@"Episod %d - %@", episode.episodeNumber, episode.title];
 }
 
 - (void)initializeProgressAndDuration
