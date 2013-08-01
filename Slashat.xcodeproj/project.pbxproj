@@ -100,6 +100,7 @@
 		04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */; };
 		04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
+		40EAEE8717AA6FA6006E3F85 /* SlashatAudioControlsView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EAEE8617AA6FA6006E3F85 /* SlashatAudioControlsView~iphone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +237,7 @@
 		04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_fbshare@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
+		40EAEE8617AA6FA6006E3F85 /* SlashatAudioControlsView~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatAudioControlsView~iphone.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +405,7 @@
 				043B544D169313A500B71F3A /* AppDelegate.m */,
 				043B5455169313A500B71F3A /* MainStoryboard_iPhone.storyboard */,
 				043B5458169313A500B71F3A /* MainStoryboard_iPad.storyboard */,
+				40EAEE8617AA6FA6006E3F85 /* SlashatAudioControlsView~iphone.xib */,
 				048EC323173BB1D50043E57D /* Utils */,
 				043B5444169313A500B71F3A /* Supporting Files */,
 			);
@@ -660,6 +663,7 @@
 				04CA4C9F17941DE500428565 /* Slashat_twittershare.png in Resources */,
 				04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */,
 				04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */,
+				40EAEE8717AA6FA6006E3F85 /* SlashatAudioControlsView~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

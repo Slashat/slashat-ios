@@ -11,8 +11,14 @@
 
 @interface AppDelegate ()
 @property (strong, nonatomic) SlashatAudioHandler *audioHandler;
-@property (strong, nonatomic) MPVolumeView *audioControllerView;
-@property (assign, nonatomic) BOOL isShowingAudioControllerView;
+@property (assign, nonatomic) BOOL isShowingAudioControlsView;
+
+@property (weak, nonatomic) IBOutlet UIButton *hideShowAudioControlsButton;
+@property (weak, nonatomic) IBOutlet UIButton *playPauseButton;
+@property (weak, nonatomic) IBOutlet UISlider *audioControlsSlider;
+@property (weak, nonatomic) IBOutlet UIView *audioControlsContentView;
+@property (weak, nonatomic) IBOutlet UIView *audioControlsView;
+
 @end
 
 @implementation AppDelegate
@@ -99,43 +105,25 @@
     [self.audioHandler setEpisode:episode];
     [self.audioHandler play];
     
-    CGSize applicationFrameSize = [UIScreen mainScreen].bounds.size;
-    CGFloat audioControllerHeight = 40.0f; // This is the minimized height, the full height i 100
-    // 49 = tab bar height, 20 = status bar height
-    CGFloat audioControllerOriginY = applicationFrameSize.height - audioControllerHeight - 49.0f;
-    CGRect audioControllerFrame = CGRectMake(0.0f,
-                                             audioControllerOriginY,
-                                             applicationFrameSize.width,
-                                             audioControllerHeight);
-    
-    if (!self.audioControllerView) {
-        self.audioControllerView = [[MPVolumeView alloc] initWithFrame:audioControllerFrame];
-        self.audioControllerView.showsRouteButton = YES;
-        self.audioControllerView.showsVolumeSlider = YES;
-        self.audioControllerView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.6f];
+    if (!self.audioControlsView.superview) {        
+        self.audioControlsView = [[[NSBundle mainBundle] loadNibNamed:@"SlashatAudioControlsView" owner:self options:nil] objectAtIndex:0];
         
-        UIButton *playPauseButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        playPauseButton.frame = CGRectMake(48.0f, 20.0f, 100.0f, 60.0f);
-        [playPauseButton setTitle:@"Play/Pause" forState:UIControlStateNormal];
-        [playPauseButton addTarget:self
-                            action:@selector(playPauseAudio:)
-                  forControlEvents:UIControlEventTouchUpInside];
-        [self.audioControllerView addSubview:playPauseButton];
+        UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+        [tabBarController.view insertSubview:self.audioControlsView belowSubview:tabBarController.tabBar];
         
-        UIButton *hideShowButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        hideShowButton.frame = CGRectMake(0.0f, 0.0f, applicationFrameSize.width, 40.0f);
-        [hideShowButton setTitle:@"Hide/Show" forState:UIControlStateNormal];
-        [hideShowButton addTarget:self
-                           action:@selector(hideShowAudioControllerView:)
-                 forControlEvents:UIControlEventTouchUpInside];
-        [self.audioControllerView addSubview:hideShowButton];
+        CGRect audioControlsFrame = self.audioControlsView.frame;
+        audioControlsFrame.origin.y = tabBarController.view.frame.size.height
+                                    - tabBarController.tabBar.frame.size.height
+                                    - self.audioControlsView.frame.size.height;
+        self.audioControlsView.frame = audioControlsFrame;
+        
+        self.isShowingAudioControlsView = YES;
     }
-    
-    [self.window.rootViewController.view addSubview:self.audioControllerView];
-    self.isShowingAudioControllerView = NO;
 }
 
-- (IBAction)playPauseAudio:(id)sender
+#pragma mark - Actions
+
+- (IBAction)playPauseButtonClicked:(id)sender
 {
     if (self.audioHandler.isPlaying) {
         [self.audioHandler pause];
@@ -144,30 +132,21 @@
     }
 }
 
-- (IBAction)hideShowAudioControllerView:(id)sender
+- (IBAction)hideShowAudioControlsButtonClicked:(id)sender
 {
-    NSTimeInterval duration = 0.2;
-    CGFloat fullHeight = 100.0f;
-    CGFloat minimizedHeight = 40.0f;
-    CGFloat heightChange = fullHeight - minimizedHeight;
-    BOOL newShowStatus;
-
-    CGRect newFrame = self.audioControllerView.frame;
+    CGRect newFrame = self.audioControlsView.frame;
+    CGFloat audioControlsContentViewHeight = self.audioControlsContentView.frame.size.height;
     
-    if (self.isShowingAudioControllerView) {
-        newFrame.size.height = minimizedHeight;
-        newFrame.origin.y += heightChange;
-        newShowStatus = NO;
+    if (self.isShowingAudioControlsView) {
+        newFrame.origin.y += audioControlsContentViewHeight;
     } else {
-        newFrame.size.height = fullHeight;
-        newFrame.origin.y -= heightChange;
-        newShowStatus = YES;
+        newFrame.origin.y -= audioControlsContentViewHeight;
     }
     
-    [UIView animateWithDuration:duration animations:^{
-        self.audioControllerView.frame = newFrame;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.audioControlsView.frame = newFrame;
     } completion:^(BOOL finished) {
-        self.isShowingAudioControllerView = newShowStatus;
+        self.isShowingAudioControlsView = !self.isShowingAudioControlsView;
     }];
 }
 
