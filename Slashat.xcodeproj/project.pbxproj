@@ -47,6 +47,7 @@
 		0452944D16985951001F0504 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944316985951001F0504 /* AFXMLRequestOperation.m */; };
 		0452944E16985951001F0504 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944516985951001F0504 /* UIImageView+AFNetworking.m */; };
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
+		04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
 		046DEAAA17820AC5004A3A88 /* Slashat_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DEAA817820AC5004A3A88 /* Slashat_about@2x.png */; };
 		046DEAAB17820AC5004A3A88 /* Slashat_archive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DEAA917820AC5004A3A88 /* Slashat_archive@2x.png */; };
@@ -175,6 +176,7 @@
 		0452944416985951001F0504 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		0452944516985951001F0504 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat@2x.png"; sourceTree = "<group>"; };
 		046D60DD16BD0E0C0088678E /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		046D60DE16BD12D80088678E /* SlashatLiveVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatLiveVideoViewController.h; sourceTree = "<group>"; };
 		046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatLiveVideoViewController.m; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 		04789291177EEEFE0091B0AD /* hosts */ = {
 			isa = PBXGroup;
 			children = (
+				04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */,
 				0478929C177EFC6E0091B0AD /* nicklas@2x.png */,
 				0478929A177EF2DE0091B0AD /* snyggtommie@2x.jpg */,
 				04789296177EF0EF0091B0AD /* snyggjohan@2x.jpg */,
@@ -660,6 +663,7 @@
 				04CA4C9F17941DE500428565 /* Slashat_twittershare.png in Resources */,
 				04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */,
 				04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */,
+				04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

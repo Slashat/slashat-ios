@@ -99,6 +99,28 @@ Arbetar hellre i OS X och Linux än i Windows när jag vill vara produktiv. Anv�
 				<key>type</key>
 				<string>contributor</string>
 				<key>name</key>
+				<string>Hjälp till med appen!</string>
+				<key>image</key>
+				<string>femalecodertocat.png</string>
+				<key>twitter</key>
+				<string></string>
+				<key>mail</key>
+				<string>johan@slashat.se</string>
+				<key>web</key>
+				<string>https://github.com/Slashat</string>
+				<key>short_description</key>
+				<string>Sugen på att dra ditt strå till stacken?</string>
+				<key>long_description</key>
+				<string>Har du åsikter eller kunskaper för hur du vill förbättra appen? Dela med dig!
+
+Vare sig du är en van kodknackare eller om du bara hittat en felstavning någonstans så kom och hjälp till. All hjälp är välkommen! Koden ligger på GitHub och på Slashats forum så kan man diskutera alla delar av appen. 
+
+Behöver du hjälp med att komma igång så kan du antingen mejla eller slänga upp en tråd på forumet. </string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>contributor</string>
+				<key>name</key>
 				<string>Nicklas</string>
 				<key>image</key>
 				<string>nicklas.png</string>
