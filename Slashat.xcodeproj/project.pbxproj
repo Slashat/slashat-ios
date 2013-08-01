@@ -84,6 +84,10 @@
 		04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940494169CA34600871DB3 /* AudioToolbox.framework */; };
 		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
 		04956B5117AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5017AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib */; };
+		04956B5617AA876200091C26 /* Slashat_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5217AA876200091C26 /* Slashat_pause.png */; };
+		04956B5717AA876200091C26 /* Slashat_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5317AA876200091C26 /* Slashat_play.png */; };
+		04956B5817AA876200091C26 /* Slashat_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5417AA876200091C26 /* Slashat_pause@2x.png */; };
+		04956B5917AA876200091C26 /* Slashat_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5517AA876200091C26 /* Slashat_play@2x.png */; };
 		04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04972487179FD2E4003685CD /* MessageUI.framework */; };
 		04CA4C88179033A300428565 /* Slashat_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C82179033A300428565 /* Slashat_mail.png */; };
 		04CA4C89179033A300428565 /* Slashat_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C83179033A300428565 /* Slashat_twitter.png */; };
@@ -221,6 +225,10 @@
 		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04956B5017AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatAudioControlsView~iphone.xib"; sourceTree = "<group>"; };
+		04956B5217AA876200091C26 /* Slashat_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_pause.png; sourceTree = "<group>"; };
+		04956B5317AA876200091C26 /* Slashat_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_play.png; sourceTree = "<group>"; };
+		04956B5417AA876200091C26 /* Slashat_pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_pause@2x.png"; sourceTree = "<group>"; };
+		04956B5517AA876200091C26 /* Slashat_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_play@2x.png"; sourceTree = "<group>"; };
 		04972487179FD2E4003685CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		04CA4C82179033A300428565 /* Slashat_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_mail.png; sourceTree = "<group>"; };
 		04CA4C83179033A300428565 /* Slashat_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_twitter.png; sourceTree = "<group>"; };
@@ -277,6 +285,10 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				04956B5217AA876200091C26 /* Slashat_pause.png */,
+				04956B5317AA876200091C26 /* Slashat_play.png */,
+				04956B5417AA876200091C26 /* Slashat_pause@2x.png */,
+				04956B5517AA876200091C26 /* Slashat_play@2x.png */,
 				04CA4C9A17941DE500428565 /* Slashat_fbshare.png */,
 				04CA4C9B17941DE500428565 /* Slashat_twittershare.png */,
 				04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */,
@@ -668,6 +680,10 @@
 				04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */,
 				04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */,
 				04956B5117AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib in Resources */,
+				04956B5617AA876200091C26 /* Slashat_pause.png in Resources */,
+				04956B5717AA876200091C26 /* Slashat_play.png in Resources */,
+				04956B5817AA876200091C26 /* Slashat_pause@2x.png in Resources */,
+				04956B5917AA876200091C26 /* Slashat_play@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

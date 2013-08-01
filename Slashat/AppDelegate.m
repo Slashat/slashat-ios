@@ -15,9 +15,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *hideShowAudioControlsButton;
 @property (weak, nonatomic) IBOutlet UIButton *playPauseButton;
-@property (weak, nonatomic) IBOutlet UISlider *audioControlsSlider;
+@property (weak, nonatomic) IBOutlet UIProgressView *audioControlsSlider;
 @property (weak, nonatomic) IBOutlet UIView *audioControlsContentView;
 @property (weak, nonatomic) IBOutlet UIView *audioControlsView;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
 
 @end
 
@@ -118,7 +120,27 @@
         self.audioControlsView.frame = audioControlsFrame;
         
         self.isShowingAudioControlsView = YES;
+        NSTimer *updateTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateCurrentTime) userInfo:nil repeats:YES];
     }
+}
+
+- (void)initializeProgressAndDuration
+{
+    
+}
+
+- (void)updateCurrentTime
+{
+    int currentPlaybackTime = (int)self.audioHandler.player.currentPlaybackTime;
+    int timeLeft = (int)self.audioHandler.player.duration - currentPlaybackTime;
+    
+    self.progressLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", currentPlaybackTime / (60*60), (currentPlaybackTime / 60) % 60, currentPlaybackTime % 60, nil];
+    
+    self.timeLeftLabel.text = [NSString stringWithFormat:@"-%02d:%02d:%02d", timeLeft / (60*60), (timeLeft / 60) % 60, timeLeft % 60, nil];
+    
+    [self.audioControlsSlider setProgress:((float)currentPlaybackTime / (float)timeLeft) animated:YES];
+
+    //self.audioControlsSlider.value = self.player.currentTime;
 }
 
 #pragma mark - Actions
