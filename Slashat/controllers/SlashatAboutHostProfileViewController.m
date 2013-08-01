@@ -15,6 +15,8 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
 
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
+
 @property (nonatomic, weak) IBOutlet UIButton *twitterButton;
 @property (nonatomic, weak) IBOutlet UIButton *webButton;
 @property (nonatomic, weak) IBOutlet UIButton *mailButton;
@@ -45,6 +47,7 @@
     NSLog(@"SlashatAboutHostProfileViewController: Setting descriptionTextView.text");
     self.descriptionTextView.text = self.host.longDescription;
     
+    
     NSLog(@"SlashatAboutHostProfileViewController: Setting profileImageView");
     [self.profileImageView setImage:self.host.profileImage];
     
@@ -56,30 +59,14 @@
     NSLog(@"SlashatAboutHostProfileViewController: Setting navigationItem.title");
     self.navigationItem.title = self.host.name;
     
-    NSLog(@"SlashatAboutHostProfileViewController: Setting descriptionTextView.frame");
-    CGRect frame;
-    frame = self.descriptionTextView.frame;
-    frame.size.height = [self.descriptionTextView contentSize].height;
-    self.descriptionTextView.frame = frame;
-    
     NSLog(@"SlashatAboutHostProfileViewController: viewDidLoad: All set!");
 }
 
-- (void)viewDidLayoutSubviews
+- (void)viewWillLayoutSubviews
 {
-    [super viewDidLayoutSubviews];
-    
+    [super viewWillLayoutSubviews];
     [self.view layoutIfNeeded];
-    
-    CGRect frame = self.descriptionTextView.frame;
-    frame.size.height = self.descriptionTextView.contentSize.height - self.descriptionTextView.contentInset.bottom - self.descriptionTextView.contentInset.top;
-    self.descriptionTextView.frame = frame;
-    
-    CGFloat contentHeight = self.descriptionTextView.contentSize.height + self.descriptionTextView.frame.origin.y;
-    
-    CGSize contentSize = CGSizeMake(0, contentHeight);
-    
-    [self.scrollView setContentSize:contentSize];
+    self.textViewHeightConstraint.constant = self.descriptionTextView.contentSize.height;    
 }
 
 - (IBAction)twitterButtonPressed:(id)sender

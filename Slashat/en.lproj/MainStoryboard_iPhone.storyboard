@@ -497,20 +497,13 @@
                                             <constraint firstAttribute="height" constant="200" id="WDP-it-Yaa"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
+                                    <textView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yii-un-JME">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="5Sg-1G-k61"/>
+                                            <constraint firstAttribute="height" constant="100" type="user" id="pMl-RA-wXW"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="14" name="Helvetica"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-pU-SQP">
@@ -577,15 +570,15 @@
                                 <constraints>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="0zW-HV-dkl"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="403-jT-fUI"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="8Sx-Sh-k2E"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" type="default" id="Clq-ej-h4X"/>
-                                    <constraint firstAttribute="bottom" secondItem="fhW-pU-SQP" secondAttribute="bottom" constant="110" id="RuC-Rr-gQR"/>
+                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="207" id="GoP-Ol-7G1"/>
+                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fhW-pU-SQP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="IcH-Hf-fW7"/>
                                     <constraint firstItem="fhW-pU-SQP" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="W2n-ua-8yH"/>
-                                    <constraint firstItem="yii-un-JME" firstAttribute="top" secondItem="fhW-pU-SQP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Y8u-lt-1ls"/>
+                                    <constraint firstAttribute="bottom" secondItem="yii-un-JME" secondAttribute="bottom" constant="2" id="ZCw-PD-o5t"/>
                                     <constraint firstItem="yii-un-JME" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ZON-VC-2Qr"/>
                                     <constraint firstItem="fhW-pU-SQP" firstAttribute="leading" secondItem="fwB-gs-HjC" secondAttribute="leading" type="default" id="f4d-7K-4to"/>
-                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="centerX" secondItem="fwB-gs-HjC" secondAttribute="centerX" type="default" id="knC-Zv-Aaa"/>
                                     <constraint firstItem="CBu-JY-eKI" firstAttribute="trailing" secondItem="fwB-gs-HjC" secondAttribute="trailing" type="default" id="ldY-Vs-7lh"/>
-                                    <constraint firstItem="fhW-pU-SQP" firstAttribute="top" secondItem="fwB-gs-HjC" secondAttribute="top" constant="207" id="wI5-Yp-d8A"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -602,6 +595,7 @@
                         <outlet property="descriptionTextView" destination="yii-un-JME" id="V96-he-Npw"/>
                         <outlet property="mailButton" destination="wRf-an-U0c" id="D3R-vz-BY2"/>
                         <outlet property="profileImageView" destination="CBu-JY-eKI" id="rdg-cw-iNN"/>
+                        <outlet property="textViewHeightConstraint" destination="pMl-RA-wXW" id="NIc-9S-XL4"/>
                         <outlet property="twitterButton" destination="4hx-jF-Ekm" id="Ice-MR-OdH"/>
                     </connections>
                 </viewController>
@@ -717,6 +711,7 @@
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="textViewHeightConstraint" candidateClass="NSLayoutConstraint"/>
                 <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="webButton" candidateClass="UIButton"/>
             </relationships>
