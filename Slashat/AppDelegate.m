@@ -121,9 +121,7 @@
                                     - tabBarController.tabBar.frame.size.height
                                     - self.audioControlsView.frame.size.height;
         self.audioControlsView.frame = audioControlsFrame;
-        
-        [self setPlayerContentAlpha:0.2];
-        
+                
         self.isShowingAudioControlsView = YES;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioHandlerLoadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:self.audioHandler.player];
@@ -132,6 +130,9 @@
     }
     
     self.episodeTitle.text = [NSString stringWithFormat:@"Episod %d - %@", episode.episodeNumber, episode.title];
+    
+    [self setPlayerContentAlpha:0.2];
+    self.playerActivityIndicator.hidden = NO;
 }
 
 -(void)audioHandlerLoadStateDidChange:(NSNotification *)notification
