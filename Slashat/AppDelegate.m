@@ -127,6 +127,7 @@
         self.isShowingAudioControlsView = YES;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioHandlerLoadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:self.audioHandler.player];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioHandlerPlaybackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:self.audioHandler.player];
         
     }
     
@@ -142,6 +143,11 @@
         self.playerActivityIndicator.hidden = YES;
         [self setPlayerContentAlpha:1.0];
     }
+}
+
+-(void)audioHandlerPlaybackDidFinish:(NSNotification *)notification
+{
+    [self.audioControlsView removeFromSuperview];
 }
 
 -(void)setPlayerContentAlpha:(CGFloat)newAlpha
