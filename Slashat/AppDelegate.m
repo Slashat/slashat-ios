@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *episodeTitle;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *playerActivityIndicator;
+
 
 @end
 
@@ -120,11 +122,35 @@
                                     - self.audioControlsView.frame.size.height;
         self.audioControlsView.frame = audioControlsFrame;
         
+        [self setPlayerContentAlpha:0.2];
+        
         self.isShowingAudioControlsView = YES;
-        NSTimer *updateTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateCurrentTime) userInfo:nil repeats:YES];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioHandlerLoadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:self.audioHandler.player];
+        
     }
     
     self.episodeTitle.text = [NSString stringWithFormat:@"Episod %d - %@", episode.episodeNumber, episode.title];
+}
+
+-(void)audioHandlerLoadStateDidChange:(NSNotification *)notification
+{
+    MPMoviePlayerController* playerController = notification.object;
+    
+    if ([playerController loadState] & MPMovieLoadStatePlayable) {
+        NSTimer *updateTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateCurrentTime) userInfo:nil repeats:YES];
+        self.playerActivityIndicator.hidden = YES;
+        [self setPlayerContentAlpha:1.0];
+    }
+}
+
+-(void)setPlayerContentAlpha:(CGFloat)newAlpha
+{
+    self.progressLabel.alpha = newAlpha;
+    self.timeLeftLabel.alpha = newAlpha;
+    self.audioControlsSlider.alpha = newAlpha;
+    self.episodeTitle.alpha = newAlpha;
+    self.playPauseButton.alpha = newAlpha;
 }
 
 - (void)initializeProgressAndDuration
@@ -152,9 +178,16 @@
 {
     if (self.audioHandler.isPlaying) {
         [self.audioHandler pause];
+        [self setPlayPauseButtonImage:@"Slashat_play.png"];
     } else {
         [self.audioHandler play];
+        [self setPlayPauseButtonImage:@"Slashat_pause.png"];
     }
+}
+
+- (void)setPlayPauseButtonImage:(NSString *)imageName
+{
+    [self.playPauseButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }
 
 - (IBAction)hideShowAudioControlsButtonClicked:(id)sender
