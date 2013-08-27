@@ -109,6 +109,8 @@
 		04CA4C9F17941DE500428565 /* Slashat_twittershare.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9B17941DE500428565 /* Slashat_twittershare.png */; };
 		04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */; };
 		04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */; };
+		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
+		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
 /* End PBXBuildFile section */
 
@@ -254,6 +256,8 @@
 		04CA4C9B17941DE500428565 /* Slashat_twittershare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_twittershare.png; sourceTree = "<group>"; };
 		04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_twittershare@2x.png"; sourceTree = "<group>"; };
 		04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_fbshare@2x.png"; sourceTree = "<group>"; };
+		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
+		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -293,6 +297,8 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				04E9FE0217CD29A500D77E83 /* podcast_icon.png */,
+				04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */,
 				04956B5E17B56A8400091C26 /* player_flap_icon.png */,
 				04956B5F17B56A8400091C26 /* player_flap_icon@2x.png */,
 				04956B5A17B5690A00091C26 /* player_flap.png */,
@@ -700,6 +706,8 @@
 				04956B5D17B5690A00091C26 /* player_flap@2x.png in Resources */,
 				04956B6017B56A8400091C26 /* player_flap_icon.png in Resources */,
 				04956B6117B56A8400091C26 /* player_flap_icon@2x.png in Resources */,
+				04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */,
+				04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,7 +895,7 @@
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0E644E37-0D19-4F4B-8DF8-B9C53186889E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B15126E0-0262-44D3-9DBD-065AEC443E53";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
