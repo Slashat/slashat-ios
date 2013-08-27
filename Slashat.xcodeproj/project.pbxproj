@@ -895,7 +895,7 @@
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B15126E0-0262-44D3-9DBD-065AEC443E53";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "03E5151A-4E7F-4056-828E-29B449E8A12A";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
