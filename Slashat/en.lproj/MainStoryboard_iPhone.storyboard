@@ -76,8 +76,8 @@
                             <constraint firstItem="nsN-t9-twP" firstAttribute="leading" secondItem="PEM-9c-bAU" secondAttribute="leading" type="user" id="Bhw-y3-JXG"/>
                             <constraint firstItem="nsN-t9-twP" firstAttribute="trailing" secondItem="PEM-9c-bAU" secondAttribute="trailing" type="user" id="NWT-y8-Rkk"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="bD9-Q2-KF0"/>
+                            <constraint firstAttribute="bottom" secondItem="Rpr-ha-DVX" secondAttribute="bottom" constant="127" id="ilZ-tz-Hzm"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="jaB-cP-MJ5"/>
-                            <constraint firstAttribute="bottom" secondItem="Rpr-ha-DVX" secondAttribute="bottom" constant="225" id="sr9-J8-nm2"/>
                             <constraint firstItem="Rpr-ha-DVX" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="uNq-Nt-Y1x"/>
                         </constraints>
                     </view>

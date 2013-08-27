@@ -64,21 +64,21 @@
 - (void)playStream:(NSURL *)streamUrl
 {
     _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:streamUrl];
+    
+    [_moviePlayer.view setFrame:self.view.bounds];
+    [self.view addSubview: _moviePlayer.view];
+    
     [_moviePlayer setMovieSourceType:MPMovieSourceTypeStreaming];
     [_moviePlayer prepareToPlay];
     [_moviePlayer setControlStyle:MPMovieControlStyleEmbedded];
     [_moviePlayer setAllowsAirPlay:YES];
-    
-    [_moviePlayer.view setFrame:self.view.bounds];
-    [self.view addSubview: _moviePlayer.view];
-    [_moviePlayer play];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieExitedFullScreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
+        
+    /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieExitedFullScreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieEnteredFullScreen:) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
 
     
-    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)  name:UIDeviceOrientationDidChangeNotification  object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)  name:UIDeviceOrientationDidChangeNotification  object:nil];*/
 }
 
 - (void)movieEnteredFullScreen:(NSNotification *)notification
