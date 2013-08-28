@@ -13,7 +13,7 @@
 #import "SlashatLiveVideoViewController.h"
 #import <Social/Social.h>
 
-const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 240.0f}};
+const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
 
 @interface SlashatLiveViewController ()
 
