@@ -336,7 +336,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-KE-Z6i">
                                 <subviews>
-                                    <textView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
+                                    <textView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="352" id="0wL-id-TTK"/>
                                         </constraints>
@@ -697,76 +697,6 @@
         <image name="podcast_icon.png" width="20" height="20"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SlashatAboutHostProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutHostProfileViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="mailButtonPressed:"/>
-                <relationship kind="action" name="twitterButtonPressed:"/>
-                <relationship kind="action" name="webButtonPressed:"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="mailButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="textViewHeightConstraint" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="webButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="SlashatAboutTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutTableViewController.h"/>
-        </class>
-        <class className="SlashatArchiveEpisodeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatArchiveEpisodeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="playButtonPressed:"/>
-                <relationship kind="action" name="shareButtonPressed:"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SlashatArchiveTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatArchiveTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="subscribeButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="SlashatAudioControlViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAudioControlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="SlashatCountdownViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatCountdownViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="countdownHeaderLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SlashatLiveVideoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatLiveVideoViewController.h"/>
-        </class>
-        <class className="SlashatLiveViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatLiveViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareOnFacebook:"/>
-                <relationship kind="action" name="shareOnTwitter:"/>
-                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="embedWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="UIRefreshControl" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
