@@ -338,7 +338,7 @@
                                 <subviews>
                                     <textView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="352" id="0wL-id-TTK"/>
+                                            <constraint firstAttribute="height" constant="284" type="user" id="5f1-aT-BIG"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
@@ -380,7 +380,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0vK-1K-jRA"/>
-                                    <constraint firstAttribute="bottom" secondItem="trO-IF-BDt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="3SD-L0-p0t"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="6jA-6J-jab"/>
                                     <constraint firstAttribute="trailing" secondItem="trO-IF-BDt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9mF-Jk-FMQ"/>
                                     <constraint firstItem="53b-9s-qLr" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DUX-lO-ws2"/>
                                     <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="83" id="DhD-4B-hgC"/>
@@ -388,9 +388,9 @@
                                     <constraint firstItem="bOF-FK-O3R" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="47" id="Gul-wd-6Wf"/>
                                     <constraint firstAttribute="trailing" secondItem="53b-9s-qLr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KNw-2V-Wpy"/>
                                     <constraint firstItem="bOF-FK-O3R" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="P0d-sb-vUA"/>
-                                    <constraint firstItem="53b-9s-qLr" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" type="default" id="cZb-sn-1hl"/>
                                     <constraint firstItem="53b-9s-qLr" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="7" id="hEu-9G-zBa"/>
                                     <constraint firstAttribute="trailing" secondItem="hD0-1C-Hxf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qGC-Ts-7k2"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="bottom" secondItem="V7l-KE-Z6i" secondAttribute="bottom" type="default" id="wOu-3R-HM8"/>
                                     <constraint firstItem="hD0-1C-Hxf" firstAttribute="bottom" secondItem="bOF-FK-O3R" secondAttribute="bottom" type="default" id="xj1-WK-nf4"/>
                                 </constraints>
                             </scrollView>
@@ -414,6 +414,7 @@
                         <outlet property="dateLabel" destination="bOF-FK-O3R" id="cJN-JA-QJE"/>
                         <outlet property="descriptionTextView" destination="trO-IF-BDt" id="5Hu-23-LvU"/>
                         <outlet property="scrollView" destination="V7l-KE-Z6i" id="RUy-gb-HZF"/>
+                        <outlet property="textViewHeightConstraint" destination="5f1-aT-BIG" id="evs-q2-cmQ"/>
                         <outlet property="titleLabel" destination="53b-9s-qLr" id="yw1-e5-wIi"/>
                     </connections>
                 </viewController>
@@ -697,6 +698,78 @@
         <image name="podcast_icon.png" width="20" height="20"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SlashatAboutHostProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutHostProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mailButtonPressed:"/>
+                <relationship kind="action" name="twitterButtonPressed:"/>
+                <relationship kind="action" name="webButtonPressed:"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="mailButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="textViewHeightConstraint" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="webButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SlashatAboutTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAboutTableViewController.h"/>
+        </class>
+        <class className="SlashatArchiveEpisodeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatArchiveEpisodeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playButtonPressed:"/>
+                <relationship kind="action" name="shareButtonPressed:"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="textViewHeightConstraint" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SlashatArchiveTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatArchiveTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="subscribeButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="SlashatAudioControlViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAudioControlViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playPauseButtonPressed:"/>
+                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SlashatCountdownViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatCountdownViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countdownHeaderLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SlashatLiveVideoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatLiveVideoViewController.h"/>
+        </class>
+        <class className="SlashatLiveViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatLiveViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareOnFacebook:"/>
+                <relationship kind="action" name="shareOnTwitter:"/>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="embedWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -14,6 +14,7 @@
 @interface SlashatArchiveEpisodeViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
 @property (nonatomic, weak) IBOutlet UIButton *playButton;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
@@ -51,21 +52,11 @@
     self.dateLabel.text = [formatter stringFromDate:self.episode.pubDate];
 }
 
-- (void)viewDidLayoutSubviews
+- (void)viewWillLayoutSubviews
 {
-    [super viewDidLayoutSubviews];
-    
+    [super viewWillLayoutSubviews];
     [self.view layoutIfNeeded];
-        
-    CGRect frame = self.descriptionTextView.frame;
-    frame.size.height = self.descriptionTextView.contentSize.height - self.descriptionTextView.contentInset.bottom - self.descriptionTextView.contentInset.top;
-    self.descriptionTextView.frame = frame;
-    
-    CGFloat contentHeight = self.descriptionTextView.contentSize.height + self.descriptionTextView.frame.origin.y;
-    
-    CGSize contentSize = CGSizeMake(0, contentHeight);
-    
-    [self.scrollView setContentSize:contentSize];
+    self.textViewHeightConstraint.constant = self.descriptionTextView.contentSize.height;
 }
 
 - (IBAction)shareButtonPressed:(id)sender
