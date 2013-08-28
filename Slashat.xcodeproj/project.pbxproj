@@ -35,6 +35,7 @@
 		043B547A169313A500B71F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 043B5478169313A500B71F3A /* InfoPlist.strings */; };
 		043B547D169313A500B71F3A /* SlashatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B547C169313A500B71F3A /* SlashatTests.m */; };
 		043B54871693189B00B71F3A /* bambuser-embed.html in Resources */ = {isa = PBXBuildFile; fileRef = 043B54861693189B00B71F3A /* bambuser-embed.html */; };
+		0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0444667117CE68A4007E9707 /* SlashatApplication.m */; };
 		044730591698623F00C74E01 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 044730571698623F00C74E01 /* RSSParser.m */; };
 		0447305D16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447305C16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m */; };
 		0452944616985951001F0504 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452943416985951001F0504 /* AFHTTPClient.m */; };
@@ -163,6 +164,8 @@
 		043B547B169313A500B71F3A /* SlashatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlashatTests.h; sourceTree = "<group>"; };
 		043B547C169313A500B71F3A /* SlashatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlashatTests.m; sourceTree = "<group>"; };
 		043B54861693189B00B71F3A /* bambuser-embed.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "bambuser-embed.html"; sourceTree = "<group>"; };
+		0444667017CE68A4007E9707 /* SlashatApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatApplication.h; sourceTree = "<group>"; };
+		0444667117CE68A4007E9707 /* SlashatApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatApplication.m; sourceTree = "<group>"; };
 		044730561698623F00C74E01 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
 		044730571698623F00C74E01 /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 		0447305B16987BB100C74E01 /* SlashatArchiveEpisodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatArchiveEpisodeViewController.h; sourceTree = "<group>"; };
@@ -440,6 +443,8 @@
 				043B5458169313A500B71F3A /* MainStoryboard_iPad.storyboard */,
 				048EC323173BB1D50043E57D /* Utils */,
 				043B5444169313A500B71F3A /* Supporting Files */,
+				0444667017CE68A4007E9707 /* SlashatApplication.h */,
+				0444667117CE68A4007E9707 /* SlashatApplication.m */,
 			);
 			path = Slashat;
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 				043255161702255200639F82 /* SlashatCountdownViewController.m in Sources */,
 				04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */,
 				04789290177A30050091B0AD /* SlashatHost.m in Sources */,
+				0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

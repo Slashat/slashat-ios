@@ -16,6 +16,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 + (AppDelegate *)sharedAppDelegate;
+- (BOOL)openURL:(NSURL *)url;
 - (void)playSlashatAudioEpisode:(SlashatEpisode *)episode;
 
 @end

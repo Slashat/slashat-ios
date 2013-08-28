@@ -99,6 +99,49 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - URL Handling
+
+- (BOOL)openURL:(NSURL *)url
+{
+    if ([url.scheme rangeOfString:@"googlechrome"].location != NSNotFound) {
+        // Let SlashatApplication handle this in it's super UIApplication
+        return NO;
+    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome:///"]]) {
+        [[UIApplication sharedApplication] openURL:[self getChromeURIForUrl:url]];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (NSURL *)getChromeURIForUrl:(NSURL *)url
+{
+    // Replace the URL Scheme with the Chrome equivalent.
+    NSString *chromeScheme = nil;
+    if ([url.scheme isEqualToString:@"http"]) {
+        chromeScheme = @"googlechrome";
+    } else if ([url.scheme isEqualToString:@"https"]) {
+        chromeScheme = @"googlechromes";
+    }
+    
+    NSURL *chromeUrl;
+    
+    // Proceed only if a valid Google Chrome URI Scheme is available.
+    if (chromeScheme) {
+        NSString *absoluteString = [url absoluteString];
+        NSRange rangeForScheme = [absoluteString rangeOfString:@":"];
+        NSString *urlNoScheme =
+        [absoluteString substringFromIndex:rangeForScheme.location];
+        NSString *chromeURLString =
+        [chromeScheme stringByAppendingString:urlNoScheme];
+        chromeUrl = [NSURL URLWithString:chromeURLString];
+    } else {
+        chromeUrl = url;
+    }
+    
+    return chromeUrl;
+}
+
 #pragma mark - Audio handler
 
 - (void)playSlashatAudioEpisode:(SlashatEpisode *)episode
