@@ -47,6 +47,11 @@
 		0452944C16985951001F0504 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944116985951001F0504 /* AFURLConnectionOperation.m */; };
 		0452944D16985951001F0504 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944316985951001F0504 /* AFXMLRequestOperation.m */; };
 		0452944E16985951001F0504 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452944516985951001F0504 /* UIImageView+AFNetworking.m */; };
+		0456B95217CFAE0100826CEB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B94D17CFAE0100826CEB /* MenuViewController.m */; };
+		0456B95317CFAE0100826CEB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B94F17CFAE0100826CEB /* RootViewController.m */; };
+		0456B95417CFAE0100826CEB /* StackScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95117CFAE0100826CEB /* StackScrollViewController.m */; };
+		0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95617CFAE7700826CEB /* DataViewController.m */; };
+		0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */; };
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
 		04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
@@ -189,6 +194,16 @@
 		0452944316985951001F0504 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		0452944416985951001F0504 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		0452944516985951001F0504 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		0456B94C17CFAE0100826CEB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		0456B94D17CFAE0100826CEB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		0456B94E17CFAE0100826CEB /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		0456B94F17CFAE0100826CEB /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0456B95017CFAE0100826CEB /* StackScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackScrollViewController.h; sourceTree = "<group>"; };
+		0456B95117CFAE0100826CEB /* StackScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackScrollViewController.m; sourceTree = "<group>"; };
+		0456B95517CFAE7700826CEB /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		0456B95617CFAE7700826CEB /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		0456B95917CFAE7800826CEB /* UIViewWithShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewWithShadow.h; sourceTree = "<group>"; };
+		0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewWithShadow.m; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat@2x.png"; sourceTree = "<group>"; };
 		046D60DD16BD0E0C0088678E /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
@@ -429,6 +444,7 @@
 		043B5443169313A500B71F3A /* Slashat */ = {
 			isa = PBXGroup;
 			children = (
+				0456B94B17CFAE0100826CEB /* StackScrollViewControllers */,
 				04956B5017AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib */,
 				046D60DD16BD0E0C0088678E /* APIKey.h */,
 				0452943116985933001F0504 /* externalFrameworks */,
@@ -524,6 +540,23 @@
 				0452944516985951001F0504 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		0456B94B17CFAE0100826CEB /* StackScrollViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0456B95517CFAE7700826CEB /* DataViewController.h */,
+				0456B95617CFAE7700826CEB /* DataViewController.m */,
+				0456B95917CFAE7800826CEB /* UIViewWithShadow.h */,
+				0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */,
+				0456B94C17CFAE0100826CEB /* MenuViewController.h */,
+				0456B94D17CFAE0100826CEB /* MenuViewController.m */,
+				0456B94E17CFAE0100826CEB /* RootViewController.h */,
+				0456B94F17CFAE0100826CEB /* RootViewController.m */,
+				0456B95017CFAE0100826CEB /* StackScrollViewController.h */,
+				0456B95117CFAE0100826CEB /* StackScrollViewController.m */,
+			);
+			path = StackScrollViewControllers;
 			sourceTree = "<group>";
 		};
 		046DEAB0178214ED004A3A88 /* tab-bar */ = {
@@ -772,6 +805,11 @@
 				04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */,
 				04789290177A30050091B0AD /* SlashatHost.m in Sources */,
 				0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */,
+				0456B95217CFAE0100826CEB /* MenuViewController.m in Sources */,
+				0456B95317CFAE0100826CEB /* RootViewController.m in Sources */,
+				0456B95417CFAE0100826CEB /* StackScrollViewController.m in Sources */,
+				0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */,
+				0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,10 +931,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -908,8 +947,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
