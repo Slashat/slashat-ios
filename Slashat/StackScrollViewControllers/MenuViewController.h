@@ -40,10 +40,10 @@
 
 
 @interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-	UITableView*  _tableView;
+
 }
 - (id)initWithFrame:(CGRect)frame;
 
-@property(nonatomic, retain)UITableView* tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end

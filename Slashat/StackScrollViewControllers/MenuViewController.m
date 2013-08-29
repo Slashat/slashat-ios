@@ -42,16 +42,39 @@
 #import "RootViewController.h"
 #import "StackScrollViewController.h"
 
-@implementation MenuViewController
-@synthesize tableView = _tableView;
+@interface StackMenuObject:NSObject
+@property (nonatomic, strong) NSString *labelText;
+@end
 
+@implementation StackMenuObject
+
+@end
+
+@interface MenuViewController ()
+
+@property (nonatomic, strong) NSArray *menuObjects;
+
+@end
+
+@implementation MenuViewController
 
 #pragma mark -
 #pragma mark View lifecycle
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super init]) {
-		[self.view setFrame:frame]; 
+		[self.view setFrame:frame];
+        
+        StackMenuObject *live = [[StackMenuObject alloc] init];
+        live.labelText = @"Live";
+        
+        StackMenuObject *archive = [[StackMenuObject alloc] init];
+        archive.labelText = @"Arkiv";
+        
+        StackMenuObject *about = [[StackMenuObject alloc] init];
+        about.labelText = @"Om oss";
+        
+        self.menuObjects = @[live, archive, about];
 		
 		_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
 		[_tableView setDelegate:self];
@@ -109,7 +132,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 10;
+    return self.menuObjects.count;
 }
 
 
@@ -126,9 +149,8 @@
     }
     
     // Configure the cell...
-	cell.textLabel.text = [NSString stringWithFormat:@"Menu %d", indexPath.row +1];
+	cell.textLabel.text = ((StackMenuObject *)[self.menuObjects objectAtIndex:indexPath.row]).labelText;
 	[cell.textLabel setTextColor:[UIColor whiteColor]];
-
 
     return cell;
 }
