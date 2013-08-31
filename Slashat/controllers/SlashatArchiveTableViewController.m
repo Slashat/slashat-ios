@@ -8,7 +8,7 @@
 
 #import "SlashatArchiveTableViewController.h"
 #import "SlashatEpisode.h"
-#import "RSSParser.h"
+#import "SlashatAPIManager.h"
 #import "SlashatArchiveEpisodeViewController.h"
 #import "ColorUtils.h"
 
@@ -44,17 +44,13 @@
 }
 
 - (void) refresh {
-    NSLog(@"Refreshing!");
-    NSURL *url = [NSURL URLWithString:@"http://slashat.se/feed/podcast/slashat.xml"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [RSSParser parseRSSFeedForRequest:request success:^(NSArray *feedItems) {
-        NSLog(@"Refresh done!");
-        [_allEntries addObjectsFromArray:feedItems];
+    
+    [[SlashatAPIManager sharedClient] fetchArchiveEpisodesWithSuccess:^(NSArray *episodes) {
+        _allEntries = [[NSMutableArray alloc] initWithArray:episodes];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
-        
     } failure:^(NSError *error) {
-        NSLog(@"Error: %@", error);
+        NSLog(@"SlashatArchiveTableViewController: refresh: Error: %@", error);
     }];
 }
 

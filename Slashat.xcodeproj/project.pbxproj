@@ -52,6 +52,7 @@
 		0456B95417CFAE0100826CEB /* StackScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95117CFAE0100826CEB /* StackScrollViewController.m */; };
 		0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95617CFAE7700826CEB /* DataViewController.m */; };
 		0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */; };
+		0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95F17D1E97900826CEB /* SlashatAPIManager.m */; };
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
 		04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
@@ -204,6 +205,8 @@
 		0456B95617CFAE7700826CEB /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
 		0456B95917CFAE7800826CEB /* UIViewWithShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewWithShadow.h; sourceTree = "<group>"; };
 		0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewWithShadow.m; sourceTree = "<group>"; };
+		0456B95E17D1E97900826CEB /* SlashatAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAPIManager.h; sourceTree = "<group>"; };
+		0456B95F17D1E97900826CEB /* SlashatAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAPIManager.m; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat@2x.png"; sourceTree = "<group>"; };
 		046D60DD16BD0E0C0088678E /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
@@ -461,6 +464,8 @@
 				043B5444169313A500B71F3A /* Supporting Files */,
 				0444667017CE68A4007E9707 /* SlashatApplication.h */,
 				0444667117CE68A4007E9707 /* SlashatApplication.m */,
+				0456B95E17D1E97900826CEB /* SlashatAPIManager.h */,
+				0456B95F17D1E97900826CEB /* SlashatAPIManager.m */,
 			);
 			path = Slashat;
 			sourceTree = "<group>";
@@ -810,6 +815,7 @@
 				0456B95417CFAE0100826CEB /* StackScrollViewController.m in Sources */,
 				0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */,
 				0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */,
+				0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
