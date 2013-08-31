@@ -18,8 +18,6 @@
 
 @implementation SlashatArchiveTableViewController
 
-@synthesize allEntries = _allEntries;
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -46,7 +44,7 @@
 - (void) refresh {
     
     [[SlashatAPIManager sharedClient] fetchArchiveEpisodesWithSuccess:^(NSArray *episodes) {
-        _allEntries = [[NSMutableArray alloc] initWithArray:episodes];
+        self.allEntries = [[NSMutableArray alloc] initWithArray:episodes];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     } failure:^(NSError *error) {
@@ -70,7 +68,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return _allEntries.count;
+    return self.allEntries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,7 +80,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    SlashatEpisode *episode = [_allEntries objectAtIndex:indexPath.row];
+    SlashatEpisode *episode = [self.allEntries objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%i - %@", episode.episodeNumber, episode.title];
     cell.detailTextLabel.text = episode.itemDescription;
@@ -94,7 +92,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];    
     SlashatArchiveEpisodeViewController *episodeViewController = segue.destinationViewController;
-    [episodeViewController setEpisode:[_allEntries objectAtIndex:indexPath.row]];
+    [episodeViewController setEpisode:[self.allEntries objectAtIndex:indexPath.row]];
 }
 
 #pragma mark - Table view delegate

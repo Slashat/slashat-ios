@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SlashatArchiveTableViewController : UITableViewController {
-    NSMutableArray *_allEntries;
 }
 
 - (IBAction) subscribeButtonPressed:(id)sender;
 
-@property (retain) NSMutableArray *allEntries;
+@property (nonatomic, strong) NSArray *allEntries;
 
 @end
