@@ -53,6 +53,8 @@
 		0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95617CFAE7700826CEB /* DataViewController.m */; };
 		0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */; };
 		0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95F17D1E97900826CEB /* SlashatAPIManager.m */; };
+		0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */; };
+		0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */; };
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
 		04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
@@ -207,6 +209,10 @@
 		0456B95A17CFAE7800826CEB /* UIViewWithShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewWithShadow.m; sourceTree = "<group>"; };
 		0456B95E17D1E97900826CEB /* SlashatAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAPIManager.h; sourceTree = "<group>"; };
 		0456B95F17D1E97900826CEB /* SlashatAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAPIManager.m; sourceTree = "<group>"; };
+		0456B96117D1F1F600826CEB /* SlashatArchiveViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatArchiveViewController~iPad.h"; sourceTree = "<group>"; };
+		0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatArchiveViewController~iPad.m"; sourceTree = "<group>"; };
+		0456B96417D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatArchiveEpisodeViewController~iPad.h"; sourceTree = "<group>"; };
+		0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatArchiveEpisodeViewController~iPad.m"; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat@2x.png"; sourceTree = "<group>"; };
 		046D60DD16BD0E0C0088678E /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
@@ -362,7 +368,7 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
-		042ECD521693538600C77193 /* controllers */ = {
+		042ECD521693538600C77193 /* ViewControllers_iPhone */ = {
 			isa = PBXGroup;
 			children = (
 				042ECD6E16961A1400C77193 /* SlashatLiveViewController.h */,
@@ -382,6 +388,7 @@
 				043255141702255200639F82 /* SlashatCountdownViewController.h */,
 				043255151702255200639F82 /* SlashatCountdownViewController.m */,
 			);
+			name = ViewControllers_iPhone;
 			path = controllers;
 			sourceTree = "<group>";
 		};
@@ -447,25 +454,25 @@
 		043B5443169313A500B71F3A /* Slashat */ = {
 			isa = PBXGroup;
 			children = (
-				0456B94B17CFAE0100826CEB /* StackScrollViewControllers */,
-				04956B5017AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib */,
 				046D60DD16BD0E0C0088678E /* APIKey.h */,
-				0452943116985933001F0504 /* externalFrameworks */,
-				042ECD521693538600C77193 /* controllers */,
-				042ECD531693538600C77193 /* models */,
-				042ECD541693538600C77193 /* views */,
-				042ECD441693537C00C77193 /* assets */,
-				043B54861693189B00B71F3A /* bambuser-embed.html */,
 				043B544C169313A500B71F3A /* AppDelegate.h */,
 				043B544D169313A500B71F3A /* AppDelegate.m */,
-				043B5455169313A500B71F3A /* MainStoryboard_iPhone.storyboard */,
+				042ECD441693537C00C77193 /* assets */,
+				043B54861693189B00B71F3A /* bambuser-embed.html */,
+				0452943116985933001F0504 /* externalFrameworks */,
 				043B5458169313A500B71F3A /* MainStoryboard_iPad.storyboard */,
-				048EC323173BB1D50043E57D /* Utils */,
-				043B5444169313A500B71F3A /* Supporting Files */,
-				0444667017CE68A4007E9707 /* SlashatApplication.h */,
-				0444667117CE68A4007E9707 /* SlashatApplication.m */,
+				043B5455169313A500B71F3A /* MainStoryboard_iPhone.storyboard */,
+				042ECD531693538600C77193 /* models */,
 				0456B95E17D1E97900826CEB /* SlashatAPIManager.h */,
 				0456B95F17D1E97900826CEB /* SlashatAPIManager.m */,
+				0444667017CE68A4007E9707 /* SlashatApplication.h */,
+				0444667117CE68A4007E9707 /* SlashatApplication.m */,
+				04956B5017AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib */,
+				043B5444169313A500B71F3A /* Supporting Files */,
+				048EC323173BB1D50043E57D /* Utils */,
+				0456B94B17CFAE0100826CEB /* ViewControllers_iPad */,
+				042ECD521693538600C77193 /* ViewControllers_iPhone */,
+				042ECD541693538600C77193 /* views */,
 			);
 			path = Slashat;
 			sourceTree = "<group>";
@@ -547,7 +554,7 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		0456B94B17CFAE0100826CEB /* StackScrollViewControllers */ = {
+		0456B94B17CFAE0100826CEB /* ViewControllers_iPad */ = {
 			isa = PBXGroup;
 			children = (
 				0456B95517CFAE7700826CEB /* DataViewController.h */,
@@ -560,7 +567,12 @@
 				0456B94F17CFAE0100826CEB /* RootViewController.m */,
 				0456B95017CFAE0100826CEB /* StackScrollViewController.h */,
 				0456B95117CFAE0100826CEB /* StackScrollViewController.m */,
+				0456B96117D1F1F600826CEB /* SlashatArchiveViewController~iPad.h */,
+				0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */,
+				0456B96417D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.h */,
+				0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */,
 			);
+			name = ViewControllers_iPad;
 			path = StackScrollViewControllers;
 			sourceTree = "<group>";
 		};
@@ -816,6 +828,8 @@
 				0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */,
 				0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */,
 				0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */,
+				0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */,
+				0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
