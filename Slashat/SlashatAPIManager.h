@@ -16,4 +16,7 @@
 - (void)fetchLiveBroadcastIdWithSuccess:(void (^)(NSString *broadcastId))success failure:(void (^)(NSError *error))failure;
 - (void)fetchLiveStreamUrlForBroadcastId:(NSString *)broadcastId sucess:(void(^)(NSURL *streamUrl))success failure:(void (^)(NSError *error))failure;
 
+- (NSArray *)getSlashatHostsInSections;
+- (NSArray *)getHostSectionTitles;
+
 @end

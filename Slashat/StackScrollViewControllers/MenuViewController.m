@@ -43,7 +43,7 @@
 #import "StackScrollViewController.h"
 #import "SlashatArchiveViewController~iPad.h"
 #import "SlashatLiveViewController~iPad.h"
-#import "ColorUtils.h"
+#import "SlashatAboutViewController.h"
 
 @interface StackMenuObject:NSObject
 @property (nonatomic, strong) NSString *labelText;
@@ -172,6 +172,9 @@
     } else if (indexPath.row == 1) {
         SlashatArchiveViewController_iPad *slashatArchiveViewController = [[SlashatArchiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
         [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatArchiveViewController invokeByController:self isStackStartView:TRUE];
+    } else if (indexPath.row == 2) {
+        SlashatAboutViewController *slashatAboutViewController = [[SlashatAboutViewController alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+        [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatAboutViewController invokeByController:self isStackStartView:TRUE];
     }
     
     
