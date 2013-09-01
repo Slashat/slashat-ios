@@ -151,8 +151,8 @@
     
     // Configure the cell...
 	cell.textLabel.text = ((StackMenuObject *)[self.menuObjects objectAtIndex:indexPath.row]).labelText;
-	[cell.textLabel setTextColor:[UIColor whiteColor]];
-
+	[cell.textLabel setTextColor:[UIColor blackColor]];
+    
     return cell;
 }
 
