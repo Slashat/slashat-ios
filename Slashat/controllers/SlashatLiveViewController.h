@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SlashatLiveViewController : UIViewController {
-    IBOutlet UIWebView *embedWebView;
-}
 
-@property (nonatomic, retain) IBOutlet UIWebView *embedWebView;
+}
 
 - (IBAction)shareOnTwitter:(id)sender;
 - (IBAction)shareOnFacebook:(id)sender;

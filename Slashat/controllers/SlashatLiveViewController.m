@@ -22,8 +22,6 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
 
 @implementation SlashatLiveViewController
 
-@synthesize embedWebView;
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];

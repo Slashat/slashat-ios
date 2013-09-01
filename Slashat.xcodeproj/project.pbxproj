@@ -34,7 +34,6 @@
 		043B5472169313A500B71F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B543F169313A500B71F3A /* Foundation.framework */; };
 		043B547A169313A500B71F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 043B5478169313A500B71F3A /* InfoPlist.strings */; };
 		043B547D169313A500B71F3A /* SlashatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B547C169313A500B71F3A /* SlashatTests.m */; };
-		043B54871693189B00B71F3A /* bambuser-embed.html in Resources */ = {isa = PBXBuildFile; fileRef = 043B54861693189B00B71F3A /* bambuser-embed.html */; };
 		0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0444667117CE68A4007E9707 /* SlashatApplication.m */; };
 		044730591698623F00C74E01 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 044730571698623F00C74E01 /* RSSParser.m */; };
 		0447305D16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447305C16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m */; };
@@ -175,7 +174,6 @@
 		043B5479169313A500B71F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		043B547B169313A500B71F3A /* SlashatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlashatTests.h; sourceTree = "<group>"; };
 		043B547C169313A500B71F3A /* SlashatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlashatTests.m; sourceTree = "<group>"; };
-		043B54861693189B00B71F3A /* bambuser-embed.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "bambuser-embed.html"; sourceTree = "<group>"; };
 		0444667017CE68A4007E9707 /* SlashatApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatApplication.h; sourceTree = "<group>"; };
 		0444667117CE68A4007E9707 /* SlashatApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatApplication.m; sourceTree = "<group>"; };
 		044730561698623F00C74E01 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
@@ -470,7 +468,6 @@
 				043B544C169313A500B71F3A /* AppDelegate.h */,
 				043B544D169313A500B71F3A /* AppDelegate.m */,
 				042ECD441693537C00C77193 /* assets */,
-				043B54861693189B00B71F3A /* bambuser-embed.html */,
 				0452943116985933001F0504 /* externalFrameworks */,
 				043B5458169313A500B71F3A /* MainStoryboard_iPad.storyboard */,
 				043B5455169313A500B71F3A /* MainStoryboard_iPhone.storyboard */,
@@ -718,7 +715,6 @@
 				043B5454169313A500B71F3A /* Default-568h@2x.png in Resources */,
 				043B5457169313A500B71F3A /* MainStoryboard_iPhone.storyboard in Resources */,
 				043B545A169313A500B71F3A /* MainStoryboard_iPad.storyboard in Resources */,
-				043B54871693189B00B71F3A /* bambuser-embed.html in Resources */,
 				042ECD4B1693537C00C77193 /* first.png in Resources */,
 				042ECD4C1693537C00C77193 /* first@2x.png in Resources */,
 				042ECD4D1693537C00C77193 /* logo.png in Resources */,
