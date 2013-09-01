@@ -121,6 +121,7 @@
 		04CA4C9F17941DE500428565 /* Slashat_twittershare.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9B17941DE500428565 /* Slashat_twittershare.png */; };
 		04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */; };
 		04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */; };
+		04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
@@ -290,6 +291,8 @@
 		04CA4C9B17941DE500428565 /* Slashat_twittershare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_twittershare.png; sourceTree = "<group>"; };
 		04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_twittershare@2x.png"; sourceTree = "<group>"; };
 		04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_fbshare@2x.png"; sourceTree = "<group>"; };
+		04CEA8EB17D3552000C265B9 /* UIColor+Slashat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Slashat.h"; sourceTree = "<group>"; };
+		04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Slashat.m"; sourceTree = "<group>"; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
@@ -464,6 +467,7 @@
 		043B5443169313A500B71F3A /* Slashat */ = {
 			isa = PBXGroup;
 			children = (
+				04CEA8EA17D3550200C265B9 /* Categories */,
 				046D60DD16BD0E0C0088678E /* APIKey.h */,
 				043B544C169313A500B71F3A /* AppDelegate.h */,
 				043B544D169313A500B71F3A /* AppDelegate.m */,
@@ -636,6 +640,15 @@
 				04F5F1E9175DB74600ED363B /* DateUtils.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		04CEA8EA17D3550200C265B9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				04CEA8EB17D3552000C265B9 /* UIColor+Slashat.h */,
+				04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -844,6 +857,7 @@
 				0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */,
 				0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */,
 				0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */,
+				04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

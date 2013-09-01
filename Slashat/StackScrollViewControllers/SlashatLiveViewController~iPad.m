@@ -37,7 +37,7 @@ const CGRect ipadVideoContainerFrame = {{0.0f, 0.0f}, {477.0f, 268.0f}};
         [self.view setBackgroundColor:[UIColor whiteColor]];
         
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-        [headerView setBackgroundColor:UIColorFromRGB(0xde5214)];
+        headerView.backgroundColor = [UIColor slashatOrange];
         [self.view addSubview:headerView];
         
         UIImage *slashatLogo = [UIImage imageNamed:@"logo_neg.png"];

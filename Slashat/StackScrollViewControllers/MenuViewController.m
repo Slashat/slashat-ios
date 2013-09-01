@@ -155,7 +155,7 @@
 	cell.textLabel.text = ((StackMenuObject *)[self.menuObjects objectAtIndex:indexPath.row]).labelText;
     
     cell.textLabel.textColor = [UIColor blackColor];
-    cell.textLabel.highlightedTextColor = UIColorFromRGB(0xde5214);;
+    cell.textLabel.highlightedTextColor = [UIColor slashatOrange];
     
     return cell;
 }

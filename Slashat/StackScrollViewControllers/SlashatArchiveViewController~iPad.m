@@ -107,6 +107,8 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%i - %@", episode.episodeNumber, episode.title];
     cell.detailTextLabel.text = episode.itemDescription;
     
+    cell.selectedBackgroundView.backgroundColor = [UIColor slashatOrange];
+    
     return cell;
 }
 

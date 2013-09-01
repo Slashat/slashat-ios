@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import <MobileCoreServices/MobileCoreServices.h>
     #import <SystemConfiguration/SystemConfiguration.h>
+    #import "UIColor+Slashat.h"
 #endif
