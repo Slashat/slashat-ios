@@ -13,7 +13,6 @@
 
 @interface SlashatArchiveEpisodeViewController ()
 
-@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
 @property (nonatomic, weak) IBOutlet UIButton *playButton;
