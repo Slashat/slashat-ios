@@ -1021,12 +1021,15 @@
 		043B5482169313A500B71F3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "31C56EAF-C763-4560-AC3E-0D9870935CC9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "31C56EAF-C763-4560-AC3E-0D9870935CC9";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
