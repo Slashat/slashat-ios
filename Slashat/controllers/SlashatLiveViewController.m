@@ -8,8 +8,7 @@
 
 #import "SlashatLiveViewController.h"
 #import "SlashatCountdownViewController.h"
-#import "AFJSONRequestOperation.h"
-#import "APIKey.h"
+#import "SlashatAPIManager.h"
 #import "SlashatLiveVideoViewController.h"
 #import <Social/Social.h>
 
@@ -48,27 +47,15 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
 
 - (void)startLiveStreamOrCountdownAsync
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.bambuser.com/broadcast.json"]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    
-    NSString *postParams = [NSString stringWithFormat:@"username=slashat&type=live&limit=1&api_key=%@", BAMBUSER_TRANSCODE_API_KEY];
-    [request setHTTPBody:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        NSArray *broadcasts = [JSON valueForKeyPath:@"result"];
-        
-        if (broadcasts.count > 0) {
-            NSString *broadcastId = [(id)[broadcasts objectAtIndex:0] valueForKeyPath:@"vid"];
+    [[SlashatAPIManager sharedClient] fetchLiveBroadcastIdWithSuccess:^(NSString *broadcastId) {
+        if (broadcastId) {
             [self startLiveStream:broadcastId];
-        } else {
+        }
+        else {
             [self startCountdown];
         }
-        
+            
     } failure:nil];
-    
-    [operation start];
 }
 
 - (void)startLiveStream:(NSString *)broadcastId
