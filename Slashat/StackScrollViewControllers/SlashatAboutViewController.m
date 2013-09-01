@@ -9,6 +9,10 @@
 #import "SlashatAboutViewController.h"
 #import "SlashatAPIManager.h"
 #import "SlashatHost.h"
+#import "SlashatAboutHostViewController~iPad.h"
+#import "AppDelegate.h"
+#import "RootViewController.h"
+#import "StackScrollViewController.h"
 
 @interface SlashatAboutViewController ()
 
@@ -103,14 +107,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*SlashatArchiveEpisodeViewController_iPad *episodeViewController = [[SlashatArchiveEpisodeViewController_iPad alloc] initWithNibName:@"SlashatEpisodeView~iPad" bundle:nil];
+    SlashatAboutHostViewController_iPad *aboutHostViewController = [[SlashatAboutHostViewController_iPad alloc] initWithNibName:@"SlashatAboutHostView~iPad" bundle:nil];
     
     
-    episodeViewController.episode = [self.episodes objectAtIndex:indexPath.row];
+    aboutHostViewController.host = [[self.hosts objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
-	[((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:episodeViewController invokeByController:self isStackStartView:FALSE];
+	[((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:aboutHostViewController invokeByController:self isStackStartView:FALSE];
     
-    episodeViewController.view.frame = CGRectMake(0, 0, 477, self.view.frame.size.height);*/
+    aboutHostViewController.view.frame = CGRectMake(0, 0, 477, self.view.frame.size.height);
 }
 
 @end

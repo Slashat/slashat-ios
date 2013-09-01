@@ -21,8 +21,6 @@
 @property (nonatomic, weak) IBOutlet UIButton *webButton;
 @property (nonatomic, weak) IBOutlet UIButton *mailButton;
 
-@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
-
 @end
 
 @implementation SlashatAboutHostProfileViewController
