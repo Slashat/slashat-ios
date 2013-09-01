@@ -123,6 +123,8 @@
 		04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */; };
 		04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */; };
 		04CEA8EF17D359E900C265B9 /* SlashatEpisodeView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CEA8EE17D359E900C265B9 /* SlashatEpisodeView~iPad.xib */; };
+		04CEA8F317D36C3F00C265B9 /* SlashatBrowserView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CEA8F217D36C3F00C265B9 /* SlashatBrowserView~iPad.xib */; };
+		04CEA8F617D36C9000C265B9 /* SlashatBrowserViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8F517D36C9000C265B9 /* SlashatBrowserViewController~iPad.m */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
@@ -295,6 +297,9 @@
 		04CEA8EB17D3552000C265B9 /* UIColor+Slashat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Slashat.h"; sourceTree = "<group>"; };
 		04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Slashat.m"; sourceTree = "<group>"; };
 		04CEA8EE17D359E900C265B9 /* SlashatEpisodeView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatEpisodeView~iPad.xib"; sourceTree = "<group>"; };
+		04CEA8F217D36C3F00C265B9 /* SlashatBrowserView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatBrowserView~iPad.xib"; sourceTree = "<group>"; };
+		04CEA8F417D36C9000C265B9 /* SlashatBrowserViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatBrowserViewController~iPad.h"; sourceTree = "<group>"; };
+		04CEA8F517D36C9000C265B9 /* SlashatBrowserViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatBrowserViewController~iPad.m"; sourceTree = "<group>"; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
@@ -380,6 +385,7 @@
 				042ECD4A1693537C00C77193 /* second@2x.png */,
 				0456B98317D3386D00826CEB /* CountdownView~iPad.xib */,
 				04CEA8EE17D359E900C265B9 /* SlashatEpisodeView~iPad.xib */,
+				04CEA8F217D36C3F00C265B9 /* SlashatBrowserView~iPad.xib */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -589,6 +595,8 @@
 				0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */,
 				0456B98017D32B0800826CEB /* SlashatLiveViewController~iPad.h */,
 				0456B98117D32B0900826CEB /* SlashatLiveViewController~iPad.m */,
+				04CEA8F417D36C9000C265B9 /* SlashatBrowserViewController~iPad.h */,
+				04CEA8F517D36C9000C265B9 /* SlashatBrowserViewController~iPad.m */,
 			);
 			name = ViewControllers_iPad;
 			path = StackScrollViewControllers;
@@ -793,6 +801,7 @@
 				0456B98717D341A900826CEB /* logo_neg.png in Resources */,
 				0456B98817D341A900826CEB /* logo_neg@2x.png in Resources */,
 				04CEA8EF17D359E900C265B9 /* SlashatEpisodeView~iPad.xib in Resources */,
+				04CEA8F317D36C3F00C265B9 /* SlashatBrowserView~iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,6 +871,7 @@
 				0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */,
 				0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */,
 				04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */,
+				04CEA8F617D36C9000C265B9 /* SlashatBrowserViewController~iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

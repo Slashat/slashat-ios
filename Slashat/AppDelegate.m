@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "SlashatBrowserViewController~iPad.h"
+#import "StackScrollViewController.h"
+#import "RootViewController.h"
+
 
 @interface AppDelegate ()
 @property (strong, nonatomic) SlashatAudioHandler *audioHandler;
@@ -103,6 +107,13 @@
 
 - (BOOL)openURL:(NSURL *)url
 {
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        
+        [self addSlashatBrowserViewToStackForUrl:url];
+        
+        return YES;
+    }
+    
     if ([url.scheme rangeOfString:@"googlechrome"].location != NSNotFound) {
         // Let SlashatApplication handle this in it's super UIApplication
         return NO;
@@ -140,6 +151,15 @@
     }
     
     return chromeUrl;
+}
+
+- (void)addSlashatBrowserViewToStackForUrl:(NSURL *)url
+{
+    SlashatBrowserViewController_iPad *browserViewController = [[SlashatBrowserViewController_iPad alloc]initWithNibName:@"SlashatBrowserView~iPad" bundle:nil url:url];
+    
+    UIViewController *viewControllerInStack = [((RootViewController *)self.window.rootViewController).stackScrollViewController.viewControllersStack lastObject];
+    
+    [((RootViewController *)self.window.rootViewController).stackScrollViewController addViewInSlider:browserViewController invokeByController:viewControllerInStack isStackStartView:NO];
 }
 
 #pragma mark - Audio handler
