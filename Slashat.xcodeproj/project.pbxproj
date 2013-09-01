@@ -55,6 +55,7 @@
 		0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B95F17D1E97900826CEB /* SlashatAPIManager.m */; };
 		0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */; };
 		0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */; };
+		0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B98117D32B0900826CEB /* SlashatLiveViewController~iPad.m */; };
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
 		04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
@@ -213,6 +214,8 @@
 		0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatArchiveViewController~iPad.m"; sourceTree = "<group>"; };
 		0456B96417D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatArchiveEpisodeViewController~iPad.h"; sourceTree = "<group>"; };
 		0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatArchiveEpisodeViewController~iPad.m"; sourceTree = "<group>"; };
+		0456B98017D32B0800826CEB /* SlashatLiveViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatLiveViewController~iPad.h"; sourceTree = "<group>"; };
+		0456B98117D32B0900826CEB /* SlashatLiveViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatLiveViewController~iPad.m"; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat@2x.png"; sourceTree = "<group>"; };
 		046D60DD16BD0E0C0088678E /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
@@ -571,6 +574,8 @@
 				0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */,
 				0456B96417D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.h */,
 				0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */,
+				0456B98017D32B0800826CEB /* SlashatLiveViewController~iPad.h */,
+				0456B98117D32B0900826CEB /* SlashatLiveViewController~iPad.m */,
 			);
 			name = ViewControllers_iPad;
 			path = StackScrollViewControllers;
@@ -830,6 +835,7 @@
 				0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */,
 				0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */,
 				0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */,
+				0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
