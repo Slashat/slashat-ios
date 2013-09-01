@@ -75,7 +75,7 @@ const CGRect ipadVideoContainerFrame = {{0.0f, 0.0f}, {477.0f, 268.0f}};
 {
     NSLog(@"Starting live stream: %@", broadcastId);
     
-    SlashatLiveVideoViewController *liveVideoViewController = (SlashatLiveVideoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatLiveVideoViewController"];
+    SlashatLiveVideoViewController *liveVideoViewController = [[SlashatLiveVideoViewController alloc] init];
     
     [liveVideoViewController initializeLiveStream:broadcastId];
     
