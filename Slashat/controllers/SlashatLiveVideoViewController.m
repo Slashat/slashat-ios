@@ -7,9 +7,8 @@
 //
 
 #import "SlashatLiveVideoViewController.h"
-#import "APIKey.h"
 #import "MediaPlayer/MPMoviePlayerController.h"
-#import "AFJSONRequestOperation.h"
+#import "SlashatAPIManager.h"
 
 @interface SlashatLiveVideoViewController ()
 
@@ -45,24 +44,14 @@
 
 - (void)initializeLiveStream:(NSString *)broadcastId
 {
-    NSURL *broadcastUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.json", BAMBUSER_TRANSCODE_URL, broadcastId]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:broadcastUrl];
-    [request setHTTPMethod:@"POST"];
-    
-    NSString *postParams = [NSString stringWithFormat:@"api_key=%@&preset=hls", BAMBUSER_TRANSCODE_API_KEY];
-    [request setHTTPBody:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        NSLog(@"Bambuser url: %@", [[JSON valueForKeyPath:@"result"] valueForKeyPath:@"url"]);
-        [self playStream:[NSURL URLWithString:[[JSON valueForKeyPath:@"result"] valueForKeyPath:@"url"]]];
+    [[SlashatAPIManager sharedClient] fetchLiveStreamUrlForBroadcastId:broadcastId sucess:^(NSURL *streamUrl) {
+        [self playStream:streamUrl];
     } failure:nil];
-    
-    [operation start];
 }
 
 - (void)playStream:(NSURL *)streamUrl
 {
+    NSLog(@"Playing stream: %@", streamUrl);
     _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:streamUrl];
     
     [_moviePlayer.view setFrame:self.view.bounds];

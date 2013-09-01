@@ -55,11 +55,28 @@
     } failure:nil];
     
     [operation start];
-    
 }
-                                                                        
-                                                            
 
+- (void)fetchLiveStreamUrlForBroadcastId:(NSString *)broadcastId sucess:(void(^)(NSURL *streamUrl))success failure:(void (^)(NSError *error))failure
+{
+    NSURL *broadcastUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.json", BAMBUSER_TRANSCODE_URL, broadcastId]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:broadcastUrl];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *postParams = [NSString stringWithFormat:@"api_key=%@&preset=hls", BAMBUSER_TRANSCODE_API_KEY];
+    [request setHTTPBody:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        NSURL *streamUrl = [NSURL URLWithString:[[JSON valueForKeyPath:@"result"] valueForKeyPath:@"url"]];
+        success(streamUrl);
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"SlashatAPIManager: fetchLiveStreamUrlForBroadcastId: error: %@", error);
+    }];
+    
+    [operation start];
+}
 
 
 @end
