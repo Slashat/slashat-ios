@@ -42,6 +42,7 @@
 #import "RootViewController.h"
 #import "StackScrollViewController.h"
 #import "SlashatArchiveViewController~iPad.h"
+#import "SlashatLiveViewController~iPad.h"
 
 @interface StackMenuObject:NSObject
 @property (nonatomic, strong) NSString *labelText;
@@ -161,8 +162,16 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SlashatArchiveViewController_iPad *slashatArchiveViewController = [[SlashatArchiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
-	[((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatArchiveViewController invokeByController:self isStackStartView:TRUE];
+    
+    if (indexPath.row == 0) {
+        SlashatLiveViewController_iPad *slashatLiveViewController = [[SlashatLiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+        [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatLiveViewController invokeByController:self isStackStartView:TRUE];
+    } else if (indexPath.row == 1) {
+        SlashatArchiveViewController_iPad *slashatArchiveViewController = [[SlashatArchiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+        [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatArchiveViewController invokeByController:self isStackStartView:TRUE];
+    }
+    
+    
 }
 
 

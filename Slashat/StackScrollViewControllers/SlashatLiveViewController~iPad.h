@@ -10,4 +10,6 @@
 
 @interface SlashatLiveViewController_iPad : UIViewController
 
+- (id)initWithFrame:(CGRect)frame;
+
 @end

@@ -56,6 +56,9 @@
 		0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B96217D1F1F600826CEB /* SlashatArchiveViewController~iPad.m */; };
 		0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */; };
 		0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456B98117D32B0900826CEB /* SlashatLiveViewController~iPad.m */; };
+		0456B98417D3386D00826CEB /* CountdownView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0456B98317D3386D00826CEB /* CountdownView~iPad.xib */; };
+		0456B98717D341A900826CEB /* logo_neg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0456B98517D341A900826CEB /* logo_neg.png */; };
+		0456B98817D341A900826CEB /* logo_neg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0456B98617D341A900826CEB /* logo_neg@2x.png */; };
 		04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04596A1F17199E450094C499 /* QuartzCore.framework */; };
 		04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */; };
 		046D60E016BD12D80088678E /* SlashatLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */; };
@@ -216,6 +219,9 @@
 		0456B96517D1F59100826CEB /* SlashatArchiveEpisodeViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatArchiveEpisodeViewController~iPad.m"; sourceTree = "<group>"; };
 		0456B98017D32B0800826CEB /* SlashatLiveViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatLiveViewController~iPad.h"; sourceTree = "<group>"; };
 		0456B98117D32B0900826CEB /* SlashatLiveViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatLiveViewController~iPad.m"; sourceTree = "<group>"; };
+		0456B98317D3386D00826CEB /* CountdownView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CountdownView~iPad.xib"; sourceTree = "<group>"; };
+		0456B98517D341A900826CEB /* logo_neg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_neg.png; sourceTree = "<group>"; };
+		0456B98617D341A900826CEB /* logo_neg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_neg@2x.png"; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04599EEA17AA5550004C5B33 /* femalecodertocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat@2x.png"; sourceTree = "<group>"; };
 		046D60DD16BD0E0C0088678E /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
@@ -327,6 +333,8 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				0456B98517D341A900826CEB /* logo_neg.png */,
+				0456B98617D341A900826CEB /* logo_neg@2x.png */,
 				04E9FE0217CD29A500D77E83 /* podcast_icon.png */,
 				04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */,
 				04956B5E17B56A8400091C26 /* player_flap_icon.png */,
@@ -367,6 +375,7 @@
 				042ECD481693537C00C77193 /* logo@2x.png */,
 				042ECD491693537C00C77193 /* second.png */,
 				042ECD4A1693537C00C77193 /* second@2x.png */,
+				0456B98317D3386D00826CEB /* CountdownView~iPad.xib */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -768,6 +777,9 @@
 				04956B6117B56A8400091C26 /* player_flap_icon@2x.png in Resources */,
 				04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */,
 				04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */,
+				0456B98417D3386D00826CEB /* CountdownView~iPad.xib in Resources */,
+				0456B98717D341A900826CEB /* logo_neg.png in Resources */,
+				0456B98817D341A900826CEB /* logo_neg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
