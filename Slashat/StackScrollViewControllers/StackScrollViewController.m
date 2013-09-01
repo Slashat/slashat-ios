@@ -692,13 +692,11 @@ const NSInteger SLIDE_VIEWS_START_X_POS = 0;
 		[[_borderViews viewWithTag:1] setHidden:TRUE];
 	}
 	
-	if ([_slideViews.subviews count] != 0) {
-		UIViewWithShadow* verticalLineView = [[UIViewWithShadow alloc] initWithFrame:CGRectMake(-40, 0, 40 , self.view.frame.size.height)];
-		[verticalLineView setBackgroundColor:[UIColor clearColor]];
-		[verticalLineView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-		[verticalLineView setClipsToBounds:NO];
-		[controller.view addSubview:verticalLineView];
-	}
+	UIViewWithShadow* verticalLineView = [[UIViewWithShadow alloc] initWithFrame:CGRectMake(-40, 0, 40 , self.view.frame.size.height)];
+    [verticalLineView setBackgroundColor:[UIColor clearColor]];
+    [verticalLineView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+    [verticalLineView setClipsToBounds:NO];
+    [controller.view addSubview:verticalLineView];
 	
 	[_viewControllersStack addObject:controller];
 	if (invokeByController !=nil) {
