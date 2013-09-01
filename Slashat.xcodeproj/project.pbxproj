@@ -122,6 +122,7 @@
 		04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9C17941DE500428565 /* Slashat_twittershare@2x.png */; };
 		04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */; };
 		04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */; };
+		04CEA8EF17D359E900C265B9 /* SlashatEpisodeView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CEA8EE17D359E900C265B9 /* SlashatEpisodeView~iPad.xib */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
@@ -293,6 +294,7 @@
 		04CA4C9D17941DE500428565 /* Slashat_fbshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slashat_fbshare@2x.png"; sourceTree = "<group>"; };
 		04CEA8EB17D3552000C265B9 /* UIColor+Slashat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Slashat.h"; sourceTree = "<group>"; };
 		04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Slashat.m"; sourceTree = "<group>"; };
+		04CEA8EE17D359E900C265B9 /* SlashatEpisodeView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatEpisodeView~iPad.xib"; sourceTree = "<group>"; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				042ECD491693537C00C77193 /* second.png */,
 				042ECD4A1693537C00C77193 /* second@2x.png */,
 				0456B98317D3386D00826CEB /* CountdownView~iPad.xib */,
+				04CEA8EE17D359E900C265B9 /* SlashatEpisodeView~iPad.xib */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				0456B98417D3386D00826CEB /* CountdownView~iPad.xib in Resources */,
 				0456B98717D341A900826CEB /* logo_neg.png in Resources */,
 				0456B98817D341A900826CEB /* logo_neg@2x.png in Resources */,
+				04CEA8EF17D359E900C265B9 /* SlashatEpisodeView~iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

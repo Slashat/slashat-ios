@@ -116,11 +116,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SlashatArchiveEpisodeViewController_iPad *episodeViewController = [[SlashatArchiveEpisodeViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+    //SlashatArchiveEpisodeViewController_iPad *episodeViewController = [[SlashatArchiveEpisodeViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+    
+    SlashatArchiveEpisodeViewController_iPad *episodeViewController = [[SlashatArchiveEpisodeViewController_iPad alloc] initWithNibName:@"SlashatEpisodeView~iPad" bundle:nil];
+    
     
     episodeViewController.episode = [self.episodes objectAtIndex:indexPath.row];
     
 	[((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:episodeViewController invokeByController:self isStackStartView:FALSE];
+    
+    episodeViewController.view.frame = CGRectMake(0, 0, 477, self.view.frame.size.height);
 }
 
 @end
