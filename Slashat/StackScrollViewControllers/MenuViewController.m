@@ -43,6 +43,7 @@
 #import "StackScrollViewController.h"
 #import "SlashatArchiveViewController~iPad.h"
 #import "SlashatLiveViewController~iPad.h"
+#import "ColorUtils.h"
 
 @interface StackMenuObject:NSObject
 @property (nonatomic, strong) NSString *labelText;
@@ -149,10 +150,12 @@
 		[bgView setBackgroundColor:[UIColor colorWithWhite:2 alpha:0.2]];
 		[cell setSelectedBackgroundView:bgView];
     }
-    
+        
     // Configure the cell...
 	cell.textLabel.text = ((StackMenuObject *)[self.menuObjects objectAtIndex:indexPath.row]).labelText;
-	[cell.textLabel setTextColor:[UIColor blackColor]];
+    
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.highlightedTextColor = UIColorFromRGB(0xde5214);;
     
     return cell;
 }
@@ -170,6 +173,7 @@
         SlashatArchiveViewController_iPad *slashatArchiveViewController = [[SlashatArchiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
         [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatArchiveViewController invokeByController:self isStackStartView:TRUE];
     }
+    
     
     
 }
