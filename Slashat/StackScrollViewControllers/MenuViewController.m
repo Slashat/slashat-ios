@@ -101,12 +101,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self selectMenuRow:0];
+}
+
+- (void)selectMenuRow:(NSNumber *)row
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
 }
 
 
