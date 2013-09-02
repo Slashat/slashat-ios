@@ -42,6 +42,9 @@
 #import "MenuViewController.h"
 #import "StackScrollViewController.h"
 
+#import "VSTheme.h"
+#import "AppDelegate.h"
+
 
 @interface UIViewExt : UIView {} 
 @end
@@ -103,11 +106,15 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    VSTheme *theme = [AppDelegate sharedAppDelegate].theme;
+    float titleBarHeight = [theme floatForKey:@"iPadTitleBarHeight"];
+    
 	rootView = [[UIViewExt alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	rootView.autoresizingMask = UIViewAutoresizingFlexibleWidth + UIViewAutoresizingFlexibleHeight;
 	[rootView setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
 	
-	leftMenuView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, self.view.frame.size.height)];
+	leftMenuView = [[UIView alloc] initWithFrame:CGRectMake(0, titleBarHeight, 200, self.view.frame.size.height - titleBarHeight)];
 	leftMenuView.autoresizingMask = UIViewAutoresizingFlexibleHeight;	
 	menuViewController = [[MenuViewController alloc] initWithFrame:CGRectMake(0, 0, leftMenuView.frame.size.width, leftMenuView.frame.size.height)];
 	[menuViewController.view setBackgroundColor:[UIColor clearColor]];
@@ -115,7 +122,7 @@
 	[menuViewController viewDidAppear:FALSE];
 	[leftMenuView addSubview:menuViewController.view];
 	
-	rightSlideView = [[UIView alloc] initWithFrame:CGRectMake(leftMenuView.frame.size.width, 0, rootView.frame.size.width - leftMenuView.frame.size.width, rootView.frame.size.height)];
+	rightSlideView = [[UIView alloc] initWithFrame:CGRectMake(leftMenuView.frame.size.width, titleBarHeight, rootView.frame.size.width - leftMenuView.frame.size.width, rootView.frame.size.height - titleBarHeight)];
 	rightSlideView.autoresizingMask = UIViewAutoresizingFlexibleWidth + UIViewAutoresizingFlexibleHeight;
 	stackScrollViewController = [[StackScrollViewController alloc] init];	
 	[stackScrollViewController.view setFrame:CGRectMake(0, 0, rightSlideView.frame.size.width, rightSlideView.frame.size.height)];
@@ -128,6 +135,21 @@
 	[rootView addSubview:rightSlideView];
 	[self.view setBackgroundColor:[UIColor colorWithPatternImage: [UIImage imageNamed:@"backgroundImage_repeat.png"]]];
 	[self.view addSubview:rootView];
+    
+    UIView *titleBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, titleBarHeight)];
+    titleBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    titleBar.backgroundColor = [UIColor slashatOrange];
+    
+    UIImage *slashatLogo = [UIImage imageNamed:@"logo_neg.png"];
+    UIImageView *slashatLogoContainerView = [[UIImageView alloc] initWithImage:slashatLogo];
+    slashatLogoContainerView.frame = CGRectMake(10, titleBarHeight / 2 - slashatLogo.size.height / 2, slashatLogo.size.width, slashatLogo.size.height);
+    [titleBar addSubview:slashatLogoContainerView];
+    
+    titleBar.layer.shadowOffset = CGSizeMake(0, 1);
+    titleBar.layer.shadowRadius = 2;
+    titleBar.layer.shadowOpacity = 0.3;
+    
+    [self.view addSubview:titleBar];
 }
 
 

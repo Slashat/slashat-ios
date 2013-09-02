@@ -44,6 +44,7 @@
 #import "SlashatArchiveViewController~iPad.h"
 #import "SlashatLiveViewController~iPad.h"
 #import "SlashatAboutViewController.h"
+#import "VSTheme.h"
 
 @interface StackMenuObject:NSObject
 @property (nonatomic, strong) NSString *labelText;
@@ -56,6 +57,7 @@
 @interface MenuViewController ()
 
 @property (nonatomic, strong) NSArray *menuObjects;
+@property (nonatomic, assign) float titleBarHeight;
 
 @end
 
@@ -78,8 +80,8 @@
         about.labelText = @"Om oss";
         
         self.menuObjects = @[live, archive, about];
-		
-		_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        		
+		_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - self.titleBarHeight) style:UITableViewStylePlain];
 		[_tableView setDelegate:self];
 		[_tableView setDataSource:self];
 		[_tableView setBackgroundColor:[UIColor clearColor]];
@@ -177,13 +179,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
-        SlashatLiveViewController_iPad *slashatLiveViewController = [[SlashatLiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+        SlashatLiveViewController_iPad *slashatLiveViewController = [[SlashatLiveViewController_iPad alloc] initWithFrame:CGRectMake(0, self.titleBarHeight, 477, self.view.frame.size.height - self.titleBarHeight)];
         [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatLiveViewController invokeByController:self isStackStartView:TRUE];
     } else if (indexPath.row == 1) {
-        SlashatArchiveViewController_iPad *slashatArchiveViewController = [[SlashatArchiveViewController_iPad alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+        SlashatArchiveViewController_iPad *slashatArchiveViewController = [[SlashatArchiveViewController_iPad alloc] initWithFrame:CGRectMake(0, self.titleBarHeight, 477, self.view.frame.size.height - self.titleBarHeight)];
         [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatArchiveViewController invokeByController:self isStackStartView:TRUE];
     } else if (indexPath.row == 2) {
-        SlashatAboutViewController *slashatAboutViewController = [[SlashatAboutViewController alloc] initWithFrame:CGRectMake(0, 0, 477, self.view.frame.size.height)];
+        SlashatAboutViewController *slashatAboutViewController = [[SlashatAboutViewController alloc] initWithFrame:CGRectMake(0, self.titleBarHeight, 477, self.view.frame.size.height - self.titleBarHeight)];
         [((RootViewController *)[AppDelegate sharedAppDelegate].window.rootViewController).stackScrollViewController addViewInSlider:slashatAboutViewController invokeByController:self isStackStartView:TRUE];
     }
     

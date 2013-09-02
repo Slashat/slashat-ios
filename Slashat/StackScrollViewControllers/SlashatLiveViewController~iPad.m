@@ -36,16 +36,7 @@ const CGRect ipadVideoContainerFrame = {{0.0f, 0.0f}, {477.0f, 268.0f}};
 		[self.view setFrame:frame];
         [self.view setBackgroundColor:[UIColor whiteColor]];
         
-        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-        headerView.backgroundColor = [UIColor slashatOrange];
-        [self.view addSubview:headerView];
-        
-        UIImage *slashatLogo = [UIImage imageNamed:@"logo_neg.png"];
-        UIImageView *slashatLogoContainerView = [[UIImageView alloc] initWithImage:slashatLogo];
-        slashatLogoContainerView.frame = CGRectMake(10, 10, slashatLogo.size.width, slashatLogo.size.height);
-        [headerView addSubview:slashatLogoContainerView];
-        
-        self.videoContainerFrame = CGRectMake(0, headerView.frame.size.height, self.view.frame.size.width, 268.0f);
+        self.videoContainerFrame = CGRectMake(0, 0, self.view.frame.size.width, 268.0f);
 	}
     return self;
 }
