@@ -34,6 +34,9 @@
 		043B5472169313A500B71F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B543F169313A500B71F3A /* Foundation.framework */; };
 		043B547A169313A500B71F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 043B5478169313A500B71F3A /* InfoPlist.strings */; };
 		043B547D169313A500B71F3A /* SlashatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B547C169313A500B71F3A /* SlashatTests.m */; };
+		043FF42517D517F700FD9993 /* VSTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 043FF42217D517F700FD9993 /* VSTheme.m */; };
+		043FF42617D517F700FD9993 /* VSThemeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 043FF42417D517F700FD9993 /* VSThemeLoader.m */; };
+		043FF42817D5180E00FD9993 /* DB5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043FF42717D5180E00FD9993 /* DB5.plist */; };
 		0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0444667117CE68A4007E9707 /* SlashatApplication.m */; };
 		044730591698623F00C74E01 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 044730571698623F00C74E01 /* RSSParser.m */; };
 		0447305D16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447305C16987BB100C74E01 /* SlashatArchiveEpisodeViewController.m */; };
@@ -181,6 +184,11 @@
 		043B5479169313A500B71F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		043B547B169313A500B71F3A /* SlashatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlashatTests.h; sourceTree = "<group>"; };
 		043B547C169313A500B71F3A /* SlashatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlashatTests.m; sourceTree = "<group>"; };
+		043FF42117D517F700FD9993 /* VSTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTheme.h; sourceTree = "<group>"; };
+		043FF42217D517F700FD9993 /* VSTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSTheme.m; sourceTree = "<group>"; };
+		043FF42317D517F700FD9993 /* VSThemeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSThemeLoader.h; sourceTree = "<group>"; };
+		043FF42417D517F700FD9993 /* VSThemeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSThemeLoader.m; sourceTree = "<group>"; };
+		043FF42717D5180E00FD9993 /* DB5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DB5.plist; sourceTree = "<group>"; };
 		0444667017CE68A4007E9707 /* SlashatApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatApplication.h; sourceTree = "<group>"; };
 		0444667117CE68A4007E9707 /* SlashatApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatApplication.m; sourceTree = "<group>"; };
 		044730561698623F00C74E01 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
@@ -485,6 +493,7 @@
 		043B5443169313A500B71F3A /* Slashat */ = {
 			isa = PBXGroup;
 			children = (
+				043FF42717D5180E00FD9993 /* DB5.plist */,
 				04CEA8EA17D3550200C265B9 /* Categories */,
 				046D60DD16BD0E0C0088678E /* APIKey.h */,
 				043B544C169313A500B71F3A /* AppDelegate.h */,
@@ -541,6 +550,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		043FF42017D517F700FD9993 /* DB5 */ = {
+			isa = PBXGroup;
+			children = (
+				043FF42117D517F700FD9993 /* VSTheme.h */,
+				043FF42217D517F700FD9993 /* VSTheme.m */,
+				043FF42317D517F700FD9993 /* VSThemeLoader.h */,
+				043FF42417D517F700FD9993 /* VSThemeLoader.m */,
+			);
+			path = DB5;
+			sourceTree = "<group>";
+		};
 		044730531698623F00C74E01 /* RSSParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +573,7 @@
 		0452943116985933001F0504 /* externalFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				043FF42017D517F700FD9993 /* DB5 */,
 				044730531698623F00C74E01 /* RSSParser */,
 				0452943216985951001F0504 /* AFNetworking */,
 			);
@@ -816,6 +837,7 @@
 				04CEA8EF17D359E900C265B9 /* SlashatEpisodeView~iPad.xib in Resources */,
 				04CEA8F317D36C3F00C265B9 /* SlashatBrowserView~iPad.xib in Resources */,
 				04CEA8FB17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib in Resources */,
+				043FF42817D5180E00FD9993 /* DB5.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +910,8 @@
 				04CEA8F617D36C9000C265B9 /* SlashatBrowserViewController~iPad.m in Sources */,
 				04CEA8F917D39D9C00C265B9 /* SlashatAboutViewController.m in Sources */,
 				04CEA8FE17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m in Sources */,
+				043FF42517D517F700FD9993 /* VSTheme.m in Sources */,
+				043FF42617D517F700FD9993 /* VSThemeLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

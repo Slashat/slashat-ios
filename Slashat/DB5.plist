@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Default</key>
+	<dict>
+		<key>iPadTitleBarColor</key>
+		<string>708090</string>
+		<key>iPadTitleBarHeight</key>
+		<integer>50</integer>
+	</dict>
+	<key>Example Theme</key>
+	<dict>
+		<key>test</key>
+		<string>foo</string>
+	</dict>
+</dict>
+</plist>

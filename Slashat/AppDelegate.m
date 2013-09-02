@@ -11,9 +11,13 @@
 #import "SlashatBrowserViewController~iPad.h"
 #import "StackScrollViewController.h"
 #import "RootViewController.h"
-
+#import "VSThemeLoader.h"
+#import "VSTheme.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) VSThemeLoader *themeLoader;
+
 @property (strong, nonatomic) SlashatAudioHandler *audioHandler;
 @property (assign, nonatomic) BOOL isShowingAudioControlsView;
 
@@ -35,6 +39,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     [self setCustomNavigationBarAppearance];
+    
+    self.themeLoader = [VSThemeLoader new];
+    self.theme = self.themeLoader.defaultTheme;
     
     //NSError *sessionError = nil;
     //[[AVAudioSession sharedInstance] setDelegate:self];

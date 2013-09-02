@@ -11,13 +11,13 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "SlashatAudioHandler.h"
 
-@class RootViewController;
+@class RootViewController, VSTheme;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) RootViewController *rootViewController;
-
+@property (nonatomic, strong) VSTheme *theme;
 
 + (AppDelegate *)sharedAppDelegate;
 - (BOOL)openURL:(NSURL *)url;
