@@ -145,9 +145,9 @@
     slashatLogoContainerView.frame = CGRectMake(10, titleBarHeight / 2 - slashatLogo.size.height / 2, slashatLogo.size.width, slashatLogo.size.height);
     [titleBar addSubview:slashatLogoContainerView];
     
-    titleBar.layer.shadowOffset = CGSizeMake(0, 1);
-    titleBar.layer.shadowRadius = 2;
-    titleBar.layer.shadowOpacity = 0.3;
+    titleBar.layer.shadowOffset = [theme sizeForKey:@"iPadTitleBarShadowSize"];
+    titleBar.layer.shadowRadius = [theme floatForKey:@"iPadTitleBarShadowRadius"];
+    titleBar.layer.shadowOpacity = [theme floatForKey:@"iPadTitleBarShadowOpacity"];
     
     [self.view addSubview:titleBar];
 }

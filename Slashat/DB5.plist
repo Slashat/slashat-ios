@@ -8,6 +8,14 @@
 		<string>708090</string>
 		<key>iPadTitleBarHeight</key>
 		<integer>50</integer>
+		<key>iPadTitleBarShadowSizeWidth</key>
+		<integer>0</integer>
+		<key>iPadTitleBarShadowSizeHeight</key>
+		<integer>1</integer>
+		<key>iPadTitleBarShadowRadius</key>
+		<integer>2</integer>
+		<key>iPadTitleBarShadowOpacity</key>
+		<real>0.3</real>
 	</dict>
 	<key>Example Theme</key>
 	<dict>
