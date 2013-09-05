@@ -124,6 +124,9 @@
     if ([url.scheme rangeOfString:@"googlechrome"].location != NSNotFound) {
         // Let SlashatApplication handle this in it's super UIApplication
         return NO;
+    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome-x-callback:///"]]) {
+        [[UIApplication sharedApplication] openURL:[self getChromeXCallbackURIForUrl:url]];
+        return YES;
     } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome:///"]]) {
         [[UIApplication sharedApplication] openURL:[self getChromeURIForUrl:url]];
         return YES;
@@ -158,6 +161,42 @@
     }
     
     return chromeUrl;
+}
+
+- (NSURL *)getChromeXCallbackURIForUrl:(NSURL *)url
+{
+    NSString *appName =
+    [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    NSURL *inputURL = url;
+    NSURL *callbackURL = [NSURL URLWithString:@"slashat://"];
+    
+    NSString *scheme = inputURL.scheme;
+    
+    // Proceed only if scheme is http or https.
+    if ([scheme isEqualToString:@"http"] ||
+        [scheme isEqualToString:@"https"]) {
+        NSString *chromeURLString = [NSString stringWithFormat:
+                                     @"googlechrome-x-callback://x-callback-url/open/?x-source=%@&x-success=%@&url=%@",
+                                     encodeByAddingPercentEscapes(appName),
+                                     encodeByAddingPercentEscapes([callbackURL absoluteString]),
+                                     encodeByAddingPercentEscapes([inputURL absoluteString])];
+        NSURL *chromeURL = [NSURL URLWithString:chromeURLString];
+        
+        return chromeURL;
+    } else {
+        return url;
+    }
+}
+
+static NSString * encodeByAddingPercentEscapes(NSString *input) {
+    NSString *encodedValue =
+    (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                        kCFAllocatorDefault,
+                                                        (CFStringRef)input,
+                                                        NULL,
+                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                        kCFStringEncodingUTF8));
+    return encodedValue;
 }
 
 - (void)addSlashatBrowserViewToStackForUrl:(NSURL *)url
