@@ -10,8 +10,6 @@
 
 @interface SlashatApplication : UIApplication
 
-- (void)openPodcastURL:(NSURL *)url;
-- (void)openTwitterURL:(NSURL *)url;
 - (void)openCustomURL:(NSURL *)url;
 
 @end
