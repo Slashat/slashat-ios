@@ -11,6 +11,7 @@
 #import "SlashatAPIManager.h"
 #import "SlashatArchiveEpisodeViewController.h"
 #import "ColorUtils.h"
+#import "SlashatApplication.h"
 
 @interface SlashatArchiveTableViewController ()
 
@@ -107,10 +108,10 @@
 {
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"podcast://"]]) {
         NSURL *podcastUrl = [NSURL URLWithString:@"podcast://slashat.se/avsnitt.rss"];
-        [[UIApplication sharedApplication] openURL:podcastUrl];
+        [((SlashatApplication *)[UIApplication sharedApplication]) openPodcastURL:podcastUrl];
     } else {
         NSURL *itunesUrl = [NSURL URLWithString:@"http://slashat.se/avsnitt.rss"];
-        [[UIApplication sharedApplication] openURL:itunesUrl];
+        [((SlashatApplication *)[UIApplication sharedApplication]) openPodcastURL:itunesUrl];
     }
 }
 

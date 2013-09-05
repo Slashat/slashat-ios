@@ -19,4 +19,9 @@
         return [super openURL:url];
 }
 
+- (void)openPodcastURL:(NSURL *)url
+{
+    [super openURL:url];
+}
+
 @end

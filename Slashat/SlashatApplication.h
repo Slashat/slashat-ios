@@ -10,4 +10,6 @@
 
 @interface SlashatApplication : UIApplication
 
+- (void)openPodcastURL:(NSURL *)url;
+
 @end
