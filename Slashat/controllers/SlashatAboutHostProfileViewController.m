@@ -7,6 +7,7 @@
 //
 
 #import "SlashatAboutHostProfileViewController.h"
+#import "SlashatApplication.h"
 
 @interface SlashatAboutHostProfileViewController ()
 
@@ -73,7 +74,12 @@
     
     for (NSURL *twitterUrl in twitterUrls) {
         if ([[UIApplication sharedApplication] canOpenURL:twitterUrl]) {
-            [[UIApplication sharedApplication] openURL:twitterUrl];
+            if ([twitterUrl.scheme rangeOfString:@"http"].location == NSNotFound) {
+                [((SlashatApplication *)[UIApplication sharedApplication]) openCustomURL:twitterUrl];
+            } else {
+                [[UIApplication sharedApplication] openURL:twitterUrl];
+            }
+            
             break;
         }
     }
@@ -102,7 +108,7 @@
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlegmail:///"]]) {
         // Gmail-app is installed
         NSURL *gmailUrl = [NSURL URLWithString:[NSString stringWithFormat:@"googlegmail:///co?to=%@", self.host.emailAdress]];
-        [[UIApplication sharedApplication] openURL:gmailUrl];
+        [(SlashatApplication *)[UIApplication sharedApplication] openCustomURL:gmailUrl];
     } else {
         [self displayComposeMailSheet];
     }

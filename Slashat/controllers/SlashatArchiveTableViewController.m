@@ -108,10 +108,10 @@
 {
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"podcast://"]]) {
         NSURL *podcastUrl = [NSURL URLWithString:@"podcast://slashat.se/avsnitt.rss"];
-        [((SlashatApplication *)[UIApplication sharedApplication]) openPodcastURL:podcastUrl];
+        [((SlashatApplication *)[UIApplication sharedApplication]) openCustomURL:podcastUrl];
     } else {
         NSURL *itunesUrl = [NSURL URLWithString:@"http://slashat.se/avsnitt.rss"];
-        [((SlashatApplication *)[UIApplication sharedApplication]) openPodcastURL:itunesUrl];
+        [((SlashatApplication *)[UIApplication sharedApplication]) openCustomURL:itunesUrl];
     }
 }
 
