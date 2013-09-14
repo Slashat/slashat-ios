@@ -178,6 +178,26 @@ Jobbat som sysadmin och nättekniker men jobbar sedan några år tillbaka som pr
 Aktiv Xbox-spelare och har tillsammans med sambon kört igenom nästan varenda co-op-spel med splitscreen. Försöker även att producera elektronisk musik med varierande framgång.
 </string>
 			</dict>
+			<dict>
+				<key>type</key>
+				<string>contributor</string>
+				<key>name</key>
+				<string>Erika</string>
+				<key>image</key>
+				<string>erika.jpg</string>
+				<key>twitter</key>
+				<string></string>
+				<key>mail</key>
+				<string>erika@akire.se</string>
+				<key>web</key>
+				<string>http://akire.se</string>
+				<key>short_description</key>
+				<string>iOS-drottning</string>
+				<key>long_description</key>
+				<string>Erika har ställt upp med kod och programmeringgsupport i iOS-appen. Till vardags jobbar hon som approgrammerare på en mellanstor konsultfirma. På fritiden slukar hon TV-serier à la science fiction eller springer i skogen med scouterna.
+
+Hon gillar och kör Mac, både på jobbet och privat, men programmerar lika gärna appar till iOS som till Android.</string>
+			</dict>
 		</array>
 	</dict>
 </array>
