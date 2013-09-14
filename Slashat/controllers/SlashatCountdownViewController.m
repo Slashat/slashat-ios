@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSTimer *countdownTimer;
 @property (nonatomic, weak) IBOutlet UIView *countdownContainerView;
+@property (nonatomic, weak) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -93,6 +94,7 @@ NSDate *nextLiveShowDate;
     if (differenceInSeconds <= 0) {
         [self stopCountdownTimer];
         [self fadeCountdownToBlack];
+        [self fadeInMessageText];
     } else {
         int days = (int)((double)differenceInSeconds/(3600.0*24.00));
         int diffDay=differenceInSeconds-(days*3600*24);
@@ -145,6 +147,22 @@ NSDate *nextLiveShowDate;
     fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
     [self.countdownContainerView.layer addAnimation:fadeAnimation forKey:@"fadeAnimation"];
+}
+
+- (void)fadeInMessageText
+{
+    self.messageLabel.hidden = NO;
+    
+    CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnimation.fillMode = kCAFillModeForwards;
+    fadeAnimation.removedOnCompletion = NO;
+    fadeAnimation.duration = 0.5;
+    fadeAnimation.fromValue = [NSNumber numberWithFloat:0.0];
+    fadeAnimation.toValue = [NSNumber numberWithFloat:1.0];
+    fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    fadeAnimation.beginTime = CACurrentMediaTime()+1.7;
+    
+    [self.messageLabel.layer addAnimation:fadeAnimation forKey:@"fadeAnimation"];
 }
 
 - (void)animateLabel:(UILabel *)label

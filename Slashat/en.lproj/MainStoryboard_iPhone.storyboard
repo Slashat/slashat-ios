@@ -263,15 +263,23 @@
                                     <constraint firstItem="P42-3K-qNd" firstAttribute="leading" secondItem="ayf-Z1-lMb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xMU-sS-eZ4"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" text="Jezper jobbar febrilt med att starta sändningen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqv-Wn-gVj" userLabel="MessageLabel">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XH1-ht-iTx" firstAttribute="leading" secondItem="v3r-7T-gxu" secondAttribute="leading" type="default" id="6vR-cs-61F"/>
-                            <constraint firstItem="rP5-cS-ixu" firstAttribute="centerY" secondItem="M3U-QS-MR2" secondAttribute="centerY" type="default" id="AH9-Dh-iQ2"/>
                             <constraint firstItem="2ar-Qv-dSi" firstAttribute="baseline" secondItem="ayf-Z1-lMb" secondAttribute="baseline" type="default" id="H2h-FF-WAC"/>
+                            <constraint firstAttribute="trailing" secondItem="hqv-Wn-gVj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="L7W-P0-bkd"/>
+                            <constraint firstItem="hqv-Wn-gVj" firstAttribute="leading" secondItem="M3U-QS-MR2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NuV-yq-ymR"/>
                             <constraint firstItem="rP5-cS-ixu" firstAttribute="top" secondItem="M3U-QS-MR2" secondAttribute="top" constant="45" id="TYb-z7-6Kb"/>
                             <constraint firstItem="v4b-58-avy" firstAttribute="baseline" secondItem="ehr-dJ-D5Q" secondAttribute="baseline" type="default" id="X83-Th-E3z"/>
                             <constraint firstItem="rP5-cS-ixu" firstAttribute="leading" secondItem="M3U-QS-MR2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gCG-Zd-ebj"/>
+                            <constraint firstItem="hqv-Wn-gVj" firstAttribute="centerY" secondItem="rP5-cS-ixu" secondAttribute="centerY" type="default" id="lML-1t-Tkl"/>
+                            <constraint firstItem="rP5-cS-ixu" firstAttribute="centerY" secondItem="M3U-QS-MR2" secondAttribute="centerY" type="default" id="ot8-dy-SFG"/>
                             <constraint firstAttribute="trailing" secondItem="rP5-cS-ixu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vam-mi-Kid"/>
                         </constraints>
                     </view>
@@ -282,6 +290,7 @@
                     <connections>
                         <outlet property="countdownContainerView" destination="rP5-cS-ixu" id="WjW-CO-uiO"/>
                         <outlet property="countdownHeaderLabel" destination="XH1-ht-iTx" id="awX-9W-w24"/>
+                        <outlet property="messageLabel" destination="hqv-Wn-gVj" id="bCg-1E-IfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-vx-sze" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,6 +771,7 @@
             <relationships>
                 <relationship kind="outlet" name="countdownContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="countdownHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="messageLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SlashatLiveVideoViewController" superclassName="UIViewController">
