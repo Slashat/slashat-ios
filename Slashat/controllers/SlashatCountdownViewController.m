@@ -33,52 +33,38 @@ NSDate *nextLiveShowDate;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
-    [self initCountdownFromNextGoogleCalendarEvent];
+    
+    SlashatCalendarItem *testCalendarItem = [[SlashatCalendarItem alloc] init];
+    testCalendarItem.date = [NSDate dateWithTimeIntervalSinceNow:3];
+    testCalendarItem.title = @"Test";
+    
+    [self startCountdownToSlashatDateItem:testCalendarItem];
+    //[self initCountdownFromNextGoogleCalendarEvent];
 }
 
 - (void)initCountdownFromNextGoogleCalendarEvent
 {
     [[SlashatAPIManager sharedClient] fetchNextSlashatCalendarItemWithSuccess:^(SlashatCalendarItem *calendarItem) {
         
-        [countdownHeaderLabel setText:calendarItem.title];
-        
-        nextLiveShowDate = calendarItem.date;
-        [self setCountdownStartValue:nextLiveShowDate];
-        
-        [self startCountDown];
+        [self startCountdownToSlashatDateItem:calendarItem];
         
     } failure:^(NSError *error) {
         NSLog(@"%@", error.localizedDescription);
     }];    
 }
 
-- (void)startCountDown
+- (void)startCountdownToSlashatDateItem:(SlashatCalendarItem *)calendarItem
+{
+    [countdownHeaderLabel setText:calendarItem.title];
+    [self setCountdownStartValue:calendarItem.date];
+    
+    [self startCountdownTimer];
+}
+
+- (void)startCountdownTimer
 {
     // __attributes__((unused)) is to get rid of the "unused variable" warning in xcode
     NSTimer *timer __attribute__((unused)) = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateCountdown:) userInfo:nil repeats:YES];
-}
-
-- (NSDate *)getNextSlashatDate
-{
-    NSDate *today = [NSDate date];
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    [gregorian setLocale:[NSLocale currentLocale]];
-    
-    NSDateComponents *nowComponents = [gregorian components:NSYearCalendarUnit | NSWeekCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:today];
-    
-    [nowComponents setWeekday:3]; //Tuesday
-    
-    if (nowComponents.weekday != 3) {
-        [nowComponents setWeek: [nowComponents week] + 1]; //Next week
-    }
-    
-    [nowComponents setHour:19]; //19.30
-    [nowComponents setMinute:30];
-    [nowComponents setSecond:0];
-    
-    NSDate *comingTuesday = [gregorian dateFromComponents:nowComponents];
-    return comingTuesday;
 }
 
 - (void)updateCountdown:(NSTimer *)timer
@@ -88,17 +74,22 @@ NSDate *nextLiveShowDate;
 
 - (void)setCountdownStartValue:(NSDate *)destinationDate
 {
+    nextLiveShowDate = destinationDate;
+    
     double differenceInSeconds = [destinationDate timeIntervalSinceDate:[NSDate date]];
     
-    
-    int days = (int)((double)differenceInSeconds/(3600.0*24.00));
-    int diffDay=differenceInSeconds-(days*3600*24);
-    int hours=(int)((double)diffDay/3600.00);
-    int diffMin=diffDay-(hours*3600);
-    int minutes=(int)(diffMin/60.0);
-    int seconds=diffMin-(minutes*60);
+    if (differenceInSeconds <= 0) {
+        [self fadeCountdownToBlack];
+    } else {
+        int days = (int)((double)differenceInSeconds/(3600.0*24.00));
+        int diffDay=differenceInSeconds-(days*3600*24);
+        int hours=(int)((double)diffDay/3600.00);
+        int diffMin=diffDay-(hours*3600);
+        int minutes=(int)(diffMin/60.0);
+        int seconds=diffMin-(minutes*60);
         
-    [self setCountdownValuesWithDays:days hours:hours minutes:minutes seconds:seconds];
+        [self setCountdownValuesWithDays:days hours:hours minutes:minutes seconds:seconds];
+    }
 }
 
 - (void)setCountdownValuesWithDays:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds
@@ -128,6 +119,11 @@ NSDate *nextLiveShowDate;
     if (![oldValueLabelString2 isEqualToString:[valueString substringFromIndex:1]]) {
         [self animateLabel:valueLabel2];
     }
+}
+
+- (void)fadeCountdownToBlack
+{
+    
 }
 
 - (void)animateLabel:(UILabel *)label
