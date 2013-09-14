@@ -277,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="1202" y="-24"/>
         </scene>
-        <!--Slashat Archive Table View Controller - Arkiv-->
+        <!--Slashat Archive Table View Controller - Avsnitt-->
         <scene sceneID="fff-Sq-c4r">
             <objects>
                 <tableViewController id="8LT-hW-RdA" customClass="SlashatArchiveTableViewController" sceneMemberID="viewController">
@@ -312,7 +312,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Arkiv" id="vkT-cT-5Mg">
+                    <navigationItem key="navigationItem" title="Avsnitt" id="vkT-cT-5Mg">
                         <barButtonItem key="rightBarButtonItem" image="podcast_icon.png" id="6Kk-Aq-w4v">
                             <connections>
                                 <action selector="subscribeButtonPressed:" destination="8LT-hW-RdA" id="SWf-T4-GbK"/>
@@ -439,7 +439,7 @@
             </objects>
             <point key="canvasLocation" x="301" y="355"/>
         </scene>
-        <!--Slashat About Table View Controller - Om oss-->
+        <!--Slashat About Table View Controller - Om Slashat-->
         <scene sceneID="Gio-p3-jpX">
             <objects>
                 <tableViewController id="sik-nw-XZP" customClass="SlashatAboutTableViewController" sceneMemberID="viewController">
@@ -478,7 +478,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Om oss" id="fZg-Be-5h5"/>
+                    <navigationItem key="navigationItem" title="Om Slashat" id="fZg-Be-5h5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sod-oq-9ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
