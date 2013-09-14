@@ -134,6 +134,7 @@
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
+		04F698B017E4777700F8DC77 /* SlashatCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -320,6 +321,8 @@
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
+		04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCalendarItem.h; sourceTree = "<group>"; };
+		04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatCalendarItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +443,8 @@
 				0481815D16A0BC4500F60954 /* SlashatEpisode.m */,
 				0478928E177A30050091B0AD /* SlashatHost.h */,
 				0478928F177A30050091B0AD /* SlashatHost.m */,
+				04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */,
+				04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -912,6 +917,7 @@
 				04CEA8FE17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m in Sources */,
 				043FF42517D517F700FD9993 /* VSTheme.m in Sources */,
 				043FF42617D517F700FD9993 /* VSThemeLoader.m in Sources */,
+				04F698B017E4777700F8DC77 /* SlashatCalendarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

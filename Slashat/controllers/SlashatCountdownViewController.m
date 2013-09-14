@@ -8,10 +8,8 @@
 
 #import "SlashatCountdownViewController.h"
 #import "QuartzCore/QuartzCore.h"
-#import "AFJSONRequestOperation.h"
-#import "DateUtils.h"
-#import "APIKey.h"
-#import "AFHTTPClient.h"
+#import "SlashatAPIManager.h"
+#import "SlashatCalendarItem.h"
 
 @interface SlashatCountdownViewController ()
 
@@ -41,33 +39,18 @@ NSDate *nextLiveShowDate;
 
 - (void)initCountdownFromNextGoogleCalendarEvent
 {
-    NSString *parameterString = [NSString stringWithFormat:@"orderBy=startTime&singleEvents=true&timeMin=%@&key=%@", [DateUtils convertNSDateToGoogleCalendarString:[NSDate date]], GOOGLE_CALENDAR_API_KEY];
-    
-    NSString *encodedParameterString = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)parameterString, NULL, CFSTR("+:"), kCFStringEncodingUTF8);
-    
-    NSString *calendarUrlString = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/3om4bg9o7rdij1vuo7of48n910@group.calendar.google.com/events?%@", encodedParameterString];
-    
-    NSURL *calendarUrl = [NSURL URLWithString:calendarUrlString];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:calendarUrl];
-    [request setHTTPMethod:@"GET"];
-            
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    [[SlashatAPIManager sharedClient] fetchNextSlashatCalendarItemWithSuccess:^(SlashatCalendarItem *calendarItem) {
         
-        NSString *headerText = [[(NSArray *)[JSON valueForKeyPath:@"items"] objectAtIndex:0] valueForKeyPath:@"summary"];
-        [countdownHeaderLabel setText:headerText];
+        [countdownHeaderLabel setText:calendarItem.title];
         
-        NSString *dateString = [[[(NSArray *)[JSON valueForKeyPath:@"items"] objectAtIndex:0] valueForKeyPath:@"start"] valueForKeyPath:@"dateTime"];
-        
-        nextLiveShowDate = [DateUtils createNSDateFrom:dateString];
+        nextLiveShowDate = calendarItem.date;
         [self setCountdownStartValue:nextLiveShowDate];
+        
         [self startCountDown];
         
-    } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
-        NSLog(@"Failed: %@",[error localizedDescription]);
-    }];
-    
-    [operation start];
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];    
 }
 
 - (void)startCountDown
