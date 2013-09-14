@@ -17,6 +17,11 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
 @interface SlashatLiveViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *containerView;
+@property (nonatomic, strong) NSTimer *liveStreamCheckTimer;
+
+@property (nonatomic, strong) SlashatCountdownViewController *countdownViewController;
+@property (nonatomic, strong) SlashatLiveVideoViewController *liveVideoViewController;
+
 
 @end
 
@@ -39,32 +44,59 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
     [super viewDidLoad];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Slashat_logo.png"]];
-    
+        
     [self startLiveStreamOrCountdownAsync];
+}
+
+- (void)startPeriodicLiveStreamCheck
+{
+    [self stopLiveStreamCheckTimer];
+    
+    self.liveStreamCheckTimer = [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(startLiveStreamOrCountdownAsync) userInfo:nil repeats:YES];
+}
+
+- (void)stopLiveStreamCheckTimer
+{
+    if (self.liveStreamCheckTimer) {
+        [self.liveStreamCheckTimer invalidate];
+        self.liveStreamCheckTimer = nil;
+    }
 }
 
 - (void)startLiveStreamOrCountdownAsync
 {
     [[SlashatAPIManager sharedClient] fetchLiveBroadcastIdWithSuccess:^(NSString *broadcastId) {
         if (broadcastId) {
+            [self stopLiveStreamCheckTimer];
             [self startLiveStream:broadcastId];
         }
         else {
             [self startCountdown];
+            [self startPeriodicLiveStreamCheck];
         }
             
-    } failure:nil];
+    } failure:^(NSError *error) {
+        [self startCountdown];
+        [self startPeriodicLiveStreamCheck];
+    }];
 }
 
 - (void)startLiveStream:(NSString *)broadcastId
 {
-    NSLog(@"Starting live stream: %@", broadcastId);
+    if (self.countdownViewController) {
+        [self.countdownViewController.view removeFromSuperview];
+        self.countdownViewController = nil;
+    }
     
-    SlashatLiveVideoViewController *liveVideoViewController = (SlashatLiveVideoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatLiveVideoViewController"];
-    
-    [liveVideoViewController initializeLiveStream:broadcastId];
+    if (!self.liveVideoViewController) {
+        NSLog(@"Starting live stream: %@", broadcastId);
         
-    [self addNewChildViewController:liveVideoViewController];
+        self.liveVideoViewController = (SlashatLiveVideoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatLiveVideoViewController"];
+        
+        [self.liveVideoViewController initializeLiveStream:broadcastId];
+        
+        [self addNewChildViewController:self.liveVideoViewController];
+    }    
 }
 
 
@@ -72,9 +104,11 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
 {
     NSLog(@"Starting countdown.");
     
-    SlashatCountdownViewController *countdownViewController = (SlashatCountdownViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatCountdownViewController"];
-    
-    [self addNewChildViewController:countdownViewController];
+    if (!self.countdownViewController) {
+        self.countdownViewController = (SlashatCountdownViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SlashatCountdownViewController"];
+        
+        [self addNewChildViewController:self.countdownViewController];
+    }
 }
 
 - (IBAction)shareOnTwitter:(id)sender
