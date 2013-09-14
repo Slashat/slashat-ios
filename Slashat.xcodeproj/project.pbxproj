@@ -92,6 +92,8 @@
 		046F3AFE17E4C762000B500C /* snyggtommie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 046F3AF517E4C762000B500C /* snyggtommie.jpg */; };
 		046F3AFF17E4C762000B500C /* erika@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 046F3AF617E4C762000B500C /* erika@2x.jpg */; };
 		046F3B0017E4C762000B500C /* nicklas@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 046F3AF717E4C762000B500C /* nicklas@2x.jpg */; };
+		046F3B0317E4CD77000B500C /* slashat.png in Resources */ = {isa = PBXBuildFile; fileRef = 046F3B0117E4CD77000B500C /* slashat.png */; };
+		046F3B0417E4CD77000B500C /* slashat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046F3B0217E4CD77000B500C /* slashat@2x.png */; };
 		04789287177A21AD0091B0AD /* Slashat-hosts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04789286177A21AD0091B0AD /* Slashat-hosts.plist */; };
 		04789290177A30050091B0AD /* SlashatHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478928F177A30050091B0AD /* SlashatHost.m */; };
 		04789294177EEEFE0091B0AD /* snyggjeppe@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04789292177EEEFE0091B0AD /* snyggjeppe@2x.jpg */; };
@@ -279,6 +281,8 @@
 		046F3AF517E4C762000B500C /* snyggtommie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snyggtommie.jpg; sourceTree = "<group>"; };
 		046F3AF617E4C762000B500C /* erika@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "erika@2x.jpg"; sourceTree = "<group>"; };
 		046F3AF717E4C762000B500C /* nicklas@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nicklas@2x.jpg"; sourceTree = "<group>"; };
+		046F3B0117E4CD77000B500C /* slashat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slashat.png; sourceTree = "<group>"; };
+		046F3B0217E4CD77000B500C /* slashat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slashat@2x.png"; sourceTree = "<group>"; };
 		04789286177A21AD0091B0AD /* Slashat-hosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Slashat-hosts.plist"; sourceTree = "<group>"; };
 		0478928E177A30050091B0AD /* SlashatHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHost.h; sourceTree = "<group>"; };
 		0478928F177A30050091B0AD /* SlashatHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHost.m; sourceTree = "<group>"; };
@@ -694,6 +698,8 @@
 		04789291177EEEFE0091B0AD /* hosts */ = {
 			isa = PBXGroup;
 			children = (
+				046F3B0117E4CD77000B500C /* slashat.png */,
+				046F3B0217E4CD77000B500C /* slashat@2x.png */,
 				046F3AEF17E4C762000B500C /* erika.jpg */,
 				046F3AF017E4C762000B500C /* femalecodertocat.png */,
 				046F3AF117E4C762000B500C /* nicklas.jpg */,
@@ -883,6 +889,8 @@
 				046F3AFE17E4C762000B500C /* snyggtommie.jpg in Resources */,
 				046F3AFF17E4C762000B500C /* erika@2x.jpg in Resources */,
 				046F3B0017E4C762000B500C /* nicklas@2x.jpg in Resources */,
+				046F3B0317E4CD77000B500C /* slashat.png in Resources */,
+				046F3B0417E4CD77000B500C /* slashat@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
