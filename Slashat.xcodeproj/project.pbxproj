@@ -81,6 +81,8 @@
 		046DEAC7178214ED004A3A88 /* Live_passive.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DEABB178214ED004A3A88 /* Live_passive.png */; };
 		046DEAC8178214ED004A3A88 /* Live_passive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DEABC178214ED004A3A88 /* Live_passive@2x.png */; };
 		046EF2F41763292B00005B82 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046EF2F31763292B00005B82 /* Social.framework */; };
+		046F3AE917E4B8D9000B500C /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 046F3AE717E4B8D9000B500C /* icon-72.png */; };
+		046F3AEA17E4B8D9000B500C /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046F3AE817E4B8D9000B500C /* icon-72@2x.png */; };
 		04789287177A21AD0091B0AD /* Slashat-hosts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04789286177A21AD0091B0AD /* Slashat-hosts.plist */; };
 		04789290177A30050091B0AD /* SlashatHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478928F177A30050091B0AD /* SlashatHost.m */; };
 		04789294177EEEFE0091B0AD /* snyggjeppe@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04789292177EEEFE0091B0AD /* snyggjeppe@2x.jpg */; };
@@ -258,6 +260,8 @@
 		046DEABB178214ED004A3A88 /* Live_passive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Live_passive.png; sourceTree = "<group>"; };
 		046DEABC178214ED004A3A88 /* Live_passive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Live_passive@2x.png"; sourceTree = "<group>"; };
 		046EF2F31763292B00005B82 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		046F3AE717E4B8D9000B500C /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		046F3AE817E4B8D9000B500C /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		04789286177A21AD0091B0AD /* Slashat-hosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Slashat-hosts.plist"; sourceTree = "<group>"; };
 		0478928E177A30050091B0AD /* SlashatHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHost.h; sourceTree = "<group>"; };
 		0478928F177A30050091B0AD /* SlashatHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHost.m; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				046F3AE717E4B8D9000B500C /* icon-72.png */,
+				046F3AE817E4B8D9000B500C /* icon-72@2x.png */,
 				0456B98517D341A900826CEB /* logo_neg.png */,
 				0456B98617D341A900826CEB /* logo_neg@2x.png */,
 				04E9FE0217CD29A500D77E83 /* podcast_icon.png */,
@@ -843,6 +849,8 @@
 				04CEA8F317D36C3F00C265B9 /* SlashatBrowserView~iPad.xib in Resources */,
 				04CEA8FB17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib in Resources */,
 				043FF42817D5180E00FD9993 /* DB5.plist in Resources */,
+				046F3AE917E4B8D9000B500C /* icon-72.png in Resources */,
+				046F3AEA17E4B8D9000B500C /* icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
