@@ -423,11 +423,11 @@
             </objects>
             <point key="canvasLocation" x="1146" y="355"/>
         </scene>
-        <!--Navigation Controller - Arkiv-->
+        <!--Navigation Controller - Avsnitt-->
         <scene sceneID="Qcx-8a-efK">
             <objects>
                 <navigationController definesPresentationContext="YES" id="hZM-YC-k69" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Arkiv" id="rNS-hN-V1j"/>
+                    <tabBarItem key="tabBarItem" title="Avsnitt" id="rNS-hN-V1j"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OTp-zv-4lE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -651,11 +651,11 @@
             </objects>
             <point key="canvasLocation" x="-294" y="881"/>
         </scene>
-        <!--Navigation Controller - Om oss-->
+        <!--Navigation Controller - Om Slashat-->
         <scene sceneID="82e-aV-2KN">
             <objects>
                 <navigationController definesPresentationContext="YES" id="IWf-Yb-o2E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Om oss" id="cND-sA-g4c"/>
+                    <tabBarItem key="tabBarItem" title="Om Slashat" id="cND-sA-g4c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XOp-RW-JP0">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -742,7 +742,6 @@
         <class className="SlashatAudioControlViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlashatAudioControlViewController.h"/>
             <relationships>
-                <relationship kind="action" name="playPauseButtonPressed:"/>
                 <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
             </relationships>

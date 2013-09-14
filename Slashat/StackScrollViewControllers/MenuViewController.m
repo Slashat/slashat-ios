@@ -74,10 +74,10 @@
         live.labelText = @"Live";
         
         StackMenuObject *archive = [[StackMenuObject alloc] init];
-        archive.labelText = @"Arkiv";
+        archive.labelText = @"Avsnitt";
         
         StackMenuObject *about = [[StackMenuObject alloc] init];
-        about.labelText = @"Om oss";
+        about.labelText = @"Om Slashat";
         
         self.menuObjects = @[live, archive, about];
         		
