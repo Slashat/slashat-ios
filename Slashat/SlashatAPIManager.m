@@ -41,7 +41,12 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     
-    NSString *postParams = [NSString stringWithFormat:@"username=slashat&type=live&limit=1&api_key=%@", BAMBUSER_TRANSCODE_API_KEY];
+    NSString *userName = self.useDevValues ? @"slashat_dev" : @"slashat";
+    NSString *apiKey = self.useDevValues ? BAMBUSER_DEV_API_KEY : BAMBUSER_TRANSCODE_API_KEY;
+    
+    NSLog(@"Fetching live broadcastId for user %@", userName);
+    
+    NSString *postParams = [NSString stringWithFormat:@"username=%@&type=live&limit=1&api_key=%@", userName, apiKey];
     [request setHTTPBody:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -55,7 +60,9 @@
             success(nil);
         }
         
-    } failure:nil];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
     
     [operation start];
 }
@@ -76,6 +83,7 @@
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"SlashatAPIManager: fetchLiveStreamUrlForBroadcastId: error: %@", error);
+        failure(error);
     }];
     
     [operation start];

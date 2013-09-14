@@ -12,6 +12,8 @@
 
 @interface SlashatAPIManager : NSObject
 
+@property (nonatomic, assign) BOOL useDevValues;
+
 + (SlashatAPIManager *)sharedClient;
 
 - (void)fetchArchiveEpisodesWithSuccess:(void (^)(NSArray *episodes))success failure:(void (^)(NSError *error))failure;
