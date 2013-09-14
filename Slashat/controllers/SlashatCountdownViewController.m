@@ -38,12 +38,18 @@ NSDate *nextLiveShowDate;
 {
     [super viewDidLoad];
     
-    SlashatCalendarItem *testCalendarItem = [[SlashatCalendarItem alloc] init];
-    testCalendarItem.date = [NSDate dateWithTimeIntervalSinceNow:3];
-    testCalendarItem.title = @"Test";
+    // For dev
+    //[self initTestCountdownWithSeconds:5];
     
+    [self initCountdownFromNextGoogleCalendarEvent];
+}
+
+- (void)initTestCountdownWithSeconds:(NSTimeInterval)secondsToCountdown
+{
+    SlashatCalendarItem *testCalendarItem = [[SlashatCalendarItem alloc] init];
+    testCalendarItem.date = [NSDate dateWithTimeIntervalSinceNow:secondsToCountdown];
+    testCalendarItem.title = @"Testavsnitt - Allt blir bra till slut";
     [self startCountdownToSlashatDateItem:testCalendarItem];
-    //[self initCountdownFromNextGoogleCalendarEvent];
 }
 
 - (void)initCountdownFromNextGoogleCalendarEvent
