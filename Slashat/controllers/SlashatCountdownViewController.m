@@ -13,6 +13,9 @@
 
 @interface SlashatCountdownViewController ()
 
+@property (nonatomic, strong) NSTimer *countdownTimer;
+@property (nonatomic, weak) IBOutlet UIView *countdownContainerView;
+
 @end
 
 @implementation SlashatCountdownViewController
@@ -63,8 +66,17 @@ NSDate *nextLiveShowDate;
 
 - (void)startCountdownTimer
 {
-    // __attributes__((unused)) is to get rid of the "unused variable" warning in xcode
-    NSTimer *timer __attribute__((unused)) = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateCountdown:) userInfo:nil repeats:YES];
+    [self stopCountdownTimer];
+    
+    self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateCountdown:) userInfo:nil repeats:YES];
+}
+
+- (void)stopCountdownTimer
+{
+    if (self.countdownTimer) {
+        [self.countdownTimer invalidate];
+        self.countdownTimer = nil;
+    }
 }
 
 - (void)updateCountdown:(NSTimer *)timer
@@ -79,6 +91,7 @@ NSDate *nextLiveShowDate;
     double differenceInSeconds = [destinationDate timeIntervalSinceDate:[NSDate date]];
     
     if (differenceInSeconds <= 0) {
+        [self stopCountdownTimer];
         [self fadeCountdownToBlack];
     } else {
         int days = (int)((double)differenceInSeconds/(3600.0*24.00));
@@ -123,7 +136,15 @@ NSDate *nextLiveShowDate;
 
 - (void)fadeCountdownToBlack
 {
+    CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnimation.fillMode = kCAFillModeForwards;
+    fadeAnimation.removedOnCompletion = NO;
+    fadeAnimation.duration = 0.5;
+    fadeAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+    fadeAnimation.toValue = [NSNumber numberWithFloat:0.0];
+    fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
+    [self.countdownContainerView.layer addAnimation:fadeAnimation forKey:@"fadeAnimation"];
 }
 
 - (void)animateLabel:(UILabel *)label
@@ -146,7 +167,7 @@ NSDate *nextLiveShowDate;
     animationGroup.animations = [NSArray arrayWithObjects:fadeAnimation, scaleAnimation, nil];
     
     UILabel *duplicateLabel = [self duplicateLabel:label];
-    [self.view addSubview:duplicateLabel];
+    [self.countdownContainerView addSubview:duplicateLabel];
     
     [CATransaction setCompletionBlock:^{[duplicateLabel removeFromSuperview];}];
     
