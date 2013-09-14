@@ -4,6 +4,36 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>Om showen</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Om Slashat.se</string>
+				<key>image</key>
+				<string>slashat.png</string>
+				<key>mail</key>
+				<string>slashat@slashat.se</string>
+				<key>web</key>
+				<string>http://slashat.se</string>
+				<key>short_description</key>
+				<string>Sveriges största teknikpodcast</string>
+				<key>long_description</key>
+				<string>Slashat.se är en svensk teknikpodcast som drivs av Jezper Söderlund och Tommie Podzemski. Podcasten, som är dryga timmen lång, utkommer varje tisdag kväll och i showen diskuteras nyheter främst rörande teknik, prylar, mjukvara, hårdvara och internet.
+
+Sedan starten 2009 har Slashat-redaktionen fått tillökning av Magnus Jonasson och Johan Larsson som är givna röster vid våra liverapporteringar från t.ex. Apple events och liknande. De dyker dessutom allt som oftast upp i eftersnacken på tisdagarna, i våra specialavsnitt och syns också i reportage från mässor och events som vi besöker.
+
+Slashat.se spelas in live inför kamera varje tisdag klockan 20.00 med försnack från klockan 19.30 och lyssnare är välkomna att titta och vara en del i diskussionerna via livechatten.
+
+Du kan lyssna på Slashat via hemsidan eller prenumerera på oss via iTunes eller i din podcast-app. Showen utkommer tisdagskvällar varje vecka, året runt. Inspelningen sänds live via vår hemsida http://live.slashat.se.
+</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>Programledare</string>
 		<key>items</key>
 		<array>
@@ -23,7 +53,9 @@
 				<key>short_description</key>
 				<string>Programledare</string>
 				<key>long_description</key>
-				<string>En glad och bekväm herre, årsmodell 1980. Jobbar som originalare men är också aktiv inom dansmusikscenen som producenten och DJ:n Airbase. Han spenderar orimligt mycket tid framför datorer och har numer helt och hållet lämnat PC-land för en hundraprocentig Apple-miljö. Några Linux-dojor har han aldrig velat ha. Intresset för datorer och teknik har hängt med sedan Amiga 500:an. Övriga intressen innefattar musik, film, resor, gott öl och vin, motorcyklar, golf och egentligen allt som hör livsnjutning till.</string>
+				<string>En glad och bekväm herre, årsmodell 1980 som arbetar med marknadsföring på dagtid och producerar dansmusik bakom artistnamnet Airbase på kvällstid - när han inte sänder Slashat förstås.
+
+Jezper spenderar nästan orimligt mycket tid framför datorer och lever där i symbios med Apples produkter och tjänster, vilka han högljutt proklamerar in-show emellanåt. Övriga intressen inkluderar musik, film, resor, gott öl, vin och allt annat som hör livsnjutning till.</string>
 			</dict>
 			<dict>
 				<key>type</key>
@@ -41,7 +73,9 @@
 				<key>short_description</key>
 				<string>Programledare</string>
 				<key>long_description</key>
-				<string>Tommie en tjötig och sportig serie-entreprenör med visst huvud för kod. Vilket allt som oftast innebär att Tommie får en idé på fredagen, spenderar hela helgen på att koda den för att sedan lägga ner allt på måndagen. Kör uteslutande PC (Ubuntu och Windows), och är vad man kallar en Android-fanboy. Han har en viss förkärlek till att pyssla med linux-kärror och jobbar som IT-ansvarig på ett medelstort svenskt företag och säger sällan, t.om aldrig, nej till en öl.</string>
+				<string>En tjötig och sportig entreprenör med visst huvud för kod, vilket allt som oftast innebär att Tommie får en idé på fredagen, spenderar hela helgen på att koda den och sedan lägger ner projektet på måndagen.
+
+Arbetar som IT-ansvarig och kör primärt OS X men navigerar även hemtamt i Ubuntu. Tommie ser sig själv som Android-fanboy och utnyttjar detta för att skapa diskussionsunderlag i showen.</string>
 			</dict>
 		</array>
 	</dict>
@@ -66,7 +100,9 @@
 				<key>short_description</key>
 				<string>Forumgeneral</string>
 				<key>long_description</key>
-				<string>Killen som drar upp medelåldern på Slashat-redaktionen då han är den enda i gänget som är född på 70-talet. Magnus jobbar till vardags som IT-tekniker och konsult med affärssystem och Windows Server-miljöer som specialitet, men föredrar faktiskt Mac privat. Beskriver sig själv som en prylnörd och är alltid hungrig på nya prylar att integrera med sitt digitala liv. Förutom teknik så har en kärlek till matlagning har funnits länge och inte mycket slår hemlagat med en kall öl till. Eller två.</string>
+				<string>Killen som drar upp medelåldern på Slashat-redaktionen, då han är den enda i gänget som är född på 70-talet. Magnus jobbar till vardags som konsultchef och tekniker och arbetar med affärssystem och Windows Server-miljöer men föredrar Mac privat.
+
+Alltid på jakt efter nya prylar att integrera i sitt digitala liv. Förutom teknik så har en kärlek till matlagning funnits länge och inte mycket slår hemlagad mat med en kall öl. Eller två.</string>
 			</dict>
 			<dict>
 				<key>type</key>
@@ -85,7 +121,9 @@
 				<string>Kottragear och apputveckling</string>
 				<key>long_description</key>
 				<string>Älskar allt som är interaktivt. Utvecklar till vardags multimediaproduktioner och till sängdags så utvecklar jag annat smått och gott.
+
 Är biOS så jag använder (och utvecklar) lika gärna med Android som iOS. Det finns styrkor och svagheter med allt men jag försöker att använda det som känns mest spännande för stunden.
+
 Arbetar hellre i OS X och Linux än i Windows när jag vill vara produktiv. Använder hellre Windows än annat när det kommer till lek &amp; spel.</string>
 			</dict>
 		</array>
@@ -123,7 +161,7 @@ Behöver du hjälp med att komma igång så kan du antingen mejla eller slänga 
 				<key>name</key>
 				<string>Nicklas</string>
 				<key>image</key>
-				<string>nicklas.png</string>
+				<string>nicklas.jpg</string>
 				<key>twitter</key>
 				<string></string>
 				<key>mail</key>
@@ -133,7 +171,12 @@ Behöver du hjälp med att komma igång så kan du antingen mejla eller slänga 
 				<key>short_description</key>
 				<string>Androidkung</string>
 				<key>long_description</key>
-				<string></string>
+				<string>Relativt ny Slashat-lyssnare som varit datorintresserad sedan en Vic20 med 12&quot; svartvit TV uppenbarade sig under granen för många herrans år sedan. Efter detta har vägen gått via C64, Amiga och PC till att bli en trogen Mac-användare i snart 10 år. Testade därför iOS under 1 år men gick över till Android efter 1 år.
+
+Jobbat som sysadmin och nättekniker men jobbar sedan några år tillbaka som programmerare på heltid. Mest Java och C#. Har hjälpt till med utvecklingen av Android-versionen av Slashats app.
+
+Aktiv Xbox-spelare och har tillsammans med sambon kört igenom nästan varenda co-op-spel med splitscreen. Försöker även att producera elektronisk musik med varierande framgång.
+</string>
 			</dict>
 		</array>
 	</dict>
