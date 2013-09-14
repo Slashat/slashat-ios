@@ -83,7 +83,7 @@
     
     SlashatEpisode *episode = [self.allEntries objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%i - %@", episode.episodeNumber, episode.title];
+    cell.textLabel.text = [NSString stringWithFormat:@"#%i - %@", episode.episodeNumber, episode.title];
     cell.detailTextLabel.text = episode.itemDescription;
     
     return cell;
