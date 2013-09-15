@@ -615,10 +615,11 @@
                     <navigationItem key="navigationItem" id="2ap-qt-wbW"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="yii-un-JME" id="V96-he-Npw"/>
-                        <outlet property="mailButton" destination="wRf-an-U0c" id="D3R-vz-BY2"/>
+                        <outlet property="mailButton" destination="wRf-an-U0c" id="pMb-al-uQP"/>
                         <outlet property="profileImageView" destination="CBu-JY-eKI" id="rdg-cw-iNN"/>
                         <outlet property="textViewHeightConstraint" destination="pMl-RA-wXW" id="NIc-9S-XL4"/>
-                        <outlet property="twitterButton" destination="4hx-jF-Ekm" id="Ice-MR-OdH"/>
+                        <outlet property="twitterButton" destination="5DR-Di-HOm" id="uYA-1D-fvj"/>
+                        <outlet property="webButton" destination="4hx-jF-Ekm" id="CH4-21-eQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7a-F7-qtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
