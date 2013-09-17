@@ -25,7 +25,7 @@
     
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Avsnitt" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"Archive_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Archive_passive.png"]];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab-bar_archive_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tab-bar_archive_inactive.png"]];
     }
     
     return self;

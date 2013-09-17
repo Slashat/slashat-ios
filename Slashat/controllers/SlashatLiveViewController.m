@@ -33,7 +33,7 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
     
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Live" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"Live_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Live_passive.png"]];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab-bar_live_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tab-bar_live_inactive.png"]];
     }
     
     return self;

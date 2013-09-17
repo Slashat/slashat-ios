@@ -13,6 +13,7 @@
 #import "RootViewController.h"
 #import "VSThemeLoader.h"
 #import "VSTheme.h"
+#import "UIColor+Slashat.h"
 
 @interface AppDelegate ()
 
@@ -57,10 +58,13 @@
 
 - (void)setCustomNavigationBarAppearance
 {
-    UIColor *slashatNavigationBarColor = [UIColor colorWithRed:106/255.0f green:36/255.0f blue:12/255.0f alpha:1];
-    [[UINavigationBar appearance] setTintColor:slashatNavigationBarColor];
+    //UIColor *slashatNavigationBarColor = [UIColor colorWithRed:106/255.0f green:36/255.0f blue:12/255.0f alpha:1];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:1];
+    //[UINavigationBar appearance].barTintColor = [UIColor slashatOrange];
     
     UIColor *textColor = [UIColor whiteColor];
     UIColor *textShadowColor = [UIColor colorWithWhite:255.0 alpha:0];

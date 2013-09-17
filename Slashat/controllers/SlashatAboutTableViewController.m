@@ -25,7 +25,7 @@
     
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Om Slashat" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"About_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"About_passive.png"]];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab-bar_about_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tab-bar_about_inactive.png"]];
     }
     
     return self;
@@ -44,8 +44,8 @@
 {
     [super viewDidLoad];
     
-    UIColor *darkSeparatorColor = [UIColor colorWithRed:46/255.0f green:45/255.0f blue:48/255.0f alpha:1];
-    [[UITableViewHeaderFooterView appearance] setTintColor:darkSeparatorColor];
+    //UIColor *darkSeparatorColor = [UIColor colorWithRed:46/255.0f green:45/255.0f blue:48/255.0f alpha:1];
+    //[[UITableViewHeaderFooterView appearance] setTintColor:darkSeparatorColor];
     
     self.hosts = [self getSlashatHostsFromPlist];
     self.sectionNames = [self getSlashatHostSectionsFromPlist];

@@ -39,7 +39,7 @@
     
     self.navigationItem.title = [NSString stringWithFormat:@"#%i", self.episode.episodeNumber];
     
-    self.descriptionTextView.contentInset = UIEdgeInsetsMake(-8,-8,-8,-8);
+    self.descriptionTextView.contentInset = UIEdgeInsetsMake(-4,-4,-4,-4);
     NSString *descriptionString = [NSString stringWithFormat:@"%@\n%@", self.episode.itemDescription, self.episode.showNotes];
     self.descriptionTextView.text = [descriptionString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
