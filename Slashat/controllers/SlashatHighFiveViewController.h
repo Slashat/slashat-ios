@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlashatHighFiveViewController : UIViewController
+@interface SlashatHighFiveViewController : UIViewController <UICollectionViewDataSource>
 
 @end

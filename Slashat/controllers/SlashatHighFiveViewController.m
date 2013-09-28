@@ -7,14 +7,16 @@
 //
 
 #import "SlashatHighFiveViewController.h"
-#import "SlashatHighFiveUser.h"
 #import "SlashatHighFiveUser+RemoteAccessors.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SlashatHighFiveViewController ()
 
 @property (strong, nonatomic) SlashatHighFiveUser *user;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UICollectionView *highFiversCollectionView;
 
 @end
 
@@ -34,13 +36,47 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
+        [self updateViewWithUser:user];
+    } onError:^(NSError *error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
+}
+
+- (void)updateViewWithUser:(SlashatHighFiveUser *)user
+{
+    self.user = user;
     
+    self.nameLabel.text = user.name;
+    [self.profileImageView setImageWithURL:user.profilePicture];
+    
+    [self.highFiversCollectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.user) {
+        return self.user.highFivers.count;
+    } else {
+        return 0;
+    }
+    
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"HighFiverCell";
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    UIImageView *highFiverImageView = (UIImageView *)[cell viewWithTag:100];
+    [highFiverImageView setImageWithURL:((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).profilePicture];
+    
+    return cell;
 }
 
 @end
