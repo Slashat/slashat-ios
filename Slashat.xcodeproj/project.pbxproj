@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042B080317F6FC4200C93997 /* SlashatHighFiveUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B080217F6FC4200C93997 /* SlashatHighFiveUser.m */; };
+		042B080617F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B080517F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m */; };
+		042B080C17F705EA00C93997 /* SlashatHighFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B080B17F705EA00C93997 /* SlashatHighFiveViewController.m */; };
 		042ECD4B1693537C00C77193 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 042ECD451693537C00C77193 /* first.png */; };
 		042ECD4C1693537C00C77193 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042ECD461693537C00C77193 /* first@2x.png */; };
 		042ECD4D1693537C00C77193 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 042ECD471693537C00C77193 /* logo.png */; };
@@ -185,6 +188,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042B080117F6FC4200C93997 /* SlashatHighFiveUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHighFiveUser.h; sourceTree = "<group>"; };
+		042B080217F6FC4200C93997 /* SlashatHighFiveUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHighFiveUser.m; sourceTree = "<group>"; };
+		042B080417F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatHighFiveUser+RemoteAccessors.h"; sourceTree = "<group>"; };
+		042B080517F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatHighFiveUser+RemoteAccessors.m"; sourceTree = "<group>"; };
+		042B080A17F705EA00C93997 /* SlashatHighFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHighFiveViewController.h; sourceTree = "<group>"; };
+		042B080B17F705EA00C93997 /* SlashatHighFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHighFiveViewController.m; sourceTree = "<group>"; };
 		042ECD451693537C00C77193 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		042ECD461693537C00C77193 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		042ECD471693537C00C77193 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -529,6 +538,8 @@
 				046D60DF16BD12D80088678E /* SlashatLiveVideoViewController.m */,
 				043255141702255200639F82 /* SlashatCountdownViewController.h */,
 				043255151702255200639F82 /* SlashatCountdownViewController.m */,
+				042B080A17F705EA00C93997 /* SlashatHighFiveViewController.h */,
+				042B080B17F705EA00C93997 /* SlashatHighFiveViewController.m */,
 			);
 			name = ViewControllers_iPhone;
 			path = controllers;
@@ -545,6 +556,10 @@
 				0478928F177A30050091B0AD /* SlashatHost.m */,
 				04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */,
 				04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */,
+				042B080117F6FC4200C93997 /* SlashatHighFiveUser.h */,
+				042B080217F6FC4200C93997 /* SlashatHighFiveUser.m */,
+				042B080417F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.h */,
+				042B080517F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1026,6 +1041,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043B544A169313A500B71F3A /* main.m in Sources */,
+				042B080317F6FC4200C93997 /* SlashatHighFiveUser.m in Sources */,
 				043B544E169313A500B71F3A /* AppDelegate.m in Sources */,
 				042ECD64169614C200C77193 /* SlashatArchiveTableViewController.m in Sources */,
 				042ECD6A169616C400C77193 /* SlashatAboutTableViewController.m in Sources */,
@@ -1051,6 +1067,7 @@
 				04789290177A30050091B0AD /* SlashatHost.m in Sources */,
 				0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */,
 				0456B95217CFAE0100826CEB /* MenuViewController.m in Sources */,
+				042B080C17F705EA00C93997 /* SlashatHighFiveViewController.m in Sources */,
 				0456B95317CFAE0100826CEB /* RootViewController.m in Sources */,
 				0456B95417CFAE0100826CEB /* StackScrollViewController.m in Sources */,
 				0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */,
@@ -1061,6 +1078,7 @@
 				0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */,
 				04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */,
 				04CEA8F617D36C9000C265B9 /* SlashatBrowserViewController~iPad.m in Sources */,
+				042B080617F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m in Sources */,
 				04CEA8F917D39D9C00C265B9 /* SlashatAboutViewController.m in Sources */,
 				04CEA8FE17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m in Sources */,
 				043FF42517D517F700FD9993 /* VSTheme.m in Sources */,

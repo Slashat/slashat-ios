@@ -650,6 +650,54 @@
             </objects>
             <point key="canvasLocation" x="1146" y="1054"/>
         </scene>
+        <!--Navigation Controller - High Five-->
+        <scene sceneID="uK0-c5-Pi2">
+            <objects>
+                <navigationController title="High Five" definesPresentationContext="YES" id="tQe-Fl-dxB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="High Five!" id="Dp3-7W-95J"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QYg-Yc-lUv">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zw8-R3-AeM" kind="relationship" relationship="rootViewController" id="dh7-dB-fbx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xS5-tz-oU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301" y="1773"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iOI-8q-j3Q">
+            <objects>
+                <viewController id="Zw8-R3-AeM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gGK-7S-DFZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EdB-BC-C7f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3uq-eN-4sR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-sH-BiS">
+                                <rect key="frame" x="20" y="82" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-Aw-L5l">
+                                <rect key="frame" x="92" y="82" width="208" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xcT-38-WSM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yir-7v-k9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="1773"/>
+        </scene>
         <!--Navigation Controller - Om Slashat-->
         <scene sceneID="82e-aV-2KN">
             <objects>
@@ -680,6 +728,7 @@
                         <segue destination="oVs-Cm-LDu" kind="relationship" relationship="viewControllers" id="inX-K4-izF"/>
                         <segue destination="hZM-YC-k69" kind="relationship" relationship="viewControllers" id="iu0-1w-TUT"/>
                         <segue destination="IWf-Yb-o2E" kind="relationship" relationship="viewControllers" id="GGS-lh-7ka"/>
+                        <segue destination="tQe-Fl-dxB" kind="relationship" relationship="viewControllers" id="eSw-B0-Og8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
