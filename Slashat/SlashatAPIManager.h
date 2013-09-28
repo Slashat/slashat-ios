@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SlashatCalendarItem;
+@class SlashatCalendarItem, SlashatHighFiveUser;
 
 @interface SlashatAPIManager : NSObject
 
@@ -22,6 +22,8 @@
 - (void)fetchNextSlashatCalendarItemWithSuccess:(void(^)(SlashatCalendarItem *calendarItem))success failure:(void(^)(NSError *error))failure;
 
 - (void)fetchLiveStreamUrlForBroadcastId:(NSString *)broadcastId sucess:(void(^)(NSURL *streamUrl))success failure:(void (^)(NSError *error))failure;
+
+- (void)fetchSlashatHighFiveUserWithSuccess:(void(^)(SlashatHighFiveUser *user))success failure:(void(^)(NSError *error))failure;
 
 - (NSArray *)getSlashatHostsInSections;
 - (NSArray *)getHostSectionTitles;

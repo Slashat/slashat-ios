@@ -13,6 +13,7 @@
 #import "SlashatHost.h"
 #import "SlashatCalendarItem.h"
 #import "DateUtils.h"
+#import "SlashatHighFiveUser.h"
 
 
 @implementation SlashatAPIManager
@@ -163,6 +164,22 @@
     }
     
     return sectionTitles;
+}
+
+- (void)fetchSlashatHighFiveUserWithSuccess:(void(^)(SlashatHighFiveUser *user))success failure:(void(^)(NSError *error))failure
+{
+    SlashatHighFiveUser *user = [[SlashatHighFiveUser alloc] init];
+    user.name = @"Johan Larsson";
+    user.userName = @"kottkrig";
+    user.profilePicture = [NSURL URLWithString:@"http://www.gravatar.com/avatar/a85e891db7a0bfd5e3ec12575559bece.png"];
+    
+    SlashatHighFiveUser *highFiver = [[SlashatHighFiveUser alloc] init];
+    highFiver.name = @"Johan Larsson";
+    highFiver.userName = @"kottkrig";
+    highFiver.profilePicture = [NSURL URLWithString:@"http://www.gravatar.com/avatar/a85e891db7a0bfd5e3ec12575559bece.png"];
+    
+    user.highFivers = @[highFiver];
+    success(user);
 }
 
 
