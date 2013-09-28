@@ -171,6 +171,8 @@
 		04CEA8F917D39D9C00C265B9 /* SlashatAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8F817D39D9B00C265B9 /* SlashatAboutViewController.m */; };
 		04CEA8FB17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CEA8FA17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib */; };
 		04CEA8FE17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8FD17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m */; };
+		04E5DDE517F70CA30091464D /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDE417F70CA30091464D /* SDWebImage.framework */; };
+		04E5DDE717F70CFF0091464D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDE617F70CFF0091464D /* ImageIO.framework */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
@@ -400,6 +402,8 @@
 		04CEA8FA17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatAboutHostView~iPad.xib"; sourceTree = "<group>"; };
 		04CEA8FC17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatAboutHostViewController~iPad.h"; sourceTree = "<group>"; };
 		04CEA8FD17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatAboutHostViewController~iPad.m"; sourceTree = "<group>"; };
+		04E5DDE417F70CA30091464D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		04E5DDE617F70CFF0091464D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
@@ -413,10 +417,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E5DDE717F70CFF0091464D /* ImageIO.framework in Frameworks */,
 				048EC321173BA6C10043E57D /* MobileCoreServices.framework in Frameworks */,
 				048EC31F173BA6890043E57D /* SystemConfiguration.framework in Frameworks */,
 				04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */,
 				046EF2F41763292B00005B82 /* Social.framework in Frameworks */,
+				04E5DDE517F70CA30091464D /* SDWebImage.framework in Frameworks */,
 				04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */,
 				0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */,
 				04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */,
@@ -594,6 +600,7 @@
 		043B543C169313A500B71F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E5DDE617F70CFF0091464D /* ImageIO.framework */,
 				04972487179FD2E4003685CD /* MessageUI.framework */,
 				046EF2F31763292B00005B82 /* Social.framework */,
 				048EC320173BA6C10043E57D /* MobileCoreServices.framework */,
@@ -694,6 +701,7 @@
 		0452943116985933001F0504 /* externalFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E5DDE417F70CA30091464D /* SDWebImage.framework */,
 				043FF42017D517F700FD9993 /* DB5 */,
 				044730531698623F00C74E01 /* RSSParser */,
 				0452943216985951001F0504 /* AFNetworking */,
@@ -1202,10 +1210,16 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/johan/Downloads,
+					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1219,10 +1233,16 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/johan/Downloads,
+					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
