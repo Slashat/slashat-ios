@@ -39,10 +39,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
+    /*[SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
         [self updateViewWithUser:user];
     } onError:^(NSError *error) {
         NSLog(@"%@", error.localizedDescription);
+    }];*/
+    
+    NSLog(@"User is loggedIn: %hhd", [SlashatHighFiveUser userIsLoggedIn]);
+    [SlashatHighFiveUser loginWithCredentials:@"kottkrig" password:@"password" success:^(SlashatHighFiveUser *user) {
+        NSLog(@"User is logged in after supplying credentials: %hhd", [SlashatHighFiveUser userIsLoggedIn]);
+        [self updateViewWithUser:user];
+    } onError:^(NSError *error) {
+        
     }];
 }
 

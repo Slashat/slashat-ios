@@ -14,7 +14,15 @@
 #import "SlashatCalendarItem.h"
 #import "DateUtils.h"
 #import "SlashatHighFiveUser.h"
+#import <Security/Security.h>
+#import "KDJKeychainItemWrapper.h"
 
+@interface SlashatAPIManager ()
+
+@property (strong, nonatomic) NSString *highFiveAuthToken;
+@property (strong, nonatomic) KDJKeychainItemWrapper *tokenKeyChainItem;
+
+@end
 
 @implementation SlashatAPIManager
 
@@ -166,6 +174,13 @@
     return sectionTitles;
 }
 
+- (void)loginHighFiveUserWithCredentials:(NSString *)userName password:(NSString *)password success:(void(^)(NSString *authToken))success failure:(void(^)(NSError *error))failure
+{
+    self.highFiveAuthToken = @"test_token";
+    NSLog(@"SlashatAPIManager: loginHighFiveUserWithCredentials: token: %@", [self.tokenKeyChainItem objectForKey:(__bridge id)(kSecValueData)]);
+    success(self.highFiveAuthToken);
+}
+
 - (void)fetchSlashatHighFiveUserWithSuccess:(void(^)(SlashatHighFiveUser *user))success failure:(void(^)(NSError *error))failure
 {
     SlashatHighFiveUser *user = [[SlashatHighFiveUser alloc] init];
@@ -202,5 +217,30 @@
     return @[highFiver1, highFiver2, highFiver3, highFiver4];
 }
 
+- (void)setHighFiveAuthToken:(NSString *)authToken
+{
+    _highFiveAuthToken = authToken;
+    
+    if (!self.tokenKeyChainItem) {
+        self.tokenKeyChainItem = [[KDJKeychainItemWrapper alloc] initWithIdentifier:@"HighFiveToken" accessGroup:nil];
+    }
+    
+    [self.tokenKeyChainItem setObject:authToken forKey:(__bridge id)kSecValueData];
+}
+
+- (NSString *)getTokenFromKeyChain
+{
+    if (!self.tokenKeyChainItem) {
+        self.tokenKeyChainItem = [[KDJKeychainItemWrapper alloc] initWithIdentifier:@"HighFiveToken" accessGroup:nil];
+    }
+    
+    return (NSString *)[self.tokenKeyChainItem objectForKey:(__bridge id)kSecValueData];
+}
+
+- (BOOL)userIsLoggedIn
+{
+    NSString *token = [self getTokenFromKeyChain];
+    return token != nil;
+}
 
 @end

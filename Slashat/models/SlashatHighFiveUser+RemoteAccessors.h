@@ -17,5 +17,8 @@ typedef void(^UserErrorBlock)(NSError *error);
 
 + (void)fetchUserWithSuccess:(UserObjectBlock)successBlock onError:(UserErrorBlock)errorBlock;
 + (void)fetchAllHighFivers:(AllUsersBlock)successBlock onError:(UserErrorBlock)errorBlock;
++ (void)loginWithCredentials:(NSString *)username password:(NSString *)password success:(UserObjectBlock)successBlock onError:(UserErrorBlock)errorBlock;
++ (BOOL)userIsLoggedIn;
+
 
 @end
