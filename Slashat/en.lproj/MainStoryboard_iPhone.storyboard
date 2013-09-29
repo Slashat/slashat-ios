@@ -688,6 +688,9 @@
                                         <state key="normal" title="Ge High Five!">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="giveHighFiveButtonPressed:" destination="Zw8-R3-AeM" eventType="touchUpInside" id="6J6-t3-IC5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEZ-3d-YgZ">
                                         <rect key="frame" x="158" y="136" width="142" height="30"/>
@@ -760,6 +763,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yir-7v-k9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725" y="1773"/>
+        </scene>
+        <!--Slashat High FiveQR Scanner View Controller - QR Scanner-->
+        <scene sceneID="4Lm-W6-hQj">
+            <objects>
+                <viewController title="QR Scanner" id="Jw6-2G-h35" customClass="SlashatHighFiveQRScannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b6u-F8-bcF"/>
+                        <viewControllerLayoutGuide type="bottom" id="pY9-CM-8v0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xkh-TL-zXM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ia2-5t-Fot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1146" y="1773"/>
         </scene>
         <!--Navigation Controller - Om Slashat-->
         <scene sceneID="82e-aV-2KN">

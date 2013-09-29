@@ -62,6 +62,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)giveHighFiveButtonPressed:(id)sender
+{
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    
+    [reader.scanner setSymbology: 0
+                   config: ZBAR_CFG_ENABLE
+                       to: 0];
+    
+    [reader.scanner setSymbology: ZBAR_QRCODE
+                          config: ZBAR_CFG_ENABLE
+                              to: 1];
+    reader.readerView.zoom = 1.0;
+    
+    [self presentViewController:reader animated:YES completion:nil];
+}
+
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info
+{
+    id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
+    
+    for (ZBarSymbol *object in results) {
+        NSLog(@"QR Result: '%@'", object.data);
+    }
+    
+    //NSLog(@"QR Result: %@", results);
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (self.user) {
         return self.user.highFivers.count;
