@@ -50,7 +50,7 @@
 {
     self.user = user;
     
-    self.nameLabel.text = user.name;
+    self.nameLabel.text = user.userName;
     [self.profileImageView setImageWithURL:user.profilePicture];
     
     [self.highFiversCollectionView reloadData];

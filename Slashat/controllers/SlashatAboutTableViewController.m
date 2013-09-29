@@ -149,8 +149,7 @@
         cell.detailTextLabel.text = host.shortDescription;
     } else if (self.highFivers) {
         SlashatHighFiveUser *highFiver = (SlashatHighFiveUser *)[self.highFivers objectAtIndex:indexPath.row];
-        cell.textLabel.text = highFiver.name;
-        cell.detailTextLabel.text = highFiver.userName;
+        cell.textLabel.text = highFiver.userName;
         [cell.imageView setImageWithURL:highFiver.profilePicture];
     }
     

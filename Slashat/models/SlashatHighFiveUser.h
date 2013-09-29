@@ -10,7 +10,6 @@
 
 @interface SlashatHighFiveUser : NSObject
 
-@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *userId;
 
