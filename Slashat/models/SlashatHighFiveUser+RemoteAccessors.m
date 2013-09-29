@@ -16,5 +16,9 @@
     [[SlashatAPIManager sharedClient] fetchSlashatHighFiveUserWithSuccess:resultBlock failure:errorBlock];
 }
 
++ (void)fetchAllHighFivers:(AllUsersBlock)successBlock onError:(UserErrorBlock)errorBlock
+{
+    [[SlashatAPIManager sharedClient] fetchAllSlashatHighFiversWithSuccess:successBlock failure:errorBlock];
+}
 
 @end

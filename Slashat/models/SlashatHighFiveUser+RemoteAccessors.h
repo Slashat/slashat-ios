@@ -9,11 +9,13 @@
 #import "SlashatHighFiveUser.h"
 
 typedef void(^UserObjectBlock)(SlashatHighFiveUser *user);
+typedef void(^AllUsersBlock)(NSArray *highFivers);
 typedef void(^UserErrorBlock)(NSError *error);
 
 
 @interface SlashatHighFiveUser (RemoteAccessors)
 
 + (void)fetchUserWithSuccess:(UserObjectBlock)successBlock onError:(UserErrorBlock)errorBlock;
++ (void)fetchAllHighFivers:(AllUsersBlock)successBlock onError:(UserErrorBlock)errorBlock;
 
 @end

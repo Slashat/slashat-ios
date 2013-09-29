@@ -9,11 +9,16 @@
 #import "SlashatAboutTableViewController.h"
 #import "SlashatAboutHostProfileViewController.h"
 #import "SlashatHost.h"
+#import "SlashatHighFiveUser+RemoteAccessors.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface SlashatAboutTableViewController ()
 
 @property (nonatomic, strong) NSArray *hosts;
 @property (nonatomic, strong) NSArray *sectionNames;
+
+@property (nonatomic, strong) NSArray *highFivers;
 
 @end
 
@@ -49,6 +54,13 @@
     
     self.hosts = [self getSlashatHostsFromPlist];
     self.sectionNames = [self getSlashatHostSectionsFromPlist];
+    
+    [SlashatHighFiveUser fetchAllHighFivers:^(NSArray *highFivers) {
+        self.highFivers = highFivers;
+        [self.tableView reloadData];
+    } onError:^(NSError *error) {
+        
+    }];
 }
 
 - (NSArray *)getSlashatHostsFromPlist
@@ -111,7 +123,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return ((NSArray *)[self.hosts objectAtIndex:section]).count;
+    if (section < 4) {
+        return ((NSArray *)[self.hosts objectAtIndex:section]).count;
+    } else if (self.highFivers) {
+        return self.highFivers.count;
+    } else {
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -123,11 +141,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    SlashatHost *host = [[self.hosts objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    if (indexPath.section < 4) {
+        SlashatHost *host = [[self.hosts objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        
+        [cell.imageView setImage:host.profileImage];
+        cell.textLabel.text = host.name;
+        cell.detailTextLabel.text = host.shortDescription;
+    } else if (self.highFivers) {
+        SlashatHighFiveUser *highFiver = (SlashatHighFiveUser *)[self.highFivers objectAtIndex:indexPath.row];
+        cell.textLabel.text = highFiver.name;
+        cell.detailTextLabel.text = highFiver.userName;
+        [cell.imageView setImageWithURL:highFiver.profilePicture];
+    }
     
-    [cell.imageView setImage:host.profileImage];
-    cell.textLabel.text = host.name;
-    cell.detailTextLabel.text = host.shortDescription;
     
     return cell;
 }
