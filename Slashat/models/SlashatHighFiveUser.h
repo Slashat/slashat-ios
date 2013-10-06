@@ -13,6 +13,10 @@
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *userId;
 
+@property (strong, nonatomic) NSString *highfivedByName;
+@property (strong, nonatomic) NSDate *highfivedDate;
+@property (strong, nonatomic) NSString *highfivedWhere;
+
 @property (strong, nonatomic) NSURL *profilePicture;
 @property (strong, nonatomic) NSURL *qrCode;
 
