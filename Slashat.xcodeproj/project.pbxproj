@@ -189,6 +189,9 @@
 		04E5E08017F85DE40091464D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E07F17F85DE40091464D /* KeychainItemWrapper.m */; };
 		04E5E08317F8642D0091464D /* KDJKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E08217F8642D0091464D /* KDJKeychainItemWrapper.m */; };
 		04E5E0861801862F0091464D /* SlashatReceiveHighFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E0851801862F0091464D /* SlashatReceiveHighFiveViewController.m */; };
+		04E5E0891801AD250091464D /* SlashatHighFive.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E0881801AD250091464D /* SlashatHighFive.m */; };
+		04E5E08B1801AE0A0091464D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5E08A1801AE0A0091464D /* CoreLocation.framework */; };
+		04E5E08E1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E08D1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
@@ -461,6 +464,11 @@
 		04E5E08217F8642D0091464D /* KDJKeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDJKeychainItemWrapper.m; sourceTree = "<group>"; };
 		04E5E0841801862F0091464D /* SlashatReceiveHighFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatReceiveHighFiveViewController.h; sourceTree = "<group>"; };
 		04E5E0851801862F0091464D /* SlashatReceiveHighFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatReceiveHighFiveViewController.m; sourceTree = "<group>"; };
+		04E5E0871801AD250091464D /* SlashatHighFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHighFive.h; sourceTree = "<group>"; };
+		04E5E0881801AD250091464D /* SlashatHighFive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHighFive.m; sourceTree = "<group>"; };
+		04E5E08A1801AE0A0091464D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		04E5E08C1801AFA00091464D /* SlashatHighFive+RemoteAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatHighFive+RemoteAccessors.h"; sourceTree = "<group>"; };
+		04E5E08D1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatHighFive+RemoteAccessors.m"; sourceTree = "<group>"; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
@@ -474,6 +482,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E5E08B1801AE0A0091464D /* CoreLocation.framework in Frameworks */,
 				04E5E07C17F85C930091464D /* Security.framework in Frameworks */,
 				04E5DE0117F80F140091464D /* libiconv.dylib in Frameworks */,
 				04E5DDFF17F80F070091464D /* CoreMedia.framework in Frameworks */,
@@ -634,6 +643,10 @@
 				042B080217F6FC4200C93997 /* SlashatHighFiveUser.m */,
 				042B080417F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.h */,
 				042B080517F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m */,
+				04E5E0871801AD250091464D /* SlashatHighFive.h */,
+				04E5E0881801AD250091464D /* SlashatHighFive.m */,
+				04E5E08C1801AFA00091464D /* SlashatHighFive+RemoteAccessors.h */,
+				04E5E08D1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -668,6 +681,7 @@
 		043B543C169313A500B71F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E5E08A1801AE0A0091464D /* CoreLocation.framework */,
 				04E5E07B17F85C930091464D /* Security.framework */,
 				04E5E04D17F810C70091464D /* AddressBook.framework */,
 				04E5E04E17F810C70091464D /* AddressBookUI.framework */,
@@ -1213,6 +1227,7 @@
 				042ECD64169614C200C77193 /* SlashatArchiveTableViewController.m in Sources */,
 				042ECD6A169616C400C77193 /* SlashatAboutTableViewController.m in Sources */,
 				042ECD6D1696177D00C77193 /* SlashatAboutHostProfileViewController.m in Sources */,
+				04E5E0891801AD250091464D /* SlashatHighFive.m in Sources */,
 				042ECD7016961A1400C77193 /* SlashatLiveViewController.m in Sources */,
 				0452944616985951001F0504 /* AFHTTPClient.m in Sources */,
 				0452944716985951001F0504 /* AFHTTPRequestOperation.m in Sources */,
@@ -1243,6 +1258,7 @@
 				0456B95B17CFAE7800826CEB /* DataViewController.m in Sources */,
 				0456B95D17CFAE7800826CEB /* UIViewWithShadow.m in Sources */,
 				0456B96017D1E97900826CEB /* SlashatAPIManager.m in Sources */,
+				04E5E08E1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m in Sources */,
 				0456B96317D1F1F600826CEB /* SlashatArchiveViewController~iPad.m in Sources */,
 				0456B96617D1F59200826CEB /* SlashatArchiveEpisodeViewController~iPad.m in Sources */,
 				0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */,

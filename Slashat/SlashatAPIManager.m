@@ -16,6 +16,7 @@
 #import "SlashatHighFiveUser.h"
 #import <Security/Security.h>
 #import "KDJKeychainItemWrapper.h"
+#import "SlashatHighFive.h"
 
 @interface SlashatAPIManager ()
 
@@ -237,6 +238,15 @@
     
     return (NSString *)[self.tokenKeyChainItem objectForKey:(__bridge id)kSecValueData];
 }
+
+- (void)performSlashatHighFive:(SlashatHighFive *)highFive success:(void(^)())success failure:(void(^)(NSError *error))failure
+{
+    NSLog(@"SlashatAPIMAnager: performSlashatHighFive: Receiver token: %@", highFive.receiverToken);
+    if (success) {
+        success();
+    }
+}
+
 
 - (BOOL)userIsLoggedIn
 {

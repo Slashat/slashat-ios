@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SlashatCalendarItem, SlashatHighFiveUser;
+@class SlashatCalendarItem, SlashatHighFiveUser, SlashatHighFive;
 
 @interface SlashatAPIManager : NSObject
 
@@ -27,6 +27,8 @@
 
 - (void)fetchSlashatHighFiveUserWithSuccess:(void(^)(SlashatHighFiveUser *user))success failure:(void(^)(NSError *error))failure;
 - (void)fetchAllSlashatHighFiversWithSuccess:(void(^)(NSArray *users))success failure:(void(^)(NSError *error))failure;
+
+- (void)performSlashatHighFive:(SlashatHighFive *)highFive success:(void(^)())success failure:(void(^)(NSError *error))failure;
 
 - (BOOL)userIsLoggedIn;
 

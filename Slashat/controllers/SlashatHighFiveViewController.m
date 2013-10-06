@@ -10,6 +10,7 @@
 #import "SlashatHighFiveUser+RemoteAccessors.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SlashatReceiveHighFiveViewController.h"
+#import "SlashatHighFive+RemoteAccessors.h"
 
 @interface SlashatHighFiveViewController ()
 
@@ -102,9 +103,18 @@
     
     for (ZBarSymbol *object in results) {
         NSLog(@"QR Result: '%@'", object.data);
+        SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
+        highFive.receiverToken = object.data;
+        [SlashatHighFive performHighFive:highFive success:^{
+            [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
+                [self updateViewWithUser:user];
+            } onError:nil];
+        } failure:nil];
+        
+        break;
     }
     
-    //NSLog(@"QR Result: %@", results);
+    [reader dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
