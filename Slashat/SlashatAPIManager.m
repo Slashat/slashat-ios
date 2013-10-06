@@ -185,6 +185,7 @@
 {
     SlashatHighFiveUser *user = [[SlashatHighFiveUser alloc] init];
     user.userName = @"kottkrig";
+    user.qrCode = [NSURL URLWithString:@"http://api.qrserver.com/v1/create-qr-code/?data=Slashat%20rules&size=510x510"];
     user.profilePicture = [NSURL URLWithString:@"http://www.gravatar.com/avatar/a85e891db7a0bfd5e3ec12575559bece.png"];
     
     user.highFivers = [self getMockHighFiveUsers];

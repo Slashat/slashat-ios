@@ -9,6 +9,7 @@
 #import "SlashatHighFiveViewController.h"
 #import "SlashatHighFiveUser+RemoteAccessors.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "SlashatReceiveHighFiveViewController.h"
 
 @interface SlashatHighFiveViewController ()
 
@@ -62,6 +63,13 @@
     [self.profileImageView setImageWithURL:user.profilePicture];
     
     [self.highFiversCollectionView reloadData];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SlashatReceiveHighFiveViewController *highFiveReceiverViewController = [((UINavigationController *)segue.destinationViewController).viewControllers objectAtIndex:0];
+    highFiveReceiverViewController.highFiveUser = self.user;
 }
 
 - (void)didReceiveMemoryWarning

@@ -189,6 +189,7 @@
 		04E5E07C17F85C930091464D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5E07B17F85C930091464D /* Security.framework */; };
 		04E5E08017F85DE40091464D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E07F17F85DE40091464D /* KeychainItemWrapper.m */; };
 		04E5E08317F8642D0091464D /* KDJKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E08217F8642D0091464D /* KDJKeychainItemWrapper.m */; };
+		04E5E0861801862F0091464D /* SlashatReceiveHighFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E0851801862F0091464D /* SlashatReceiveHighFiveViewController.m */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
@@ -461,6 +462,8 @@
 		04E5E07F17F85DE40091464D /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		04E5E08117F8642D0091464D /* KDJKeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDJKeychainItemWrapper.h; sourceTree = "<group>"; };
 		04E5E08217F8642D0091464D /* KDJKeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDJKeychainItemWrapper.m; sourceTree = "<group>"; };
+		04E5E0841801862F0091464D /* SlashatReceiveHighFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatReceiveHighFiveViewController.h; sourceTree = "<group>"; };
+		04E5E0851801862F0091464D /* SlashatReceiveHighFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatReceiveHighFiveViewController.m; sourceTree = "<group>"; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
@@ -614,6 +617,8 @@
 				042B080B17F705EA00C93997 /* SlashatHighFiveViewController.m */,
 				04E5E07417F816B50091464D /* SlashatHighFiveQRScannerViewController.h */,
 				04E5E07517F816B50091464D /* SlashatHighFiveQRScannerViewController.m */,
+				04E5E0841801862F0091464D /* SlashatReceiveHighFiveViewController.h */,
+				04E5E0851801862F0091464D /* SlashatReceiveHighFiveViewController.m */,
 			);
 			name = ViewControllers_iPhone;
 			path = controllers;
@@ -1220,6 +1225,7 @@
 				0452944916985951001F0504 /* AFJSONRequestOperation.m in Sources */,
 				0452944A16985951001F0504 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0452944B16985951001F0504 /* AFPropertyListRequestOperation.m in Sources */,
+				04E5E0861801862F0091464D /* SlashatReceiveHighFiveViewController.m in Sources */,
 				0452944C16985951001F0504 /* AFURLConnectionOperation.m in Sources */,
 				0452944D16985951001F0504 /* AFXMLRequestOperation.m in Sources */,
 				0452944E16985951001F0504 /* UIImageView+AFNetworking.m in Sources */,
