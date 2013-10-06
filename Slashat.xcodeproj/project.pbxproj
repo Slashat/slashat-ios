@@ -185,7 +185,6 @@
 		04E5E07117F815D40091464D /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 04E5E06C17F815D40091464D /* zbar-help.html */; };
 		04E5E07217F815D40091464D /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5E06D17F815D40091464D /* zbar-helpicons.png */; };
 		04E5E07317F815D40091464D /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5E06E17F815D40091464D /* zbar-samples.png */; };
-		04E5E07617F816B50091464D /* SlashatHighFiveQRScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E07517F816B50091464D /* SlashatHighFiveQRScannerViewController.m */; };
 		04E5E07C17F85C930091464D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5E07B17F85C930091464D /* Security.framework */; };
 		04E5E08017F85DE40091464D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E07F17F85DE40091464D /* KeychainItemWrapper.m */; };
 		04E5E08317F8642D0091464D /* KDJKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E08217F8642D0091464D /* KDJKeychainItemWrapper.m */; };
@@ -455,8 +454,6 @@
 		04E5E06C17F815D40091464D /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
 		04E5E06D17F815D40091464D /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
 		04E5E06E17F815D40091464D /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
-		04E5E07417F816B50091464D /* SlashatHighFiveQRScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatHighFiveQRScannerViewController.h; sourceTree = "<group>"; };
-		04E5E07517F816B50091464D /* SlashatHighFiveQRScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatHighFiveQRScannerViewController.m; sourceTree = "<group>"; };
 		04E5E07B17F85C930091464D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		04E5E07E17F85DE40091464D /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		04E5E07F17F85DE40091464D /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
@@ -615,8 +612,6 @@
 				043255151702255200639F82 /* SlashatCountdownViewController.m */,
 				042B080A17F705EA00C93997 /* SlashatHighFiveViewController.h */,
 				042B080B17F705EA00C93997 /* SlashatHighFiveViewController.m */,
-				04E5E07417F816B50091464D /* SlashatHighFiveQRScannerViewController.h */,
-				04E5E07517F816B50091464D /* SlashatHighFiveQRScannerViewController.m */,
 				04E5E0841801862F0091464D /* SlashatReceiveHighFiveViewController.h */,
 				04E5E0851801862F0091464D /* SlashatReceiveHighFiveViewController.m */,
 			);
@@ -1240,7 +1235,6 @@
 				043255161702255200639F82 /* SlashatCountdownViewController.m in Sources */,
 				04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */,
 				04789290177A30050091B0AD /* SlashatHost.m in Sources */,
-				04E5E07617F816B50091464D /* SlashatHighFiveQRScannerViewController.m in Sources */,
 				0444667217CE68A4007E9707 /* SlashatApplication.m in Sources */,
 				0456B95217CFAE0100826CEB /* MenuViewController.m in Sources */,
 				042B080C17F705EA00C93997 /* SlashatHighFiveViewController.m in Sources */,
