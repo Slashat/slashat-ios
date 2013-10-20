@@ -682,7 +682,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xI-wB-s5c">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xI-wB-s5c">
                                         <rect key="frame" x="20" y="136" width="130" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Ge High Five!">
@@ -758,6 +758,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="High Five!" id="xcT-38-WSM"/>
                     <connections>
+                        <outlet property="giveHighFiveButton" destination="9xI-wB-s5c" id="lwg-Ut-5MX"/>
                         <outlet property="highFiversCollectionView" destination="t5q-Xw-CbU" id="ncA-mg-zLH"/>
                         <outlet property="nameLabel" destination="dFw-fl-ds3" id="Ekz-6s-bdJ"/>
                         <outlet property="profileImageView" destination="0rZ-JT-719" id="Qot-sq-kg2"/>

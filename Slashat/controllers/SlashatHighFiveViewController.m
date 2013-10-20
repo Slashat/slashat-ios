@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *highFiversCollectionView;
 
+@property (weak, nonatomic) IBOutlet UIButton *giveHighFiveButton;
+
 @end
 
 @implementation SlashatHighFiveViewController
@@ -39,20 +41,72 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    /*[SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
-        [self updateViewWithUser:user];
-    } onError:^(NSError *error) {
-        NSLog(@"%@", error.localizedDescription);
-    }];*/
+    //[SlashatHighFiveUser logOutUser];
     
-    NSLog(@"User is loggedIn: %hhd", [SlashatHighFiveUser userIsLoggedIn]);
-    [SlashatHighFiveUser loginWithCredentials:@"kottkrig" password:@"password" success:^(SlashatHighFiveUser *user) {
-        NSLog(@"User is logged in after supplying credentials: %hhd", [SlashatHighFiveUser userIsLoggedIn]);
-        [self updateViewWithUser:user];
-    } onError:^(NSError *error) {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)applicationEnteredForeground:(NSNotification *)notification {
+    NSLog(@"Application Entered Foreground");
+    if ([SlashatHighFiveUser userIsLoggedIn]) {
+        NSLog(@"User is already logged in. Fetching user.");
+        [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
+            [self updateViewWithUser:user];
+        } onError:^(NSError *error) {
+            
+        }];
+    }
+    else {
+        [self showLoginView];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([SlashatHighFiveUser userIsLoggedIn]) {
+        NSLog(@"User is already logged in. Fetching user.");
+        [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
+            [self updateViewWithUser:user];
+        } onError:^(NSError *error) {
+            
+        }];
+    }
+    else {
+        [self showLoginView];
+    }
+}
+
+- (void)showLoginView
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:Nil delegate:nil cancelButtonTitle:@"Avbryt" otherButtonTitles:@"Logga in", @"Skapa konto", nil];
+    alertView.title = @"Logga in";
+    alertView.message = @"Använd de kontouppgifter som du använder för forum.slashat.se.";
+    alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    alertView.delegate = self;
+    [alertView show];
+}
+    
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.cancelButtonIndex) {
         
+    } else if (buttonIndex == 1) {
+        [self loginWithCredentials:[alertView textFieldAtIndex:0].text password:[alertView textFieldAtIndex:1].text];
+    } else if (buttonIndex == 2) {
+        // Användare vill registrera konto
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://forum.slashat.se/ucp.php?mode=register"]];
+    }
+}
+
+- (void)loginWithCredentials:(NSString *)userName password:(NSString *)password
+{
+    [SlashatHighFiveUser loginWithCredentials:userName password:password success:^(SlashatHighFiveUser *user) {
+        [self updateViewWithUser:user];
+    } onError:^(NSError *error) {
+        [self showLoginView];
     }];
 }
 
@@ -62,6 +116,10 @@
     
     self.nameLabel.text = user.userName;
     [self.profileImageView setImageWithURL:user.profilePicture];
+    
+    if (user.highFivers.count > 0) {
+        self.giveHighFiveButton.enabled = TRUE;
+    }
     
     [self.highFiversCollectionView reloadData];
 }

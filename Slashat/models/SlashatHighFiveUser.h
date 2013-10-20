@@ -22,4 +22,6 @@
 
 @property (strong, nonatomic) NSArray *highFivers;
 
+- (id)initWithAttributes:(NSDictionary *)attributes;
+
 @end

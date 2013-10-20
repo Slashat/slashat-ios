@@ -17,6 +17,7 @@
 #import <Security/Security.h>
 #import "KDJKeychainItemWrapper.h"
 #import "SlashatHighFive.h"
+#import "NSError+SlashatAPI.h"
 
 @interface SlashatAPIManager ()
 
@@ -26,6 +27,8 @@
 @end
 
 @implementation SlashatAPIManager
+
+@synthesize highFiveAuthToken = _highFiveAuthToken;
 
 + (SlashatAPIManager *)sharedClient {
     static SlashatAPIManager *_sharedClient = nil;
@@ -177,20 +180,75 @@
 
 - (void)loginHighFiveUserWithCredentials:(NSString *)userName password:(NSString *)password success:(void(^)(NSString *authToken))success failure:(void(^)(NSError *error))failure
 {
-    self.highFiveAuthToken = @"test_token";
-    NSLog(@"SlashatAPIManager: loginHighFiveUserWithCredentials: token: %@", [self.tokenKeyChainItem objectForKey:(__bridge id)(kSecValueData)]);
-    success(self.highFiveAuthToken);
+    NSString *loginUrlString = [NSString stringWithFormat:@"%@login", SLASHAT_API_URL];
+    
+    NSURL *loginUrl = [NSURL URLWithString:loginUrlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:loginUrl];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
+    NSString *params = [NSString stringWithFormat:@"username=%@&password=%@&deviceid=%@", userName, password, uuid];
+    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        if ([JSON valueForKey:@"token"] && [JSON valueForKey:@"token"] != [NSNull null]) {
+            self.highFiveAuthToken = [JSON valueForKey:@"token"];
+            success(self.highFiveAuthToken);
+        } else {
+            NSError *error = [[NSError alloc] initWithAttributes:JSON];
+            failure(error);
+        }
+        
+        NSLog(@"login success, token: %@", self.highFiveAuthToken);
+        
+        
+    } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
+        NSLog(@"Failed: %@",[error localizedDescription]);
+    }];
+    
+    [operation start];
 }
 
 - (void)fetchSlashatHighFiveUserWithSuccess:(void(^)(SlashatHighFiveUser *user))success failure:(void(^)(NSError *error))failure
 {
-    SlashatHighFiveUser *user = [[SlashatHighFiveUser alloc] init];
+    NSString *loginUrlString = [NSString stringWithFormat:@"%@getuser", SLASHAT_API_URL];
+    
+    NSURL *loginUrl = [NSURL URLWithString:loginUrlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:loginUrl];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *params = [NSString stringWithFormat:@"token=%@", self.highFiveAuthToken];
+    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSLog(@"HighFiveAuthToken: %@", self.highFiveAuthToken);
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        SlashatHighFiveUser *highFiveUser = [[SlashatHighFiveUser alloc] initWithAttributes:JSON];
+        NSLog(@"getUser success: %@", highFiveUser.userName);
+        success(highFiveUser);
+        
+    } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
+        NSLog(@"Failed: %@",[error localizedDescription]);
+    }];
+    
+    [operation start];
+    
+    
+    
+    
+    
+    /*SlashatHighFiveUser *user = [[SlashatHighFiveUser alloc] init];
     user.userName = @"kottkrig";
     user.qrCode = [NSURL URLWithString:@"http://api.qrserver.com/v1/create-qr-code/?data=Slashat%20rules&size=510x510"];
     user.profilePicture = [NSURL URLWithString:@"http://www.gravatar.com/avatar/a85e891db7a0bfd5e3ec12575559bece.png"];
     
     user.highFivers = [self getMockHighFiveUsers];
-    success(user);
+    success(user);*/
 }
 
 - (void)fetchAllSlashatHighFiversWithSuccess:(void(^)(NSArray *users))success failure:(void(^)(NSError *error))failure
@@ -230,6 +288,15 @@
     [self.tokenKeyChainItem setObject:authToken forKey:(__bridge id)kSecValueData];
 }
 
+- (NSString *)highFiveAuthToken
+{
+    if (!_highFiveAuthToken) {
+        _highFiveAuthToken = [self getTokenFromKeyChain];
+    }
+    
+    return _highFiveAuthToken;
+}
+
 - (NSString *)getTokenFromKeyChain
 {
     if (!self.tokenKeyChainItem) {
@@ -237,6 +304,15 @@
     }
     
     return (NSString *)[self.tokenKeyChainItem objectForKey:(__bridge id)kSecValueData];
+}
+
+- (void)clearTokenFromKeychain
+{
+    if (!self.tokenKeyChainItem) {
+        self.tokenKeyChainItem = [[KDJKeychainItemWrapper alloc] initWithIdentifier:@"HighFiveToken" accessGroup:nil];
+    }
+    
+    [self.tokenKeyChainItem setObject:@"" forKey:(__bridge id)kSecValueData];
 }
 
 - (void)performSlashatHighFive:(SlashatHighFive *)highFive success:(void(^)())success failure:(void(^)(NSError *error))failure
@@ -251,7 +327,7 @@
 - (BOOL)userIsLoggedIn
 {
     NSString *token = [self getTokenFromKeyChain];
-    return token != nil;
+    return token && token.length;
 }
 
 @end

@@ -20,5 +20,7 @@ typedef void(^UserErrorBlock)(NSError *error);
 + (void)loginWithCredentials:(NSString *)username password:(NSString *)password success:(UserObjectBlock)successBlock onError:(UserErrorBlock)errorBlock;
 + (BOOL)userIsLoggedIn;
 
++ (void)logOutUser;
+
 
 @end

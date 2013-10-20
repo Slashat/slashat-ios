@@ -10,7 +10,7 @@
 #import "ZBarSDK.h"
 
 
-@interface SlashatHighFiveViewController : UIViewController <UICollectionViewDataSource, ZBarReaderDelegate>
+@interface SlashatHighFiveViewController : UIViewController <UICollectionViewDataSource, ZBarReaderDelegate, UIAlertViewDelegate>
 
 - (IBAction)giveHighFiveButtonPressed:(id)sender;
 

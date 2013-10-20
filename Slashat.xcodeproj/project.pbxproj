@@ -148,6 +148,7 @@
 		04956B6017B56A8400091C26 /* player_flap_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5E17B56A8400091C26 /* player_flap_icon.png */; };
 		04956B6117B56A8400091C26 /* player_flap_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04956B5F17B56A8400091C26 /* player_flap_icon@2x.png */; };
 		04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04972487179FD2E4003685CD /* MessageUI.framework */; };
+		04C677471814343C00D7B925 /* NSError+SlashatAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C677461814343C00D7B925 /* NSError+SlashatAPI.m */; };
 		04CA4C88179033A300428565 /* Slashat_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C82179033A300428565 /* Slashat_mail.png */; };
 		04CA4C89179033A300428565 /* Slashat_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C83179033A300428565 /* Slashat_twitter.png */; };
 		04CA4C8A179033A300428565 /* Slashat_webb.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4C84179033A300428565 /* Slashat_webb.png */; };
@@ -394,6 +395,8 @@
 		04956B5E17B56A8400091C26 /* player_flap_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_flap_icon.png; sourceTree = "<group>"; };
 		04956B5F17B56A8400091C26 /* player_flap_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_flap_icon@2x.png"; sourceTree = "<group>"; };
 		04972487179FD2E4003685CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		04C677451814343C00D7B925 /* NSError+SlashatAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SlashatAPI.h"; sourceTree = "<group>"; };
+		04C677461814343C00D7B925 /* NSError+SlashatAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SlashatAPI.m"; sourceTree = "<group>"; };
 		04CA4C82179033A300428565 /* Slashat_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_mail.png; sourceTree = "<group>"; };
 		04CA4C83179033A300428565 /* Slashat_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_twitter.png; sourceTree = "<group>"; };
 		04CA4C84179033A300428565 /* Slashat_webb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slashat_webb.png; sourceTree = "<group>"; };
@@ -921,6 +924,8 @@
 			children = (
 				04CEA8EB17D3552000C265B9 /* UIColor+Slashat.h */,
 				04CEA8EC17D3552000C265B9 /* UIColor+Slashat.m */,
+				04C677451814343C00D7B925 /* NSError+SlashatAPI.h */,
+				04C677461814343C00D7B925 /* NSError+SlashatAPI.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1047,6 +1052,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Johan Larsson";
+				TargetAttributes = {
+					043B5438169313A500B71F3A = {
+						DevelopmentTeam = X23ZFVGL7W;
+					};
+				};
 			};
 			buildConfigurationList = 043B5433169313A500B71F3A /* Build configuration list for PBXProject "Slashat" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1264,6 +1274,7 @@
 				0456B98217D32B0900826CEB /* SlashatLiveViewController~iPad.m in Sources */,
 				04CEA8ED17D3552000C265B9 /* UIColor+Slashat.m in Sources */,
 				04CEA8F617D36C9000C265B9 /* SlashatBrowserViewController~iPad.m in Sources */,
+				04C677471814343C00D7B925 /* NSError+SlashatAPI.m in Sources */,
 				042B080617F6FF1C00C93997 /* SlashatHighFiveUser+RemoteAccessors.m in Sources */,
 				04CEA8F917D39D9C00C265B9 /* SlashatAboutViewController.m in Sources */,
 				04CEA8FE17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m in Sources */,
@@ -1407,11 +1418,13 @@
 					"$(inherited)",
 					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks/ZBarSDK",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1419,8 +1432,8 @@
 		043B5482169313A500B71F3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johan Larsson (X23ZFVGL7W)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/johan/Downloads,
@@ -1442,7 +1455,9 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

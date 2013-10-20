@@ -10,4 +10,34 @@
 
 @implementation SlashatHighFiveUser
 
+- (id)initWithAttributes:(NSDictionary *)attributes
+{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    NSLog(@"SlashatHighFiveUser: attributes: %@", attributes);
+    
+    self.userName = [attributes valueForKey:@"username"];
+    self.userId = [attributes valueForKey:@"user_id"];
+    
+    if ([attributes valueForKey:@"picture"] && [attributes valueForKey:@"picture"] != [NSNull null]) {
+        self.profilePicture = [NSURL URLWithString:[attributes valueForKey:@"picture"]];
+    }
+    
+    if ([attributes valueForKey:@"qrcode"]) {
+        self.qrCode = [NSURL URLWithString:[attributes valueForKey:@"qrcode"]];
+    }
+    
+    NSMutableArray *highFivers = [[NSMutableArray alloc] init];
+    for (NSString *highFiverAttributes in [attributes objectForKey:@"highfivers"]) {
+        [highFivers addObject:[[SlashatHighFiveUser alloc] initWithAttributes:[[attributes objectForKey:@"highfivers"]objectForKey:highFiverAttributes]]];
+    }
+    
+    self.highFivers = highFivers;
+    
+    return self;
+}
+
 @end

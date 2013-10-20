@@ -32,13 +32,13 @@
         [self fetchUserWithSuccess:successBlock onError:errorBlock];
         
     } failure:^(NSError *error) {
-        
+        errorBlock(error);
     }];
 }
 
-+ (void)saveTokenToKeyChain:(NSString *)authToken
++ (void)logOutUser
 {
-    
+    [[SlashatAPIManager sharedClient] clearTokenFromKeychain];
 }
 
 @end
