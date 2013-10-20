@@ -16,9 +16,7 @@
     if (!self) {
         return nil;
     }
-    
-    NSLog(@"SlashatHighFiveUser: attributes: %@", attributes);
-    
+        
     self.userName = [attributes valueForKey:@"username"];
     self.userId = [attributes valueForKey:@"user_id"];
     

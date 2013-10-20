@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self.qrCodeImageView setImageWithURL:self.highFiveUser.qrCode];
     
     self.navigationItem.title = [NSString stringWithFormat:@"Ge %@ en high five!", self.highFiveUser.userName];
