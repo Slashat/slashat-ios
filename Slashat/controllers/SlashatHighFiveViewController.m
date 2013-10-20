@@ -164,6 +164,7 @@
         SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
         highFive.receiverToken = object.data;
         [SlashatHighFive performHighFive:highFive success:^{
+            NSLog(@"SlashatHighFiveViewController: High five success. Fetching new user data.");
             [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
                 [self updateViewWithUser:user];
             } onError:nil];

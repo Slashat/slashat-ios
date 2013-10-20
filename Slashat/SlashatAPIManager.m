@@ -223,9 +223,7 @@
     
     NSString *params = [NSString stringWithFormat:@"token=%@", self.highFiveAuthToken];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSLog(@"HighFiveAuthToken: %@", self.highFiveAuthToken);
-    
+        
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
         SlashatHighFiveUser *highFiveUser = [[SlashatHighFiveUser alloc] initWithAttributes:JSON];
@@ -253,7 +251,29 @@
 
 - (void)fetchAllSlashatHighFiversWithSuccess:(void(^)(NSArray *users))success failure:(void(^)(NSError *error))failure
 {
-    success([self getMockHighFiveUsers]);
+    NSString *urlString = [NSString stringWithFormat:@"%@getallusers", SLASHAT_API_URL];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *params = [NSString stringWithFormat:@"token=%@", self.highFiveAuthToken];
+    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        NSLog(@"allSlashatUsers success: %@", JSON);
+        
+        
+        
+    } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
+        NSLog(@"Failed: %@",[error localizedDescription]);
+    }];
+    
+    [operation start];
+    
+    
+    //success([self getMockHighFiveUsers]);
 }
 
 - (NSArray *)getMockHighFiveUsers
@@ -316,11 +336,30 @@
 }
 
 - (void)performSlashatHighFive:(SlashatHighFive *)highFive success:(void(^)())success failure:(void(^)(NSError *error))failure
-{
-    NSLog(@"SlashatAPIMAnager: performSlashatHighFive: Receiver token: %@", highFive.receiverToken);
-    if (success) {
-        success();
-    }
+{    
+    NSString *hi5UrlString = [NSString stringWithFormat:@"%@sethi5", SLASHAT_API_URL];
+    NSURL *url = [NSURL URLWithString:hi5UrlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *params = [NSString stringWithFormat:@"token=%@&receiver=%@", self.highFiveAuthToken, highFive.receiverToken];
+    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        if ([JSON valueForKey:@"success"] && [JSON valueForKey:@"success"] != [NSNull null]) {
+            if (success) {
+                success();
+            }
+        } else {
+            failure([[NSError alloc]initWithAttributes:JSON]);
+        }
+    } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
+        NSLog(@"hi5 failed: %@",[error localizedDescription]);
+    }];
+    
+    [operation start];
 }
 
 
