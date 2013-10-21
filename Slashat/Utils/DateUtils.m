@@ -26,4 +26,26 @@
     return [formatter stringFromDate:date];
 }
 
++ (NSString *)convertNSDateToFriendlyString:(NSDate *)date
+{
+    NSTimeInterval timeSinceDate = - [date timeIntervalSinceNow];
+    
+    if(timeSinceDate < 48.0 * 60.0 * 60.0)
+    {
+        NSUInteger hoursSinceDate = (NSUInteger)(timeSinceDate / (60.0 * 60.0));
+        
+        switch(hoursSinceDate)
+        {
+            default: return [NSString stringWithFormat:@"%d timmar sedan", hoursSinceDate];
+            case 1: return @"1 timma sedan";
+            case 0: return [NSString stringWithFormat:@"%d minuter sedan", (NSUInteger)(timeSinceDate / 60.0)];
+        }
+    }
+    else
+    {
+        NSUInteger daysSinceDate = (NSUInteger)(timeSinceDate / (24.0 * 60.0 * 60.0));
+        return [NSString stringWithFormat:@"%d dagar sedan", daysSinceDate];
+    }    
+}
+
 @end

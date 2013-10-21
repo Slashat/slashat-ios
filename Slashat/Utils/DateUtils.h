@@ -12,6 +12,6 @@
 
 + (NSDate *)createNSDateFrom:(NSString *)googleCalendarDateString;
 + (NSString *)convertNSDateToGoogleCalendarString:(NSDate *)date;
-
++ (NSString *)convertNSDateToFriendlyString:(NSDate *)date;
 
 @end
