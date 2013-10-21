@@ -257,14 +257,20 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     
-    NSString *params = [NSString stringWithFormat:@"token=%@", self.highFiveAuthToken];
-    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    //NSString *params = [NSString stringWithFormat:@"token=%@", self.highFiveAuthToken];
+    //[request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
         NSLog(@"allSlashatUsers success: %@", JSON);
         
+        NSMutableArray *highFivers = [[NSMutableArray alloc] init];
+        for (NSString *highFiverKey in JSON) {
+            NSDictionary *highFiverAttributes = [JSON objectForKey:highFiverKey];
+            [highFivers addObject:[[SlashatHighFiveUser alloc] initWithAttributes:highFiverAttributes]];
+        }
         
+        success(highFivers);
         
     } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
         NSLog(@"Failed: %@",[error localizedDescription]);

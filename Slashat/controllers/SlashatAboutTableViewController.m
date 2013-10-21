@@ -150,6 +150,7 @@
     } else if (self.highFivers) {
         SlashatHighFiveUser *highFiver = (SlashatHighFiveUser *)[self.highFivers objectAtIndex:indexPath.row];
         cell.textLabel.text = highFiver.userName;
+        cell.detailTextLabel.text = @"";
         [cell.imageView setImageWithURL:highFiver.profilePicture];
     }
     
