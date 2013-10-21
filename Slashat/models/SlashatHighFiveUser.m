@@ -20,6 +20,11 @@
     self.userName = [attributes valueForKey:@"username"];
     self.userId = [attributes valueForKey:@"user_id"];
     
+    self.highfivedByName = [attributes valueForKey:@"highfived_by_name"];
+        
+    self.highfivedDate = [NSDate dateWithTimeIntervalSince1970:[[attributes valueForKey:@"highfived_date"] doubleValue]];
+    self.highfivedWhere = [attributes valueForKey:@"highfived_where"];
+    
     if ([attributes valueForKey:@"picture"] && [attributes valueForKey:@"picture"] != [NSNull null]) {
         self.profilePicture = [NSURL URLWithString:[attributes valueForKey:@"picture"]];
     }

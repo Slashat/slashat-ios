@@ -11,6 +11,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SlashatReceiveHighFiveViewController.h"
 #import "SlashatHighFive+RemoteAccessors.h"
+#import <QuartzCore/QuartzCore.h>
+#import "DateUtils.h"
 
 @interface SlashatHighFiveViewController ()
 
@@ -19,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *highFiversCollectionView;
+
+@property (weak, nonatomic) IBOutlet UIView *profileInfoView;
+@property (weak, nonatomic) IBOutlet UILabel *profileDescriptionLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *giveHighFiveButton;
 
@@ -43,6 +48,11 @@
     [super viewDidLoad];
     
     //[SlashatHighFiveUser logOutUser];
+    
+    self.profileInfoView.layer.masksToBounds = NO;
+    self.profileInfoView.layer.shadowOffset = CGSizeMake(0, 1);
+    self.profileInfoView.layer.shadowRadius = 1;
+    self.profileInfoView.layer.shadowOpacity = 0.3;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
@@ -116,6 +126,10 @@
     
     self.nameLabel.text = user.userName;
     [self.profileImageView setImageWithURL:user.profilePicture];
+    self.profileImageView.layer.masksToBounds = YES;
+    self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.size.width / 2;
+    
+    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första highfive av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
     
     if (user.highFivers.count > 0) {
         self.giveHighFiveButton.enabled = TRUE;
@@ -192,6 +206,13 @@
     
     UIImageView *highFiverImageView = (UIImageView *)[cell viewWithTag:100];
     [highFiverImageView setImageWithURL:((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).profilePicture];
+    
+    highFiverImageView.layer.cornerRadius = highFiverImageView.bounds.size.width / 2;
+    highFiverImageView.layer.masksToBounds = YES;
+    
+
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:200];
+    nameLabel.text = ((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).userName;
     
     return cell;
 }
