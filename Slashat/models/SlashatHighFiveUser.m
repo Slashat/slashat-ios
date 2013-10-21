@@ -34,8 +34,9 @@
     }
     
     NSMutableArray *highFivers = [[NSMutableArray alloc] init];
-    for (NSString *highFiverAttributes in [attributes objectForKey:@"highfivers"]) {
-        [highFivers addObject:[[SlashatHighFiveUser alloc] initWithAttributes:[[attributes objectForKey:@"highfivers"]objectForKey:highFiverAttributes]]];
+    for (NSString *highFiverKey in [attributes objectForKey:@"highfivers"]) {
+        NSDictionary *highFiverAttributes = [[attributes objectForKey:@"highfivers"] objectForKey:highFiverKey];
+        [highFivers addObject:[[SlashatHighFiveUser alloc] initWithAttributes:highFiverAttributes]];
     }
     
     self.highFivers = highFivers;
