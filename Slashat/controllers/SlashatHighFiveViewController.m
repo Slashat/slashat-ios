@@ -50,9 +50,9 @@
     //[SlashatHighFiveUser logOutUser];
     
     self.profileInfoView.layer.masksToBounds = NO;
-    self.profileInfoView.layer.shadowOffset = CGSizeMake(0, 1);
+    self.profileInfoView.layer.shadowOffset = CGSizeMake(0, 0);
     self.profileInfoView.layer.shadowRadius = 1;
-    self.profileInfoView.layer.shadowOpacity = 0.3;
+    self.profileInfoView.layer.shadowOpacity = 0.5;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
