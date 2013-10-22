@@ -172,7 +172,6 @@
 		04CEA8F917D39D9C00C265B9 /* SlashatAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8F817D39D9B00C265B9 /* SlashatAboutViewController.m */; };
 		04CEA8FB17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CEA8FA17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib */; };
 		04CEA8FE17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CEA8FD17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m */; };
-		04E5DDE517F70CA30091464D /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDE417F70CA30091464D /* SDWebImage.framework */; };
 		04E5DDE717F70CFF0091464D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDE617F70CFF0091464D /* ImageIO.framework */; };
 		04E5DDEC17F8087D0091464D /* tab-bar_highfive_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5DDE817F8087D0091464D /* tab-bar_highfive_active.png */; };
 		04E5DDED17F8087D0091464D /* tab-bar_highfive_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5DDE917F8087D0091464D /* tab-bar_highfive_active@2x.png */; };
@@ -197,6 +196,7 @@
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
 		04F698B017E4777700F8DC77 /* SlashatCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */; };
+		04F8509518170624004E7DC1 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F8509418170624004E7DC1 /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,7 +424,6 @@
 		04CEA8FA17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SlashatAboutHostView~iPad.xib"; sourceTree = "<group>"; };
 		04CEA8FC17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlashatAboutHostViewController~iPad.h"; sourceTree = "<group>"; };
 		04CEA8FD17D3A72500C265B9 /* SlashatAboutHostViewController~iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatAboutHostViewController~iPad.m"; sourceTree = "<group>"; };
-		04E5DDE417F70CA30091464D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		04E5DDE617F70CFF0091464D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		04E5DDE817F8087D0091464D /* tab-bar_highfive_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-bar_highfive_active.png"; sourceTree = "<group>"; };
 		04E5DDE917F8087D0091464D /* tab-bar_highfive_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-bar_highfive_active@2x.png"; sourceTree = "<group>"; };
@@ -478,6 +477,7 @@
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
 		04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCalendarItem.h; sourceTree = "<group>"; };
 		04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatCalendarItem.m; sourceTree = "<group>"; };
+		04F8509418170624004E7DC1 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,10 +498,10 @@
 				048EC31F173BA6890043E57D /* SystemConfiguration.framework in Frameworks */,
 				04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */,
 				046EF2F41763292B00005B82 /* Social.framework in Frameworks */,
-				04E5DDE517F70CA30091464D /* SDWebImage.framework in Frameworks */,
 				04596A2017199E450094C499 /* QuartzCore.framework in Frameworks */,
 				0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */,
 				043B543E169313A500B71F3A /* UIKit.framework in Frameworks */,
+				04F8509518170624004E7DC1 /* SDWebImage.framework in Frameworks */,
 				043B5440169313A500B71F3A /* Foundation.framework in Frameworks */,
 				043B5442169313A500B71F3A /* CoreGraphics.framework in Frameworks */,
 			);
@@ -792,9 +792,9 @@
 		0452943116985933001F0504 /* externalFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04F8509418170624004E7DC1 /* SDWebImage.framework */,
 				04E5E07D17F85DE40091464D /* GenericKeychain */,
 				04E5E05117F815D40091464D /* ZBarSDK */,
-				04E5DDE417F70CA30091464D /* SDWebImage.framework */,
 				043FF42017D517F700FD9993 /* DB5 */,
 				044730531698623F00C74E01 /* RSSParser */,
 				0452943216985951001F0504 /* AFNetworking */,
