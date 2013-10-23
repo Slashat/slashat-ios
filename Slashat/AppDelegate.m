@@ -63,7 +63,7 @@
     
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
     
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:1];
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:0.8];
     //[UINavigationBar appearance].barTintColor = [UIColor slashatOrange];
     
     UIColor *textColor = [UIColor whiteColor];
