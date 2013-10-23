@@ -41,7 +41,7 @@ Du kan lyssna på Slashat via hemsidan eller prenumerera på oss via iTunes elle
 				<key>type</key>
 				<string>host</string>
 				<key>name</key>
-				<string>Jezper</string>
+				<string>Jezper Söderlund</string>
 				<key>image</key>
 				<string>snyggjeppe.jpg</string>
 				<key>twitter</key>
@@ -61,7 +61,7 @@ Jezper spenderar nästan orimligt mycket tid framför datorer och lever där i s
 				<key>type</key>
 				<string>host</string>
 				<key>name</key>
-				<string>Tommie</string>
+				<string>Tommie Podzemski</string>
 				<key>image</key>
 				<string>snyggtommie.jpg</string>
 				<key>twitter</key>
@@ -88,7 +88,7 @@ Arbetar som IT-ansvarig och kör primärt OS X men navigerar även hemtamt i Ubu
 				<key>type</key>
 				<string>host</string>
 				<key>name</key>
-				<string>Magnus</string>
+				<string>Magnus Jonasson</string>
 				<key>image</key>
 				<string>snyggmagnus.jpg</string>
 				<key>twitter</key>
@@ -108,7 +108,7 @@ Alltid på jakt efter nya prylar att integrera i sitt digitala liv. Förutom tek
 				<key>type</key>
 				<string>host</string>
 				<key>name</key>
-				<string>Johan</string>
+				<string>Johan Larsson</string>
 				<key>image</key>
 				<string>snyggjohan.jpg</string>
 				<key>twitter</key>
@@ -130,7 +130,7 @@ Arbetar hellre i OS X och Linux än i Windows när jag vill vara produktiv. Anv�
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Apphjälpredor</string>
+		<string>App-hjälpredor</string>
 		<key>items</key>
 		<array>
 			<dict>
@@ -159,7 +159,7 @@ Behöver du hjälp med att komma igång så kan du antingen mejla eller slänga 
 				<key>type</key>
 				<string>contributor</string>
 				<key>name</key>
-				<string>Nicklas</string>
+				<string>Nicklas Löf</string>
 				<key>image</key>
 				<string>nicklas.jpg</string>
 				<key>twitter</key>
@@ -169,7 +169,7 @@ Behöver du hjälp med att komma igång så kan du antingen mejla eller slänga 
 				<key>web</key>
 				<string></string>
 				<key>short_description</key>
-				<string>Androidkung</string>
+				<string>Android-kung</string>
 				<key>long_description</key>
 				<string>Relativt ny Slashat-lyssnare som varit datorintresserad sedan en Vic20 med 12&quot; svartvit TV uppenbarade sig under granen för många herrans år sedan. Efter detta har vägen gått via C64, Amiga och PC till att bli en trogen Mac-användare i snart 10 år. Testade därför iOS under 1 år men gick över till Android efter 1 år.
 
@@ -182,7 +182,7 @@ Aktiv Xbox-spelare och har tillsammans med sambon kört igenom nästan varenda c
 				<key>type</key>
 				<string>contributor</string>
 				<key>name</key>
-				<string>Erika</string>
+				<string>Erika Thorsen</string>
 				<key>image</key>
 				<string>erika.jpg</string>
 				<key>twitter</key>
@@ -202,7 +202,7 @@ Hon gillar och kör Mac, både på jobbet och privat, men programmerar lika gär
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>High Fivers!</string>
+		<string>High-Fivers!</string>
 		<key>items</key>
 		<array/>
 	</dict>

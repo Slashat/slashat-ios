@@ -36,7 +36,7 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"High Five!" image:nil tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"High-Five!" image:nil tag:0];
         [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab-bar_highfive_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tab-bar_highfive_inactive.png"]];
     }
     
@@ -96,10 +96,11 @@
 - (void)showLoginView
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:Nil delegate:nil cancelButtonTitle:@"Avbryt" otherButtonTitles:@"Logga in", @"Skapa konto", nil];
-    alertView.title = @"Logga in";
-    alertView.message = @"Använd de kontouppgifter som du använder för forum.slashat.se.";
+    alertView.title = @"Slashat.se Forum-konto:";
+    alertView.message = @"Du använder ditt befintliga Slashat.se Forum-konto för\natt koppla ihop appen med\n din forumprofil.";
     alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     alertView.delegate = self;
+    [alertView textFieldAtIndex:0].placeholder = @"Användarnamn";
     [alertView show];
 }
     
@@ -133,7 +134,7 @@
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.size.width / 2;
     
-    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första highfive av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
+    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första High-Five av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
     
     if (user.highFivers.count > 0) {
         self.giveHighFiveButton.enabled = TRUE;
