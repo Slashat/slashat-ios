@@ -1415,7 +1415,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks/ZBarSDK",
+					./Slashat/externalFrameworks/ZBarSDK,
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1449,7 +1449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks/ZBarSDK",
+					./Slashat/externalFrameworks/ZBarSDK,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
