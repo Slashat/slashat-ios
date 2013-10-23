@@ -1401,8 +1401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/johan/Downloads,
-					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks",
+					./Slashat/externalFrameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
@@ -1436,8 +1435,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/johan/Downloads,
-					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks",
+					./Slashat/externalFrameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slashat/Slashat-Prefix.pch";
