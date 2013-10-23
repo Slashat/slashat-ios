@@ -238,7 +238,6 @@
 		043B543F169313A500B71F3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		043B5441169313A500B71F3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		043B5445169313A500B71F3A /* Slashat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slashat-Info.plist"; sourceTree = "<group>"; };
-		043B5447169313A500B71F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		043B5449169313A500B71F3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		043B544B169313A500B71F3A /* Slashat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slashat-Prefix.pch"; sourceTree = "<group>"; };
 		043B544C169313A500B71F3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -246,12 +245,9 @@
 		043B544F169313A500B71F3A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		043B5451169313A500B71F3A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		043B5453169313A500B71F3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		043B5456169313A500B71F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		043B5459169313A500B71F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		043B546E169313A500B71F3A /* SlashatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlashatTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043B546F169313A500B71F3A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		043B5477169313A500B71F3A /* SlashatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlashatTests-Info.plist"; sourceTree = "<group>"; };
-		043B5479169313A500B71F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		043B547B169313A500B71F3A /* SlashatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlashatTests.h; sourceTree = "<group>"; };
 		043B547C169313A500B71F3A /* SlashatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlashatTests.m; sourceTree = "<group>"; };
 		043FF42117D517F700FD9993 /* VSTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTheme.h; sourceTree = "<group>"; };
@@ -480,6 +476,10 @@
 		04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCalendarItem.h; sourceTree = "<group>"; };
 		04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatCalendarItem.m; sourceTree = "<group>"; };
 		04F8509418170624004E7DC1 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		6CFA08D7181859350083F183 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = sv; path = sv.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		6CFA08D8181859350083F183 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = sv; path = sv.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		6CFA08D9181859350083F183 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6CFA08DA181859350083F183 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1067,6 +1067,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				sv,
 			);
 			mainGroup = 043B542E169313A500B71F3A;
 			productRefGroup = 043B543A169313A500B71F3A /* Products */;
@@ -1310,7 +1311,7 @@
 		043B5446169313A500B71F3A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				043B5447169313A500B71F3A /* en */,
+				6CFA08D9181859350083F183 /* sv */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1318,7 +1319,7 @@
 		043B5455169313A500B71F3A /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				043B5456169313A500B71F3A /* en */,
+				6CFA08D8181859350083F183 /* sv */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -1326,7 +1327,7 @@
 		043B5458169313A500B71F3A /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				043B5459169313A500B71F3A /* en */,
+				6CFA08D7181859350083F183 /* sv */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -1334,7 +1335,7 @@
 		043B5478169313A500B71F3A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				043B5479169313A500B71F3A /* en */,
+				6CFA08DA181859350083F183 /* sv */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

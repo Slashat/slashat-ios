@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <deployment version="1552" defaultVersion="1792" identifier="iOS"/>
         <development version="5000" identifier="xcode"/>
@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="width" constant="154" id="kSi-hJ-lao"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Dela på twitter" image="live_view_share_twitter.png">
+                                <state key="normal" title="Dela på Twitter" image="live_view_share_twitter.png">
                                     <color key="titleColor" red="0.93333333333333335" green="0.2196078431372549" blue="0.0078431372549019607" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -483,7 +483,7 @@
             </objects>
             <point key="canvasLocation" x="301" y="355"/>
         </scene>
-        <!--Slashat About Table View Controller - Om Slashat-->
+        <!--Slashat About Table View Controller - Om Slashat.se-->
         <scene sceneID="Gio-p3-jpX">
             <objects>
                 <tableViewController id="sik-nw-XZP" customClass="SlashatAboutTableViewController" sceneMemberID="viewController">
@@ -523,7 +523,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Om Slashat" id="fZg-Be-5h5"/>
+                    <navigationItem key="navigationItem" title="Om Slashat.se" id="fZg-Be-5h5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sod-oq-9ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -856,11 +856,11 @@
             </objects>
             <point key="canvasLocation" x="1146" y="1773"/>
         </scene>
-        <!--Navigation Controller - Om Slashat-->
+        <!--Navigation Controller - Om Slashat.se-->
         <scene sceneID="82e-aV-2KN">
             <objects>
                 <navigationController definesPresentationContext="YES" id="IWf-Yb-o2E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Om Slashat" id="cND-sA-g4c"/>
+                    <tabBarItem key="tabBarItem" title="Om Slashat.se" id="cND-sA-g4c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XOp-RW-JP0">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
