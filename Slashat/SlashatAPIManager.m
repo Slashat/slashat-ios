@@ -228,6 +228,14 @@
         
         SlashatHighFiveUser *highFiveUser = [[SlashatHighFiveUser alloc] initWithAttributes:JSON];
         NSLog(@"getUser success: %@", highFiveUser.userName);
+        if (highFiveUser.userName) {
+            success(highFiveUser);
+        }
+        else {
+            NSError *error = [[NSError alloc] initWithAttributes:JSON];
+            failure(error);
+        }
+            
         success(highFiveUser);
         
     } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
