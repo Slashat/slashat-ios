@@ -1413,7 +1413,7 @@
 					"externalFrameworks/ZXingWidget/Classes/**",
 				);
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks/ZBarSDK",
@@ -1448,7 +1448,7 @@
 					"externalFrameworks/ZXingWidget/Classes/**",
 				);
 				INFOPLIST_FILE = "Slashat/Slashat-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/johan/Development/Slashat/slashat-ios/Slashat/externalFrameworks/ZBarSDK",
