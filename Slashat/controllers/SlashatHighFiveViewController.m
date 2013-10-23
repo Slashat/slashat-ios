@@ -85,7 +85,7 @@
         [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
             [self updateViewWithUser:user];
         } onError:^(NSError *error) {
-            
+            [self showLoginView];
         }];
     }
     else {
