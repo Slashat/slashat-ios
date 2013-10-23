@@ -21,8 +21,11 @@
     self.userId = [attributes valueForKey:@"user_id"];
     
     self.highfivedByName = [attributes valueForKey:@"highfived_by_name"];
-        
-    self.highfivedDate = [NSDate dateWithTimeIntervalSince1970:[[attributes valueForKey:@"highfived_date"] doubleValue]];
+    
+    if ([attributes valueForKey:@"highfived_date"] && [attributes valueForKey:@"highfived_date"] != [NSNull null]) {
+        self.highfivedDate = [NSDate dateWithTimeIntervalSince1970:[[attributes valueForKey:@"highfived_date"] doubleValue]];
+    }
+    
     self.highfivedWhere = [attributes valueForKey:@"highfived_where"];
     
     if ([attributes valueForKey:@"picture"] && [attributes valueForKey:@"picture"] != [NSNull null]) {

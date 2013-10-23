@@ -137,7 +137,11 @@
     self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första High-Five av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
     
     if (user.highFivers.count > 0) {
-        self.giveHighFiveButton.enabled = TRUE;
+        self.giveHighFiveButton.enabled = YES;
+        self.profileDescriptionLabel.hidden = NO;
+    } else {
+        self.giveHighFiveButton.enabled = NO;
+        self.profileDescriptionLabel.hidden = YES;
     }
     
     [self.highFiversCollectionView reloadData];
