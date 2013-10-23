@@ -284,23 +284,17 @@
 
 - (NSArray *)getMockHighFiveUsers
 {
-    SlashatHighFiveUser *highFiver1 = [[SlashatHighFiveUser alloc] init];
-    highFiver1.userName = @"jezper";
-    highFiver1.profilePicture = [NSURL URLWithString:@"http://forum.slashat.se/download/file.php?avatar=54_1371413866.png"];
+    NSMutableArray *snyggJeppeArray = [NSMutableArray array];
     
-    SlashatHighFiveUser *highFiver2 = [[SlashatHighFiveUser alloc] init];
-    highFiver2.userName = @"tommie";
-    highFiver2.profilePicture = [NSURL URLWithString:@"http://forum.slashat.se/download/file.php?avatar=53_1379446237.png"];
+    for (int i = 0; i < 30; i++) {
+        SlashatHighFiveUser *highFiver = [[SlashatHighFiveUser alloc] init];
+        highFiver.userName = @"jezper";
+        highFiver.profilePicture = [NSURL URLWithString:@"http://forum.slashat.se/download/file.php?avatar=54_1371413866.png"];
+        
+        [snyggJeppeArray addObject:highFiver];
+    }
     
-    SlashatHighFiveUser *highFiver3 = [[SlashatHighFiveUser alloc] init];
-    highFiver3.userName = @"jonasson";
-    highFiver3.profilePicture = [NSURL URLWithString:@"http://forum.slashat.se/download/file.php?avatar=66_1368392108.jpg"];
-    
-    SlashatHighFiveUser *highFiver4 = [[SlashatHighFiveUser alloc] init];
-    highFiver4.userName = @"smiley";
-    highFiver4.profilePicture = [NSURL URLWithString:@"http://forum.slashat.se/download/file.php?avatar=1197_1372799107.jpg"];
-    
-    return @[highFiver1, highFiver2, highFiver3, highFiver4];
+    return snyggJeppeArray;
 }
 
 - (void)setHighFiveAuthToken:(NSString *)authToken
