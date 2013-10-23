@@ -49,6 +49,10 @@
     
     //[SlashatHighFiveUser logOutUser];
     
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.highFiversCollectionView.collectionViewLayout;
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 40, 20);
+
+    
     self.profileInfoView.layer.masksToBounds = NO;
     self.profileInfoView.layer.shadowOffset = CGSizeMake(0, 0);
     self.profileInfoView.layer.shadowRadius = 1;
@@ -215,6 +219,21 @@
     nameLabel.text = ((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).userName;
     
     return cell;
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *header = nil;
+    
+    if ([kind isEqual:UICollectionElementKindSectionHeader])
+    {
+        header = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                    withReuseIdentifier:@"HighFiverSection"
+                                                           forIndexPath:indexPath];
+        
+        //header.headerLabel.text = @"Car Image Gallery";
+    }
+    return header;
 }
 
 @end
