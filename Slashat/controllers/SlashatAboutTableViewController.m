@@ -147,10 +147,14 @@
         [cell.imageView setImage:host.profileImage];
         cell.textLabel.text = host.name;
         cell.detailTextLabel.text = host.shortDescription;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.userInteractionEnabled = YES;
     } else if (self.highFivers) {
         SlashatHighFiveUser *highFiver = (SlashatHighFiveUser *)[self.highFivers objectAtIndex:indexPath.row];
         cell.textLabel.text = highFiver.userName;
         cell.detailTextLabel.text = @"";
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.userInteractionEnabled = NO;
         [cell.imageView setImageWithURL:highFiver.profilePicture];
     }
     
