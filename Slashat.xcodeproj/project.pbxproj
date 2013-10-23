@@ -1057,7 +1057,7 @@
 				ORGANIZATIONNAME = "Johan Larsson";
 				TargetAttributes = {
 					043B5438169313A500B71F3A = {
-						DevelopmentTeam = X23ZFVGL7W;
+						DevelopmentTeam = W4X5WKYPC6;
 					};
 				};
 			};
@@ -1427,7 +1427,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1459,7 +1459,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
