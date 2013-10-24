@@ -12,6 +12,6 @@
 @interface SlashatHighFive : NSObject
 
 @property (strong, nonatomic) NSString *receiverToken;
-@property (assign, nonatomic) CLLocationCoordinate2D *coordinate;
+@property (assign, nonatomic) CLLocationCoordinate2D coordinate;
 
 @end

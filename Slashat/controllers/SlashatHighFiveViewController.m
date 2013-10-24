@@ -14,6 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "DateUtils.h"
 
+
 @interface SlashatHighFiveViewController ()
 
 @property (strong, nonatomic) SlashatHighFiveUser *user;
@@ -26,6 +27,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *profileDescriptionLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *giveHighFiveButton;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @end
 
@@ -58,7 +63,23 @@
     self.profileInfoView.layer.shadowRadius = 1;
     self.profileInfoView.layer.shadowOpacity = 0.5;
     
+    
+    if ([SlashatHighFiveUser userIsLoggedIn]) {
+        [self initializeLocationManager];
+    }
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)initializeLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
+    [self updateLocation];
 }
 
 - (void)applicationEnteredForeground:(NSNotification *)notification {
@@ -76,9 +97,25 @@
     }
 }
 
+- (void)updateLocation
+{
+    if (self.locationManager) {
+        [self.locationManager startUpdatingLocation];
+    }
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.locationManager stopUpdatingLocation];
+    self.currentLocation = [locations lastObject];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self updateLocation];
     
     if ([SlashatHighFiveUser userIsLoggedIn]) {
         NSLog(@"User is already logged in. Fetching user.");
@@ -120,6 +157,7 @@
 {
     [SlashatHighFiveUser loginWithCredentials:userName password:password success:^(SlashatHighFiveUser *user) {
         [self updateViewWithUser:user];
+        [self initializeLocationManager];
     } onError:^(NSError *error) {
         [self showLoginView];
     }];
@@ -186,6 +224,7 @@
         NSLog(@"QR Result: '%@'", object.data);
         SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
         highFive.receiverToken = object.data;
+        highFive.coordinate = self.currentLocation.coordinate;
         [SlashatHighFive performHighFive:highFive success:^{
             NSLog(@"SlashatHighFiveViewController: High five success. Fetching new user data.");
             [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {

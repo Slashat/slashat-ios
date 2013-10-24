@@ -351,7 +351,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     
-    NSString *params = [NSString stringWithFormat:@"token=%@&receiver=%@", self.highFiveAuthToken, highFive.receiverToken];
+    NSString *params = [NSString stringWithFormat:@"token=%@&receiver=%@&geolocation_lon=%f&geolocation_lat=%f", self.highFiveAuthToken, highFive.receiverToken, highFive.coordinate.longitude, highFive.coordinate.latitude];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
