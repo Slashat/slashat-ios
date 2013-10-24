@@ -29,8 +29,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *giveHighFiveButton;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-
 @property (strong, nonatomic) CLLocation *currentLocation;
+
+@property (strong, nonatomic) UIView *loginAlertViewUnderlayView;
 
 @end
 
@@ -66,7 +67,11 @@
     
     if ([SlashatHighFiveUser userIsLoggedIn]) {
         [self initializeLocationManager];
+    } else {
+        [self addLoginAlertViewUnderlay];
     }
+    
+    
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -128,6 +133,7 @@
         }];
     }
     else {
+        [self addLoginAlertViewUnderlay];
         [self showLoginView];
     }
 }
@@ -141,6 +147,29 @@
     alertView.delegate = self;
     [alertView textFieldAtIndex:0].placeholder = @"Användarnamn";
     [alertView show];
+    
+    [self addLoginAlertViewUnderlay];
+}
+
+- (void)addLoginAlertViewUnderlay
+{
+    if (!self.loginAlertViewUnderlayView) {
+        CGRect underlayFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        
+        self.loginAlertViewUnderlayView = [[UIView alloc] initWithFrame:underlayFrame];
+        self.loginAlertViewUnderlayView.backgroundColor = [UIColor whiteColor];
+    }
+    
+    if (!self.loginAlertViewUnderlayView.superview) {
+        [self.view addSubview:self.loginAlertViewUnderlayView];
+    }
+}
+
+- (void)removeLoginAlertViewUnderlay
+{
+    if (self.loginAlertViewUnderlayView && self.loginAlertViewUnderlayView.superview) {
+        [self.loginAlertViewUnderlayView removeFromSuperview];
+    }
 }
     
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -167,6 +196,8 @@
 
 - (void)updateViewWithUser:(SlashatHighFiveUser *)user
 {
+    [self removeLoginAlertViewUnderlay];
+    
     self.user = user;
     
     self.nameLabel.text = user.userName;
