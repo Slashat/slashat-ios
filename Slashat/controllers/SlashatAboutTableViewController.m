@@ -149,7 +149,6 @@
         cell.detailTextLabel.text = host.shortDescription;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.userInteractionEnabled = YES;
-        NSLog(@"cellImageSize: %f, %f", cell.imageView.frame.size.width, cell.imageView.frame.size.height);
     } else if (self.highFivers) {
         SlashatHighFiveUser *highFiver = (SlashatHighFiveUser *)[self.highFivers objectAtIndex:indexPath.row];
         cell.textLabel.text = highFiver.userName;
