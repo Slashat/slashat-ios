@@ -65,28 +65,12 @@
 
 - (void)setCustomNavigationBarAppearance
 {
-    //UIColor *slashatNavigationBarColor = [UIColor colorWithRed:106/255.0f green:36/255.0f blue:12/255.0f alpha:1];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:0.8];
-    //[UINavigationBar appearance].barTintColor = [UIColor slashatOrange];
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:0.7];
     
     UIColor *textColor = [UIColor whiteColor];
-    UIColor *textShadowColor = [UIColor colorWithWhite:255.0 alpha:0];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                UITextAttributeTextColor: textColor,
-                          UITextAttributeTextShadowColor: textShadowColor,
-                         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)]
-     }];
-    
-    [[UIBarButtonItem appearance] setTitleTextAttributes: @{
-                                UITextAttributeTextColor: textColor,
-                          UITextAttributeTextShadowColor: textShadowColor,
-                         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)]}
-                                                forState: UIControlStateNormal];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : textColor}];
 }
 
 + (AppDelegate *)sharedAppDelegate
