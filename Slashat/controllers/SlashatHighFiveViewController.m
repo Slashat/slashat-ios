@@ -82,21 +82,6 @@
     [self updateLocation];
 }
 
-- (void)applicationEnteredForeground:(NSNotification *)notification {
-    NSLog(@"Application Entered Foreground");
-    if ([SlashatHighFiveUser userIsLoggedIn]) {
-        NSLog(@"User is already logged in. Fetching user.");
-        [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
-            [self updateViewWithUser:user];
-        } onError:^(NSError *error) {
-            
-        }];
-    }
-    else {
-        [self showLoginView];
-    }
-}
-
 - (void)updateLocation
 {
     if (self.locationManager) {
@@ -115,7 +100,24 @@
 {
     [super viewDidAppear:animated];
     
+    [self activateView];
+}
+
+- (void)applicationEnteredForeground:(NSNotification *)notification
+{
+    [self activateView];
+}
+
+- (void)activateView
+{
     [self updateLocation];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL automaticLogin = [defaults boolForKey:@"highFiveAutomaticLogin"];
+    
+    if (!automaticLogin) {
+        [SlashatHighFiveUser logOutUser];
+    }
     
     if ([SlashatHighFiveUser userIsLoggedIn]) {
         NSLog(@"User is already logged in. Fetching user.");

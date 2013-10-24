@@ -195,6 +195,7 @@
 		04E5E08E1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E08D1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m */; };
 		04E9FE0417CD29A500D77E83 /* podcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0217CD29A500D77E83 /* podcast_icon.png */; };
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
+		04F5D4DF181994ED006CF721 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4DE181994ED006CF721 /* Settings.bundle */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
 		04F698B017E4777700F8DC77 /* SlashatCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */; };
 		04F8509518170624004E7DC1 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F8509418170624004E7DC1 /* SDWebImage.framework */; };
@@ -471,6 +472,7 @@
 		04E5E08D1801AFA00091464D /* SlashatHighFive+RemoteAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlashatHighFive+RemoteAccessors.m"; sourceTree = "<group>"; };
 		04E9FE0217CD29A500D77E83 /* podcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast_icon.png; sourceTree = "<group>"; };
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
+		04F5D4DE181994ED006CF721 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
 		04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCalendarItem.h; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				042ECD521693538600C77193 /* ViewControllers_iPhone */,
 				042ECD541693538600C77193 /* views */,
 				046DBB0A17E8C184008CDA03 /* Media.xcassets */,
+				04F5D4DE181994ED006CF721 /* Settings.bundle */,
 			);
 			path = Slashat;
 			sourceTree = "<group>";
@@ -1111,6 +1114,7 @@
 				046DEAAA17820AC5004A3A88 /* Slashat_about@2x.png in Resources */,
 				046DEAAB17820AC5004A3A88 /* Slashat_archive@2x.png in Resources */,
 				046DEAAE17820CAC004A3A88 /* Slashat_archive.png in Resources */,
+				04F5D4DF181994ED006CF721 /* Settings.bundle in Resources */,
 				046DEAAF17820CAC004A3A88 /* Slashat_about.png in Resources */,
 				046DEABD178214ED004A3A88 /* About_active.png in Resources */,
 				046DEABE178214ED004A3A88 /* About_active@2x.png in Resources */,

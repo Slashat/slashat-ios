@@ -44,6 +44,13 @@
     self.themeLoader = [VSThemeLoader new];
     self.theme = self.themeLoader.defaultTheme;
     
+    // Set the application defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:@"YES"
+                                                            forKey:@"highFiveAutomaticLogin"];
+    [defaults registerDefaults:appDefaults];
+    [defaults synchronize];
+    
     //NSError *sessionError = nil;
     //[[AVAudioSession sharedInstance] setDelegate:self];
     //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
