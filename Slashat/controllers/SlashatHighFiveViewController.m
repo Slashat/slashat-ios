@@ -307,8 +307,6 @@
         header = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                     withReuseIdentifier:@"HighFiverSection"
                                                            forIndexPath:indexPath];
-        
-        //header.headerLabel.text = @"Car Image Gallery";
     }
     return header;
 }
