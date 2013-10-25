@@ -235,8 +235,6 @@
             NSError *error = [[NSError alloc] initWithAttributes:JSON];
             failure(error);
         }
-            
-        success(highFiveUser);
         
     } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
         NSLog(@"Failed: %@",[error localizedDescription]);
