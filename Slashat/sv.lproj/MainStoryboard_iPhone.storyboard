@@ -675,15 +675,15 @@
                         <viewControllerLayoutGuide type="bottom" id="EdB-BC-C7f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3uq-eN-4sR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uj8-AW-B3i">
-                                <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t5q-Xw-CbU">
-                                        <rect key="frame" x="0.0" y="191" width="320" height="357"/>
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t5q-Xw-CbU">
+                                        <rect key="frame" x="0.0" y="128" width="320" height="440"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="yFq-Uz-arL">
@@ -733,8 +733,8 @@
                                             <outlet property="dataSource" destination="Zw8-R3-AeM" id="anc-ca-0WJ"/>
                                         </connections>
                                     </collectionView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQk-xB-vzb">
-                                        <rect key="frame" x="0.0" y="63" width="320" height="128"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQk-xB-vzb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rZ-JT-719">
@@ -778,11 +778,14 @@
                                         <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="t5q-Xw-CbU" firstAttribute="top" secondItem="qQk-xB-vzb" secondAttribute="bottom" id="Yr2-lw-MyL"/>
+                                    <constraint firstItem="t5q-Xw-CbU" firstAttribute="top" secondItem="qQk-xB-vzb" secondAttribute="bottom" id="wd0-Xj-u3z"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="High-Five!" id="xcT-38-WSM"/>
                     <connections>
                         <outlet property="giveHighFiveButton" destination="9xI-wB-s5c" id="lwg-Ut-5MX"/>
