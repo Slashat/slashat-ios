@@ -56,7 +56,7 @@
     //[SlashatHighFiveUser logOutUser];
     
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.highFiversCollectionView.collectionViewLayout;
-    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 40, 20);
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 120, 20);
 
     
     self.profileInfoView.layer.masksToBounds = NO;
