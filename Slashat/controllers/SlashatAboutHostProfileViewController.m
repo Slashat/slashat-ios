@@ -77,7 +77,7 @@
 {
     [super viewWillLayoutSubviews];
     [self.view layoutIfNeeded];
-    self.textViewHeightConstraint.constant = self.descriptionTextView.contentSize.height;    
+    self.textViewHeightConstraint.constant = [self.descriptionTextView sizeThatFits:CGSizeMake(self.descriptionTextView.frame.size.width, FLT_MAX)].height;
 }
 
 - (IBAction)twitterButtonPressed:(id)sender
