@@ -56,6 +56,9 @@
     
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.highFiversCollectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 120, 20);
+    
+    self.nameLabel.text = @"";
+    self.profileDescriptionLabel.text = @"";
 
     
     self.profileInfoView.layer.masksToBounds = NO;
