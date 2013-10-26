@@ -42,8 +42,7 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"High-Five!" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab-bar_highfive_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tab-bar_highfive_inactive.png"]];
+        (void)[self.tabBarItem initWithTitle:@"High-Five!" image:[UIImage imageNamed:@"tab-bar_highfive_inactive.png"] selectedImage:[UIImage imageNamed:@"tab-bar_highfive_active.png"]];
     }
     
     return self;

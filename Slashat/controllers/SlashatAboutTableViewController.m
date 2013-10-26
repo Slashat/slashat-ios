@@ -29,8 +29,7 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Om Slashat.se" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab-bar_about_active.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tab-bar_about_inactive.png"]];
+        (void)[self.tabBarItem initWithTitle:@"Om Slashat.se" image:[UIImage imageNamed:@"tab-bar_about_inactive.png"] selectedImage:[UIImage imageNamed:@"tab-bar_about_active.png"]];
     }
     
     return self;
