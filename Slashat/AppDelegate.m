@@ -246,7 +246,7 @@ static NSString * encodeByAddingPercentEscapes(NSString *input) {
     MPMoviePlayerController* playerController = notification.object;
     
     if ([playerController loadState] & MPMovieLoadStatePlayable) {
-        NSTimer *updateTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateCurrentTime) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateCurrentTime) userInfo:nil repeats:YES];
         self.playerActivityIndicator.hidden = YES;
         [self setPlayerContentAlpha:1.0];
     }
