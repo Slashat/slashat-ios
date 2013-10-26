@@ -197,6 +197,8 @@
 		04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */; };
 		04F5D4DF181994ED006CF721 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4DE181994ED006CF721 /* Settings.bundle */; };
 		04F5D4E118199C6B006CF721 /* icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4E018199C6B006CF721 /* icon-29@2x.png */; };
+		04F5D4E4181C838C006CF721 /* about_view_link.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4E2181C838C006CF721 /* about_view_link.png */; };
+		04F5D4E5181C838C006CF721 /* about_view_link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4E3181C838C006CF721 /* about_view_link@2x.png */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
 		04F698B017E4777700F8DC77 /* SlashatCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */; };
 		04F8509518170624004E7DC1 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F8509418170624004E7DC1 /* SDWebImage.framework */; };
@@ -475,6 +477,8 @@
 		04E9FE0317CD29A500D77E83 /* podcast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast_icon@2x.png"; sourceTree = "<group>"; };
 		04F5D4DE181994ED006CF721 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		04F5D4E018199C6B006CF721 /* icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-29@2x.png"; sourceTree = "<group>"; };
+		04F5D4E2181C838C006CF721 /* about_view_link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_view_link.png; sourceTree = "<group>"; };
+		04F5D4E3181C838C006CF721 /* about_view_link@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_view_link@2x.png"; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
 		04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCalendarItem.h; sourceTree = "<group>"; };
@@ -529,6 +533,8 @@
 		042ECD441693537C00C77193 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				04F5D4E2181C838C006CF721 /* about_view_link.png */,
+				04F5D4E3181C838C006CF721 /* about_view_link@2x.png */,
 				04F5D4E018199C6B006CF721 /* icon-29@2x.png */,
 				0465EFF618184A8900B1772B /* about_table_view_placeholder@2x.png */,
 				04E5DDE817F8087D0091464D /* tab-bar_highfive_active.png */,
@@ -1106,6 +1112,7 @@
 				042ECD4F1693537C00C77193 /* second.png in Resources */,
 				046DBB1817E8C634008CDA03 /* tab-bar_about_active.png in Resources */,
 				046DBB1C17E8C634008CDA03 /* tab-bar_live_active.png in Resources */,
+				04F5D4E5181C838C006CF721 /* about_view_link@2x.png in Resources */,
 				042ECD501693537C00C77193 /* second@2x.png in Resources */,
 				0481816516A0D11900F60954 /* icon.png in Resources */,
 				0481816616A0D11900F60954 /* icon@2x.png in Resources */,
@@ -1187,6 +1194,7 @@
 				04CEA8F317D36C3F00C265B9 /* SlashatBrowserView~iPad.xib in Resources */,
 				046DBB1917E8C634008CDA03 /* tab-bar_about_inactive.png in Resources */,
 				04E5E07317F815D40091464D /* zbar-samples.png in Resources */,
+				04F5D4E4181C838C006CF721 /* about_view_link.png in Resources */,
 				04CEA8FB17D3A5CC00C265B9 /* SlashatAboutHostView~iPad.xib in Resources */,
 				043FF42817D5180E00FD9993 /* DB5.plist in Resources */,
 				046F3AE917E4B8D9000B500C /* icon-72.png in Resources */,
