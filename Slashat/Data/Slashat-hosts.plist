@@ -14,6 +14,8 @@
 				<string>Slashat.se</string>
 				<key>image</key>
 				<string>slashat.png</string>
+				<key>twitter</key>
+				<string>slashat</string>
 				<key>mail</key>
 				<string>slashat@slashat.se</string>
 				<key>web</key>
