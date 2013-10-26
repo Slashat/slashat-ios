@@ -45,6 +45,7 @@ const CGRect containerFrame = {{0.0f, 0.0f}, {320.0f, 180.0f}};
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Slashat_logo.png"]];
         
+    [self startCountdown];
     [self startLiveStreamOrCountdownAsync];
 }
 

@@ -40,6 +40,7 @@ NSDate *nextLiveShowDate;
     
     // For dev
     //[self initTestCountdownWithSeconds:5];
+    self.countdownContainerView.alpha = 0.0f;
     
     [self initCountdownFromNextGoogleCalendarEvent];
 }
@@ -67,6 +68,8 @@ NSDate *nextLiveShowDate;
 {
     [countdownHeaderLabel setText:calendarItem.title];
     [self setCountdownStartValue:calendarItem.date];
+    
+    [self fadeInCountdown];
     
     [self startCountdownTimer];
 }
@@ -140,6 +143,20 @@ NSDate *nextLiveShowDate;
     if (![oldValueLabelString2 isEqualToString:[valueString substringFromIndex:1]]) {
         [self animateLabel:valueLabel2];
     }
+}
+
+- (void)fadeInCountdown
+{
+    CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnimation.fillMode = kCAFillModeForwards;
+    fadeAnimation.removedOnCompletion = NO;
+    fadeAnimation.beginTime = CACurrentMediaTime()+0.5;
+    fadeAnimation.duration = 0.3;
+    fadeAnimation.fromValue = [NSNumber numberWithFloat:0.0];
+    fadeAnimation.toValue = [NSNumber numberWithFloat:1.0];
+    fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    
+    [self.countdownContainerView.layer addAnimation:fadeAnimation forKey:@"fadeAnimation"];
 }
 
 - (void)fadeCountdownToBlack
