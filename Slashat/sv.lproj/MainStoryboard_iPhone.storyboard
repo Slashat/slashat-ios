@@ -554,7 +554,7 @@
                                     <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-pU-SQP">
                                         <rect key="frame" x="0.0" y="258" width="320" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Di-HOm">
                                                 <rect key="frame" x="138" y="3" width="44" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                                 <state key="normal" image="about_view_twitter.png">
@@ -568,7 +568,7 @@
                                                     <action selector="twitterButtonPressed:" destination="kaT-K8-JSB" eventType="touchUpInside" id="Kub-5c-dqB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-an-U0c">
                                                 <rect key="frame" x="86" y="3" width="44" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                                 <state key="normal" image="about_view_mail.png">
@@ -599,10 +599,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="wRf-an-U0c" firstAttribute="top" secondItem="5DR-Di-HOm" secondAttribute="top" id="PKJ-2n-mvp"/>
-                                            <constraint firstItem="wRf-an-U0c" firstAttribute="centerY" secondItem="fhW-pU-SQP" secondAttribute="centerY" id="RgZ-Vc-TAg"/>
                                             <constraint firstAttribute="height" constant="50" id="fGb-Js-xyz"/>
-                                            <constraint firstItem="5DR-Di-HOm" firstAttribute="leading" secondItem="wRf-an-U0c" secondAttribute="trailing" constant="29" id="mKK-HM-sgT"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-ah-bsx">
