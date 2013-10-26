@@ -59,6 +59,18 @@
     self.navigationItem.title = self.host.name;
     
     NSLog(@"SlashatAboutHostProfileViewController: viewDidLoad: All set!");
+    
+    if (!self.host.twitterHandle || [self.host.twitterHandle isEqualToString:@""]) {
+        self.twitterButton.enabled = NO;
+    }
+    
+    if (!self.host.link || [[self.host.link absoluteString] isEqualToString:@""]) {
+        self.webButton.enabled = NO;
+    }
+    
+    if (!self.host.emailAdress || [self.host.emailAdress isEqualToString:@""]) {
+        self.mailButton.enabled = NO;
+    }
 }
 
 - (void)viewWillLayoutSubviews
