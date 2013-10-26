@@ -59,22 +59,17 @@
     
     self.nameLabel.text = @"";
     self.profileDescriptionLabel.text = @"";
-
     
     self.profileInfoView.layer.masksToBounds = NO;
     self.profileInfoView.layer.shadowOffset = CGSizeMake(0, 0);
     self.profileInfoView.layer.shadowRadius = 1;
     self.profileInfoView.layer.shadowOpacity = 0.5;
     
-    
     if ([SlashatHighFiveUser userIsLoggedIn]) {
         [self initializeLocationManager];
     } else {
         [self addLoginAlertViewUnderlay];
     }
-    
-    
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
