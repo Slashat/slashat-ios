@@ -359,7 +359,7 @@
                 success();
             }
         } else {
-            failure([[NSError alloc]initWithAttributes:JSON]);
+            failure([[NSError alloc] initWithAttributes:JSON]);
         }
     } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
         NSLog(@"hi5 failed: %@",[error localizedDescription]);
