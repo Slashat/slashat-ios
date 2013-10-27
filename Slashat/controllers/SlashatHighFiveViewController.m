@@ -13,6 +13,7 @@
 #import "SlashatHighFive+RemoteAccessors.h"
 #import <QuartzCore/QuartzCore.h>
 #import "DateUtils.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 
 @interface SlashatHighFiveViewController ()
