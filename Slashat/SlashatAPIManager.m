@@ -292,7 +292,7 @@
 {
     NSMutableArray *snyggJeppeArray = [NSMutableArray array];
     
-    for (int i = 0; i < 180; i++) {
+    for (int i = 0; i < 25; i++) {
         SlashatHighFiveUser *highFiver = [[SlashatHighFiveUser alloc] init];
         highFiver.userName = @"jezper";
         highFiver.profilePicture = [NSURL URLWithString:@"http://forum.slashat.se/download/file.php?avatar=54_1371413866.png"];
