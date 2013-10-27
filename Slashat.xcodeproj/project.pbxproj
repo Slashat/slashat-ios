@@ -200,6 +200,11 @@
 		04F5D4E4181C838C006CF721 /* about_view_link.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4E2181C838C006CF721 /* about_view_link.png */; };
 		04F5D4E5181C838C006CF721 /* about_view_link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4E3181C838C006CF721 /* about_view_link@2x.png */; };
 		04F5D4F3181D2E7B006CF721 /* HighFiveFeedbackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4F2181D2E7B006CF721 /* HighFiveFeedbackView.xib */; };
+		04F5D505181D5651006CF721 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D4FF181D5651006CF721 /* InfoPlist.strings */; };
+		04F5D506181D5651006CF721 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D501181D5651006CF721 /* MainStoryboard_iPad.storyboard */; };
+		04F5D507181D5651006CF721 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D503181D5651006CF721 /* MainStoryboard_iPhone.storyboard */; };
+		04F5D50C181D594D006CF721 /* AFNetworking.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D508181D594D006CF721 /* AFNetworking.strings */; };
+		04F5D50D181D594D006CF721 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D50A181D594D006CF721 /* Localizable.strings */; };
 		04F5F1EA175DB74600ED363B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5F1E9175DB74600ED363B /* DateUtils.m */; };
 		04F698B017E4777700F8DC77 /* SlashatCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F698AF17E4777700F8DC77 /* SlashatCalendarItem.m */; };
 		04F8509518170624004E7DC1 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F8509418170624004E7DC1 /* SDWebImage.framework */; };
@@ -481,6 +486,11 @@
 		04F5D4E2181C838C006CF721 /* about_view_link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_view_link.png; sourceTree = "<group>"; };
 		04F5D4E3181C838C006CF721 /* about_view_link@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_view_link@2x.png"; sourceTree = "<group>"; };
 		04F5D4F2181D2E7B006CF721 /* HighFiveFeedbackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HighFiveFeedbackView.xib; sourceTree = "<group>"; };
+		04F5D500181D5651006CF721 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = InfoPlist.strings; sourceTree = "<group>"; };
+		04F5D502181D5651006CF721 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = sv; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		04F5D504181D5651006CF721 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = sv; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		04F5D509181D594D006CF721 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = AFNetworking.strings; sourceTree = "<group>"; };
+		04F5D50B181D594D006CF721 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localizable.strings; sourceTree = "<group>"; };
 		04F5F1E8175DB74600ED363B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateUtils.h; path = Utils/DateUtils.h; sourceTree = "<group>"; };
 		04F5F1E9175DB74600ED363B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateUtils.m; path = Utils/DateUtils.m; sourceTree = "<group>"; };
 		04F698AE17E4777700F8DC77 /* SlashatCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatCalendarItem.h; sourceTree = "<group>"; };
@@ -720,6 +730,7 @@
 		043B5443169313A500B71F3A /* Slashat */ = {
 			isa = PBXGroup;
 			children = (
+				04F5D4FE181D5651006CF721 /* sv.lproj */,
 				04F5D4F1181D2E2F006CF721 /* Views */,
 				043FF42717D5180E00FD9993 /* DB5.plist */,
 				04CEA8EA17D3550200C265B9 /* Categories */,
@@ -1023,6 +1034,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		04F5D4FE181D5651006CF721 /* sv.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				04F5D508181D594D006CF721 /* AFNetworking.strings */,
+				04F5D50A181D594D006CF721 /* Localizable.strings */,
+				04F5D4FF181D5651006CF721 /* InfoPlist.strings */,
+				04F5D501181D5651006CF721 /* MainStoryboard_iPad.storyboard */,
+				04F5D503181D5651006CF721 /* MainStoryboard_iPhone.storyboard */,
+			);
+			path = sv.lproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1116,6 +1139,7 @@
 				042ECD4F1693537C00C77193 /* second.png in Resources */,
 				046DBB1817E8C634008CDA03 /* tab-bar_about_active.png in Resources */,
 				046DBB1C17E8C634008CDA03 /* tab-bar_live_active.png in Resources */,
+				04F5D506181D5651006CF721 /* MainStoryboard_iPad.storyboard in Resources */,
 				04F5D4E5181C838C006CF721 /* about_view_link@2x.png in Resources */,
 				042ECD501693537C00C77193 /* second@2x.png in Resources */,
 				0481816516A0D11900F60954 /* icon.png in Resources */,
@@ -1156,6 +1180,7 @@
 				04CA4C8A179033A300428565 /* Slashat_webb.png in Resources */,
 				04CA4C8B179033A300428565 /* Slashat_mail@2x.png in Resources */,
 				04CA4C8C179033A300428565 /* Slashat_twitter@2x.png in Resources */,
+				04F5D50C181D594D006CF721 /* AFNetworking.strings in Resources */,
 				04CA4C8D179033A300428565 /* Slashat_webb@2x.png in Resources */,
 				04CA4C90179036C100428565 /* Slashat_stream.png in Resources */,
 				04CA4C91179036C100428565 /* Slashat_stream@2x.png in Resources */,
@@ -1170,9 +1195,11 @@
 				04CA4CA017941DE500428565 /* Slashat_twittershare@2x.png in Resources */,
 				04CA4CA117941DE500428565 /* Slashat_fbshare@2x.png in Resources */,
 				046DBB3817E8DEF0008CDA03 /* about_view_mail.png in Resources */,
+				04F5D505181D5651006CF721 /* InfoPlist.strings in Resources */,
 				04599EEB17AA5550004C5B33 /* femalecodertocat@2x.png in Resources */,
 				04956B5117AA7FF200091C26 /* SlashatAudioControlsView~iphone.xib in Resources */,
 				04956B5617AA876200091C26 /* Slashat_pause.png in Resources */,
+				04F5D507181D5651006CF721 /* MainStoryboard_iPhone.storyboard in Resources */,
 				04956B5717AA876200091C26 /* Slashat_play.png in Resources */,
 				046DBB3B17E8DEF0008CDA03 /* about_view_twitter@2x.png in Resources */,
 				046DBB1A17E8C634008CDA03 /* tab-bar_archive_active.png in Resources */,
@@ -1191,6 +1218,7 @@
 				046DBB2E17E8DD61008CDA03 /* live_view_share_fb.png in Resources */,
 				046DBB3917E8DEF0008CDA03 /* about_view_mail@2x.png in Resources */,
 				04E9FE0517CD29A500D77E83 /* podcast_icon@2x.png in Resources */,
+				04F5D50D181D594D006CF721 /* Localizable.strings in Resources */,
 				0456B98417D3386D00826CEB /* CountdownView~iPad.xib in Resources */,
 				0456B98717D341A900826CEB /* logo_neg.png in Resources */,
 				0456B98817D341A900826CEB /* logo_neg@2x.png in Resources */,
@@ -1358,6 +1386,46 @@
 				6CFA08DA181859350083F183 /* sv */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04F5D4FF181D5651006CF721 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F5D500181D5651006CF721 /* sv */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04F5D501181D5651006CF721 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F5D502181D5651006CF721 /* sv */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		04F5D503181D5651006CF721 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F5D504181D5651006CF721 /* sv */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		04F5D508181D594D006CF721 /* AFNetworking.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F5D509181D594D006CF721 /* sv */,
+			);
+			name = AFNetworking.strings;
+			sourceTree = "<group>";
+		};
+		04F5D50A181D594D006CF721 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F5D50B181D594D006CF721 /* sv */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

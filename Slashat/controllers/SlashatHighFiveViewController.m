@@ -103,6 +103,8 @@
     [super viewDidAppear:animated];
     
     [self activateView];
+    
+    [self showHighFiveErrorFeedback];
 }
 
 - (void)applicationEnteredForeground:(NSNotification *)notification
@@ -137,9 +139,9 @@
 
 - (void)showLoginView
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:Nil delegate:nil cancelButtonTitle:@"Avbryt" otherButtonTitles:@"Logga in", @"Skapa konto", nil];
-    alertView.title = @"Slashat.se Forum-konto:";
-    alertView.message = @"Du använder ditt befintliga Slashat.se Forum-konto för\natt koppla ihop appen med\n din forumprofil.";
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:Nil delegate:nil cancelButtonTitle:@"Avbryt" otherButtonTitles:NSLocalizedString(@"Logga in", @"Logga in-knapp i login-alertview"), NSLocalizedString(@"Skapa konto", @"Skapa konto-knapp i login-alertview"), nil];
+    alertView.title = NSLocalizedString(@"Slashat.se Forum-konto:", @"Titel på login-alertview");
+    alertView.message = NSLocalizedString(@"Du använder ditt befintliga Slashat.se Forum-konto för\natt koppla ihop appen med\n din forumprofil.", @"Undertitel på login-alertview");
     alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     alertView.delegate = self;
     [alertView textFieldAtIndex:0].placeholder = @"Användarnamn";
@@ -318,12 +320,12 @@
 
 - (void)showHighFiveSuccessFeedback
 {
-    [self showHighFiveFeedback:@"Yay, High-Five!" color:[UIColor highFiveFeedbackGoodTextColor]];
+    [self showHighFiveFeedback:NSLocalizedString(@"Yay, High-Five!", @"Feedback i notifikation när High-Five lyckades.") color:[UIColor highFiveFeedbackGoodTextColor]];
 }
 
 - (void)showHighFiveErrorFeedback
 {
-    [self showHighFiveFeedback:@"Aj då, det där gick inte så bra. Försök igen!" color:[UIColor highFiveFeedbackBadTextColor]];
+    [self showHighFiveFeedback:NSLocalizedString(@"Aj då, det där gick inte så bra. Försök igen!", @"Feedback i notifikation när High-Five misslyckades.") color:[UIColor highFiveFeedbackBadTextColor]];
 }
 
 - (void)showHighFiveFeedback:(NSString *)feedbackText color:(UIColor *)textColor;
