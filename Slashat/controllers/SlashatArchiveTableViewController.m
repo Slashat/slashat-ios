@@ -10,7 +10,6 @@
 #import "SlashatEpisode.h"
 #import "SlashatAPIManager.h"
 #import "SlashatArchiveEpisodeViewController.h"
-#import "ColorUtils.h"
 #import "SlashatApplication.h"
 
 @interface SlashatArchiveTableViewController ()
@@ -34,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    self.refreshControl.tintColor = UIColorFromRGB(0xec3700);
+    self.refreshControl.tintColor = [UIColor slashatOrange];
     [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
 
     self.allEntries = [NSMutableArray array];
