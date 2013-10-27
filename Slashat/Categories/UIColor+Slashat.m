@@ -17,4 +17,14 @@
     //return UIColorFromRGB(0xde5214);
 }
 
++ (UIColor *)highFiveFeedbackGoodTextColor
+{
+    return [UIColor colorWithRed:128/255.0f green:255/255.0f blue:0/255.0f alpha:1];
+}
+
++ (UIColor *)highFiveFeedbackBadTextColor
+{
+    return [UIColor colorWithRed:255/255.0f green:0/255.0f blue:0/255.0f alpha:1];
+}
+
 @end

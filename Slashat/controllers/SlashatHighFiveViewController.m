@@ -103,6 +103,14 @@
     [super viewDidAppear:animated];
     
     [self activateView];
+    
+    if (arc4random_uniform(2) == 1) {
+        [self showHighFiveSuccessFeedback];
+    } else {
+        [self showHighFiveErrorFeedback];
+    }
+    
+    
 }
 
 - (void)applicationEnteredForeground:(NSNotification *)notification
@@ -306,6 +314,44 @@
                                                            forIndexPath:indexPath];
     }
     return header;
+}
+
+- (void)showHighFiveSuccessFeedback
+{
+    [self showHighFiveFeedback:@"High-Fiven gick bra!" color:[UIColor highFiveFeedbackGoodTextColor]];
+}
+
+- (void)showHighFiveErrorFeedback
+{
+    [self showHighFiveFeedback:@"High-Fiven gick dåligt! Försök igen!" color:[UIColor highFiveFeedbackBadTextColor]];
+}
+
+- (void)showHighFiveFeedback:(NSString *)feedbackText color:(UIColor *)textColor;
+{
+    NSArray *subviewArray = [[NSBundle mainBundle] loadNibNamed:@"HighFiveFeedbackView" owner:self options:nil];
+    UIView *feedbackView = [subviewArray objectAtIndex:0];
+    
+    UILabel *feedbackTextLabel = (UILabel *)[feedbackView viewWithTag:1];
+    feedbackTextLabel.text = feedbackText;
+    feedbackTextLabel.textColor = textColor;
+    
+    CGRect frame = CGRectMake(0, self.profileInfoView.frame.origin.y + self.profileInfoView.frame.size.height - 25, self.profileInfoView.frame.size.width, 25);
+    feedbackView.frame = frame;
+    
+    CGRect newFrame = CGRectMake(0, frame.origin.y + frame.size.height, frame.size.width, frame.size.height);
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        feedbackView.frame = newFrame;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.25 delay:3.0 options:nil animations:^{
+            feedbackView.frame = frame;
+        } completion:^(BOOL finished) {
+            [feedbackView removeFromSuperview];
+        }];
+    }];
+    
+    [self.view addSubview:feedbackView];
+    [self.view addSubview:self.profileInfoView];
 }
 
 @end
