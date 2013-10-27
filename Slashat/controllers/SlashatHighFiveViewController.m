@@ -103,14 +103,6 @@
     [super viewDidAppear:animated];
     
     [self activateView];
-    
-    if (arc4random_uniform(2) == 1) {
-        [self showHighFiveSuccessFeedback];
-    } else {
-        [self showHighFiveErrorFeedback];
-    }
-    
-    
 }
 
 - (void)applicationEnteredForeground:(NSNotification *)notification
@@ -263,17 +255,25 @@
         SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
         highFive.receiverToken = object.data;
         highFive.coordinate = self.currentLocation.coordinate;
-        [SlashatHighFive performHighFive:highFive success:^{
-            NSLog(@"SlashatHighFiveViewController: High five success. Fetching new user data.");
-            [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
-                [self updateViewWithUser:user];
-            } onError:nil];
-        } failure:nil];
         
+        [self performHighFive:highFive];
         break;
     }
     
     [reader dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)performHighFive:(SlashatHighFive *)highFive
+{
+    [SlashatHighFive performHighFive:highFive success:^{
+        NSLog(@"SlashatHighFiveViewController: High five success. Fetching new user data.");
+        [self showHighFiveSuccessFeedback];
+        [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
+            [self updateViewWithUser:user];
+        } onError:nil];
+    } failure:^(NSError *error) {
+        [self showHighFiveErrorFeedback];
+    }];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -318,12 +318,12 @@
 
 - (void)showHighFiveSuccessFeedback
 {
-    [self showHighFiveFeedback:@"High-Fiven gick bra!" color:[UIColor highFiveFeedbackGoodTextColor]];
+    [self showHighFiveFeedback:@"Yay, High-Five!" color:[UIColor highFiveFeedbackGoodTextColor]];
 }
 
 - (void)showHighFiveErrorFeedback
 {
-    [self showHighFiveFeedback:@"High-Fiven gick dåligt! Försök igen!" color:[UIColor highFiveFeedbackBadTextColor]];
+    [self showHighFiveFeedback:@"Aj då, det där gick inte så bra. Försök igen!" color:[UIColor highFiveFeedbackBadTextColor]];
 }
 
 - (void)showHighFiveFeedback:(NSString *)feedbackText color:(UIColor *)textColor;
