@@ -59,9 +59,10 @@
                                     <action selector="shareOnFacebook:" destination="2" eventType="touchUpInside" id="JeZ-Vd-onE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsN-t9-twP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsN-t9-twP">
                                 <rect key="frame" x="83" y="218" width="154" height="22"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="cFU-mi-L0u"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="dF3-vb-yhT"/>
                                     <constraint firstAttribute="width" constant="154" id="kSi-hJ-lao"/>
                                 </constraints>
