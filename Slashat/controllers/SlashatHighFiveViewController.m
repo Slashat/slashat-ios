@@ -33,6 +33,8 @@
 
 @property (strong, nonatomic) UIView *loginAlertViewUnderlayView;
 
+@property (weak, nonatomic) IBOutlet UILabel *noHighFivesDescriptionLabel;
+
 @end
 
 @implementation SlashatHighFiveViewController
@@ -102,9 +104,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self activateView];
-    
-    [self showHighFiveErrorFeedback];
+    [self activateView];    
 }
 
 - (void)applicationEnteredForeground:(NSNotification *)notification
@@ -209,9 +209,13 @@
     if (user.highFivers.count > 0) {
         self.giveHighFiveButton.enabled = YES;
         self.profileDescriptionLabel.hidden = NO;
+        self.noHighFivesDescriptionLabel.hidden = YES;
+        self.highFiversCollectionView.hidden = NO;
     } else {
         self.giveHighFiveButton.enabled = NO;
         self.profileDescriptionLabel.hidden = YES;
+        self.noHighFivesDescriptionLabel.hidden = NO;
+        self.highFiversCollectionView.hidden = YES;
     }
     
     [self.highFiversCollectionView reloadData];

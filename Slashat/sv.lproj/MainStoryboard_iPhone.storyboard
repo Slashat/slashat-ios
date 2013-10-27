@@ -822,6 +822,20 @@
                                     <constraint firstAttribute="width" constant="320" id="NyU-Yi-yGY"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="MCp-Sd-0uT">
+                                <rect key="frame" x="20" y="95" width="280" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Du har inte blivit High-Fivad än. Ge dig ut och leta upp en Slashatlyssnare som har blivit det så att denne kan High-Fiva dig!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -838,6 +852,7 @@
                         <outlet property="giveHighFiveButton" destination="9xI-wB-s5c" id="lwg-Ut-5MX"/>
                         <outlet property="highFiversCollectionView" destination="t5q-Xw-CbU" id="ncA-mg-zLH"/>
                         <outlet property="nameLabel" destination="dFw-fl-ds3" id="Ekz-6s-bdJ"/>
+                        <outlet property="noHighFivesDescriptionLabel" destination="MCp-Sd-0uT" id="gaF-Sr-ZCi"/>
                         <outlet property="profileDescriptionLabel" destination="beY-Un-bL6" id="dzZ-Fd-gPg"/>
                         <outlet property="profileImageView" destination="0rZ-JT-719" id="Qot-sq-kg2"/>
                         <outlet property="profileInfoView" destination="qQk-xB-vzb" id="u9F-M6-wav"/>
