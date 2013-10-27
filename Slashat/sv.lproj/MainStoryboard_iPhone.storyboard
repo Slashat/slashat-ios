@@ -394,11 +394,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-KE-Z6i">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-KE-Z6i">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
-                                        <rect key="frame" x="20" y="146" width="280" height="402"/>
+                                    <textView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trO-IF-BDt">
+                                        <rect key="frame" x="20" y="146" width="280" height="422"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="422" id="B5x-TE-5uh"/>
                                         </constraints>
@@ -414,8 +414,12 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-1C-Hxf">
-                                        <rect key="frame" x="198" y="116" width="102" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-1C-Hxf">
+                                        <rect key="frame" x="208" y="116" width="92" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="S3l-3X-mo3"/>
+                                            <constraint firstAttribute="width" constant="92" id="bkJ-qP-9mb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <state key="normal" title="Strömma" image="episode_view_stream_button.png">
                                             <color key="titleColor" red="0.75294125080108643" green="0.29019609093666077" blue="0.15294118225574493" alpha="1" colorSpace="deviceRGB"/>
@@ -424,13 +428,16 @@
                                             <action selector="playButtonPressed:" destination="WDs-f0-o1S" eventType="touchUpInside" id="Viy-WN-NUn"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="2013-01-10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-FK-O3R">
-                                        <rect key="frame" x="20" y="116" width="87" height="22"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2013-01-10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-FK-O3R">
+                                        <rect key="frame" x="20" y="116" width="100" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="TIB-tQ-kFc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Slashat.se #223 - I Göttingen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53b-9s-qLr">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slashat.se #223 - I Göttingen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53b-9s-qLr">
                                         <rect key="frame" x="20" y="66" width="280" height="42"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -439,7 +446,21 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="trO-IF-BDt" secondAttribute="bottom" constant="50" id="Eff-gL-uau"/>
+                                    <constraint firstItem="hD0-1C-Hxf" firstAttribute="top" secondItem="53b-9s-qLr" secondAttribute="bottom" constant="8" symbolic="YES" id="GUq-tO-ALo"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="bOF-FK-O3R" secondAttribute="leading" id="Jo1-mT-zSX"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="bOF-FK-O3R" secondAttribute="bottom" constant="8" symbolic="YES" id="MOI-01-4GK"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="centerX" secondItem="V7l-KE-Z6i" secondAttribute="centerX" id="QuT-zH-HfC"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="53b-9s-qLr" secondAttribute="leading" id="Yat-0x-0zf"/>
+                                    <constraint firstItem="bOF-FK-O3R" firstAttribute="top" secondItem="53b-9s-qLr" secondAttribute="bottom" constant="8" symbolic="YES" id="hDa-A5-EKM"/>
+                                    <constraint firstItem="53b-9s-qLr" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="66" id="kQB-1g-1v8"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="V7l-KE-Z6i" secondAttribute="top" constant="146" id="l1Y-ZT-3rU"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="trailing" secondItem="53b-9s-qLr" secondAttribute="trailing" id="ljz-PD-0FS"/>
+                                    <constraint firstAttribute="trailing" secondItem="trO-IF-BDt" secondAttribute="trailing" constant="20" symbolic="YES" id="pud-5n-Ek8"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="V7l-KE-Z6i" secondAttribute="leading" constant="20" symbolic="YES" id="t4j-0P-XEm"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="top" secondItem="hD0-1C-Hxf" secondAttribute="bottom" constant="8" symbolic="YES" id="wrV-3p-bOZ"/>
+                                    <constraint firstItem="trO-IF-BDt" firstAttribute="trailing" secondItem="hD0-1C-Hxf" secondAttribute="trailing" id="yEG-TT-CZr"/>
                                 </constraints>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="65" maxX="0.0" maxY="50"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
