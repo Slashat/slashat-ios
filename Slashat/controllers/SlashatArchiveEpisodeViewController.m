@@ -39,11 +39,16 @@
     
     self.navigationItem.title = [NSString stringWithFormat:@"#%i", self.episode.episodeNumber];
     
-    self.descriptionTextView.contentInset = UIEdgeInsetsMake(-4,-4,-4,-4);
+    
+    //self.descriptionTextView.contentInset = UIEdgeInsetsMake(120, 0, 120, 0);
+    self.descriptionTextView.textContainerInset = UIEdgeInsetsMake(120, 6, 80, 6);
+    self.descriptionTextView.scrollIndicatorInsets = UIEdgeInsetsMake(120, 0, 55, 0);
+    
     NSString *descriptionString = [NSString stringWithFormat:@"%@\n%@", self.episode.itemDescription, self.episode.showNotes];
     self.descriptionTextView.text = [descriptionString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     self.titleLabel.text = [self.episode.title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [self.titleLabel sizeToFit];
     
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -55,7 +60,7 @@
 {
     [super viewWillLayoutSubviews];
     [self.view layoutIfNeeded];
-    self.textViewHeightConstraint.constant = [self.descriptionTextView sizeThatFits:CGSizeMake(self.descriptionTextView.frame.size.width, FLT_MAX)].height;
+    //self.textViewHeightConstraint.constant = [self.descriptionTextView sizeThatFits:CGSizeMake(self.descriptionTextView.frame.size.width, FLT_MAX)].height;
 }
 
 - (IBAction)shareButtonPressed:(id)sender
