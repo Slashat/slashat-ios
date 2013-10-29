@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Om showen</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Slashat.se</string>
+				<key>image</key>
+				<string>slashat.png</string>
+				<key>twitter</key>
+				<string>slashat</string>
+				<key>mail</key>
+				<string>slashat@slashat.se</string>
+				<key>web</key>
+				<string>http://slashat.se</string>
+				<key>short_description</key>
+				<string>Sveriges största teknikpodcast</string>
+				<key>long_description</key>
+				<string>Slashat.se är en svensk teknikpodcast som drivs av Jezper Söderlund och Tommie Podzemski. Podcasten, som är dryga timmen lång, utkommer varje tisdag kväll och i showen diskuteras nyheter främst rörande teknik, prylar, mjukvara, hårdvara och internet.
+
+Sedan starten 2009 har Slashat-redaktionen fått tillökning av Magnus Jonasson och Johan Larsson som är givna röster vid våra liverapporteringar från t.ex. Apple events och liknande. De dyker dessutom allt som oftast upp i eftersnacken på tisdagarna, i våra specialavsnitt och syns också i reportage från mässor och events som vi besöker.
+
+Slashat.se spelas in live inför kamera varje tisdag klockan 20.00 med försnack från klockan 19.30 och lyssnare är välkomna att titta och vara en del i diskussionerna via livechatten.
+
+Du kan lyssna på Slashat via hemsidan eller prenumerera på oss via iTunes eller i din podcast-app. Showen utkommer tisdagskvällar varje vecka, året runt. Inspelningen sänds live via vår hemsida http://live.slashat.se.
+</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Programledare</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Jezper Söderlund</string>
+				<key>image</key>
+				<string>snyggjeppe.jpg</string>
+				<key>twitter</key>
+				<string>jezperse</string>
+				<key>mail</key>
+				<string>jezper@slashat.se</string>
+				<key>web</key>
+				<string>http://jezper.se</string>
+				<key>short_description</key>
+				<string>Apple fanboy</string>
+				<key>long_description</key>
+				<string>En glad och bekväm herre, årsmodell 1980 som arbetar med marknadsföring på dagtid och producerar dansmusik bakom artistnamnet Airbase på kvällstid - när han inte sänder Slashat förstås.
+
+Jezper spenderar nästan orimligt mycket tid framför datorer och lever där i symbios med Apples produkter och tjänster, vilka han högljutt proklamerar in-show emellanåt. Övriga intressen inkluderar musik, film, resor, gott öl, vin och allt annat som hör livsnjutning till.</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Tommie Podzemski</string>
+				<key>image</key>
+				<string>snyggtommie.jpg</string>
+				<key>twitter</key>
+				<string>tommienu</string>
+				<key>mail</key>
+				<string>tommie@slashat.se</string>
+				<key>web</key>
+				<string>http://podzemski.se</string>
+				<key>short_description</key>
+				<string>Borde avlönas av Google</string>
+				<key>long_description</key>
+				<string>En tjötig och sportig entreprenör med visst huvud för kod, vilket allt som oftast innebär att Tommie får en idé på fredagen, spenderar hela helgen på att koda den och sedan lägger ner projektet på måndagen.
+
+Arbetar som IT-ansvarig och kör primärt OS X men navigerar även hemtamt i Ubuntu. Tommie ser sig själv som Android-fanboy och utnyttjar detta för att skapa diskussionsunderlag i showen.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Medarbetare</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Magnus Jonasson</string>
+				<key>image</key>
+				<string>snyggmagnus.jpg</string>
+				<key>twitter</key>
+				<string>magnusjonasson</string>
+				<key>mail</key>
+				<string>magnus@slashat.se</string>
+				<key>web</key>
+				<string>http://magnusjonasson.com</string>
+				<key>short_description</key>
+				<string>Prylnörden</string>
+				<key>long_description</key>
+				<string>Killen som drar upp medelåldern på Slashat-redaktionen, då han är den enda i gänget som är född på 70-talet. Magnus jobbar till vardags som konsultchef och tekniker och arbetar med affärssystem och Windows Server-miljöer men föredrar Mac privat.
+
+Alltid på jakt efter nya prylar att integrera i sitt digitala liv. Förutom teknik så har en kärlek till matlagning funnits länge och inte mycket slår hemlagad mat med en kall öl. Eller två.</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Johan Larsson</string>
+				<key>image</key>
+				<string>snyggjohan.jpg</string>
+				<key>twitter</key>
+				<string>kottkrig</string>
+				<key>mail</key>
+				<string>johan@slashat.se</string>
+				<key>web</key>
+				<string>http://johanl.se</string>
+				<key>short_description</key>
+				<string>Kottrageare</string>
+				<key>long_description</key>
+				<string>Älskar allt som är interaktivt. Utvecklar till vardags multimediaproduktioner och till sängdags så utvecklar jag annat smått och gott.
+
+Är biOS så jag använder (och utvecklar) lika gärna med Android som iOS. Det finns styrkor och svagheter med allt men jag försöker att använda det som känns mest spännande för stunden.
+
+Arbetar hellre i OS X och Linux än i Windows när jag vill vara produktiv. Använder hellre Windows än annat när det kommer till lek &amp; spel.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>App-hjälpredor</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>contributor</string>
+				<key>name</key>
+				<string>Hjälp till med appen!</string>
+				<key>image</key>
+				<string>femalecodertocat.png</string>
+				<key>twitter</key>
+				<string></string>
+				<key>mail</key>
+				<string>johan@slashat.se</string>
+				<key>web</key>
+				<string>https://github.com/Slashat</string>
+				<key>short_description</key>
+				<string>Sugen på att dra ditt strå till stacken?</string>
+				<key>long_description</key>
+				<string>Har du åsikter eller kunskaper för hur du vill förbättra appen? Dela med dig!
+
+Vare sig du är en van kodknackare eller om du bara hittat en felstavning någonstans så kom och hjälp till. All hjälp är välkommen! Koden ligger på GitHub och på Slashats forum så kan man diskutera alla delar av appen. 
+
+Behöver du hjälp med att komma igång så kan du antingen mejla eller slänga upp en tråd på forumet. </string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>contributor</string>
+				<key>name</key>
+				<string>Nicklas Löf</string>
+				<key>image</key>
+				<string>nicklas.jpg</string>
+				<key>twitter</key>
+				<string>nicklaslof</string>
+				<key>mail</key>
+				<string></string>
+				<key>web</key>
+				<string></string>
+				<key>short_description</key>
+				<string>Android-kung</string>
+				<key>long_description</key>
+				<string>Relativt ny Slashat-lyssnare som varit datorintresserad sedan en Vic20 med 12&quot; svartvit TV uppenbarade sig under granen för många herrans år sedan. Efter detta har vägen gått via C64, Amiga och PC till att bli en trogen Mac-användare i snart 10 år. Testade därför iOS under 1 år men gick över till Android efter 1 år.
+
+Jobbat som sysadmin och nättekniker men jobbar sedan några år tillbaka som programmerare på heltid. Mest Java och C#. Har hjälpt till med utvecklingen av Android-versionen av Slashats app.
+
+Aktiv Xbox-spelare och har tillsammans med sambon kört igenom nästan varenda co-op-spel med splitscreen. Försöker även att producera elektronisk musik med varierande framgång.
+</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>contributor</string>
+				<key>name</key>
+				<string>Erika Thorsen</string>
+				<key>image</key>
+				<string>erika.jpg</string>
+				<key>twitter</key>
+				<string></string>
+				<key>mail</key>
+				<string>erika@akire.se</string>
+				<key>web</key>
+				<string>http://akire.se</string>
+				<key>short_description</key>
+				<string>iOS-drottning</string>
+				<key>long_description</key>
+				<string>Erika har ställt upp med kod och programmeringgsupport i iOS-appen. Till vardags jobbar hon som approgrammerare på en mellanstor konsultfirma. På fritiden slukar hon TV-serier à la science fiction eller springer i skogen med scouterna.
+
+Hon gillar och kör Mac, både på jobbet och privat, men programmerar lika gärna appar till iOS som till Android.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>High-Fivers!</string>
+		<key>items</key>
+		<array/>
+	</dict>
+</array>
+</plist>
