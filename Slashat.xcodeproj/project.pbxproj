@@ -207,7 +207,6 @@
 		04F5D6DF181F98DA006CF721 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5D60E181F98DA006CF721 /* KeychainItemWrapper.m */; };
 		04F5D6E0181F98DA006CF721 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5D611181F98DA006CF721 /* RSSParser.m */; };
 		04F5D6E1181F98DA006CF721 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F5D612181F98DA006CF721 /* SDWebImage.framework */; };
-		04F5D6E8181F9B3C006CF721 /* Slashat-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D6E7181F9B3C006CF721 /* Slashat-Info.plist */; };
 		04F5D6EB181F9C8A006CF721 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D6EA181F9C8A006CF721 /* MainStoryboard_iPad.storyboard */; };
 		04F5D6EE181F9C92006CF721 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D6ED181F9C92006CF721 /* MainStoryboard_iPhone.storyboard */; };
 /* End PBXBuildFile section */
@@ -1284,7 +1283,6 @@
 				04F5D675181F98DA006CF721 /* femalecodertocat.png in Resources */,
 				04931E97182195DB00B4A2C4 /* erika_88x88@2x.jpg in Resources */,
 				04F5D677181F98DA006CF721 /* nicklas.jpg in Resources */,
-				04F5D6E8181F9B3C006CF721 /* Slashat-Info.plist in Resources */,
 				04F5D6B9181F98DA006CF721 /* Live_active@2x.png in Resources */,
 				04F5D668181F98DA006CF721 /* about_view_link.png in Resources */,
 				04F5D694181F98DA006CF721 /* player_flap_icon.png in Resources */,
@@ -1602,6 +1600,7 @@
 		043B5481169313A500B71F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1639,6 +1638,7 @@
 		043B5482169313A500B71F3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
