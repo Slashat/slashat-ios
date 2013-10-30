@@ -834,7 +834,7 @@
                                 <rect key="frame" x="20" y="95" width="280" height="383"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Du har inte blivit High-Fivad än. Ge dig ut och leta upp en Slashatlyssnare som har blivit det så att denne kan High-Fiva dig!">
+                                    <fragment content="Du har inte blivit High-Fivad än. Ge dig ut och leta upp en Slashat-lyssnare som har blivit det så att denne kan High-Fiva dig!">
                                         <attributes>
                                             <color key="NSColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="15" name="HelveticaNeue"/>
