@@ -51,8 +51,8 @@
     //UIColor *darkSeparatorColor = [UIColor colorWithRed:46/255.0f green:45/255.0f blue:48/255.0f alpha:1];
     //[[UITableViewHeaderFooterView appearance] setTintColor:darkSeparatorColor];
     
-    self.hosts = [self getSlashatHostsFromPlist];
-    self.sectionNames = [self getSlashatHostSectionsFromPlist];
+    self.hosts = [SlashatHost getSlashatHostsInSections];
+    self.sectionNames = [SlashatHost getHostSectionTitles];
     
     [SlashatHighFiveUser fetchAllHighFivers:^(NSArray *highFivers) {
         self.highFivers = highFivers;
@@ -60,51 +60,6 @@
     } onError:^(NSError *error) {
         
     }];
-}
-
-- (NSArray *)getSlashatHostsFromPlist
-{
-    NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-    NSArray *plistRootArray = [[NSArray alloc] initWithContentsOfFile:plistHostPath];
-            
-    NSMutableArray *hostSections = [[NSMutableArray alloc] init];
-    
-    for (int i=0; i < plistRootArray.count; i++) {
-        
-        NSArray *sectionHosts = [plistRootArray objectAtIndex:i][@"items"];
-        
-        NSMutableArray *hosts = [[NSMutableArray alloc] init];
-        
-        for (int j=0; j<sectionHosts.count; j++) {
-            SlashatHost *host = [[SlashatHost alloc] init];
-            host.name = [sectionHosts objectAtIndex:j][@"name"];
-            host.profileImage = [UIImage imageNamed:[sectionHosts objectAtIndex:j][@"image"]];
-            host.shortDescription = [sectionHosts objectAtIndex:j][@"short_description"];
-            host.longDescription = [sectionHosts objectAtIndex:j][@"long_description"];
-            host.twitterHandle = [sectionHosts objectAtIndex:j][@"twitter"];
-            host.emailAdress = [sectionHosts objectAtIndex:j][@"mail"];
-            host.link = [NSURL URLWithString:[sectionHosts objectAtIndex:j][@"web"]];
-            [hosts addObject:host];
-        }
-        
-        [hostSections addObject:hosts];        
-    }
-    
-    return hostSections;
-}
-
-- (NSArray *)getSlashatHostSectionsFromPlist
-{
-    NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-    NSArray *plistRootArray = [[NSArray alloc] initWithContentsOfFile:plistHostPath];
-    
-    NSMutableArray *sectionTitles = [[NSMutableArray alloc] init];
-    for (int i = 0; i < plistRootArray.count; i++) {
-        NSString *sectionTitle = [plistRootArray objectAtIndex:i][@"title"];
-        [sectionTitles addObject:sectionTitle];
-    }
-    
-    return sectionTitles;
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,7 +98,7 @@
     if (indexPath.section < 4) {
         SlashatHost *host = [[self.hosts objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         
-        [cell.imageView setImage:host.profileImage];
+        [cell.imageView setImage:[UIImage imageNamed:host.profileThumbnailImageName]];
         cell.textLabel.text = host.name;
         cell.detailTextLabel.text = host.shortDescription;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

@@ -34,9 +34,4 @@
 
 - (void)clearTokenFromKeychain;
 
-
-- (NSArray *)getSlashatHostsInSections;
-- (NSArray *)getHostSectionTitles;
-
-
 @end

@@ -54,8 +54,8 @@
 {
     [super viewDidLoad];
 	
-    self.hosts = [[SlashatAPIManager sharedClient] getSlashatHostsInSections];
-    self.sectionTitles = [[SlashatAPIManager sharedClient] getHostSectionTitles];
+    self.hosts = [SlashatHost getSlashatHostsInSections];
+    self.sectionTitles = [SlashatHost getHostSectionTitles];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,7 +91,7 @@
     
     SlashatHost *host = [[self.hosts objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
-    [cell.imageView setImage:host.profileImage];
+    [cell.imageView setImage:[UIImage imageNamed:host.profileThumbnailImageName]];
     cell.textLabel.text = host.name;
     cell.detailTextLabel.text = host.shortDescription;
     

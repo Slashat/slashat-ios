@@ -19,6 +19,14 @@
 		046EF2F41763292B00005B82 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046EF2F31763292B00005B82 /* Social.framework */; };
 		048EC31F173BA6890043E57D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048EC31E173BA6890043E57D /* SystemConfiguration.framework */; };
 		048EC321173BA6C10043E57D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048EC320173BA6C10043E57D /* MobileCoreServices.framework */; };
+		04931E97182195DB00B4A2C4 /* erika_88x88@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04931E8F182195DB00B4A2C4 /* erika_88x88@2x.jpg */; };
+		04931E98182195DB00B4A2C4 /* femalecodertocat_88x88@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04931E90182195DB00B4A2C4 /* femalecodertocat_88x88@2x.png */; };
+		04931E99182195DB00B4A2C4 /* nicklas_88x88@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04931E91182195DB00B4A2C4 /* nicklas_88x88@2x.jpg */; };
+		04931E9A182195DB00B4A2C4 /* slashat_88x88@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04931E92182195DB00B4A2C4 /* slashat_88x88@2x.png */; };
+		04931E9B182195DB00B4A2C4 /* snyggjeppe_88x88@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04931E93182195DB00B4A2C4 /* snyggjeppe_88x88@2x.jpg */; };
+		04931E9C182195DB00B4A2C4 /* snyggjohan_88x88@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04931E94182195DB00B4A2C4 /* snyggjohan_88x88@2x.jpg */; };
+		04931E9D182195DB00B4A2C4 /* snyggmagnus_88x88@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04931E95182195DB00B4A2C4 /* snyggmagnus_88x88@2x.jpg */; };
+		04931E9E182195DB00B4A2C4 /* snyggtommie_88x88@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04931E96182195DB00B4A2C4 /* snyggtommie_88x88@2x.jpg */; };
 		04940492169C96BE00871DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940491169C96BE00871DB3 /* AVFoundation.framework */; };
 		04940495169CA34600871DB3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04940494169CA34600871DB3 /* AudioToolbox.framework */; };
 		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
@@ -229,6 +237,14 @@
 		04789286177A21AD0091B0AD /* Slashat-hosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Slashat-hosts.plist"; sourceTree = "<group>"; };
 		048EC31E173BA6890043E57D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		048EC320173BA6C10043E57D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		04931E8F182195DB00B4A2C4 /* erika_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "erika_88x88@2x.jpg"; sourceTree = "<group>"; };
+		04931E90182195DB00B4A2C4 /* femalecodertocat_88x88@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "femalecodertocat_88x88@2x.png"; sourceTree = "<group>"; };
+		04931E91182195DB00B4A2C4 /* nicklas_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nicklas_88x88@2x.jpg"; sourceTree = "<group>"; };
+		04931E92182195DB00B4A2C4 /* slashat_88x88@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slashat_88x88@2x.png"; sourceTree = "<group>"; };
+		04931E93182195DB00B4A2C4 /* snyggjeppe_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggjeppe_88x88@2x.jpg"; sourceTree = "<group>"; };
+		04931E94182195DB00B4A2C4 /* snyggjohan_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggjohan_88x88@2x.jpg"; sourceTree = "<group>"; };
+		04931E95182195DB00B4A2C4 /* snyggmagnus_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggmagnus_88x88@2x.jpg"; sourceTree = "<group>"; };
+		04931E96182195DB00B4A2C4 /* snyggtommie_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snyggtommie_88x88@2x.jpg"; sourceTree = "<group>"; };
 		04940491169C96BE00871DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		04940494169CA34600871DB3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494049D169CB27300871DB3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -622,6 +638,21 @@
 			path = Slashat/Data;
 			sourceTree = "<group>";
 		};
+		04931E8E182195DB00B4A2C4 /* 88x88 */ = {
+			isa = PBXGroup;
+			children = (
+				04931E8F182195DB00B4A2C4 /* erika_88x88@2x.jpg */,
+				04931E90182195DB00B4A2C4 /* femalecodertocat_88x88@2x.png */,
+				04931E91182195DB00B4A2C4 /* nicklas_88x88@2x.jpg */,
+				04931E92182195DB00B4A2C4 /* slashat_88x88@2x.png */,
+				04931E93182195DB00B4A2C4 /* snyggjeppe_88x88@2x.jpg */,
+				04931E94182195DB00B4A2C4 /* snyggjohan_88x88@2x.jpg */,
+				04931E95182195DB00B4A2C4 /* snyggmagnus_88x88@2x.jpg */,
+				04931E96182195DB00B4A2C4 /* snyggtommie_88x88@2x.jpg */,
+			);
+			path = 88x88;
+			sourceTree = "<group>";
+		};
 		04F5D510181F98D9006CF721 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,6 +981,7 @@
 		04F5D586181F98D9006CF721 /* Hosts */ = {
 			isa = PBXGroup;
 			children = (
+				04931E8E182195DB00B4A2C4 /* 88x88 */,
 				04F5D587181F98D9006CF721 /* erika.jpg */,
 				04F5D588181F98D9006CF721 /* erika@2x.jpg */,
 				04F5D589181F98D9006CF721 /* femalecodertocat.png */,
@@ -1243,11 +1275,14 @@
 			files = (
 				04F5D661181F98DA006CF721 /* SlashatAudioControlsView~iphone.xib in Resources */,
 				04F5D6AB181F98DA006CF721 /* Slashat_twitter@2x.png in Resources */,
+				04931E9B182195DB00B4A2C4 /* snyggjeppe_88x88@2x.jpg in Resources */,
 				04F5D6B7181F98DA006CF721 /* Archive_passive@2x.png in Resources */,
 				04F5D6CB181F98DA006CF721 /* tab-bar_live_inactive@2x.png in Resources */,
 				04F5D67C181F98DA006CF721 /* snyggjeppe@2x.jpg in Resources */,
+				04931E98182195DB00B4A2C4 /* femalecodertocat_88x88@2x.png in Resources */,
 				04F5D6D2181F98DA006CF721 /* high-five-sound.mp3 in Resources */,
 				04F5D675181F98DA006CF721 /* femalecodertocat.png in Resources */,
+				04931E97182195DB00B4A2C4 /* erika_88x88@2x.jpg in Resources */,
 				04F5D677181F98DA006CF721 /* nicklas.jpg in Resources */,
 				04F5D6E8181F9B3C006CF721 /* Slashat-Info.plist in Resources */,
 				04F5D6B9181F98DA006CF721 /* Live_active@2x.png in Resources */,
@@ -1287,6 +1322,7 @@
 				04F5D65F181F98DA006CF721 /* SlashatEpisodeView~iPad.xib in Resources */,
 				04F5D683181F98DA006CF721 /* icon-29@2x.png in Resources */,
 				04F5D688181F98DA006CF721 /* live_view_share_fb.png in Resources */,
+				04931E9C182195DB00B4A2C4 /* snyggjohan_88x88@2x.jpg in Resources */,
 				04F5D6C6181F98DA006CF721 /* tab-bar_highfive_inactive.png in Resources */,
 				04F5D6E5181F98DA006CF721 /* zbar-helpicons.png in Resources */,
 				04F5D664181F98DA006CF721 /* Slashat-hosts.plist in Resources */,
@@ -1316,6 +1352,7 @@
 				04F5D689181F98DA006CF721 /* live_view_share_fb@2x.png in Resources */,
 				04F5D666181F98DA006CF721 /* about_view_fb.png in Resources */,
 				04F5D68A181F98DA006CF721 /* live_view_share_twitter.png in Resources */,
+				04931E99182195DB00B4A2C4 /* nicklas_88x88@2x.jpg in Resources */,
 				04F5D66D181F98DA006CF721 /* about_view_twitter@2x.png in Resources */,
 				04F5D671181F98DA006CF721 /* first.png in Resources */,
 				04F5D6B0181F98DA006CF721 /* About_active.png in Resources */,
@@ -1323,13 +1360,16 @@
 				04F5D695181F98DA006CF721 /* player_flap_icon@2x.png in Resources */,
 				04F5D6A6181F98DA006CF721 /* Slashat_play.png in Resources */,
 				04F5D686181F98DA006CF721 /* icon.png in Resources */,
+				04931E9D182195DB00B4A2C4 /* snyggmagnus_88x88@2x.jpg in Resources */,
 				04F5D6B4181F98DA006CF721 /* Archive_active.png in Resources */,
 				04F5D674181F98DA006CF721 /* erika@2x.jpg in Resources */,
 				04F5D6EB181F9C8A006CF721 /* MainStoryboard_iPad.storyboard in Resources */,
+				04931E9E182195DB00B4A2C4 /* snyggtommie_88x88@2x.jpg in Resources */,
 				04F5D691181F98DA006CF721 /* Navigationbar@2x.png in Resources */,
 				04F5D6A8181F98DA006CF721 /* Slashat_stream.png in Resources */,
 				04F5D699181F98DA006CF721 /* second@2x.png in Resources */,
 				04F5D69B181F98DA006CF721 /* Slashat_about@2x.png in Resources */,
+				04931E9A182195DB00B4A2C4 /* slashat_88x88@2x.png in Resources */,
 				04F5D6A0181F98DA006CF721 /* Slashat_logo.png in Resources */,
 				04F5D684181F98DA006CF721 /* icon-72.png in Resources */,
 				04F5D68B181F98DA006CF721 /* live_view_share_twitter@2x.png in Resources */,

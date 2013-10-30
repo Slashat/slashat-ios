@@ -45,7 +45,7 @@
     self.descriptionTextView.contentInset = UIEdgeInsetsMake(-8,-8,-8,-8);
     self.descriptionTextView.text = self.host.longDescription;
         
-    [self.profileImageView setImage:self.host.profileImage];
+    [self.profileImageView setImage:[UIImage imageNamed:self.host.profileThumbnailImageName]];
     
     [self.twitterButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.webButton.imageView setContentMode:UIViewContentModeScaleAspectFit];

@@ -48,7 +48,7 @@
     
     
     NSLog(@"SlashatAboutHostProfileViewController: Setting profileImageView");
-    [self.profileImageView setImage:self.host.profileImage];
+    [self.profileImageView setImage:[UIImage imageNamed:self.host.profileImageName]];
     
     NSLog(@"SlashatAboutHostProfileViewController: Setting content modes on image views");
     [self.twitterButton.imageView setContentMode:UIViewContentModeScaleAspectFit];

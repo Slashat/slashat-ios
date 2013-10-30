@@ -133,51 +133,6 @@
     [operation start];
 }
 
-- (NSArray *)getSlashatHostsInSections
-{
-    NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-    NSArray *plistRootArray = [[NSArray alloc] initWithContentsOfFile:plistHostPath];
-    
-    NSMutableArray *hostSections = [[NSMutableArray alloc] init];
-    
-    for (int i=0; i < plistRootArray.count; i++) {
-        
-        NSArray *sectionHosts = [plistRootArray objectAtIndex:i][@"items"];
-        
-        NSMutableArray *hosts = [[NSMutableArray alloc] init];
-        
-        for (int j=0; j<sectionHosts.count; j++) {
-            SlashatHost *host = [[SlashatHost alloc] init];
-            host.name = [sectionHosts objectAtIndex:j][@"name"];
-            host.profileImage = [UIImage imageNamed:[sectionHosts objectAtIndex:j][@"image"]];
-            host.shortDescription = [sectionHosts objectAtIndex:j][@"short_description"];
-            host.longDescription = [sectionHosts objectAtIndex:j][@"long_description"];
-            host.twitterHandle = [sectionHosts objectAtIndex:j][@"twitter"];
-            host.emailAdress = [sectionHosts objectAtIndex:j][@"mail"];
-            host.link = [NSURL URLWithString:[sectionHosts objectAtIndex:j][@"web"]];
-            [hosts addObject:host];
-        }
-        
-        [hostSections addObject:hosts];
-    }
-    
-    return hostSections;
-}
-
-- (NSArray *)getHostSectionTitles
-{
-    NSString *plistHostPath = [[NSBundle mainBundle] pathForResource:@"Slashat-hosts" ofType:@"plist"];
-    NSArray *plistRootArray = [[NSArray alloc] initWithContentsOfFile:plistHostPath];
-    
-    NSMutableArray *sectionTitles = [[NSMutableArray alloc] init];
-    for (int i = 0; i < plistRootArray.count; i++) {
-        NSString *sectionTitle = [plistRootArray objectAtIndex:i][@"title"];
-        [sectionTitles addObject:sectionTitle];
-    }
-    
-    return sectionTitles;
-}
-
 - (void)loginHighFiveUserWithCredentials:(NSString *)userName password:(NSString *)password success:(void(^)(NSString *authToken))success failure:(void(^)(NSError *error))failure
 {
     NSString *loginUrlString = [NSString stringWithFormat:@"%@login", SLASHAT_API_URL];

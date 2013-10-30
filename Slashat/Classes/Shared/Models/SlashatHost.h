@@ -10,14 +10,18 @@
 
 @interface SlashatHost : NSObject
 
-@property (strong,nonatomic) NSString *name;
-@property (strong,nonatomic) UIImage *profileImage;
-@property (strong,nonatomic) NSString *shortDescription;
-@property (strong,nonatomic) NSString *longDescription;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *profileImageName;
+@property (strong, nonatomic) NSString *profileThumbnailImageName;
+@property (strong, nonatomic) NSString *shortDescription;
+@property (strong, nonatomic) NSString *longDescription;
 
-@property (strong,nonatomic) NSString *twitterHandle;
-@property (strong,nonatomic) NSURL *link;
-@property (strong,nonatomic) NSString *emailAdress;
+@property (strong, nonatomic) NSString *twitterHandle;
+@property (strong, nonatomic) NSURL *link;
+@property (strong, nonatomic) NSString *emailAdress;
 
+
++ (NSArray *)getSlashatHostsInSections;
++ (NSArray *)getHostSectionTitles;
 
 @end
