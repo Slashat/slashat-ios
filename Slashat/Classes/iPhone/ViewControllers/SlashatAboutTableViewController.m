@@ -53,6 +53,7 @@
     
     self.hosts = [SlashatHost getSlashatHostsInSections];
     self.sectionNames = [SlashatHost getHostSectionTitles];
+    [self.tableView reloadData];
     
     [SlashatHighFiveUser fetchAllHighFivers:^(NSArray *highFivers) {
         self.highFivers = highFivers;
