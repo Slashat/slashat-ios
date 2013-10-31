@@ -18,7 +18,7 @@
     }
         
     self.userName = [attributes valueForKey:@"username"];
-    self.userId = [attributes valueForKey:@"user_id"];
+    self.userId = [[attributes valueForKey:@"user_id"] integerValue];
     
     self.highfivedByName = [attributes valueForKey:@"highfived_by_name"];
     
@@ -36,15 +36,23 @@
         self.qrCode = [NSURL URLWithString:[attributes valueForKey:@"qrcode"]];
     }
     
-    NSMutableArray *highFivers = [[NSMutableArray alloc] init];
-    for (NSString *highFiverKey in [attributes objectForKey:@"highfivers"]) {
-        NSDictionary *highFiverAttributes = [[attributes objectForKey:@"highfivers"] objectForKey:highFiverKey];
+    self.highFivers = [SlashatHighFiveUser initUsersWithAttributes:[attributes objectForKey:@"highfivers"]];
+    
+    return self;
+}
+
++ (NSArray *)initUsersWithAttributes:(NSDictionary *)attributes
+{
+    NSMutableArray *highFivers = [NSMutableArray array];
+    for (NSString *highFiverKey in attributes) {
+        NSDictionary *highFiverAttributes = [attributes objectForKey:highFiverKey];
         [highFivers addObject:[[SlashatHighFiveUser alloc] initWithAttributes:highFiverAttributes]];
     }
     
-    self.highFivers = highFivers;
+    NSSortDescriptor *lowestIdToHighest = [NSSortDescriptor sortDescriptorWithKey:@"userId" ascending:YES];
+    [highFivers sortUsingDescriptors:[NSArray arrayWithObject:lowestIdToHighest]];
     
-    return self;
+    return highFivers;
 }
 
 @end

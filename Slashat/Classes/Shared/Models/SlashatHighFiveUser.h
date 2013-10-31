@@ -11,7 +11,7 @@
 @interface SlashatHighFiveUser : NSObject
 
 @property (strong, nonatomic) NSString *userName;
-@property (strong, nonatomic) NSString *userId;
+@property (assign, nonatomic) NSInteger userId;
 
 @property (strong, nonatomic) NSString *highfivedByName;
 @property (strong, nonatomic) NSDate *highfivedDate;
@@ -23,5 +23,6 @@
 @property (strong, nonatomic) NSArray *highFivers;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
++ (NSArray *)initUsersWithAttributes:(NSDictionary *)attributes;
 
 @end
