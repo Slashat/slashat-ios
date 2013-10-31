@@ -151,7 +151,6 @@
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
         SlashatHighFiveUser *highFiveUser = [[SlashatHighFiveUser alloc] initWithAttributes:JSON];
-        NSLog(@"getUser success: %@", highFiveUser.userName);
         if (highFiveUser.userName) {
             success(highFiveUser);
         }
