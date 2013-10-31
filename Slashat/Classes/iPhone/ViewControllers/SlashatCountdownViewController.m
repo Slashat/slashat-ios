@@ -8,7 +8,6 @@
 
 #import "SlashatCountdownViewController.h"
 #import "QuartzCore/QuartzCore.h"
-#import "SlashatAPIManager.h"
 #import "SlashatCalendarItem.h"
 
 @interface SlashatCountdownViewController ()
@@ -55,13 +54,11 @@ NSDate *nextLiveShowDate;
 
 - (void)initCountdownFromNextGoogleCalendarEvent
 {
-    [[SlashatAPIManager sharedClient] fetchNextSlashatCalendarItemWithSuccess:^(SlashatCalendarItem *calendarItem) {
-        
+    [SlashatCalendarItem fetchNextSlashatCalendarItemWithSuccess:^(SlashatCalendarItem *calendarItem) {
         [self startCountdownToSlashatDateItem:calendarItem];
-        
     } failure:^(NSError *error) {
         NSLog(@"%@", error.localizedDescription);
-    }];    
+    }]; 
 }
 
 - (void)startCountdownToSlashatDateItem:(SlashatCalendarItem *)calendarItem

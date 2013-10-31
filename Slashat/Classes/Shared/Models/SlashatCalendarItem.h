@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSString *title;
 
++ (void)fetchNextSlashatCalendarItemWithSuccess:(void(^)(SlashatCalendarItem *calendarItem))success failure:(void(^)(NSError *error))failure;
+
 @end
