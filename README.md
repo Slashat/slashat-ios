@@ -18,7 +18,7 @@ Utvecklarbeslut:
 
 * Automatic Reference Counting
 * Storyboards
-* iOS 6
+* iOS 7
 
 Med tanke på att utrullningen av iOS6 gått såpass smärtfritt (senaste siffrorna ligger på ~75% and counting) så kör vi det som krav. Detta innebär att vi utan problem kan använda godsaker som *Social Framework*, *UITableView pull-to-refresh*, och *UICollectionView*.
 
