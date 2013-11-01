@@ -1,7 +1,7 @@
 Slashat för iOS
 ===============
 
-En app för att följa och interagera med podcasten slashat.se. Utvecklingsarbetet går att följa här på github och på [Slashats forum](http://forum.slashat.se/viewforum.php?f=13) där man kan diskutera allt som har med utvecklandet av apparna att göra. Om man är sugen på att hjälpa till (vi behöver all hjälp vi kan få) så  är det enklast att forka det här projektet och börja utforska. 
+En app till iPhone och iPad för att följa och interagera med podcasten slashat.se. Utvecklingsarbetet går att följa här på github och på [Slashats forum](http://forum.slashat.se/viewforum.php?f=13) där man kan diskutera allt som har med utvecklandet av apparna att göra. Om man är sugen på att hjälpa till (vi behöver all hjälp vi kan få) så  är det enklast att forka det här projektet och börja utforska. 
 
 Vill man hänga bland likasinnande så brukar det alltid vara någon online i [#slashatdev på irc.slashat.se][slashatdev]. 
 
