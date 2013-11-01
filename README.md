@@ -82,3 +82,11 @@ Sköter uppspelning av ett `SlashatEpisode`. Använder sig av `MPMoviePlayerCont
 Håller instans av `SlashatAudioControlViewController` för att den skall vara tillgänglig globalt, `SlashatArchiveEpisodeViewController` kallar på `playSlashatAudioEpisode` för att sätta igång spelning av episod. Sköter även sättandet av färger på NavigationBar.
 
 [slashatdev]: irc://irc.slashat.se/slashatdev
+
+
+Utvecklare
+==========
+
+<a href="https://plus.google.com/u/0/113428742926263981798" rel="author">Johan Larsson</a>
+Erika Thorsen
+
