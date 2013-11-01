@@ -87,6 +87,6 @@ Håller instans av `SlashatAudioControlViewController` för att den skall vara t
 Utvecklare
 ==========
 
-- <a href="https://plus.google.com/u/0/113428742926263981798" rel="author">Johan Larsson</a>
+- <a href="https://plus.google.com/113428742926263981798?rel=author" rel="author">Johan Larsson</a>
 - Erika Thorsen
 
