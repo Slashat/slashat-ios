@@ -191,7 +191,7 @@
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                 
-        NSArray *highFivers = [SlashatHighFiveUser initUsersWithAttributes:JSON];
+        NSArray *highFivers = [SlashatHighFiveUser initUsersSortedByUserIdWithAttributes:JSON];
         success(highFivers);
         
     } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){

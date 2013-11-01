@@ -23,6 +23,7 @@
 @property (strong, nonatomic) NSArray *highFivers;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
-+ (NSArray *)initUsersWithAttributes:(NSDictionary *)attributes;
+
++ (NSArray *)initUsersSortedByUserIdWithAttributes:(NSDictionary *)attributes;
 
 @end

@@ -49,7 +49,7 @@
     NSData *jsonData = [self.allHighFiversJsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
-    NSArray *highFivers = [SlashatHighFiveUser initUsersWithAttributes:JSON];
+    NSArray *highFivers = [SlashatHighFiveUser initUsersSortedByUserIdWithAttributes:JSON];
     STAssertTrue(highFivers.count == 9, @"There should be 9 users in json data");
 }
 
@@ -58,7 +58,7 @@
     NSData *jsonData = [self.allHighFiversJsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
-    NSArray *highFivers = [SlashatHighFiveUser initUsersWithAttributes:JSON];
+    NSArray *highFivers = [SlashatHighFiveUser initUsersSortedByUserIdWithAttributes:JSON];
     
     BOOL ascendingOrder = YES;
     NSUInteger previousId = 0;

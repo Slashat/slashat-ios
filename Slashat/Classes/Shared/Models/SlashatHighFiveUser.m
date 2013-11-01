@@ -36,12 +36,18 @@
         self.qrCode = [NSURL URLWithString:[attributes valueForKey:@"qrcode"]];
     }
     
-    self.highFivers = [SlashatHighFiveUser initUsersWithAttributes:[attributes objectForKey:@"highfivers"]];
+    self.highFivers = [SlashatHighFiveUser initUsersSortedByUserIdWithAttributes:[attributes objectForKey:@"highfivers"]];
     
     return self;
 }
 
-+ (NSArray *)initUsersWithAttributes:(NSDictionary *)attributes
++ (NSArray *)initUsersSortedByUserIdWithAttributes:(NSDictionary *)attributes
+{
+    NSSortDescriptor *lowestIdToHighest = [NSSortDescriptor sortDescriptorWithKey:@"userId" ascending:YES];
+    return [self initUsersWithAttributes:attributes sortDescriptors:@[lowestIdToHighest]];
+}
+
++ (NSArray *)initUsersWithAttributes:(NSDictionary *)attributes sortDescriptors:(NSArray *)sortDescriptors
 {
     NSMutableArray *highFivers = [NSMutableArray array];
     for (NSString *highFiverKey in attributes) {
@@ -49,8 +55,7 @@
         [highFivers addObject:[[SlashatHighFiveUser alloc] initWithAttributes:highFiverAttributes]];
     }
     
-    NSSortDescriptor *lowestIdToHighest = [NSSortDescriptor sortDescriptorWithKey:@"userId" ascending:YES];
-    [highFivers sortUsingDescriptors:[NSArray arrayWithObject:lowestIdToHighest]];
+    [highFivers sortUsingDescriptors:sortDescriptors];
     
     return highFivers;
 }
