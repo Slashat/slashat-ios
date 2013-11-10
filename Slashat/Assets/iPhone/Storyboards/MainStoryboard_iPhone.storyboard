@@ -472,6 +472,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XB8-Hb-fnf" firstAttribute="top" secondItem="ZC6-ti-xUL" secondAttribute="top" constant="63" id="1mB-kG-oyY"/>
                             <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="XB8-Hb-fnf" secondAttribute="leading" id="5DB-FA-ewu"/>
                             <constraint firstItem="trO-IF-BDt" firstAttribute="trailing" secondItem="XB8-Hb-fnf" secondAttribute="trailing" id="5WY-uO-oiV"/>
                             <constraint firstItem="trO-IF-BDt" firstAttribute="leading" secondItem="ZC6-ti-xUL" secondAttribute="leading" id="5lA-kX-nYn"/>
