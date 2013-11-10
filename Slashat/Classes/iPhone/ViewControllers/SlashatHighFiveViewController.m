@@ -33,6 +33,7 @@
 @property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) UIView *loginAlertViewUnderlayView;
+@property (strong, nonatomic) UIAlertView *loginAlertView;
 
 @property (weak, nonatomic) IBOutlet UILabel *noHighFivesDescriptionLabel;
 
@@ -132,7 +133,8 @@
             [self showLoginView];
         }];
     }
-    else {
+    else if(self.tabBarController.selectedIndex == 3) {
+        // Only show loginAlert when this tab is selected
         [self addLoginAlertViewUnderlay];
         [self showLoginView];
     }
@@ -140,13 +142,16 @@
 
 - (void)showLoginView
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:Nil delegate:nil cancelButtonTitle:@"Avbryt" otherButtonTitles:NSLocalizedString(@"Logga in", @"Logga in-knapp i login-alertview"), NSLocalizedString(@"Skapa konto", @"Skapa konto-knapp i login-alertview"), nil];
-    alertView.title = NSLocalizedString(@"Slashat.se Forum-konto:", @"Titel på login-alertview");
-    alertView.message = NSLocalizedString(@"Du använder ditt befintliga Slashat.se Forum-konto för\natt koppla ihop appen med\n din forumprofil.", @"Undertitel på login-alertview");
-    alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    alertView.delegate = self;
-    [alertView textFieldAtIndex:0].placeholder = @"Användarnamn";
-    [alertView show];
+    if (!self.loginAlertView) {
+        self.loginAlertView = [[UIAlertView alloc] initWithTitle:nil message:Nil delegate:nil cancelButtonTitle:@"Avbryt" otherButtonTitles:NSLocalizedString(@"Logga in", @"Logga in-knapp i login-alertview"), NSLocalizedString(@"Skapa konto", @"Skapa konto-knapp i login-alertview"), nil];
+    }
+    
+    self.loginAlertView.title = NSLocalizedString(@"Slashat.se Forum-konto:", @"Titel på login-alertview");
+    self.loginAlertView.message = NSLocalizedString(@"Du använder ditt befintliga Slashat.se Forum-konto för\natt koppla ihop appen med\n din forumprofil.", @"Undertitel på login-alertview");
+    self.loginAlertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    self.loginAlertView.delegate = self;
+    [self.loginAlertView textFieldAtIndex:0].placeholder = @"Användarnamn";
+    [self.loginAlertView show];
     
     [self addLoginAlertViewUnderlay];
 }
@@ -252,7 +257,7 @@
     [self presentViewController:reader animated:YES completion:nil];
 }
 
-- (void) imagePickerController: (UIImagePickerController*) reader
+- (void)imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info
 {
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
@@ -289,7 +294,6 @@
     } else {
         return 0;
     }
-    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
