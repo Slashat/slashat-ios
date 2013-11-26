@@ -9,10 +9,12 @@
 #import "SlashatLiveVideoViewController.h"
 #import "MediaPlayer/MPMoviePlayerController.h"
 #import "SlashatAPIManager.h"
+#import "SlashatFullscreenMoviePlayerViewController.h"
 
 @interface SlashatLiveVideoViewController ()
 
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+@property (nonatomic, strong) SlashatFullscreenMoviePlayerViewController *fullscreenVideoViewController;
 
 @end
 
@@ -62,22 +64,32 @@
     [_moviePlayer setControlStyle:MPMovieControlStyleEmbedded];
     [_moviePlayer setAllowsAirPlay:YES];
         
-    /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieExitedFullScreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieExitedFullScreen:) name:MPMoviePlayerWillExitFullscreenNotification object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieEnteredFullScreen:) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
 
     
-    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)  name:UIDeviceOrientationDidChangeNotification  object:nil];*/
+    //[[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)  name:UIDeviceOrientationDidChangeNotification  object:nil];
 }
 
 - (void)movieEnteredFullScreen:(NSNotification *)notification
 {
     NSLog(@"movieEnteredFullScreen");
+    
+    if (!self.fullscreenVideoViewController) {
+        self.fullscreenVideoViewController = [[SlashatFullscreenMoviePlayerViewController alloc] init];
+    }
+    
+    [self.fullscreenVideoViewController.view addSubview:_moviePlayer.view];
+    
+    [self presentViewController:self.fullscreenVideoViewController animated:NO completion:nil];
 }
 
 - (void)movieExitedFullScreen:(NSNotification *)notification
 {
     NSLog(@"movieExitedFullScreen");
+    [self.view addSubview:_moviePlayer.view];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)orientationChanged:(NSNotification *)notification

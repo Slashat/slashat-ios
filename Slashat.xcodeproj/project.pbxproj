@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042AD7681845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042AD7671845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m */; };
 		043B543E169313A500B71F3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B543D169313A500B71F3A /* UIKit.framework */; };
 		043B5440169313A500B71F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B543F169313A500B71F3A /* Foundation.framework */; };
 		043B5442169313A500B71F3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043B5441169313A500B71F3A /* CoreGraphics.framework */; };
@@ -222,6 +223,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042AD7661845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatFullscreenMoviePlayerViewController.h; sourceTree = "<group>"; };
+		042AD7671845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatFullscreenMoviePlayerViewController.m; sourceTree = "<group>"; };
 		043B5439169313A500B71F3A /* Slashat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slashat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043B543D169313A500B71F3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		043B543F169313A500B71F3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -796,6 +799,8 @@
 				04F5D53E181F98D9006CF721 /* SlashatLiveViewController.m */,
 				04F5D53F181F98D9006CF721 /* SlashatReceiveHighFiveViewController.h */,
 				04F5D540181F98D9006CF721 /* SlashatReceiveHighFiveViewController.m */,
+				042AD7661845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.h */,
+				042AD7671845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1467,6 +1472,7 @@
 				04F5D641181F98DA006CF721 /* UIViewWithShadow.m in Sources */,
 				04F5D6DD181F98DA006CF721 /* VSThemeLoader.m in Sources */,
 				04F5D643181F98DA006CF721 /* SlashatAboutHostProfileViewController.m in Sources */,
+				042AD7681845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m in Sources */,
 				04F5D6D7181F98DA006CF721 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				04F5D647181F98DA006CF721 /* SlashatAudioControlViewController.m in Sources */,
 				04F5D651181F98DA006CF721 /* DateUtils.m in Sources */,

@@ -14,6 +14,7 @@
 #import "VSThemeLoader.h"
 #import "VSTheme.h"
 #import "UIColor+Slashat.h"
+#import "SlashatFullscreenMoviePlayerViewController.h"
 
 @interface AppDelegate ()
 
@@ -73,6 +74,18 @@
     
     UIColor *textColor = [UIColor whiteColor];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : textColor}];
+}
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if ([[self.window.rootViewController presentedViewController] isKindOfClass:[SlashatFullscreenMoviePlayerViewController class]])
+    {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    else
+    {
+        return UIInterfaceOrientationMaskPortrait;
+    }
 }
 
 + (AppDelegate *)sharedAppDelegate
