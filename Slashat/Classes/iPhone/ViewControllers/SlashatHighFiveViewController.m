@@ -211,7 +211,7 @@
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.size.width / 2;
     
-    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"%u High-Fives. Fick sin första av %@ för %@.", user.highFivers.count, self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
+    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
     
     if (user.highFivers.count > 0) {
         self.giveHighFiveButton.enabled = YES;
