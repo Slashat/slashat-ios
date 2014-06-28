@@ -19,7 +19,7 @@
     
     self.name = [attributes valueForKey:@"name"];
     self.imageUrl = [NSURL URLWithString:[attributes valueForKey:@"picture"]];
-    self.achieved = [attributes valueForKey:@"achieved"];
+    self.achieved = [[attributes valueForKey:@"achieved"] boolValue];
     
     return self;
 }
