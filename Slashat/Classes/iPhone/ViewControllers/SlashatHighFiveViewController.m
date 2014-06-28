@@ -22,6 +22,8 @@
 @interface SlashatHighFiveViewController ()
 
 @property (strong, nonatomic) SlashatHighFiveUser *user;
+@property (strong, nonatomic) NSArray *sections;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -62,7 +64,7 @@
     //[SlashatHighFiveUser logOutUser];
     
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.highFiversCollectionView.collectionViewLayout;
-    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 120, 20);
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 60, 20);
     
     self.nameLabel.text = @"";
     self.profileDescriptionLabel.text = @"";
@@ -179,6 +181,8 @@
         [self.loginAlertViewUnderlayView removeFromSuperview];
     }
 }
+
+
     
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
@@ -208,20 +212,22 @@
     
     self.user = user;
     
+    [self updateSectionsWithDataFromUser:user];
+    
     self.nameLabel.text = user.userName;
     [self.profileImageView setImageWithURL:user.profilePicture];
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.size.width / 2;
     
-    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
+    self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första High-Five av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
+    
+    self.giveHighFiveButton.enabled = YES;
     
     if (user.highFivers.count > 0) {
-        self.giveHighFiveButton.enabled = YES;
         self.profileDescriptionLabel.hidden = NO;
         self.noHighFivesDescriptionLabel.hidden = YES;
         self.highFiversCollectionView.hidden = NO;
     } else {
-        self.giveHighFiveButton.enabled = NO;
         self.profileDescriptionLabel.hidden = YES;
         self.noHighFivesDescriptionLabel.hidden = NO;
         self.highFiversCollectionView.hidden = YES;
@@ -230,6 +236,49 @@
     [self.highFiversCollectionView reloadData];
 }
 
+- (void)updateSectionsWithDataFromUser:(SlashatHighFiveUser *)user
+{
+    NSMutableArray *sections = [NSMutableArray array];
+    
+    if (user.badges.count > 0) {
+        [sections addObject:@{
+                              @"title": NSLocalizedString(@"Mina troféer", @"Badges"),
+                              @"items": user.badges
+                              }];
+    }
+    
+    if (user.achievements.count > 0) {
+        [sections addObject:@{
+                              @"title": NSLocalizedString(@"Mina utmaningar", @"Achievements"),
+                              @"items": user.achievements
+                              }];
+    }
+    
+    if (user.highFivers.count > 0) {
+        [sections addObject:@{
+                              @"title": [NSString stringWithFormat:@"Mina %u High-Fivers:", user.highFivers.count],
+                              @"items": user.highFivers
+                              }];
+    }
+    
+    self.sections = sections;
+}
+
+- (void)enableGiveHighFiveButton
+{
+    self.giveHighFiveButton.enabled = YES;
+    self.profileDescriptionLabel.hidden = NO;
+    self.noHighFivesDescriptionLabel.hidden = YES;
+    self.highFiversCollectionView.hidden = NO;
+}
+
+- (void)disableGiveHighFiveButton
+{
+    self.giveHighFiveButton.enabled = NO;
+    self.profileDescriptionLabel.hidden = YES;
+    self.noHighFivesDescriptionLabel.hidden = NO;
+    self.highFiversCollectionView.hidden = YES;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -291,23 +340,24 @@
     }];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 3;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.sections.count;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
-        return self.user.achievements.count;
-    } else if (section == 1) {
-        return self.user.badges.count;
-    } else if (section == 2 && self.user) {
-        return self.user.highFivers.count;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    if (self.user) {
+        NSDictionary *sectionItem = [self.sections objectAtIndex:section];
+        return ((NSArray *)sectionItem[@"items"]).count;
     } else {
         return 0;
     }
+    
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *identifier = @"HighFiverCell";
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
@@ -318,24 +368,58 @@
     highFiverImageView.layer.masksToBounds = NO;
     
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:200];
+    nameLabel.text = @"";
+    
+    NSDictionary *sectionItem = [self.sections objectAtIndex:indexPath.section];
+    id item = [((NSArray *)sectionItem[@"items"]) objectAtIndex:indexPath.row];
+    
+    if ([item isKindOfClass:[SlashatBadge class]]) {
+        [highFiverImageView setImageWithURL:((SlashatBadge *)item).imageUrl];
+    } else if([item isKindOfClass:[SlashatAchievement class]]) {
+        SlashatAchievement *achievement = (SlashatAchievement *)item;
+        
+        [highFiverImageView setImageWithURL:achievement.imageUrl];
+        
+        if (!achievement.achieved) {
+            highFiverImageView.alpha = 0.2f;
+            highFiverImageView.tintColor = [UIColor whiteColor];
+            highFiverImageView.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
+        }
+    } else if([item isKindOfClass:[SlashatHighFiveUser class]]) {
+        
+        SlashatHighFiveUser *user = (SlashatHighFiveUser *)item;
+        
+        [highFiverImageView setImageWithURL:user.profilePicture];
+        
+        highFiverImageView.layer.cornerRadius = highFiverImageView.bounds.size.width / 2;
+        highFiverImageView.layer.masksToBounds = YES;
+        
+        nameLabel.text = user.userName;
+    }
+    
+    /*
     
     if (indexPath.section == 0) {
+        
+        SlashatBadge *badge = [self.user.badges objectAtIndex:indexPath.row];
+        
+        [highFiverImageView setImageWithURL:badge.imageUrl];
         
         SlashatAchievement *achievement = [self.user.achievements objectAtIndex:indexPath.row];
         
         [highFiverImageView setImageWithURL:achievement.imageUrl];
         
         if (!achievement.achieved) {
-            highFiverImageView.alpha = 0.1f;
+            highFiverImageView.alpha = 0.2f;
+            highFiverImageView.tintColor = [UIColor whiteColor];
+            highFiverImageView.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
         }
         
-        nameLabel.text = achievement.name;
+        
     } else if (indexPath.section == 1) {
         SlashatBadge *badge = [self.user.badges objectAtIndex:indexPath.row];
         
         [highFiverImageView setImageWithURL:badge.imageUrl];
-        
-        nameLabel.text = badge.name;
     } else {
         [highFiverImageView setImageWithURL:((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).profilePicture];
         
@@ -344,7 +428,7 @@
         
         
         nameLabel.text = ((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).userName;
-    }
+    } */
     
     
     
@@ -361,18 +445,7 @@
                                                     withReuseIdentifier:@"HighFiverSection"
                                                            forIndexPath:indexPath];
         
-        if (indexPath.section == 0) {
-            header.title.text = NSLocalizedString(@"Utmaningar", @"Achievements");
-        }
-        
-        if (indexPath.section == 1) {
-            header.title.text = NSLocalizedString(@"Troféer", @"Badges");
-        }
-        
-        if (indexPath.section == 2 && self.user && self.user.highFivers.count > 1) {
-            header.title.text = [NSString stringWithFormat:@"Mina %u High-Fivers:", self.user.highFivers.count];
-        }
-        
+        header.title.text = [self.sections objectAtIndex:indexPath.section][@"title"];
     }
     
     return header;
