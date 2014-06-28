@@ -66,6 +66,8 @@
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.highFiversCollectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 20, 60, 20);
     
+    self.highFiversCollectionView.delegate = self;
+    
     self.nameLabel.text = @"";
     self.profileDescriptionLabel.text = @"";
     
@@ -81,6 +83,15 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (section == self.sections.count - 1) {
+        return UIEdgeInsetsMake(5, 20, 120, 20);
+    } else {
+        return UIEdgeInsetsMake(5, 20, 0, 20);
+    }
 }
 
 - (void)initializeLocationManager
