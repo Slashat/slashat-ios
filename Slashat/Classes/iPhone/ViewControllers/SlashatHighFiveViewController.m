@@ -14,6 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "DateUtils.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "SlashatHighFiverCollectionHeaderView.h"
 
 
 @interface SlashatHighFiveViewController ()
@@ -316,14 +317,19 @@
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionReusableView *header = nil;
+    SlashatHighFiverCollectionHeaderView *header = nil;
     
-    if ([kind isEqual:UICollectionElementKindSectionHeader])
-    {
+    if (kind == UICollectionElementKindSectionHeader){
         header = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                     withReuseIdentifier:@"HighFiverSection"
                                                            forIndexPath:indexPath];
+        
+        if (self.user && self.user.highFivers.count > 1) {
+            header.title.text = [NSString stringWithFormat:@"Mina %u High-Fivers:", self.user.highFivers.count];
+        }
+        
     }
+    
     return header;
 }
 
