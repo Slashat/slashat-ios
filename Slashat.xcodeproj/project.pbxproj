@@ -38,6 +38,8 @@
 		0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0494049D169CB27300871DB3 /* MediaPlayer.framework */; };
 		04972488179FD2E4003685CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04972487179FD2E4003685CD /* MessageUI.framework */; };
 		04D240B2195EEEE500CE6580 /* SlashatHighFiverCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240B1195EEEE500CE6580 /* SlashatHighFiverCollectionHeaderView.m */; };
+		04D240B5195F05E300CE6580 /* SlashatAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240B4195F05E300CE6580 /* SlashatAchievement.m */; };
+		04D240B8195F113E00CE6580 /* SlashatBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240B7195F113E00CE6580 /* SlashatBadge.m */; };
 		04E5DDE717F70CFF0091464D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDE617F70CFF0091464D /* ImageIO.framework */; };
 		04E5DDFD17F80EFE0091464D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDFC17F80EFE0091464D /* CoreVideo.framework */; };
 		04E5DDFF17F80F070091464D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDFE17F80F070091464D /* CoreMedia.framework */; };
@@ -278,6 +280,10 @@
 		04972487179FD2E4003685CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		04D240B0195EEEE500CE6580 /* SlashatHighFiverCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlashatHighFiverCollectionHeaderView.h; path = Views/SlashatHighFiverCollectionHeaderView.h; sourceTree = "<group>"; };
 		04D240B1195EEEE500CE6580 /* SlashatHighFiverCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlashatHighFiverCollectionHeaderView.m; path = Views/SlashatHighFiverCollectionHeaderView.m; sourceTree = "<group>"; };
+		04D240B3195F05E300CE6580 /* SlashatAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAchievement.h; sourceTree = "<group>"; };
+		04D240B4195F05E300CE6580 /* SlashatAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAchievement.m; sourceTree = "<group>"; };
+		04D240B6195F113E00CE6580 /* SlashatBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatBadge.h; sourceTree = "<group>"; };
+		04D240B7195F113E00CE6580 /* SlashatBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatBadge.m; sourceTree = "<group>"; };
 		04E5DDE617F70CFF0091464D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		04E5DDFC17F80EFE0091464D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		04E5DDFE17F80F070091464D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -865,6 +871,10 @@
 				04F5D560181F98D9006CF721 /* SlashatHighFiveUser.m */,
 				04F5D561181F98D9006CF721 /* SlashatHost.h */,
 				04F5D562181F98D9006CF721 /* SlashatHost.m */,
+				04D240B3195F05E300CE6580 /* SlashatAchievement.h */,
+				04D240B4195F05E300CE6580 /* SlashatAchievement.m */,
+				04D240B6195F113E00CE6580 /* SlashatBadge.h */,
+				04D240B7195F113E00CE6580 /* SlashatBadge.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1474,6 +1484,7 @@
 				04F5D641181F98DA006CF721 /* UIViewWithShadow.m in Sources */,
 				04F5D6DD181F98DA006CF721 /* VSThemeLoader.m in Sources */,
 				04F5D643181F98DA006CF721 /* SlashatAboutHostProfileViewController.m in Sources */,
+				04D240B5195F05E300CE6580 /* SlashatAchievement.m in Sources */,
 				042AD7681845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m in Sources */,
 				04F5D6D7181F98DA006CF721 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				04F5D647181F98DA006CF721 /* SlashatAudioControlViewController.m in Sources */,
@@ -1493,6 +1504,7 @@
 				04F5D646181F98DA006CF721 /* SlashatArchiveTableViewController.m in Sources */,
 				04F5D6D8181F98DA006CF721 /* AFPropertyListRequestOperation.m in Sources */,
 				04F5D6D3181F98DA006CF721 /* AFHTTPClient.m in Sources */,
+				04D240B8195F113E00CE6580 /* SlashatBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
