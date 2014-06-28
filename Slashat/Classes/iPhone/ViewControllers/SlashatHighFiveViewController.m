@@ -299,7 +299,7 @@
     if (section == 0) {
         return self.user.achievements.count;
     } else if (section == 1) {
-        return 0;
+        return self.user.badges.count;
     } else if (section == 2 && self.user) {
         return self.user.highFivers.count;
     } else {
