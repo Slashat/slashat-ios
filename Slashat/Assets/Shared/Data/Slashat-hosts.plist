@@ -43,26 +43,6 @@ Du kan lyssna på Slashat via hemsidan eller prenumerera på oss via iTunes elle
 				<key>type</key>
 				<string>host</string>
 				<key>name</key>
-				<string>Jezper Söderlund</string>
-				<key>image</key>
-				<string>snyggjeppe.jpg</string>
-				<key>twitter</key>
-				<string>jezperse</string>
-				<key>mail</key>
-				<string>jezper@slashat.se</string>
-				<key>web</key>
-				<string>http://jezper.se</string>
-				<key>short_description</key>
-				<string>Apple fanboy</string>
-				<key>long_description</key>
-				<string>En glad och bekväm herre, årsmodell 1980 som arbetar med marknadsföring på dagtid och producerar dansmusik bakom artistnamnet Airbase på kvällstid - när han inte sänder Slashat förstås.
-
-Jezper spenderar nästan orimligt mycket tid framför datorer och lever där i symbios med Apples produkter och tjänster, vilka han högljutt proklamerar in-show emellanåt. Övriga intressen inkluderar musik, film, resor, gott öl, vin och allt annat som hör livsnjutning till.</string>
-			</dict>
-			<dict>
-				<key>type</key>
-				<string>host</string>
-				<key>name</key>
 				<string>Tommie Podzemski</string>
 				<key>image</key>
 				<string>snyggtommie.jpg</string>
@@ -79,13 +59,26 @@ Jezper spenderar nästan orimligt mycket tid framför datorer och lever där i s
 
 Arbetar som IT-ansvarig och kör primärt OS X men navigerar även hemtamt i Ubuntu. Tommie ser sig själv som Android-fanboy och utnyttjar detta för att skapa diskussionsunderlag i showen.</string>
 			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Medarbetare</string>
-		<key>items</key>
-		<array>
+			<dict>
+				<key>type</key>
+				<string>host</string>
+				<key>name</key>
+				<string>Jezper Söderlund</string>
+				<key>image</key>
+				<string>snyggjeppe.jpg</string>
+				<key>twitter</key>
+				<string>jezperse</string>
+				<key>mail</key>
+				<string>jezper@slashat.se</string>
+				<key>web</key>
+				<string>http://jezper.se</string>
+				<key>short_description</key>
+				<string>Apple fanboy</string>
+				<key>long_description</key>
+				<string>En glad och bekväm herre, årsmodell 1980 som arbetar med marknadsföring på dagtid och producerar dansmusik bakom artistnamnet Airbase på kvällstid - när han inte sänder Slashat förstås.
+
+Jezper spenderar nästan orimligt mycket tid framför datorer och lever där i symbios med Apples produkter och tjänster, vilka han högljutt proklamerar in-show emellanåt. Övriga intressen inkluderar musik, film, resor, gott öl, vin och allt annat som hör livsnjutning till.</string>
+			</dict>
 			<dict>
 				<key>type</key>
 				<string>host</string>
@@ -132,7 +125,7 @@ Arbetar hellre i OS X och Linux än i Windows när jag vill vara produktiv. Anv�
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>App-hjälpredor</string>
+		<string>Medarbetare</string>
 		<key>items</key>
 		<array>
 			<dict>
@@ -158,6 +151,13 @@ Jobbat som sysadmin och nättekniker men jobbar sedan några år tillbaka som pr
 Aktiv Xbox-spelare och har tillsammans med sambon kört igenom nästan varenda co-op-spel med splitscreen. Försöker även att producera elektronisk musik med varierande framgång.
 </string>
 			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>App-hjälpredor</string>
+		<key>items</key>
+		<array>
 			<dict>
 				<key>type</key>
 				<string>contributor</string>
