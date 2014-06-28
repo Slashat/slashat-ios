@@ -17,8 +17,8 @@
         return nil;
     }
     
-    self.name = [attributes valueForKey:@"name"];
-    self.imageUrl = [NSURL URLWithString:[attributes valueForKey:@"picture"]];
+    self.name = attributes[@"name"];
+    self.imageUrl = [NSURL URLWithString:attributes[@"picture"]];
     
     return self;
 }
