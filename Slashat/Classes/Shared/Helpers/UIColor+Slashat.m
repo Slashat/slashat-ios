@@ -14,7 +14,11 @@
 + (UIColor *)slashatOrange
 {
     return [UIColor colorWithRed:222/255.0f green:82/255.0f blue:20/255.0f alpha:1];
-    //return UIColorFromRGB(0xde5214);
+}
+
++ (UIColor *)slashatTintOrange
+{
+    return [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:0.8];
 }
 
 + (UIColor *)highFiveFeedbackGoodTextColor

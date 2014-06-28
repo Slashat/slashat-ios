@@ -65,12 +65,13 @@
 }
 
 - (void)setCustomNavigationBarAppearance
-{
+{    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:238/255.0f green:46/255.0f blue:2/255.0f alpha:0.8];
+    [UINavigationBar appearance].barTintColor = [UIColor slashatTintOrange];
+    [UITabBar appearance].tintColor = [UIColor slashatTintOrange];
     
     UIColor *textColor = [UIColor whiteColor];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : textColor}];

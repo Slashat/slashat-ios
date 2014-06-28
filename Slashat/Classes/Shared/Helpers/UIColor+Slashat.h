@@ -11,6 +11,7 @@
 @interface UIColor (Slashat)
 
 + (UIColor *)slashatOrange;
++ (UIColor *)slashatTintOrange;
 + (UIColor *)highFiveFeedbackGoodTextColor;
 + (UIColor *)highFiveFeedbackBadTextColor;
 
