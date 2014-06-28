@@ -237,7 +237,6 @@
 		043B547C169313A500B71F3A /* SlashatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlashatTests.m; sourceTree = "<group>"; };
 		04596A1F17199E450094C499 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		046EF2F31763292B00005B82 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		04789286177A21AD0091B0AD /* Slashat-hosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Slashat-hosts.plist"; sourceTree = "<group>"; };
 		048EC31E173BA6890043E57D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		048EC320173BA6C10043E57D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		04931E8F182195DB00B4A2C4 /* erika_88x88@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "erika_88x88@2x.jpg"; sourceTree = "<group>"; };
@@ -559,7 +558,6 @@
 		043B542E169313A500B71F3A = {
 			isa = PBXGroup;
 			children = (
-				04789285177A21AD0091B0AD /* Data */,
 				043B5443169313A500B71F3A /* Slashat */,
 				043B5475169313A500B71F3A /* SlashatTests */,
 				043B543C169313A500B71F3A /* Frameworks */,
@@ -632,15 +630,6 @@
 				043B5478169313A500B71F3A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		04789285177A21AD0091B0AD /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				04789286177A21AD0091B0AD /* Slashat-hosts.plist */,
-			);
-			name = Data;
-			path = Slashat/Data;
 			sourceTree = "<group>";
 		};
 		04931E8E182195DB00B4A2C4 /* 88x88 */ = {
