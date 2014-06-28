@@ -15,6 +15,8 @@
 #import "DateUtils.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "SlashatHighFiverCollectionHeaderView.h"
+#import "SlashatAchievement.h"
+#import "SlashatBadge.h"
 
 
 @interface SlashatHighFiveViewController ()
@@ -289,8 +291,16 @@
     }];
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 3;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.user) {
+    if (section == 0) {
+        return self.user.achievements.count;
+    } else if (section == 1) {
+        return 0;
+    } else if (section == 2 && self.user) {
         return self.user.highFivers.count;
     } else {
         return 0;
@@ -303,14 +313,39 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImageView *highFiverImageView = (UIImageView *)[cell viewWithTag:100];
-    [highFiverImageView setImageWithURL:((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).profilePicture];
-    
-    highFiverImageView.layer.cornerRadius = highFiverImageView.bounds.size.width / 2;
-    highFiverImageView.layer.masksToBounds = YES;
-    
-
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:200];
-    nameLabel.text = ((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).userName;
+    
+    if (indexPath.section == 0) {
+        
+        SlashatAchievement *achievement = [self.user.achievements objectAtIndex:indexPath.row];
+        
+        [highFiverImageView setImageWithURL:achievement.imageUrl];
+        highFiverImageView.layer.cornerRadius = 0;
+        
+        if (!achievement.achieved) {
+            highFiverImageView.alpha = 0.1f;
+        }
+        
+        nameLabel.text = achievement.name;
+    } else if (indexPath.section == 1) {
+        SlashatBadge *badge = [self.user.badges objectAtIndex:indexPath.row];
+        
+        [highFiverImageView setImageWithURL:badge.imageUrl];
+        highFiverImageView.layer.cornerRadius = 0;
+        
+        nameLabel.text = badge.name;
+    } else {
+        [highFiverImageView setImageWithURL:((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).profilePicture];
+        
+        highFiverImageView.layer.cornerRadius = highFiverImageView.bounds.size.width / 2;
+        highFiverImageView.layer.masksToBounds = YES;
+        
+        
+        nameLabel.text = ((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).userName;
+    }
+    
+    
+    
     
     return cell;
 }
@@ -324,7 +359,15 @@
                                                     withReuseIdentifier:@"HighFiverSection"
                                                            forIndexPath:indexPath];
         
-        if (self.user && self.user.highFivers.count > 1) {
+        if (indexPath.section == 0) {
+            header.title.text = @"Achievements";
+        }
+        
+        if (indexPath.section == 1) {
+            header.title.text = @"Badges";
+        }
+        
+        if (indexPath.section == 2 && self.user && self.user.highFivers.count > 1) {
             header.title.text = [NSString stringWithFormat:@"Mina %u High-Fivers:", self.user.highFivers.count];
         }
         
