@@ -313,6 +313,10 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImageView *highFiverImageView = (UIImageView *)[cell viewWithTag:100];
+    highFiverImageView.alpha = 1.0f;
+    highFiverImageView.layer.cornerRadius = 0;
+    highFiverImageView.layer.masksToBounds = NO;
+    
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:200];
     
     if (indexPath.section == 0) {
@@ -320,7 +324,6 @@
         SlashatAchievement *achievement = [self.user.achievements objectAtIndex:indexPath.row];
         
         [highFiverImageView setImageWithURL:achievement.imageUrl];
-        highFiverImageView.layer.cornerRadius = 0;
         
         if (!achievement.achieved) {
             highFiverImageView.alpha = 0.1f;
@@ -331,7 +334,6 @@
         SlashatBadge *badge = [self.user.badges objectAtIndex:indexPath.row];
         
         [highFiverImageView setImageWithURL:badge.imageUrl];
-        highFiverImageView.layer.cornerRadius = 0;
         
         nameLabel.text = badge.name;
     } else {
@@ -360,11 +362,11 @@
                                                            forIndexPath:indexPath];
         
         if (indexPath.section == 0) {
-            header.title.text = @"Achievements";
+            header.title.text = NSLocalizedString(@"Utmaningar", @"Achievements");
         }
         
         if (indexPath.section == 1) {
-            header.title.text = @"Badges";
+            header.title.text = NSLocalizedString(@"Troféer", @"Badges");
         }
         
         if (indexPath.section == 2 && self.user && self.user.highFivers.count > 1) {
