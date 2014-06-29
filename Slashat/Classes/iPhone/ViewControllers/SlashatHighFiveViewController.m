@@ -253,21 +253,14 @@
     NSMutableArray *sections = [NSMutableArray array];
     
     NSMutableArray *achievementBadges = [NSMutableArray array];
+    
+    [achievementBadges addObjectsFromArray:user.badges];
+    [achievementBadges addObjectsFromArray:user.achievements];
+    
     NSDictionary *achievementBadgeSectionItem = @{
                                                   @"title": NSLocalizedString(@"Mina troféer:", @"Badges"),
                                                   @"items": achievementBadges
                                                   };
-    
-    
-    
-    if (user.badges.count > 0) {
-        [achievementBadges addObjectsFromArray:user.badges];
-        
-    }
-    
-    if (user.achievements.count > 0) {
-        [achievementBadges addObjectsFromArray:user.achievements];
-    }
     
     [sections addObject:achievementBadgeSectionItem];
     
