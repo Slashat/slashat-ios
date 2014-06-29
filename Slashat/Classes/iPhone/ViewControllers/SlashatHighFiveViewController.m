@@ -370,7 +370,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section < 2) {
+    if (indexPath.section < 1) {
         return CGSizeMake(70, 70);
     } else {
         return CGSizeMake(70, 90);
