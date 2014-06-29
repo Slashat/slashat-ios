@@ -252,19 +252,24 @@
 {
     NSMutableArray *sections = [NSMutableArray array];
     
+    NSMutableArray *achievementBadges = [NSMutableArray array];
+    NSDictionary *achievementBadgeSectionItem = @{
+                                                  @"title": NSLocalizedString(@"Mina troféer:", @"Badges"),
+                                                  @"items": achievementBadges
+                                                  };
+    
+    
+    
     if (user.badges.count > 0) {
-        [sections addObject:@{
-                              @"title": NSLocalizedString(@"Mina troféer:", @"Badges"),
-                              @"items": user.badges
-                              }];
+        [achievementBadges addObjectsFromArray:user.badges];
+        
     }
     
     if (user.achievements.count > 0) {
-        [sections addObject:@{
-                              @"title": NSLocalizedString(@"Mina bedrifter:", @"Achievements"),
-                              @"items": user.achievements
-                              }];
+        [achievementBadges addObjectsFromArray:user.achievements];
     }
+    
+    [sections addObject:achievementBadgeSectionItem];
     
     if (user.highFivers.count > 0) {
         [sections addObject:@{
