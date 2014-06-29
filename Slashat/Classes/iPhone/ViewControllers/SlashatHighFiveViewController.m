@@ -274,22 +274,6 @@
     self.sections = sections;
 }
 
-- (void)enableGiveHighFiveButton
-{
-    self.giveHighFiveButton.enabled = YES;
-    self.profileDescriptionLabel.hidden = NO;
-    self.noHighFivesDescriptionLabel.hidden = YES;
-    self.highFiversCollectionView.hidden = NO;
-}
-
-- (void)disableGiveHighFiveButton
-{
-    self.giveHighFiveButton.enabled = NO;
-    self.profileDescriptionLabel.hidden = YES;
-    self.noHighFivesDescriptionLabel.hidden = NO;
-    self.highFiversCollectionView.hidden = YES;
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ReceiveHighFiveSegue"]) {
