@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSURL *largeImageUrl;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSString *achievedDescription;
 @property (nonatomic) BOOL achieved;
 
 + (NSArray *)initAchievements:(NSDictionary *)attributes;

@@ -19,6 +19,7 @@
     
     self.name = attributes[@"title"];
     self.description = attributes[@"description"];
+    self.achievedDescription = attributes[@"description_achieved"];
     
     self.imageUrl = [NSURL URLWithString:attributes[@"picture"]];
     self.largeImageUrl = [NSURL URLWithString:attributes[@"picture_large"]];

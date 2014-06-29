@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     if (self.achievement) {
-        self.descriptionTextView.text = self.achievement.description;
+        self.descriptionTextView.text = self.achievement.achieved ? self.achievement.achievedDescription : self.achievement.description;
         [self.imageView setImageWithURL:self.achievement.largeImageUrl];
     }
     

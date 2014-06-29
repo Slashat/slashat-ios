@@ -261,7 +261,7 @@
     
     if (user.achievements.count > 0) {
         [sections addObject:@{
-                              @"title": NSLocalizedString(@"Mina utmaningar:", @"Achievements"),
+                              @"title": NSLocalizedString(@"Mina bedrifter:", @"Achievements"),
                               @"items": user.achievements
                               }];
     }
