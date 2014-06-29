@@ -17,6 +17,7 @@
 #import "SlashatHighFiverCollectionHeaderView.h"
 #import "SlashatAchievement.h"
 #import "SlashatBadge.h"
+#import "SlashatAchievementDetailViewController.h"
 
 
 @interface SlashatHighFiveViewController ()
@@ -90,7 +91,7 @@
     if (section == self.sections.count - 1) {
         return UIEdgeInsetsMake(5, 20, 120, 20);
     } else {
-        return UIEdgeInsetsMake(5, 20, 0, 20);
+        return UIEdgeInsetsMake(5, 20, 20, 20);
     }
 }
 
@@ -253,14 +254,14 @@
     
     if (user.badges.count > 0) {
         [sections addObject:@{
-                              @"title": NSLocalizedString(@"Mina troféer", @"Badges"),
+                              @"title": NSLocalizedString(@"Mina troféer:", @"Badges"),
                               @"items": user.badges
                               }];
     }
     
     if (user.achievements.count > 0) {
         [sections addObject:@{
-                              @"title": NSLocalizedString(@"Mina utmaningar", @"Achievements"),
+                              @"title": NSLocalizedString(@"Mina utmaningar:", @"Achievements"),
                               @"items": user.achievements
                               }];
     }
@@ -293,8 +294,26 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    SlashatReceiveHighFiveViewController *highFiveReceiverViewController = [((UINavigationController *)segue.destinationViewController).viewControllers objectAtIndex:0];
-    highFiveReceiverViewController.highFiveUser = self.user;
+    if ([segue.identifier isEqualToString:@"ReceiveHighFiveSegue"]) {
+        SlashatReceiveHighFiveViewController *highFiveReceiverViewController = [((UINavigationController *)segue.destinationViewController).viewControllers objectAtIndex:0];
+        highFiveReceiverViewController.highFiveUser = self.user;
+    } else if ([segue.identifier isEqualToString:@"AchievementDetailSegue"]) {
+        SlashatAchievementDetailViewController *achievementDetailViewController = segue.destinationViewController;
+        
+        NSIndexPath *selectedIndexPath = [[self.highFiversCollectionView indexPathsForSelectedItems] objectAtIndex:0];
+        
+        
+        id selectedItem = [[self.sections objectAtIndex:selectedIndexPath.section][@"items"] objectAtIndex:selectedIndexPath.row];
+        
+        if ([selectedItem isKindOfClass:[SlashatBadge class]]) {
+            achievementDetailViewController.badge = selectedItem;
+        } else if ([selectedItem isKindOfClass:[SlashatAchievement class]]) {
+            achievementDetailViewController.achievement = selectedItem;
+        } else if ([selectedItem isKindOfClass:[SlashatHighFiveUser class]]) {
+            achievementDetailViewController.highFiveUser = selectedItem;
+        }
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -367,6 +386,15 @@
     
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section < 2) {
+        return CGSizeMake(70, 70);
+    } else {
+        return CGSizeMake(70, 90);
+    }
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"HighFiverCell";
@@ -407,42 +435,6 @@
         
         nameLabel.text = user.userName;
     }
-    
-    /*
-    
-    if (indexPath.section == 0) {
-        
-        SlashatBadge *badge = [self.user.badges objectAtIndex:indexPath.row];
-        
-        [highFiverImageView setImageWithURL:badge.imageUrl];
-        
-        SlashatAchievement *achievement = [self.user.achievements objectAtIndex:indexPath.row];
-        
-        [highFiverImageView setImageWithURL:achievement.imageUrl];
-        
-        if (!achievement.achieved) {
-            highFiverImageView.alpha = 0.2f;
-            highFiverImageView.tintColor = [UIColor whiteColor];
-            highFiverImageView.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
-        }
-        
-        
-    } else if (indexPath.section == 1) {
-        SlashatBadge *badge = [self.user.badges objectAtIndex:indexPath.row];
-        
-        [highFiverImageView setImageWithURL:badge.imageUrl];
-    } else {
-        [highFiverImageView setImageWithURL:((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).profilePicture];
-        
-        highFiverImageView.layer.cornerRadius = highFiverImageView.bounds.size.width / 2;
-        highFiverImageView.layer.masksToBounds = YES;
-        
-        
-        nameLabel.text = ((SlashatHighFiveUser *)[self.user.highFivers objectAtIndex:indexPath.row]).userName;
-    } */
-    
-    
-    
     
     return cell;
 }

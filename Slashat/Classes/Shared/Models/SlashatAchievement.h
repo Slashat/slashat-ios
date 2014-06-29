@@ -11,7 +11,9 @@
 @interface SlashatAchievement : NSObject
 
 @property (strong, nonatomic) NSURL *imageUrl;
+@property (strong, nonatomic) NSURL *largeImageUrl;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *description;
 @property (nonatomic) BOOL achieved;
 
 + (NSArray *)initAchievements:(NSDictionary *)attributes;

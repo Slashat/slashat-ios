@@ -17,8 +17,12 @@
         return nil;
     }
     
-    self.name = attributes[@"name"];
+    self.name = attributes[@"title"];
+    self.description = attributes[@"description"];
+    
     self.imageUrl = [NSURL URLWithString:attributes[@"picture"]];
+    self.largeImageUrl = [NSURL URLWithString:attributes[@"picture_large"]];
+    
     self.achieved = [attributes[@"achieved"] boolValue];
     
     return self;

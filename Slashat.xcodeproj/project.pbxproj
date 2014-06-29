@@ -40,6 +40,7 @@
 		04D240B2195EEEE500CE6580 /* SlashatHighFiverCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240B1195EEEE500CE6580 /* SlashatHighFiverCollectionHeaderView.m */; };
 		04D240B5195F05E300CE6580 /* SlashatAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240B4195F05E300CE6580 /* SlashatAchievement.m */; };
 		04D240B8195F113E00CE6580 /* SlashatBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240B7195F113E00CE6580 /* SlashatBadge.m */; };
+		04D240BE195F7CA400CE6580 /* SlashatAchievementDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D240BD195F7CA400CE6580 /* SlashatAchievementDetailViewController.m */; };
 		04E5DDE717F70CFF0091464D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDE617F70CFF0091464D /* ImageIO.framework */; };
 		04E5DDFD17F80EFE0091464D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDFC17F80EFE0091464D /* CoreVideo.framework */; };
 		04E5DDFF17F80F070091464D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5DDFE17F80F070091464D /* CoreMedia.framework */; };
@@ -284,6 +285,8 @@
 		04D240B4195F05E300CE6580 /* SlashatAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAchievement.m; sourceTree = "<group>"; };
 		04D240B6195F113E00CE6580 /* SlashatBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatBadge.h; sourceTree = "<group>"; };
 		04D240B7195F113E00CE6580 /* SlashatBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatBadge.m; sourceTree = "<group>"; };
+		04D240BC195F7CA400CE6580 /* SlashatAchievementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlashatAchievementDetailViewController.h; sourceTree = "<group>"; };
+		04D240BD195F7CA400CE6580 /* SlashatAchievementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlashatAchievementDetailViewController.m; sourceTree = "<group>"; };
 		04E5DDE617F70CFF0091464D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		04E5DDFC17F80EFE0091464D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		04E5DDFE17F80F070091464D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -809,6 +812,8 @@
 				04F5D540181F98D9006CF721 /* SlashatReceiveHighFiveViewController.m */,
 				042AD7661845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.h */,
 				042AD7671845245A00F20C32 /* SlashatFullscreenMoviePlayerViewController.m */,
+				04D240BC195F7CA400CE6580 /* SlashatAchievementDetailViewController.h */,
+				04D240BD195F7CA400CE6580 /* SlashatAchievementDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1472,6 +1477,7 @@
 				04F5D64C181F98DA006CF721 /* SlashatReceiveHighFiveViewController.m in Sources */,
 				04F5D654181F98DA006CF721 /* SlashatAudioHandler.m in Sources */,
 				04F5D650181F98DA006CF721 /* SlashatApplication.m in Sources */,
+				04D240BE195F7CA400CE6580 /* SlashatAchievementDetailViewController.m in Sources */,
 				04F5D6D5181F98DA006CF721 /* AFImageRequestOperation.m in Sources */,
 				04F5D65A181F98DA006CF721 /* SlashatHighFiveUser.m in Sources */,
 				04F5D640181F98DA006CF721 /* StackScrollViewController.m in Sources */,
