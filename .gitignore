@@ -19,3 +19,7 @@ DerivedData
 *.hmap
 Slashat/APIKey.h
 Slashat/SampleAPIKey.h
+
+# CocoaPods
+#
+Pods/
