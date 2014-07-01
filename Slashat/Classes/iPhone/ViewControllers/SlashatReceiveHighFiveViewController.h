@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ZXingObjC/ZXingObjC.h>
 #import "SlashatHighFiveUser.h"
 
-@interface SlashatReceiveHighFiveViewController : UIViewController
+
+@interface SlashatReceiveHighFiveViewController : UIViewController <ZXCaptureDelegate>
 
 @property (strong, nonatomic) SlashatHighFiveUser *highFiveUser;
 
