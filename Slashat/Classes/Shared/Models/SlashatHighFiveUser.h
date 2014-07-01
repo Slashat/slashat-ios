@@ -22,6 +22,9 @@
 
 @property (strong, nonatomic) NSArray *highFivers;
 
+@property (strong, nonatomic) NSArray *badges;
+@property (strong, nonatomic) NSArray *achievements;
+
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
 + (NSArray *)initUsersSortedByUserIdWithAttributes:(NSDictionary *)attributes;

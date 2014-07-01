@@ -7,6 +7,8 @@
 //
 
 #import "SlashatHighFiveUser.h"
+#import "SlashatAchievement.h"
+#import "SlashatBadge.h"
 
 @implementation SlashatHighFiveUser
 
@@ -35,6 +37,9 @@
     if ([attributes valueForKey:@"qrcode"]) {
         self.qrCode = [NSURL URLWithString:[attributes valueForKey:@"qrcode"]];
     }
+    
+    self.achievements = [SlashatAchievement initAchievements:attributes[@"achievements"]];
+    self.badges = [SlashatBadge initBadges:attributes[@"badges"]];
     
     self.highFivers = [SlashatHighFiveUser initUsersSortedByHighFiveDateWithAttributes:[attributes objectForKey:@"highfivers"]];
     
