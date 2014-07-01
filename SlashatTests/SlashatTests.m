@@ -39,9 +39,9 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
     SlashatHighFiveUser *highFiveUser = [[SlashatHighFiveUser alloc] initWithAttributes:json];
-    STAssertEqualObjects(highFiveUser.userName, @"kottkrig", @"Username should be kottkrig");
-    STAssertEquals(highFiveUser.userId, 5, @"UserId should be 5");
-    STAssertTrue(highFiveUser.highFivers.count == 0, @"There should be no highfivers");
+    XCTAssertEqualObjects(highFiveUser.userName, @"kottkrig", @"Username should be kottkrig");
+    XCTAssertEqual(highFiveUser.userId, 5, @"UserId should be 5");
+    XCTAssertTrue(highFiveUser.highFivers.count == 0, @"There should be no highfivers");
 }
 
 - (void)testParseGetAllHighFivers
@@ -50,7 +50,7 @@
     NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
     NSArray *highFivers = [SlashatHighFiveUser initUsersSortedByUserIdWithAttributes:JSON];
-    STAssertTrue(highFivers.count == 9, @"There should be 9 users in json data");
+    XCTAssertTrue(highFivers.count == 9, @"There should be 9 users in json data");
 }
 
 - (void)testHighFiversAreInAscendingOrder
@@ -71,7 +71,7 @@
         previousId = highFiver.userId;
     }
     
-    STAssertTrue(ascendingOrder, @"HighFivers should be in ascending order");
+    XCTAssertTrue(ascendingOrder, @"HighFivers should be in ascending order");
 }
 
 @end
