@@ -249,7 +249,7 @@ static NSString * encodeByAddingPercentEscapes(NSString *input) {
         
     }
     
-    self.episodeTitle.text = [NSString stringWithFormat:@"Episod %d - %@", episode.episodeNumber, episode.title];
+    self.episodeTitle.text = [NSString stringWithFormat:@"Episod %@ - %@", episode.episodeNumber, episode.title];
     
     [self setPlayerContentAlpha:0.2];
     self.playerActivityIndicator.hidden = NO;

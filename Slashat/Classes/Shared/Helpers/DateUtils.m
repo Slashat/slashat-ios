@@ -36,15 +36,15 @@
         
         switch(hoursSinceDate)
         {
-            default: return [NSString stringWithFormat:@"%d timmar sedan", hoursSinceDate];
+            default: return [NSString stringWithFormat:@"%lu timmar sedan", (unsigned long)hoursSinceDate];
             case 1: return @"1 timma sedan";
-            case 0: return [NSString stringWithFormat:@"%d minuter sedan", (NSUInteger)(timeSinceDate / 60.0)];
+            case 0: return [NSString stringWithFormat:@"%lu minuter sedan", (unsigned long)(timeSinceDate / 60.0)];
         }
     }
     else
     {
         NSUInteger daysSinceDate = (NSUInteger)(timeSinceDate / (24.0 * 60.0 * 60.0));
-        return [NSString stringWithFormat:@"%d dagar sedan", daysSinceDate];
+        return [NSString stringWithFormat:@"%lu dagar sedan", (unsigned long)daysSinceDate];
     }    
 }
 

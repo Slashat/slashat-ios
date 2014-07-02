@@ -94,9 +94,9 @@
             [currentItem setTitle:[tmpString stringByReplacingOccurrencesOfString:@"Slashat.se #" withString:@""]];
             NSInteger episodeNumber;
             [[NSScanner scannerWithString:currentItem.title] scanInteger:&episodeNumber];
-            currentItem.episodeNumber = episodeNumber;
+            currentItem.episodeNumber = [NSNumber numberWithInteger:episodeNumber];
             
-            [currentItem setTitle:[currentItem.title stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%i - ", currentItem.episodeNumber] withString:@""]];
+            [currentItem setTitle:[currentItem.title stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@ - ", currentItem.episodeNumber] withString:@""]];
         }
         
         if ([elementName isEqualToString:@"description"]) {

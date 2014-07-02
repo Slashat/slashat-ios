@@ -232,7 +232,7 @@
     
     if (user.highFivers.count > 0) {
         [sections addObject:@{
-                              @"title": [NSString stringWithFormat:@"Mina %u High-Fivers:", user.highFivers.count],
+                              @"title": [NSString stringWithFormat:@"Mina %lu High-Fivers:", (unsigned long)user.highFivers.count],
                               @"items": user.highFivers
                               }];
     }
