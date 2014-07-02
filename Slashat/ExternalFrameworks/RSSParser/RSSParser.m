@@ -99,12 +99,9 @@
             [currentItem setTitle:[currentItem.title stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@ - ", currentItem.episodeNumber] withString:@""]];
         }
         
-        if ([elementName isEqualToString:@"description"]) {
-            [currentItem setItemDescription:tmpString];
-        }
-        
         if ([elementName isEqualToString:@"itunes:summary"]) {
             [currentItem setShowNotes:tmpString];
+            [currentItem setItemDescription:tmpString];
         }
         
         if ([elementName isEqualToString:@"link"]) {

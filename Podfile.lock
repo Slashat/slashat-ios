@@ -1,4 +1,5 @@
 PODS:
+  - AFNetworking (1.3.4)
   - SDWebImage (3.6):
     - SDWebImage/Core
   - SDWebImage/Core (3.6)
@@ -7,10 +8,12 @@ PODS:
   - ZXingObjC/All (3.0.1)
 
 DEPENDENCIES:
+  - AFNetworking (~> 1.3)
   - SDWebImage (~> 3.6)
   - ZXingObjC (~> 3.0)
 
 SPEC CHECKSUMS:
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
   SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
   ZXingObjC: e21ba2d24fdb226d4c6c8484aa901c0381bdf633
 
