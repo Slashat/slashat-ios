@@ -7,6 +7,21 @@ Vill man hänga bland likasinnande så brukar det alltid vara någon online i [#
 
 Skisser och planer är utspridda mellan forumet och github. Det smidigaste är nästan att fråga på forumet, i [#slashatdev][slashatdev] eller fråga ([@kottkrig](http://twitter.com/kottkrig)) om man undrar över vad det är som gäller.
 
+
+Dependencies:
+-------------
+
+- [CocoaPods](http://cocoapods.org)
+- XCode
+
+Installera CocoaPods, dra ned projektet och kör:
+
+```bash
+pod install
+```
+
+Öppna sedan `Slashat.xcworkspace`.
+
 Features:
 ---------
 * Se Slashat live på tisdagar kl 19.30
