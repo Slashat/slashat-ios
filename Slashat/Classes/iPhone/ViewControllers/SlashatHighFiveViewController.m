@@ -33,11 +33,6 @@
 @property (weak, nonatomic) IBOutlet UIView *profileInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *profileDescriptionLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *giveHighFiveButton;
-
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) CLLocation *currentLocation;
-
 @property (strong, nonatomic) UIView *loginAlertViewUnderlayView;
 @property (strong, nonatomic) UIAlertView *loginAlertView;
 
@@ -77,9 +72,7 @@
     self.profileInfoView.layer.shadowRadius = 1;
     self.profileInfoView.layer.shadowOpacity = 0.5;
     
-    if ([SlashatHighFiveUser userIsLoggedIn]) {
-        [self initializeLocationManager];
-    } else {
+    if (![SlashatHighFiveUser userIsLoggedIn]) {
         [self addLoginAlertViewUnderlay];
     }
     
@@ -95,29 +88,7 @@
     }
 }
 
-- (void)initializeLocationManager
-{
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    
-    [self updateLocation];
-}
 
-- (void)updateLocation
-{
-    if (self.locationManager) {
-        [self.locationManager startUpdatingLocation];
-    }
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    [self.locationManager stopUpdatingLocation];
-    self.currentLocation = [locations lastObject];
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -133,8 +104,6 @@
 
 - (void)activateView
 {
-    [self updateLocation];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL automaticLogin = [defaults boolForKey:@"highFiveAutomaticLogin"];
     
@@ -212,7 +181,6 @@
 {
     [SlashatHighFiveUser loginWithCredentials:userName password:password success:^(SlashatHighFiveUser *user) {
         [self updateViewWithUser:user];
-        [self initializeLocationManager];
     } onError:^(NSError *error) {
         [self showLoginView];
     }];
@@ -232,9 +200,7 @@
     self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.size.width / 2;
     
     self.profileDescriptionLabel.text = [NSString stringWithFormat:@"Fick sin första High-Five av %@ för %@.", self.user.highfivedByName, [DateUtils convertNSDateToFriendlyString:self.user.highfivedDate]];
-    
-    self.giveHighFiveButton.enabled = YES;
-    
+        
     if (user.highFivers.count > 0) {
         self.profileDescriptionLabel.hidden = NO;
         self.noHighFivesDescriptionLabel.hidden = YES;
@@ -304,53 +270,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)giveHighFiveButtonPressed:(id)sender
-{
-    ZBarReaderViewController *reader = [ZBarReaderViewController new];
-    reader.readerDelegate = self;
-    
-    [reader.scanner setSymbology: 0
-                   config: ZBAR_CFG_ENABLE
-                       to: 0];
-    
-    [reader.scanner setSymbology: ZBAR_QRCODE
-                          config: ZBAR_CFG_ENABLE
-                              to: 1];
-    reader.readerView.zoom = 1.0;
-    
-    [self presentViewController:reader animated:YES completion:nil];
-}
 
-- (void)imagePickerController: (UIImagePickerController*) reader
- didFinishPickingMediaWithInfo: (NSDictionary*) info
-{
-    id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
-    
-    for (ZBarSymbol *object in results) {
-        NSLog(@"QR Result: '%@'", object.data);
-        SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
-        highFive.receiverToken = object.data;
-        highFive.coordinate = self.currentLocation.coordinate;
-        
-        [self performHighFive:highFive];
-        break;
-    }
-    
-    [reader dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)performHighFive:(SlashatHighFive *)highFive
-{
-    [SlashatHighFive performHighFive:highFive success:^{
-        NSLog(@"SlashatHighFiveViewController: High five success. Fetching new user data.");
-        [self showHighFiveSuccessFeedback];
-        [SlashatHighFiveUser fetchUserWithSuccess:^(SlashatHighFiveUser *user) {
-            [self updateViewWithUser:user];
-        } onError:nil];
-    } failure:^(NSError *error) {
-        [self showHighFiveErrorFeedback];
-    }];
-}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -434,44 +354,6 @@
     }
     
     return header;
-}
-
-- (void)showHighFiveSuccessFeedback
-{
-    [self showHighFiveFeedback:NSLocalizedString(@"Yay, High-Five!", @"Feedback i notifikation när High-Five lyckades.") color:[UIColor highFiveFeedbackGoodTextColor]];
-}
-
-- (void)showHighFiveErrorFeedback
-{
-    [self showHighFiveFeedback:NSLocalizedString(@"Aj då, det där gick inte så bra. Försök igen!", @"Feedback i notifikation när High-Five misslyckades.") color:[UIColor highFiveFeedbackBadTextColor]];
-}
-
-- (void)showHighFiveFeedback:(NSString *)feedbackText color:(UIColor *)textColor;
-{
-    NSArray *subviewArray = [[NSBundle mainBundle] loadNibNamed:@"HighFiveFeedbackView" owner:self options:nil];
-    UIView *feedbackView = [subviewArray objectAtIndex:0];
-    
-    UILabel *feedbackTextLabel = (UILabel *)[feedbackView viewWithTag:1];
-    feedbackTextLabel.text = feedbackText;
-    feedbackTextLabel.textColor = textColor;
-    
-    CGRect frame = CGRectMake(0, self.profileInfoView.frame.origin.y + self.profileInfoView.frame.size.height - 25, self.profileInfoView.frame.size.width, 25);
-    feedbackView.frame = frame;
-    
-    CGRect newFrame = CGRectMake(0, frame.origin.y + frame.size.height, frame.size.width, frame.size.height);
-    
-    [UIView animateWithDuration:0.25 animations:^{
-        feedbackView.frame = newFrame;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.25 delay:3.0 options:nil animations:^{
-            feedbackView.frame = frame;
-        } completion:^(BOOL finished) {
-            [feedbackView removeFromSuperview];
-        }];
-    }];
-    
-    [self.view addSubview:feedbackView];
-    [self.view addSubview:self.profileInfoView];
 }
 
 @end

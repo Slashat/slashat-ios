@@ -126,9 +126,6 @@
             failure(error);
         }
         
-        NSLog(@"login success, token: %@", self.highFiveAuthToken);
-        
-        
     } failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON){
         NSLog(@"Failed: %@",[error localizedDescription]);
     }];

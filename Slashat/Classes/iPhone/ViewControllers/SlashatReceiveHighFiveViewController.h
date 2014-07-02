@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <ZXingObjC/ZXingObjC.h>
 #import "SlashatHighFiveUser.h"
 
-@interface SlashatReceiveHighFiveViewController : UIViewController
+
+@interface SlashatReceiveHighFiveViewController : UIViewController <ZXCaptureDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) SlashatHighFiveUser *highFiveUser;
 
