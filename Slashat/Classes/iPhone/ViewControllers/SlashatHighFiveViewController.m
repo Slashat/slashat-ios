@@ -33,9 +33,6 @@
 @property (weak, nonatomic) IBOutlet UIView *profileInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *profileDescriptionLabel;
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) CLLocation *currentLocation;
-
 @property (strong, nonatomic) UIView *loginAlertViewUnderlayView;
 @property (strong, nonatomic) UIAlertView *loginAlertView;
 
@@ -75,9 +72,7 @@
     self.profileInfoView.layer.shadowRadius = 1;
     self.profileInfoView.layer.shadowOpacity = 0.5;
     
-    if ([SlashatHighFiveUser userIsLoggedIn]) {
-        [self initializeLocationManager];
-    } else {
+    if (![SlashatHighFiveUser userIsLoggedIn]) {
         [self addLoginAlertViewUnderlay];
     }
     
@@ -93,29 +88,7 @@
     }
 }
 
-- (void)initializeLocationManager
-{
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    
-    [self updateLocation];
-}
 
-- (void)updateLocation
-{
-    if (self.locationManager) {
-        [self.locationManager startUpdatingLocation];
-    }
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    [self.locationManager stopUpdatingLocation];
-    self.currentLocation = [locations lastObject];
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -131,8 +104,6 @@
 
 - (void)activateView
 {
-    [self updateLocation];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL automaticLogin = [defaults boolForKey:@"highFiveAutomaticLogin"];
     
@@ -210,7 +181,6 @@
 {
     [SlashatHighFiveUser loginWithCredentials:userName password:password success:^(SlashatHighFiveUser *user) {
         [self updateViewWithUser:user];
-        [self initializeLocationManager];
     } onError:^(NSError *error) {
         [self showLoginView];
     }];

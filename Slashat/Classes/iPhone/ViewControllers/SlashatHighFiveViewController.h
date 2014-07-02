@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface SlashatHighFiveViewController : UIViewController <UICollectionViewDataSource, UIAlertViewDelegate, CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout>
+@interface SlashatHighFiveViewController : UIViewController <UICollectionViewDataSource, UIAlertViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

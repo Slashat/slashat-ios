@@ -20,6 +20,11 @@
 @property (nonatomic, strong) ZXCapture *capture;
 @property (nonatomic, weak) IBOutlet UIView *scanRectView;
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+
+@property (strong, nonatomic) NSString *previousResult;
+
 @end
 
 @implementation SlashatReceiveHighFiveViewController
@@ -42,7 +47,7 @@
     self.capture = [[ZXCapture alloc] init];
     self.capture.camera = self.capture.back;
     self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-    self.capture.rotation = 90.0f;
+    //self.capture.rotation = 90.0f;
     
     self.capture.layer.frame = self.view.bounds;
     [self.view.layer addSublayer:self.capture.layer];
@@ -52,6 +57,8 @@
     
     [self.view bringSubviewToFront:self.qrCodeImageView];
     [self.view bringSubviewToFront:self.instructionText];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnteredForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,6 +71,37 @@
     self.capture.scanRect = CGRectApplyAffineTransform(self.scanRectView.frame, captureSizeTransform);
 }
 
+- (void)applicationEnteredForeground:(NSNotification *)notification
+{
+    [self updateLocation];
+}
+
+
+#pragma mark - Location
+
+- (void)initializeLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
+    [self updateLocation];
+}
+
+- (void)updateLocation
+{
+    if (self.locationManager) {
+        [self.locationManager startUpdatingLocation];
+    }
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.locationManager stopUpdatingLocation];
+    self.currentLocation = [locations lastObject];
+}
 
 
 #pragma mark - ZXCaptureDelegate Methods
@@ -71,17 +109,18 @@
 - (void)captureResult:(ZXCapture *)capture result:(ZXResult *)result {
     if (!result) return;
     
-    
-    NSLog(@"Result: %@", result.text);
-    
-    SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
-    highFive.receiverToken = result.text;
-    highFive.coordinate = self.currentLocation.coordinate;
-    
-    [self performHighFive:highFive];
-    
-    // Vibrate
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    if (![result.text isEqualToString:self.previousResult]) {
+        self.previousResult = result.text;
+        
+        SlashatHighFive *highFive = [[SlashatHighFive alloc] init];
+        highFive.receiverToken = result.text;
+        highFive.coordinate = self.currentLocation.coordinate;
+        
+        [self performHighFive:highFive];
+        
+        // Vibrate
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
 }
 
 #pragma mark - High-Five!
@@ -115,7 +154,9 @@
     feedbackTextLabel.text = feedbackText;
     feedbackTextLabel.textColor = textColor;
     
-    CGRect frame = CGRectMake(0, self.profileInfoView.frame.origin.y + self.profileInfoView.frame.size.height - 25, self.profileInfoView.frame.size.width, 25);
+    CGFloat frameHeight = 25;
+    
+    CGRect frame = CGRectMake(0, 0 - frameHeight, self.navigationController.navigationBar.frame.size.width, frameHeight);
     feedbackView.frame = frame;
     
     CGRect newFrame = CGRectMake(0, frame.origin.y + frame.size.height, frame.size.width, frame.size.height);
@@ -131,7 +172,6 @@
     }];
     
     [self.view addSubview:feedbackView];
-    [self.view addSubview:self.profileInfoView];
 }
 
 #pragma mark - Memory stuff
@@ -144,6 +184,7 @@
 
 - (IBAction)closeButtonPressed:(id)sender
 {
+    [self.capture stop];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
