@@ -205,7 +205,6 @@
 		04F5D6DE181F98DA006CF721 /* KDJKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5D60C181F98DA006CF721 /* KDJKeychainItemWrapper.m */; };
 		04F5D6DF181F98DA006CF721 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5D60E181F98DA006CF721 /* KeychainItemWrapper.m */; };
 		04F5D6E0181F98DA006CF721 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5D611181F98DA006CF721 /* RSSParser.m */; };
-		04F5D6E1181F98DA006CF721 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F5D612181F98DA006CF721 /* SDWebImage.framework */; };
 		04F5D6EB181F9C8A006CF721 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D6EA181F9C8A006CF721 /* MainStoryboard_iPad.storyboard */; };
 		04F5D6EE181F9C92006CF721 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5D6ED181F9C92006CF721 /* MainStoryboard_iPhone.storyboard */; };
 		CBD4112AEB984B0A8629577B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9494436C6EE450393618EF9 /* libPods.a */; };
@@ -484,7 +483,6 @@
 		04F5D60E181F98DA006CF721 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		04F5D610181F98DA006CF721 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
 		04F5D611181F98DA006CF721 /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
-		04F5D612181F98DA006CF721 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		04F5D635181F98DA006CF721 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		04F5D636181F98DA006CF721 /* SampleAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAPIKey.h; sourceTree = "<group>"; };
 		04F5D6E7181F9B3C006CF721 /* Slashat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Slashat-Info.plist"; sourceTree = "<group>"; };
@@ -516,7 +514,6 @@
 				0494049E169CB27300871DB3 /* MediaPlayer.framework in Frameworks */,
 				043B543E169313A500B71F3A /* UIKit.framework in Frameworks */,
 				043B5440169313A500B71F3A /* Foundation.framework in Frameworks */,
-				04F5D6E1181F98DA006CF721 /* SDWebImage.framework in Frameworks */,
 				043B5442169313A500B71F3A /* CoreGraphics.framework in Frameworks */,
 				CBD4112AEB984B0A8629577B /* libPods.a in Frameworks */,
 			);
@@ -1045,7 +1042,6 @@
 				04F5D605181F98DA006CF721 /* DB5 */,
 				04F5D60A181F98DA006CF721 /* GenericKeychain */,
 				04F5D60F181F98DA006CF721 /* RSSParser */,
-				04F5D612181F98DA006CF721 /* SDWebImage.framework */,
 			);
 			path = ExternalFrameworks;
 			sourceTree = "<group>";
