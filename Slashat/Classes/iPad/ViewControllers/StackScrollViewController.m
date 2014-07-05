@@ -678,7 +678,7 @@ const NSInteger SLIDE_VIEWS_START_X_POS = 0;
 		}
 		
 		NSInteger viewControllerCount = [_viewControllersStack count];
-		for (int i = indexOfViewController; i < viewControllerCount; i++) {
+		for (NSInteger i = indexOfViewController; i < viewControllerCount; i++) {
 			[[_slideViews viewWithTag:i] removeFromSuperview];
 			[_viewControllersStack removeObjectAtIndex:indexOfViewController];
 			viewXPosition = self.view.frame.size.width - [controller view].frame.size.width;
