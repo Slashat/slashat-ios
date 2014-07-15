@@ -268,15 +268,22 @@ static NSString * encodeByAddingPercentEscapes(NSString *input) {
     NSLog(@"%@", event);
     
     if (event.type == UIEventTypeRemoteControl) {
-        if (event.subtype == UIEventSubtypeRemoteControlPlay) {
-            [self.audioHandler play];
-            NSLog(@"play");
-        } else if (event.subtype == UIEventSubtypeRemoteControlPause) {
-            [self.audioHandler pause];
-            NSLog(@"pause");
-        } else if (event.subtype == UIEventSubtypeRemoteControlTogglePlayPause) {
-            NSLog(@"toggle");
-            [self togglePlayPause];
+        
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+                [self.audioHandler play];
+                break;
+            
+            case UIEventSubtypeRemoteControlPause:
+                [self.audioHandler pause];
+                break;
+            
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                [self togglePlayPause];
+                break;
+                
+            default:
+                break;
         }
     }
 }
