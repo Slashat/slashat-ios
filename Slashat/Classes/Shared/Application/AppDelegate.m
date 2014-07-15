@@ -249,10 +249,36 @@ static NSString * encodeByAddingPercentEscapes(NSString *input) {
         
     }
     
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+    
     self.episodeTitle.text = [NSString stringWithFormat:@"Episod %@ - %@", episode.episodeNumber, episode.title];
     
     [self setPlayerContentAlpha:0.2];
     self.playerActivityIndicator.hidden = NO;
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    NSLog(@"%@", event);
+    
+    if (event.type == UIEventTypeRemoteControl) {
+        if (event.subtype == UIEventSubtypeRemoteControlPlay) {
+            [self.audioHandler play];
+            NSLog(@"play");
+        } else if (event.subtype == UIEventSubtypeRemoteControlPause) {
+            [self.audioHandler pause];
+            NSLog(@"pause");
+        } else if (event.subtype == UIEventSubtypeRemoteControlTogglePlayPause) {
+            NSLog(@"toggle");
+            [self togglePlayPause];
+        }
+    }
 }
 
 -(void)audioHandlerLoadStateDidChange:(NSNotification *)notification
@@ -302,6 +328,11 @@ static NSString * encodeByAddingPercentEscapes(NSString *input) {
 #pragma mark - Actions
 
 - (IBAction)playPauseButtonClicked:(id)sender
+{
+    [self togglePlayPause];
+}
+
+- (void)togglePlayPause
 {
     if (self.audioHandler.isPlaying) {
         [self.audioHandler pause];
