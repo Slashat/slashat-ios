@@ -301,6 +301,8 @@ static NSString * encodeByAddingPercentEscapes(NSString *input) {
 
 -(void)audioHandlerPlaybackDidFinish:(NSNotification *)notification
 {
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
     [self.audioControlsView removeFromSuperview];
 }
 
