@@ -8,6 +8,12 @@
 
 #import "RSSParser.h"
 
+@interface RSSParser()
+
+@property (nonatomic, strong) NSString *albumArtUrl;
+
+@end
+
 @implementation RSSParser
 
 #pragma mark lifecycle
@@ -76,8 +82,12 @@
     
     tmpString = [[NSMutableString alloc] init];
     
+    if ([elementName isEqualToString:@"itunes:image"]) {
+        self.albumArtUrl = attributeDict[@"href"];
+    }
+    
     if ([elementName isEqualToString:@"enclosure"]) {
-        NSString *urlString = [attributeDict objectForKey:@"url"];
+        NSString *urlString = attributeDict[@"url"];
         [currentItem setMediaUrl:[NSURL URLWithString:urlString]];
     }
     
@@ -87,6 +97,7 @@
 {    
     if ([elementName isEqualToString:@"item"]) {
         [items addObject:currentItem];
+        currentItem.podcastImage = [[NSURL alloc] initWithString:self.albumArtUrl];
     }
     if (currentItem != nil && tmpString != nil) {
         

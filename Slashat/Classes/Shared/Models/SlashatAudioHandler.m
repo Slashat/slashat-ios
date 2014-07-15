@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
+#import <SDWebImage/SDWebImageDownloader.h>
 
 @interface SlashatAudioHandler () {
     
@@ -51,17 +52,32 @@
     Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
     
     if (playingInfoCenter) {
+                
+        [SDWebImageDownloader.sharedDownloader downloadImageWithURL:self.episode.podcastImage options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+            
+            if (image && finished) {
+                [self updateNowPlayingInfoWithTitle:self.episode.title albumArt:image];
+            }
+            
+        }];
         
-        NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
-        
-        //MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage: [UIImage imagedNamed:@"AlbumArt"]];
-        
-        [songInfo setObject:[_episode title] forKey:MPMediaItemPropertyTitle];
-        //[songInfo setObject:@"Audio Author" forKey:MPMediaItemPropertyArtist];
-        //[songInfo setObject:@"Audio Album" forKey:MPMediaItemPropertyAlbumTitle];
-        //[songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
-        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
+        [self updateNowPlayingInfoWithTitle:self.episode.title albumArt:nil];
     }
+}
+
+- (void)updateNowPlayingInfoWithTitle:(NSString *)title albumArt:(UIImage *)image
+{
+    NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
+    
+    songInfo[MPMediaItemPropertyTitle] = title;
+    songInfo[MPMediaItemPropertyArtist] = @"Slashat.se";
+    
+    if (image) {
+        MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage: image];
+        songInfo[MPMediaItemPropertyArtwork] = albumArt;
+    }
+    
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
 }
 
 - (void)setEpisode:(SlashatEpisode *)episode
