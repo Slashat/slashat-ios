@@ -195,7 +195,7 @@
     [self updateSectionsWithDataFromUser:user];
     
     self.nameLabel.text = user.userName;
-    [self.profileImageView setImageWithURL:user.profilePicture];
+    [self.profileImageView sd_setImageWithURL:user.profilePicture];
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.size.width / 2;
     
@@ -315,11 +315,11 @@
     id item = [((NSArray *)sectionItem[@"items"]) objectAtIndex:indexPath.row];
     
     if ([item isKindOfClass:[SlashatBadge class]]) {
-        [highFiverImageView setImageWithURL:((SlashatBadge *)item).imageUrl];
+        [highFiverImageView sd_setImageWithURL:((SlashatBadge *)item).imageUrl];
     } else if([item isKindOfClass:[SlashatAchievement class]]) {
         SlashatAchievement *achievement = (SlashatAchievement *)item;
         
-        [highFiverImageView setImageWithURL:achievement.imageUrl];
+        [highFiverImageView sd_setImageWithURL:achievement.imageUrl];
         
         if (!achievement.achieved) {
             highFiverImageView.alpha = 0.2f;
@@ -330,7 +330,7 @@
         
         SlashatHighFiveUser *user = (SlashatHighFiveUser *)item;
         
-        [highFiverImageView setImageWithURL:user.profilePicture];
+        [highFiverImageView sd_setImageWithURL:user.profilePicture];
         
         highFiverImageView.layer.cornerRadius = highFiverImageView.bounds.size.width / 2;
         highFiverImageView.layer.masksToBounds = YES;

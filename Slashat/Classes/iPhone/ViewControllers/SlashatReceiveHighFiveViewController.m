@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
             
-    [self.qrCodeImageView setImageWithURL:self.highFiveUser.qrCode];
+    [self.qrCodeImageView sd_setImageWithURL:self.highFiveUser.qrCode];
     
     self.capture = [[ZXCapture alloc] init];
     self.capture.camera = self.capture.back;

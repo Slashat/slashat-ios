@@ -111,7 +111,7 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.userInteractionEnabled = NO;
         
-        [cell.imageView setImageWithURL:highFiver.profilePicture placeholderImage:[UIImage imageNamed:@"about_table_view_placeholder.png"]];
+        [cell.imageView sd_setImageWithURL:highFiver.profilePicture placeholderImage:[UIImage imageNamed:@"about_table_view_placeholder.png"]];
     }
     
     
