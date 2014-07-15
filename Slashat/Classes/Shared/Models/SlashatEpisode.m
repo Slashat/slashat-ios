@@ -10,4 +10,9 @@
 
 @implementation SlashatEpisode
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"episodeNumber: %@\nepisodeTitle: %@\nmediaUrl: %@\npodcastImage: %@", self.episodeNumber, self.title, self.mediaUrl, self.podcastImage];
+}
+
 @end
