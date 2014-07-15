@@ -43,7 +43,7 @@
 - (void) refresh {
     
     [[SlashatAPIManager sharedClient] fetchArchiveEpisodesWithSuccess:^(NSArray *episodes) {
-        self.allEntries = [[NSMutableArray alloc] initWithArray:episodes];
+        self.allEntries = [[NSArray alloc] initWithArray:episodes];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     } failure:^(NSError *error) {
