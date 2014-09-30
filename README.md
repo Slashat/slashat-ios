@@ -104,6 +104,3 @@ Utvecklare
 
 - <a href="https://plus.google.com/113428742926263981798?rel=author" rel="author">Johan Larsson</a>
 - Erika Thorsen
-
-
-Jezper was here
